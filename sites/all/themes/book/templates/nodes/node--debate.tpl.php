@@ -74,10 +74,14 @@
             <?php print theme('user_picture', array('account' =>user_load($uid))); ?>
             <a href="/user/<?php echo $uid; ?>" class="user">
                 <?php $user_fields = user_load(intval($uid)); ?>
-                <?php if (isset ($user_fields->field_firstname)): ?>
-                    <?php echo $user_fields->field_firstname['und'][0]['safe_value']; ?>
+                <?php if (isset ($user_fields->field_firstname) || isset ($user_fields->field_lastname)): ?>
+                        <?php if (isset ($user_fields->field_firstname['und'])): ?>
+                            <?php echo $user_fields->field_firstname['und'][0]['safe_value']; ?>
+                        <?php endif; ?>
                     <?php echo ' '; ?>
-                    <?php echo $user_fields->field_lastname['und'][0]['safe_value']; ?>
+                        <?php if (isset ($user_fields->field_lastname['und'])): ?>
+                            <?php echo $user_fields->field_lastname['und'][0]['safe_value']; ?>
+                        <?php endif; ?>
                 <?php else: ?>
                     <?php echo $user_fields->name; ?>
                 <?php endif; ?>

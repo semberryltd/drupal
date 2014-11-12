@@ -4,6 +4,9 @@ var ajaxURL = document.getElementById('api-url').value;
 var languageCode = document.getElementById('selected-language').value;
 var countryCode = document.getElementById('entity-id').value;
 
+// Stack to store ajax call indicators
+var callStack = [];
+
 ////////////////////////////////////////////////////////////////////////////////
 //                                 LOADERS
 ////////////////////////////////////////////////////////////////////////////////
@@ -135,6 +138,9 @@ for (var i = 0; i < starredIndicatorList.length; i++) {
 }
 
 function getStarredChartData(options, data) {
+	// Check and load if there are more indicators in the stack
+	loadSmallChartFromStack();
+
 	data = JSON.parse(data);
 
 	var series = [];
@@ -185,7 +191,7 @@ wesCountry.stateful.start({
 
 		// Avoid selecting an unselectable option for country-comparing-select
 		// We select the first selectable country of the same region of this country
-
+/*
 		var selector = selectors['#country-comparing-select'];
 
 		var option = selector.querySelector("option:not([disabled])");
@@ -198,6 +204,8 @@ wesCountry.stateful.start({
 		selector.selectedIndex = optionSameRegion && optionSameRegion.index ? optionSameRegion.index: option;
 
 		selectors['#country-comparing-select'].refresh();
+		
+		*/
 
 		// Show fixed charts
 		showFixedCharts();
@@ -230,6 +238,7 @@ wesCountry.stateful.start({
 			},
 			selector: "#source-select",
 			onChange: function(index, value, parameters, selectors) {
+				console.log("source-select: onChange: " + value);
 				// Load indicator select
 				loadIndicatorsFromSource(parameters, selectors);
 
@@ -261,6 +270,7 @@ wesCountry.stateful.start({
 			name: "indicator",
 			selector: "#indicator-select",
 			onChange: function(index, value, parameters, selectors) {
+				console.log("indicator-select: onChange: " + value);
 			/*
 				// Set this indicator source
 				var source = selectors['#indicator-select'].options[index].parentNode.label;
@@ -287,7 +297,49 @@ wesCountry.stateful.start({
 		{
 			name: "comparing-country",
 			selector: "#country-comparing-select",
+			selectedIndex: function(parameters, selectors) {
+				var selector = selectors['#country-comparing-select'];
+				var comparing = parameters["comparing-country"];
+				
+				if (comparing && comparing != "" && comparing != countryCode)  {
+					var option = selector.querySelector(String.format('option[value={0}]', comparing));
+					
+					if (option && option.index)
+						return option.index;
+				}
+				
+				// Avoid selecting an unselectable option for country-comparing-select
+				// We select the first selectable country of the same region of this country
+				
+				var thisCountryOption = selector.querySelector(String.format('option[value={0}]', countryCode));
+
+				var region = thisCountryOption && thisCountryOption.hasAttribute("data-region") ? thisCountryOption.getAttribute("data-region") : "";
+				
+				var selectorOptions = selector.options;
+				var optionSameRegion = null;
+				
+				for (var i = 0; i < selectorOptions.length; i++) {
+					var option = selectorOptions[i];
+					
+					if (option.disabled)
+						continue;
+					
+					if (option.value == countryCode)
+						continue;
+					
+					if (!optionSameRegion)
+						optionSameRegion = option;
+						
+					if (option.getAttribute("data-region") == region) {
+						optionSameRegion = option;
+						break;
+					}
+				}
+
+				return optionSameRegion && optionSameRegion.index >= 0 ? optionSameRegion.index: -1;
+			},
 			onChange: function(index, value, parameters, selectors) {
+				console.log("comparing-country: onChange: " + value);
 				loadComparingTimeline(parameters);
 			}
 		}
@@ -322,19 +374,41 @@ function loadComparingTimeline(parameters) {
 	var country1 = countryCode;
 	var country2 = parameters["comparing-country"];
 	var indicator = parameters["indicator"];
-
+	
+	if (!country1 || country1 == "" || !country2 || country2 == "" || !indicator || indicator == "")
+		return;
+		
+	console.log(String.format("load Data country:{0}, comparing:{1}, indicator:{2}", country1, country2, indicator));
+	
 	timelineLoader.load({
 		url: ajaxURL + '/observations_by_country.php',
 		parameters: String.format("country1={0}&country2={1}&indicator={2}&language={3}",
 															country1, country2, indicator, languageCode),
 	});
+	
+	// Fill call stack
+	callStack = [];
 
-	for (var indicator in starredLoaderList) {
-		starredLoaderList[indicator].load({
-			url: ajaxURL + '/observations_by_country.php',
-			parameters: String.format("country1={0}&country2={1}&indicator={2}&language={3}",
-																country1, country2, indicator, languageCode),
+	for (var indicator in starredLoaderList)
+		callStack.push({
+			indicator: indicator,
+			ajaxOptions: {
+				url: ajaxURL + '/observations_by_country.php',
+				parameters: String.format("country1={0}&country2={1}&indicator={2}&language={3}",
+																		country1, country2, indicator, languageCode),
+			}
 		});
+		
+	loadSmallChartFromStack();
+}
+
+// Comparing timeline small charts (Stack)
+
+function loadSmallChartFromStack() {
+	if (callStack.length > 0) {
+		var options = callStack.shift();
+		
+		starredLoaderList[options.indicator].load(options.ajaxOptions);
 	}
 }
 
