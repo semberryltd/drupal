@@ -1,0 +1,91 @@
+<?php
+/**
+ * @file
+ * This module provide an interface to the landbook section of the Landportal.
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
+
+require_once('utils/database_helper.php');
+$GLOBALS['landbook_menu'] = 'landbook-menu';
+
+function landbook_help($path, $arg) {
+  switch ($path) {
+  case "admin/help#landbook":
+    return '<p>' . t("Landbook section of the Landportal") . '</p>'
+      . '<p>'. t("This come with a (header) Block, customised View(s) and a landbook main-menu item").'</p>'
+      . '<p>'. t("The Landbook is composed of different modules: catalog, countries, indicators, regions, reuse, sources, widgets").'</p>'
+      ;
+    break;
+  }
+}
+
+function landbook_theme() {
+  return array(
+    'regions' => array(
+      'variables' => array(
+        'iso3'  => NULL,
+        'meta' => NULL,
+        'data' => NULL,
+      ),
+    ),
+  );
+}
+
+function landbook_menu() {
+  $items = array();
+
+  // Admin section
+  $items['admin/config/landbook'] = array(
+    'title'             => 'Landbook',
+    'description'       => 'Configure the landbook',
+    'postition'         => 'right',
+    'weight'            => -4,
+    'page callback'	=> 'system_admin_menu_block_page',
+    'access arguments'  => array('administer site configuration'),
+    'file'              => 'system.admin.inc',
+    'file path'         => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/landbook/settings'] = array(
+    'title'             => 'Landbook settings',
+    'description'       => 'Base landbook configuration',
+    'page callback'	=> 'drupal_get_form',
+    'page arguments'	=> array('landbook_admin_settings'),
+    'access arguments'  => array('administer site configuration'),
+    'type'              => MENU_NORMAL_ITEM,
+    'file'              => 'landbook.admin.inc',
+    'file path'         => drupal_get_path('module', 'landbook').'/includes'
+  );
+
+  // Landbook frontend
+  $items['book'] = array(
+    'title'		=> 'landbook',
+    'menu_name'		=> 'main-menu',
+    'access callback'	=> TRUE,
+    'type'              => MENU_NORMAL_ITEM,
+    'page callback'	=> 'landbook_regions',
+    'page arguments'	=> array(),
+    'file'              => 'regions.inc',
+    'file path'         => drupal_get_path('module', 'landbook').'/modules'
+  );
+
+  // Automatically build Landbook menu according to available modules
+  ctools_include('landbook.menu', 'landbook');
+  landbook_menu_build($items);
+
+  return $items;
+}
+
+function landbook_block_info_alter(&$blocks, $theme, $code_blocks) {
+
+  if ($theme == 'landportal' && ! $blocks['menu'][$GLOBALS['landbook_menu']]['status']) {
+    $blocks['menu'][$GLOBALS['landbook_menu']]['status'] = TRUE;
+    $blocks['menu'][$GLOBALS['landbook_menu']]['region'] = 'highlighted';
+    $blocks['menu'][$GLOBALS['landbook_menu']]['visibility'] = BLOCK_VISIBILITY_LISTED;
+    $blocks['menu'][$GLOBALS['landbook_menu']]['pages'] = "book\nbook/*";
+  }
+  return $blocks;
+}
