@@ -1,0 +1,9 @@
+name = Landportal Homepage
+description = Provide home page stuff for the Landportal
+package = Landportal
+core = 7.x
+version = 7.x-1.0-alpha
+; dependencies[] = devel
+dependencies[] = ctools
+dependencies[] = views
+files[] = landportal_homepage.module
