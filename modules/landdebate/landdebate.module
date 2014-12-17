@@ -1,0 +1,119 @@
+<?php
+/**
+ * @file
+ * This module provide an interface to the landdebate section of the Landportal.
+ *
+ * The Landportal landdebate
+ *
+ * Original work by: WESO
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
+
+$GLOBALS['landdebate_menu'] = 'landdebate-menu';
+
+function landdebate_help($path, $arg) {
+  switch ($path) {
+  case "admin/help#landdebate":
+    return '<p>' . t("Landdebate section of the Landportal") . '</p>'
+      . '<p>'. t("This come with a (header) Block, customised View(s) and a landdebate main-menu item").'</p>'
+      . '<p>'. t("Landdebate sections are:").'</p>'
+      ;
+    break;
+  }
+}
+
+function landdebate_views_api() {
+  return array('api' => 3.0);
+}
+
+include_once 'landdebate.view_default.inc';
+
+
+function landdebate_menu() {
+  $items = array();
+
+  // Admin section
+  $items['admin/config/landdebate'] = array(
+    'title'             => 'Landdebate',
+    'description'       => 'Configure the landdebate',
+    'postition'         => 'right',
+    'weight'            => -4,
+    'page callback'	=> 'system_admin_menu_block_page',
+    'access arguments'  => array('administer site configuration'),
+    'file'              => 'system.admin.inc',
+    'file path'         => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/landdebate/settings'] = array(
+    'title'             => 'Landdebate settings',
+    'description'       => 'Base landdebate configuration',
+    'page callback'	=> 'drupal_get_form',
+    'page arguments'	=> array('landdebate_admin_settings'),
+    'access arguments'  => array('administer site configuration'),
+    'type'              => MENU_NORMAL_ITEM,
+    'file'              => 'landdebate.admin.inc',
+  );
+  $items['admin/config/landdebate/social'] = array(
+    'title'             => 'Social networks',
+    'description'       => 'Landdebate social network configurations',
+    'page callback'	=> 'drupal_get_form',
+    'page arguments'	=> array('landdebate_admin_social'),
+    'access arguments'  => array('administer site configuration'),
+    'type'              => MENU_NORMAL_ITEM,
+    'file'              => 'landdebate.admin.inc',
+  );
+
+  /* // Landdebate frontend */
+  /* $items['debate'] = array( */
+  /*   'title'		=> 'landdebate', */
+  /*   'menu_name'		=> 'main-menu', */
+  /*   'access callback'	=> TRUE, */
+  /*   'type'              => MENU_NORMAL_ITEM, */
+  /*   'weight'            => 1, */
+  /*   //'page callback'	=> 'node_page_view', */
+  /*   //'page arguments'	=> array('debate'), */
+  /* ); */
+
+
+  $landebate_ct = array('news', 'debate', 'event', 'blog_post', 'organization');
+
+  foreach ($landebate_ct as $s) {
+    $items['debate/' . $s] = array(
+      'title'           => ucfirst($s),
+      'menu_name'       => $GLOBALS['landdebate_menu'],
+      'access callback'	=> TRUE,
+      //'type'            => MENU_DEFAULT_LOCAL_TASK,
+      //'type'            => MENU_NORMAL_ITEM,
+      'page callback'   => 'landdebate_vcb',
+      'page arguments'  => array(1),
+    );
+    /* $items['debate/' . $s . '/%node'] = array( */
+    /*   'title'           => ucfirst($s), */
+    /*   'access callback'	=> TRUE, */
+    /*   //'type'            => MENU_NORMAL_ITEM, */
+    /*   //'page callback'   => 'node_page_view', */
+    /*   'page arguments'  => array(0, 1, 2), */
+    /* ); */
+  }
+
+  return $items;
+}
+
+/** Simple callback to 'debate' conditionnal view (see: landdebate.view_default.inc , for more details)
+ */
+function landdebate_vcb($args) {
+  return views_embed_view('debate', 'default', $args);
+}
+
+/** Default block configuration for landbook-menu
+ * @TODO bug: pages & visibility doesn't appear in drupal landdebate menu block setting page, though it seems to work
+ */
+function landdebate_block_info_alter(&$blocks, $theme, $code_blocks) {
+  if ($theme == 'landportal' && ! $blocks['menu'][$GLOBALS['landdebate_menu']]['status']) {
+  //print_r(dpm($blocks['menu'][$GLOBALS['landdebate_menu']]));
+    $blocks['menu'][$GLOBALS['landdebate_menu']]['status'] = TRUE;
+    $blocks['menu'][$GLOBALS['landdebate_menu']]['region'] = 'highlighted';
+  }
+  $blocks['menu'][$GLOBALS['landdebate_menu']]['visibility'] = BLOCK_VISIBILITY_LISTED;
+  $blocks['menu'][$GLOBALS['landdebate_menu']]['pages'] = "debate\ndebate/*";
+  return $blocks;
+}
