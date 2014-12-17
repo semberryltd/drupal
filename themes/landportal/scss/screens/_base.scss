@@ -18,20 +18,63 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     float: left;
 }
 
+
+
+
 #header {
     border-bottom: .36em solid $green;
-    padding: 5px 5em;
-    height: 35px;
     .block-menu {
-        float: left;
+        h2 {
+            display: none;
+        }
+        .contextual-links-wrapper {
+            display: none;
+        }
     }
+
     #block-system-user-menu {
         float: right;
     }
 }
 
-#main-wrapper {
-    border: 1px solid $blue-dark;
+#footer {
+    border-top: 1px solid $grey;
+    height: 100px;
+    margin-top: 5px;
+}
+
+#header,
+#footer {
+    padding: 5px 5em;
+    height: 35px;
+}
+
+
+
+
+
+#highlighted {
+    .block-menu {
+        width: 100%;
+        background-color: #EEE;
+        /* li { */
+        /*     float: left; */
+        /*     width: 20%; */
+        /* } */
+        /* li.last { */
+        /*     clear: right; */
+        /* } */
+    }
+}
+
+#breadcrumb {
+    clear: both;
+}
+#main-content { width: 100%; clear: both; }
+
+.clearfix {
+    clear: both;
+    //border-top: 1px dotted $blue-dark;
 }
 
 #sidebar-first {
@@ -40,12 +83,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 #sidebar-second {
     float: right;
-}
-
-#footer {
-    border-top: 1px solid $grey;
-    height: 100px;
-    margin-top: 5px;
 }
 
 .view-content {

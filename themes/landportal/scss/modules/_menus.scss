@@ -2,12 +2,17 @@
 
 #header ul.menu {
     margin: 0;
+    padding: 0;
 
-    li.leaf {
+    li {
         padding: 0;
         float: left;
         list-style-type: none;
         list-style-image: none;
+
+        a {
+            text-decoration: none;
+        }
         
         &:before {
             content: "| ";
@@ -15,9 +20,5 @@
         &:first-of-type:before {
             content: "";
         }
-    }
-
-    a {
-        text-decoration: none;
     }
 }

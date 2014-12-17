@@ -27,25 +27,26 @@ buttons, forms, menus...
 /* line 3, ../scss/modules/_menus.scss */
 #header ul.menu {
   margin: 0;
+  padding: 0;
 }
-/* line 6, ../scss/modules/_menus.scss */
-#header ul.menu li.leaf {
+/* line 7, ../scss/modules/_menus.scss */
+#header ul.menu li {
   padding: 0;
   float: left;
   list-style-type: none;
   list-style-image: none;
 }
-/* line 12, ../scss/modules/_menus.scss */
-#header ul.menu li.leaf:before {
+/* line 13, ../scss/modules/_menus.scss */
+#header ul.menu li a {
+  text-decoration: none;
+}
+/* line 17, ../scss/modules/_menus.scss */
+#header ul.menu li:before {
   content: "| ";
 }
-/* line 15, ../scss/modules/_menus.scss */
-#header ul.menu li.leaf:first-of-type:before {
-  content: "";
-}
 /* line 20, ../scss/modules/_menus.scss */
-#header ul.menu a {
-  text-decoration: none;
+#header ul.menu li:first-of-type:before {
+  content: "";
 }
 
 /******************** IMPORT: Screens
@@ -75,44 +76,77 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   float: left;
 }
 
-/* line 21, ../scss/screens/_base.scss */
+/* line 24, ../scss/screens/_base.scss */
 #header {
   border-bottom: 0.36em solid #8fcd1f;
-  padding: 5px 5em;
-  height: 35px;
 }
-/* line 25, ../scss/screens/_base.scss */
-#header .block-menu {
-  float: left;
+/* line 27, ../scss/screens/_base.scss */
+#header .block-menu h2 {
+  display: none;
 }
-/* line 28, ../scss/screens/_base.scss */
+/* line 30, ../scss/screens/_base.scss */
+#header .block-menu .contextual-links-wrapper {
+  display: none;
+}
+/* line 35, ../scss/screens/_base.scss */
 #header #block-system-user-menu {
   float: right;
 }
 
-/* line 33, ../scss/screens/_base.scss */
-#main-wrapper {
-  border: 1px solid #2a6496;
-}
-
-/* line 37, ../scss/screens/_base.scss */
-#sidebar-first {
-  float: left;
-}
-
-/* line 41, ../scss/screens/_base.scss */
-#sidebar-second {
-  float: right;
-}
-
-/* line 45, ../scss/screens/_base.scss */
+/* line 40, ../scss/screens/_base.scss */
 #footer {
   border-top: 1px solid #333333;
   height: 100px;
   margin-top: 5px;
 }
 
-/* line 51, ../scss/screens/_base.scss */
+/* line 46, ../scss/screens/_base.scss */
+#header,
+#footer {
+  padding: 5px 5em;
+  height: 35px;
+}
+
+/* line 57, ../scss/screens/_base.scss */
+#highlighted .block-menu {
+  width: 100%;
+  background-color: #EEE;
+  /* li { */
+  /*     float: left; */
+  /*     width: 20%; */
+  /* } */
+  /* li.last { */
+  /*     clear: right; */
+  /* } */
+}
+
+/* line 70, ../scss/screens/_base.scss */
+#breadcrumb {
+  clear: both;
+}
+
+/* line 73, ../scss/screens/_base.scss */
+#main-content {
+  width: 100%;
+  clear: both;
+}
+
+/* line 75, ../scss/screens/_base.scss */
+.clearfix {
+  clear: both;
+}
+
+/* line 80, ../scss/screens/_base.scss */
+#sidebar-first {
+  float: left;
+}
+
+/* line 84, ../scss/screens/_base.scss */
+#sidebar-second {
+  float: right;
+}
+
+/* line 88, ../scss/screens/_base.scss */
 .view-content {
   clear: both;
 }
