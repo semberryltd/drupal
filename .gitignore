@@ -1,6 +1,8 @@
 # Ignore configuration files that may contain sensitive information.
-*settings.php
-*config.php
+/*settings.php
+/*config.php
+
+/themes/landportal/scss/.sass-cache/
 
 # Ignore backup & temp files
 *~
