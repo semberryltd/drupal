@@ -23,6 +23,7 @@ Original work for the new Landportal version (as of 2014) and development of the
 This GIT repository is meant to be clone/checked-out in a "standard" Drupal 7 [Drupal]/sites/ directory named after the host.
 
 Example (on a Debian-based distro):
+```
 ~# ls -l /usr/share/drupal7
   ...
   sites -> /etc/drupal/7/sites
@@ -37,7 +38,7 @@ Example (on a Debian-based distro):
   all/
   default/
   [SITENAME]/
-
+```
 
 ## Environment
 
@@ -55,17 +56,19 @@ Refer to the Landportal Administrator handbook for further details.
 
 To have the website up and running:
  - Create a database for the drupal instance.
+ - Configure [...]drupal7/sites/HOSTNAME/dbconfig.php and local.settings.php
  - Run the default drupal install process(?)
- - Enable Features:
+   http://HOSTNAME/install.php
+ - Enable and set default theme to landportal
+ - Enable: landportal_extra
+ - This should already have enabled the following features:
    - landportal_taxonomy
    - landportal_field_base
    - landportal_content_type
  - Enable modules:
    - landportal_homepage
-   - landportal_extra
    - landdebate
    - landbook
-
 
 # Components
 
@@ -75,21 +78,46 @@ Implements the new Landportal design style.
 
 ## Modules
 
- - landportal_homepage
- - landportal_extra
- - landbook
- - landdebate
+### landportal_extra
+
+Pulls dependencies for the landportal base modules and theme.
+Set default configuration for menus and few other things.
+This module should be enabled first.
+### landportal_homepage
+
+Provides views and configuration for the landing page.
+
+### landbook
+
+Before enabling this module, you need to have a dump of the 'landportal' MySQL
+ database up and running. You also need to configure it in the drupal settings
+ or dbconfig.php as follow:
+```
+$databases['default']['default'] = array(
+        // drupal7 database
+);
+$databases['default']['landbook'] = array(
+	'driver' => 'mysql',
+	'database' => 'landportal',
+	'username' => 'USERNAME',
+	'password' => 'USERPASS',
+	'host' => 'localhost',
+	'port' => '',
+	'prefix' => ''
+);
+```
+### landdebate
+
+Provide views and blocks for the landdebate section of the portal.
 
 ## Features
 
-Features are (normally) exported directly through the drupal backoffice.
+Features are (normally) exported directly from the drupal backoffice Structure > Features page.
 
 Each of them holds specific
  - landportal_taxonomy
  - landportal_field_base
  - landportal_content_type
-
-
 
 # More information
 
