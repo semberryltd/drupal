@@ -562,7 +562,7 @@ function landportal_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_image',
     'label' => 'Image',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
@@ -579,13 +579,14 @@ function landportal_content_types_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'public' => 'public',
         ),
         'allowed_types' => array(
-          0 => 'image',
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
         ),
-        'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
@@ -616,8 +617,8 @@ function landportal_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Related topics',
-    'required' => 1,
+    'label' => 'Topics',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -780,6 +781,7 @@ function landportal_content_types_field_default_field_instances() {
   t('Related topics');
   t('Status');
   t('The date in which the debate will be open to participate.');
+  t('Topics');
 
   return $field_instances;
 }

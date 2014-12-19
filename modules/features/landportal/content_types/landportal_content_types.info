@@ -38,5 +38,6 @@ features[node][] = event
 features[node][] = news
 features[node][] = organization
 features[variable][] = field_bundle_settings_node__debate
+features[variable][] = field_bundle_settings_node__news
 features_exclude[field_base][body] = body
 features_exclude[field_base][field_image] = field_image
