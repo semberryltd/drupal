@@ -16,31 +16,13 @@ function landbook_enable() {
     'description'     => t("The header menu for the landbook")
   );
   watchdog('Landbook', 'Enable ' . $GLOBALS['landbook_menu']);
-  dpm($lb_menu);
-
-  $my_menus = variable_get('landbook_menus', array());
-  dpm($my_menus);
-  if (!$my_menus || !menu_load($GLOBALS['landbook_menu'])) {
+  if (!menu_load($GLOBALS['landbook_menu'])) {
     menu_save($lb_menu);
   }
   cache_clear_all('*', 'cache_menu', TRUE);
 }
 
 function landbook_disable() {
-
-  /* $my_menus = variable_get('landbook_menus', array()); */
-  /* unset($my_menus[$GLOBALS['landbook_menu']]); */
-  /* dpm($my_menus); */
-  /* variable_set('landbook_menus', $my_menus); */
-
   watchdog('Landbook', 'Disabling ' . $GLOBALS['landbook_menu']);
   menu_delete(array('menu_name' => $GLOBALS['landbook_menu']));
 }
-
-/* function landbook_install() { */
-/*   global $lb_menu; */
-/*   menu_save($lb_menu); */
-/*   cache_clear_all('*', 'cache_menu', TRUE); */
-/* } */
-/* function landbook_uninstall() { */
-/* } */

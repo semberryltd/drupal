@@ -9,6 +9,14 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
+/* function landportal_homepage_block_info_alter(&$blocks, $theme, $code_blocks) { */
+/*   //dpm($blocks); */
+/*   $blocks['views']['front_page_promoted-block']['status'] = TRUE; */
+/*   $blocks['views']['front_page_promoted-block']['region'] = 'content'; */
+/*   $blocks['views']['front_page_teasers-block']['status'] = TRUE; */
+/*   $blocks['views']['front_page_teasers-block']['region'] = 'content'; */
+/*   return $blocks; */
+/* } */
 
 
 function landportal_homepage_views_api() {
@@ -164,18 +172,18 @@ function landportal_homepage_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $translatables['front_page_blocks'] = array(
-                                              t('Master'),
-                                              t('Front page teasers'),
-                                              t('more'),
-                                              t('Apply'),
-                                              t('Reset'),
-                                              t('Sort by'),
-                                              t('Asc'),
-                                              t('Desc'),
-                                              t('Body'),
-                                              t('Block'),
-                                              );
+  $translatables['teasers'] = array(
+                                    t('Master'),
+                                    t('Front page teasers'),
+                                    t('more'),
+                                    t('Apply'),
+                                    t('Reset'),
+                                    t('Sort by'),
+                                    t('Asc'),
+                                    t('Desc'),
+                                    t('Body'),
+                                    t('Block'),
+                                    );
 
   /* Export this view */
   $views[$view->name] = $view;

@@ -13,7 +13,7 @@ Modules:
  - landbook
  - landdebate
  - landportal_homepage
- - landportal_footer
+ - landportal_extra
 
 Original work for the new Landportal version (as of 2014) and development of the Landbook was made by WESO (http://github.com/weso) and SBC4D (http://sbc4d.com). The Drupal refactoring have been done by Jules Clement (http://jcpc.ker.bz).
 
@@ -62,7 +62,7 @@ To have the website up and running:
    - landportal_content_type
  - Enable modules:
    - landportal_homepage
-   - landportal_footer
+   - landportal_extra
    - landdebate
    - landbook
 
@@ -76,7 +76,7 @@ Implements the new Landportal design style.
 ## Modules
 
  - landportal_homepage
- - landportal_footer
+ - landportal_extra
  - landbook
  - landdebate
 

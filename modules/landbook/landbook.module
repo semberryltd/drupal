@@ -81,7 +81,7 @@ function landbook_menu() {
 
 function landbook_block_info_alter(&$blocks, $theme, $code_blocks) {
 
-  if ($theme == 'landportal' && ! $blocks['menu'][$GLOBALS['landbook_menu']]['status']) {
+  if ($theme == 'landportal') { // && ! $blocks['menu'][$GLOBALS['landbook_menu']]['status']) {
     $blocks['menu'][$GLOBALS['landbook_menu']]['status'] = TRUE;
     $blocks['menu'][$GLOBALS['landbook_menu']]['region'] = 'highlighted';
     $blocks['menu'][$GLOBALS['landbook_menu']]['visibility'] = BLOCK_VISIBILITY_LISTED;

@@ -108,7 +108,7 @@ function landdebate_vcb($args) {
  * @TODO bug: pages & visibility doesn't appear in drupal landdebate menu block setting page, though it seems to work
  */
 function landdebate_block_info_alter(&$blocks, $theme, $code_blocks) {
-  if ($theme == 'landportal' && ! $blocks['menu'][$GLOBALS['landdebate_menu']]['status']) {
+  if ($theme == 'landportal') {// && ! $blocks['menu'][$GLOBALS['landdebate_menu']]['status']) {
   //print_r(dpm($blocks['menu'][$GLOBALS['landdebate_menu']]));
     $blocks['menu'][$GLOBALS['landdebate_menu']]['status'] = TRUE;
     $blocks['menu'][$GLOBALS['landdebate_menu']]['region'] = 'highlighted';
