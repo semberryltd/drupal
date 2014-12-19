@@ -1,8 +1,0 @@
-name = Landportal Footer
-description = Provides a footer block for the Landportal
-package = Landportal
-core = 7.x
-version = 7.x-1.0-alpha
-dependencies[] = block
-dependencies[] = ctools
-files[] = landportal_footer.module

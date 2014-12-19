@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Landportal extra module
+ *
+ * Original work by: WESO (http://weso.es/)
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
+
+function landportal_extra_init() {
+  //drupal_set_message('helo');
+}
+
+module_load_include('inc', 'landportal_extra', 'landportal_extra.blocks');
+module_load_include('inc', 'landportal_extra', 'landportal_extra.menu');
+
+/** Default block configuration for main-menu
+ * @TODO bug: pages & visibility doesn't appear in drupal landdebate menu block setting page, though it seems to work
+ */
+function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
+  if ($theme == 'landportal') {
+    // Show default menus in header
+    foreach (array('main-menu', 'user-menu') as $m) {
+      //dpm($blocks['system'][$m]);
+      $blocks['system'][$m]['status'] = TRUE;
+      $blocks['system'][$m]['region'] = 'header';
+    }
+    // Disable Drupal default block
+    foreach (array('powered-by', 'navigation') as $m) {
+      //dpm($blocks['system'][$m]);
+      $blocks['system'][$m]['status'] = FALSE;
+      $blocks['system'][$m]['region'] = '';
+    }
+    $blocks['search']['form']['status'] = FALSE;
+    $blocks['search']['form']['region'] = '';
+    $blocks['user']['login']['status'] = FALSE;
+    $blocks['user']['login']['region'] = '';
+  }
+  return $blocks;
+}

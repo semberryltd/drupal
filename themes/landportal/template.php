@@ -13,11 +13,3 @@ function landportal_theme($existing, $type, $theme, $path) {
   $items = array();
   return $items;
 }
-
-function landportal_install() {
-
-}
-
-function landportal_uninstall() {
-
-}
