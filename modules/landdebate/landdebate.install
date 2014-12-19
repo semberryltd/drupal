@@ -16,8 +16,7 @@ function landdebate_enable() {
     'description'     => t("The header menu for the landdebate")
   );
   watchdog('Landdebate', 'Enable ' . $GLOBALS['landdebate_menu']);
-  $my_menus = variable_get('landdebate_menus', array());
-  if (!$my_menus || !menu_load($GLOBALS['landdebate_menu'])) {
+  if (!menu_load($GLOBALS['landdebate_menu'])) {
     menu_save($ld_menu);
   }
   cache_clear_all('*', 'cache_menu', TRUE);

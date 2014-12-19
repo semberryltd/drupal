@@ -62,37 +62,27 @@ function landdebate_menu() {
     'file'              => 'landdebate.admin.inc',
   );
 
-  /* // Landdebate frontend */
-  /* $items['debate'] = array( */
-  /*   'title'		=> 'landdebate', */
-  /*   'menu_name'		=> 'main-menu', */
-  /*   'access callback'	=> TRUE, */
-  /*   'type'              => MENU_NORMAL_ITEM, */
-  /*   'weight'            => 1, */
-  /*   //'page callback'	=> 'node_page_view', */
-  /*   //'page arguments'	=> array('debate'), */
-  /* ); */
-
+  // Landdebate frontend
+  $items['debate'] = array(
+    'title'		=> 'landdebate',
+    'menu_name'		=> 'main-menu',
+    'access callback'	=> TRUE,
+    //'type'              => MENU_NORMAL_ITEM,
+    'weight'            => 1,
+    'page callback'	=> 'views_page',
+    'page arguments'	=> array('debate', 'page'),
+  );
 
   $landebate_ct = array('news', 'debate', 'event', 'blog_post', 'organization');
-
   foreach ($landebate_ct as $s) {
     $items['debate/' . $s] = array(
       'title'           => ucfirst($s),
       'menu_name'       => $GLOBALS['landdebate_menu'],
       'access callback'	=> TRUE,
-      //'type'            => MENU_DEFAULT_LOCAL_TASK,
       //'type'            => MENU_NORMAL_ITEM,
       'page callback'   => 'landdebate_vcb',
       'page arguments'  => array(1),
     );
-    /* $items['debate/' . $s . '/%node'] = array( */
-    /*   'title'           => ucfirst($s), */
-    /*   'access callback'	=> TRUE, */
-    /*   //'type'            => MENU_NORMAL_ITEM, */
-    /*   //'page callback'   => 'node_page_view', */
-    /*   'page arguments'  => array(0, 1, 2), */
-    /* ); */
   }
 
   return $items;
@@ -101,14 +91,14 @@ function landdebate_menu() {
 /** Simple callback to 'debate' conditionnal view (see: landdebate.view_default.inc , for more details)
  */
 function landdebate_vcb($args) {
-  return views_embed_view('debate', 'default', $args);
+  return views_page('debate', 'page', $args);
 }
 
 /** Default block configuration for landbook-menu
  * @TODO bug: pages & visibility doesn't appear in drupal landdebate menu block setting page, though it seems to work
  */
 function landdebate_block_info_alter(&$blocks, $theme, $code_blocks) {
-  if ($theme == 'landportal') {// && ! $blocks['menu'][$GLOBALS['landdebate_menu']]['status']) {
+  if ($theme == 'landportal') {
   //print_r(dpm($blocks['menu'][$GLOBALS['landdebate_menu']]));
     $blocks['menu'][$GLOBALS['landdebate_menu']]['status'] = TRUE;
     $blocks['menu'][$GLOBALS['landdebate_menu']]['region'] = 'highlighted';
