@@ -1,29 +1,23 @@
-{{>header}}
-<input type="hidden" id="entity-id" value="{{entity-id}}" />
-<input type="hidden" id="path" value="{{path}}" />
-<input type="hidden" id="continent-id" value="{{#info}}{{#region}}{{un_code}}{{/region}}{{/info}}" />
-<input type="hidden" id="continent-name" value="{{#info}}{{#region}}{{name}}{{/region}}{{/info}}" />
-<input type="hidden" id="country-name" value="{{#info}}{{name}}{{/info}}" />
-<input type="hidden" id="un-code" value="{{#info}}{{un_code}}{{/info}}" />
+<?php
+
+dpm($data);
+
+?>
+
+<input type="hidden" id="entity-id" value="<?php echo $data['entity-id']; ?>" />
+<input type="hidden" id="path" value="" />
+<input type="hidden" id="continent-id" value="<?php echo $data['info']['region']['un_code']; ?>" />
+<input type="hidden" id="continent-name" value="<?php echo $data['info']['region']['name']; ?>" />
+<input type="hidden" id="country-name" value="<?php echo $data['info']['name']; ?>" />
+<input type="hidden" id="un-code" value="<?php echo $data['info']['iso3']; ?>" />
 <input type="hidden" id="starred-indicators" value="{{#starred}}{{#indicators}}{{id}},{{/indicators}}{{/starred}}" />
 <div class="content main-content container">
-	<ol class="breadcrumb">
-	  <li><a href="/">{{#labels}}{{index}}{{/labels}}</a></li>
-		<li><a href="/book">{{#labels}}{{land_book}}{{/labels}}</a></li>
-	  <li><a href="/book/countries">{{#labels}}{{countries}}{{/labels}}</a></li>
-	  <li>
-	  	<a id="continent-link" href="/book/regions?region={{#info}}{{#region}}{{un_code}}{{/region}}{{/info}}">
-	  		{{#info}}{{#region}}{{name}}{{/region}}{{/info}}
-	  	</a>
-	  </li>
-	  <li class="active"><span class="country-name">{{#info}}{{name}}{{/info}}</span></li>
-	</ol>
 	<div class="row">
 		<div class="col-sm-12">
 			<h1 class="country-name">
 				<span class="country-name no-margin flag">
-					<img id="flag" class="flag" src="{{path}}/static/images/flags/{{#info}}{{iso3}}{{/info}}.png" />
-					{{#info}}{{name}}{{/info}}
+					<img id="flag" class="flag" src="<?php echo drupal_get_path('theme', 'landportal'); ?>/images/flags/<?php echo $data['info']['iso3']; ?>.png" />
+					<?php echo $data['info']['name']; ?>
 				</span>
 			</h1>
 		</div>
@@ -132,7 +126,7 @@
 		  <h2 class="section section-name"><span class="indicator-name"></span><span> </span><span>{{#labels}}{{for_countries}}{{/labels}}</span></h2>
 		  <div id="mapDiv" class="map-medium indicator-map"></div>
 		  <div id="chart-region-bar-comparison" class="graph-medium"></div>
-		  <h2 class="section section-name"><span class="indicator-name"></span><span> </span><span>{{#labels}}{{across_time}}{{/labels}}</span><span> </span><span class="country-name">{{#info}}{{name}}{{/info}}</span></h2>
+		  <h2 class="section section-name"><span class="indicator-name"></span><span> </span><span>{{#labels}}{{across_time}}{{/labels}}</span><span> </span><span class="country-name"><?php echo $data['info']['name']; ?></span></h2>
 		  <div class="row">
 			<div class="col-xs-4">
 				{{#labels}}{{compare_with}}{{/labels}}:
@@ -210,7 +204,7 @@
 
 			<a href="/book/countries/{{entity-id}}/details">
 			  <button id="full-data-button" class="btn data-button">
-					{{#labels}}{{full_data}}{{/labels}} <span class="country-name">{{#info}}{{name}}{{/info}}</span>
+					{{#labels}}{{full_data}}{{/labels}} <span class="country-name"><?php echo $data['info']['name']; ?></span>
 				</button>
 			</a>
 		  <a href="/book/indicators" class="more-info">{{#labels}}{{more_about_the_indicators}}{{/labels}}</a>
@@ -224,20 +218,16 @@
 			{{/selectors}}
 		  </select>
 		  <a href="/book/countries" class="more-info">{{#labels}}{{more_about_areas_and_countries}}{{/labels}}</a>
-			<a href="http://legacy.landportal.info/area/{{#info}}{{name}}{{/info}}" target="_blank">
+			<a href="http://legacy.landportal.info/area/<?php echo $data['info']['name']; ?>" target="_blank">
 		  <button class="btn data-button-dark">
                         {{#labels}}{{consult_library}}{{/labels}}
-			<!--br />
-			<span class="country-name">{{#info}}{{name}}{{/info}}</span-->
 			  <br/><i>({{#labels}}{{new_coming_soon}}{{/labels}})</i>
 
 		  </button></a>
-		  <a href="/search/site/{{#info}}{{name}}{{/info}}">
+		  <a href="/search/site/<?php echo $data['info']['name']; ?>">
 				<button class="btn data-button-dark">{{#labels}}{{debate_with_others}}{{/labels}}</button>
 			</a>
-			<h2 class="section"><span>{{#labels}}{{share}}{{/labels}}</span></h2>
-			{{>share}}
 	  </div>
 	</div>
 </div>
-{{>footer}}
+
