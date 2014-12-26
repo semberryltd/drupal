@@ -29,7 +29,7 @@ function landbook_menu_build(&$items) {
       'title'           => $s.' details',
       'access callback'	=> TRUE,
       'page callback'   => 'landbook_' . $s,
-      'page arguments'  => array(1),
+      'page arguments'  => array(2),
       'file'            => $s . '.inc',
       'file path'       => drupal_get_path('module', 'landbook').'/modules',
     );

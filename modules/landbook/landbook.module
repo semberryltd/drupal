@@ -5,7 +5,7 @@
  *
  * The Landportal landbook
  *
- * Original work by: WESO
+ * Original work by: WESO (http://www.weso.es/)
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
@@ -25,6 +25,22 @@ function landbook_help($path, $arg) {
   }
 }
 
+function landbook_theme() {
+  $struct = array(
+    'variables' => array(
+      'meta' => NULL,
+      'data' => NULL,
+    ),
+  );
+  return array(
+    'regions'   => $struct,
+    'countries' => $struct,
+    'country'   => $struct,
+    /* 'file' => 'countries.tpl.php', */
+    /* 'path' => drupal_get_path('module', 'landbook').'/theme', */
+  );
+}
+
 function landbook_add_js_css() {
 
   //drupal_add_js('misc/jquery.js');
@@ -41,29 +57,8 @@ function landbook_add_js_css() {
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/seedrandom.min.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/country_chart_options.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/regions.js', array('scope'=>'footer'));
 
   drupal_add_css(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.css');
-
-
-}
-
-function landbook_theme() {
-  return array(
-    'regions' => array(
-      'variables' => array(
-        'meta' => NULL,
-        'data' => NULL,
-      ),
-    ),
-    'regions' => array(
-      'variables' => array(
-        'meta' => NULL,
-        'data' => NULL,
-      ),
-    ),
-  );
-  return array();
 }
 
 function landbook_menu() {
