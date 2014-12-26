@@ -9,7 +9,9 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
-require_once('utils/database_helper.php');
+require_once(drupal_get_path('module', 'landbook').'/utils/database_helper.php');
+require_once(drupal_get_path('module', 'landbook').'/utils/cache_helper.php');
+
 $GLOBALS['landbook_menu'] = 'landbook-menu';
 
 function landbook_help($path, $arg) {
@@ -23,16 +25,45 @@ function landbook_help($path, $arg) {
   }
 }
 
+function landbook_add_js_css() {
+
+  //drupal_add_js('misc/jquery.js');
+  //drupal_add_js('misc/jquery.once.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/jquery-2.1.0.min.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/util.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/canvg.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/rgbcolor.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/language.js');
+  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/search.js');
+  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/ajax.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/StackBlur.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/seedrandom.min.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/country_chart_options.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/regions.js', array('scope'=>'footer'));
+
+  drupal_add_css(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.css');
+
+
+}
+
 function landbook_theme() {
   return array(
     'regions' => array(
       'variables' => array(
-        'iso3'  => NULL,
+        'meta' => NULL,
+        'data' => NULL,
+      ),
+    ),
+    'regions' => array(
+      'variables' => array(
         'meta' => NULL,
         'data' => NULL,
       ),
     ),
   );
+  return array();
 }
 
 function landbook_menu() {
@@ -81,7 +112,7 @@ function landbook_menu() {
 
 function landbook_block_info_alter(&$blocks, $theme, $code_blocks) {
 
-  if ($theme == 'landportal') { // && ! $blocks['menu'][$GLOBALS['landbook_menu']]['status']) {
+  if ($theme == 'landportal') {
     $blocks['menu'][$GLOBALS['landbook_menu']]['status'] = TRUE;
     $blocks['menu'][$GLOBALS['landbook_menu']]['region'] = 'highlighted';
     $blocks['menu'][$GLOBALS['landbook_menu']]['visibility'] = BLOCK_VISIBILITY_LISTED;

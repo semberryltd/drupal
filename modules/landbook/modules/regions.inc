@@ -13,43 +13,42 @@
 function landbook_regions($node=NULL) {
   global $databases, $language;
   $r = new Regions();
-  $rdata = $r->get(array('language'=>$language->language));
-  //dpm($rdata);
+  $rdata = $r->get($language);
+
+  landbook_add_js_css();
+
   return theme("regions", array(
     'meta'      => "lp:regions",
+    'title'     => "LB Regions",
     'data'      => $rdata,
                ));
 }
 
+
 class Regions {
-  private $c;
-  private $cached;
 
-  function __construct() {
-    $this->c = new Memcached();
-    $this->c->addServer('localhost', '11211');
-    $this->cached = $this->c->get('landbook-regions');
-  }
+        public function get($options) {
+                $lang = $options->language;
+                //$api = $options->host;
 
-  public function get($options) {
-    if ($this->cached[$options['language']]) {
-      //drupal_set_message('landbook got cache');
-      return $this->cached[$options['language']];
-    }
-
-    $database = new DataBaseHelper();
-    $database->open();
-    $regions = $database->query("continents", array($options['language']));
-    $datasources = $database->query("datasources", array($options['language']));
-    $countries = $database->query("countries_without_region", array($options['language']));
-    $database->close();
-    $result = $this->compose_data($regions, $datasources, $countries);
-
-    $this->cached[$options['language']] = $regions;
-    $this->c->set('landbook-regions', $this->cached);
-    // dpm($this->cached);
-    return $result;
-  }
+                $cache = new CacheHelper('regions', array(
+                        $lang,
+                ));
+                $cached = $cache->get();
+                if ($cached !== null) {
+                        return $cached;
+                } else {
+                        $database = new DataBaseHelper();
+                        $database->open();
+                        $regions = $database->query("continents", array($lang));
+                        $datasources = $database->query("datasources", array($lang));
+                        $countries = $database->query("countries_without_region", array($lang));
+                        $database->close();
+                        $result = $this->compose_data($regions, $datasources, $countries);
+                        $cache->store($result);
+                        return $result;
+                }
+        }
 
 	private function compose_data($regions, $datasources, $countries) {
 		$res_regions = $this->compose_regions($regions);

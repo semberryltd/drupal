@@ -1,9 +1,20 @@
- <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
-require_once(dirname(__FILE__) .'/../database/database_helper.php');
-require_once(dirname(__FILE__) .'/../cache/cache_helper.php');
+<?php
+/**
+ * @file
+ * This file provides JSON data for the landbook JS
+ *
+ * This file is not process through Drupal
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
+
+require_once(dirname(__FILE__) .'/../../../local.settings.php');
+require_once(dirname(__FILE__) .'/../../../dbconfig.php');
+require_once(dirname(__FILE__) .'/../utils/database_helper.php');
+require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
 
 $region1 = $_GET["region1"];
 $region2 = isset($_GET["region2"]) ? $_GET["region2"] : "";
@@ -12,7 +23,6 @@ $language = $_GET["language"];
 
 header('Content-Type: application/json');
 echo observations_by_region_average($region1, $region2, $indicator, $language);
-
 
 /**
  * Calculate the observations average for a certain region or regions and an
@@ -36,6 +46,7 @@ function observations_by_region_average($region1, $region2, $indicator, $languag
     ));
     $cached = $cache->get();
     if ($cached !== null) {
+      var_dump($cached);
         return $cached;
     }
     $database = new DataBaseHelper();

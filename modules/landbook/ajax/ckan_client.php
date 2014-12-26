@@ -123,7 +123,7 @@ class CkanClient
 	 *
 	 * @param	string	CKAN API key.
 	 */
-	public function __construct($api_key = FALSE)
+	public function __construct($ckan_url, $api_key = FALSE)
 	{
 		// If provided, set the API key.
 		if ($api_key)
@@ -131,7 +131,7 @@ class CkanClient
 			$this->set_api_key($api_key);
 		}
 		// Set base URI and Ckan_client user agent string.
-		$this->set_base_url();
+		$this->set_base_url($ckan_url);
 		$this->set_user_agent();
 		// Create cURL object.
 		$this->ch = curl_init();
@@ -196,8 +196,10 @@ class CkanClient
 	 * @return	void
 	 * @since	Version 0.1.0
 	 */
-	private function set_base_url()
+	private function set_base_url($ckan_url)
+
 	{
+          $this->base_url = $ckan_url;
           if ( substr($this->base_url, 0, 4) !== "http" ) {
             $this->base_url = 'http'.(isset($_SERVER['HTTPS']) ? 's' : '').'://'.$_SERVER['SERVER_NAME'].$this->base_url;
           }

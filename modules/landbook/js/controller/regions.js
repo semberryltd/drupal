@@ -1,7 +1,7 @@
 // Constants
 
-var ajaxURL = document.getElementById('api-url').value;
-var languageCode = document.getElementById('selected-language').value;
+var ajaxURL = "/sites/miniplenty/modules/landbook/ajax";
+var languageCode = "en";//document.getElementById('selected-language').value;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                 LOADERS

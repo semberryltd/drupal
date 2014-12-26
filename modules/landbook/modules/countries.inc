@@ -10,13 +10,24 @@
  */
 
 function landbook_countries() {
-  return "[lp:lb:countries]";
+  global $databases, $language;
+  $r = new Countries();
+  $rdata = $r->get($language);
+
+  landbook_add_js_css();
+
+  dpm($rdata);
+  return theme("page", array(
+    'meta'      => "lb:countries",
+    'title'     => "LB Countries",
+    'page'      => array('#show_messages' => 'yoyo'),
+    'data'      => $rdata,
+                                ));
 }
 
 class Countries {
 	public function get($options) {
 		$lang = $options->language;
-		$api = $options->host;
 		$cache = new CacheHelper('countries', array(
 			$lang,
 		));

@@ -1,10 +1,20 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
+/**
+ * @file
+ * This file provides JSON data for the landbook JS
+ *
+ * This file is not process through Drupal
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
 
-require_once(dirname(__FILE__) .'/../database/database_helper.php');
-require_once(dirname(__FILE__) .'/../cache/cache_helper.php');
+require_once(dirname(__FILE__) .'/../../../local.settings.php');
+require_once(dirname(__FILE__) .'/../../../dbconfig.php');
+require_once(dirname(__FILE__) .'/../utils/database_helper.php');
+require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
 
 $region = $_GET["region"];
 $indicator = $_GET["indicator"];

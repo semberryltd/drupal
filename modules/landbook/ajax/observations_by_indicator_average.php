@@ -1,16 +1,30 @@
- <?php
-require_once(dirname(__FILE__) .'/../database/database_helper.php');
-require_once(dirname(__FILE__) .'/../cache/cache_helper.php');
+<?php
+/**
+ * @file
+ * This file provides JSON data for the landbook JS
+ *
+ * This file is not process through Drupal
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
+
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
+require_once(dirname(__FILE__) .'/../../../dbconfig.php');
+require_once(dirname(__FILE__) .'/../utils/database_helper.php');
+require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
 
 $indicator1 = $_GET["indicator1"];
 $indicator2 = $_GET["indicator2"];
-
 $language = $_GET["language"];
 
 header('Content-Type: application/json');
 echo observations_by_indicator_average($indicator1, $indicator2, $language);
-
-
 
 function observations_by_indicator_average($indicator1, $indicator2, $language) {
     $cache = new CacheHelper('observations_by_region_avg', array(

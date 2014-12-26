@@ -1,7 +1,21 @@
- <?php
-require_once(dirname(__FILE__) .'/../database/database_helper.php');
-require_once(dirname(__FILE__) .'/../cache/cache_helper.php');
-require_once(dirname(__FILE__) ."/../helpers/observations_by_country_indicator.php");
+<?php
+/**
+ * @file
+ * This file provides JSON data for the landbook JS
+ *
+ * This file is not process through Drupal
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
+
+require_once(dirname(__FILE__) .'/../../../local.settings.php');
+require_once(dirname(__FILE__) .'/../../../dbconfig.php');
+require_once(dirname(__FILE__) .'/../utils/database_helper.php');
+require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
+require_once(dirname(__FILE__) ."/../utils/observations_by_country_indicator.php");
 
 $country1 = $_GET["country1"];
 $country2 = $_GET["country2"];

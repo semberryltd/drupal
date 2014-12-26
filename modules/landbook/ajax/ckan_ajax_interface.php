@@ -1,14 +1,28 @@
 <?php
-// Display errors for demo
-@ini_set('error_reporting', E_ALL);
-@ini_set('display_errors', 'stdout');
+/**
+ * @file
+ * This provides an interface to CKAN for ajax scripts
+ *
+ * This file is not process through Drupal.
+ * It is using a (piece of shit?) custom php CKAN client, ckan_client.php.
+ *  ( I haven't really red through the code more than that but, who the fuck
+ *  writes a client with hardcoded uri and no config possible?
+ *  --unless WESO students fucked it up, which wouldn't be too surprising--
+ * Anyways... low standards, low grade code : piece of shit application.
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
 
 // Include Ckan_client
-require_once('./ckan_client.php');
+require_once(dirname(__FILE__) . '/../../../local.settings.php');
+require_once(dirname(__FILE__) . '/ckan_client.php');
 
 // Create CKAN object
 // Takes optional API key parameter. Required for POST and PUT methods.
-$ckan = new CkanClient('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');
+$ckan = new CkanClient($conf['landbook']['ckan'], 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');
 
 if (isset($_POST['functionname'])) {
 	

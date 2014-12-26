@@ -22,6 +22,12 @@ class DataBaseHelper {
     
   function __construct() {
     global $databases;
+
+    if (! $databases ) {
+      var_dump('No database connection');
+      return;
+    }
+
     $this->db_url = $databases['default']['landbook']['host'];
     $this->db_user = $databases['default']['landbook']['username'];
     $this->db_pass = $databases['default']['landbook']['password'];
