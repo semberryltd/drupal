@@ -8,12 +8,12 @@
   <h2 class="section section-name"><span class="indicator-name"></span></h2>
   <div id="map" class="map"></div>
 
-  <h2 class="section section-name indicator-name">{{#labels}}{{for_countries}}{{/labels}}</h2>
+  <h2 class="section section-name indicator-name"><?php echo t('For countries in the region'); ?></h2>
   <div id="chart-region-bar-comparison" class="graph-medium"></div>
 
-  <h2 class="section section-name indicator-name">{{#labels}}{{across_time}}{{/labels}}</h2>
+   <h2 class="section section-name indicator-name"><?php echo t('Across time in'); ?></h2>
   <div class="row compare-bar">
-    <div class="col-xs-4">{{#labels}}{{compare_with}}{{/labels}}:</div>
+   <div class="col-xs-4"><?php echo t('Compare with'); ?></div>
     <div class="col-xs-8">
       <select id="region-comparing-select" class="form-control">
 <?php foreach ($data['selectors']['regions'] as $r): ?>
@@ -36,22 +36,27 @@
 </div>
 
 <div class="col-sm-3">
-  <h2 class="section"><span>{{#labels}}{{world_region}}{{/labels}}</span></h2>
+   <h2 class="section"><span><?php echo t('World region'); ?></span></h2>
   <select id="region-select" multiple="multiple" class="form-control data-sources">
 <?php foreach ($data['selectors']['regions'] as $r): ?>
     <option value="<?php echo $r['un_code']; ?>"><?php echo $r['name']; ?></option>
 <?php endforeach; ?>
   </select>
 
-  <h2 class="section"><span>{{#labels}}{{sources}}{{/labels}}</span></h2>
-  <select id="source-select" multiple="multiple" class="form-control data-sources">
+
+
+<?php /* SAME SNIPET IN country & regions.tpl.php */ ?>
+<h2 class="section"><span><?php echo t('Data sources'); ?></span></h2>
+<select id="source-select" multiple="multiple" class="data-sources">
 <?php foreach ($data['selectors']['data-sources'] as $d): ?>
     <option value="<?php echo $d['id']; ?>" title="<?php echo $d['name']; ?>"><?php echo $d['name']; ?></option>
 <?php endforeach; ?>
   </select>
 
-  <h2 class="section"><span>{{#labels}}{{indicators}}{{/labels}}</span></h2>
 
+
+<?php /* SAME SNIPET IN country & regions.tpl.php */ ?>
+<h2 class="section"><span><?php echo t('Indicators'); ?></span></h2>
 <!-- all indicator selects -->
 <div>
 <?php foreach ($data['selectors']['data-sources'] as $d): ?>
@@ -62,18 +67,21 @@
   </select>
 <?php endforeach; ?>
 </div>
-
-
-
 <select id="indicator-select" multiple="multiple" class="form-control data-sources"></select>
-<a href="/book/indicators" class="more-info">{{#labels}}{{more_about_the_indicators}}{{/labels}}</a>
-<h2 class="section"><span>{{#labels}}{{specific_country}}{{/labels}}</span></h2>
+
+
+
+
+
+   <a href="/book/indicators" class="more-info"><?php echo t('More about the indicators'); ?></a>
+
+   <h2 class="section"><span><?php echo t('Specific country'); ?></span></h2>
 <select id="country-select" class="form-control">
-  <option disabled="disabled" selected="true">{{#labels}}{{select_a_country}}{{/labels}}</option>
+   <option disabled="disabled" selected="true"><?php echo t('Select a country'); ?></option>
 <?php foreach ($data['selectors']['countries'] as $i): ?>
   <option value="<?php echo $i['iso3']; ?>"><?php echo $i['name']; ?></option>
 <?php endforeach; ?>
 </select>
-  <a href="/book/countries" class="more-info">{{#labels}}{{more_about_areas_and_countries}}{{/labels}}</a>
+  <a href="/book/countries" class="more-info"><?php echo t('More about areas and countries'); ?></a>
   </div>
 </div>

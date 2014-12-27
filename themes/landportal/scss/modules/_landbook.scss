@@ -5,12 +5,39 @@
     min-height: 25em;
 }
 
-#world-map,
 #map {
-    height: 400px;
+    height: 600px;
     width:  800px;
 }
-#map-container {
+.map-medium {
     height: 400px;
+    width:  600px;
+}
+#map-container {
+    height: 600px;
     width:  800px;
+}
+
+.hidden {
+    display: none!important;
+    visibility: hidden!important;
+}
+#country-map,
+#world-map {
+    width: 200px;
+}
+
+
+/* TMP stuff */
+.col-sm-3 {
+    width: 20%;
+    float: left;
+}
+.col-sm-6 {
+    float: left;
+    width: 55%;
+    h2 {
+        clear: none;
+    }
+
 }

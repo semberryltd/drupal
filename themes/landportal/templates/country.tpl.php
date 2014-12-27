@@ -1,6 +1,14 @@
 <?php
+/**
+ * @file
+ * Country page template
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO (http://www.weso.es/)
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
 
-dpm($data);
 
 ?>
 
@@ -10,137 +18,130 @@ dpm($data);
 <input type="hidden" id="continent-name" value="<?php echo $data['info']['region']['name']; ?>" />
 <input type="hidden" id="country-name" value="<?php echo $data['info']['name']; ?>" />
 <input type="hidden" id="un-code" value="<?php echo $data['info']['iso3']; ?>" />
-<input type="hidden" id="starred-indicators" value="{{#starred}}{{#indicators}}{{id}},{{/indicators}}{{/starred}}" />
+<input type="hidden" id="starred-indicators" value="<?php $si=''; foreach($data['starred']['indicators'] as $indicators): $si .= ($si? ',':'').$indicators['id']; endforeach; echo $si; ?>" />
 <div class="content main-content container">
 	<div class="row">
 		<div class="col-sm-12">
-			<h1 class="country-name">
-				<span class="country-name no-margin flag">
-					<img id="flag" class="flag" src="<?php echo drupal_get_path('theme', 'landportal'); ?>/images/flags/<?php echo $data['info']['iso3']; ?>.png" />
-					<?php echo $data['info']['name']; ?>
-				</span>
-			</h1>
+			<h1 class="country-name"><span class="country-name no-margin flag"><img id="flag" class="flag" src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/flags/<?php echo $data['info']['iso3']; ?>.png" /><?php echo $data['info']['name']; ?></span></h1>
 		</div>
 	</div>
 	<div class="row">
-	  <div class="col-sm-3">
-	  	  <div id="world-map" class="world-map"></div>
-	  	  <h2 class="section"><span>{{#labels}}{{country_map}}{{/labels}}</span></h2>
-	  	  <div id="country-map" class="country-map"></div>
-		  <h2 class="section"><span>{{#labels}}{{main_index_rankings}}{{/labels}}</span></h2>
-		  <div id="main-index-rankings" class="graph">
-            {{#charts}}
-            	<div class="source-graph chart-content">
-	                {{#spider}}
-	                    {{>table}}
-											{{^observations}}
-												<div class="text-center text-muted">{{#labels}}{{no_data_available}}{{/labels}}</div>
-											{{/observations}}
-	                {{/spider}}
-            	</div>
-							<ul class="spider-legend">
-								{{#spider}}
-									{{#observations}}
-										<li>
-											{{#indicator}}
-												<span class="spider-legen-id">{{id}}</span>: {{name}}
-											{{/indicator}}
-										</li>
-									{{/observations}}
-								{{/spider}}
-							</ul>
-            {{/charts}}
-          </div>
-		  <h2 class="section"><span>{{#labels}}{{gender_issues}}{{/labels}}</span></h2>
-		  <table class="traffic">
-		  	{{#charts}}
-		  		{{#trafficLights}}
-		  				<tr
-							 class="{{^light}}text-muted{{/light}}"
-							>
-								<td class="issue">
-								{{indicator}}
-								</td>
-								<td>
-									<div class="circle"><div class="{{light}}"></div></div>
-								</td>
-		  				</tr>
-					{{/trafficLights}}
-		  	{{/charts}}
-		  </table>
+
+
+  <!-- Left / First Sidebar -->
+  <div class="col-sm-3">
+
+
+    <div id="world-map" class="world-map"></div>
+    <h2 class="section"><span><?php echo t('Country map'); ?></span></h2>
+    <div id="country-map" class="country-map"></div>
+    <h2 class="section"><span><?php echo t('Main Index rankings'); ?></span></h2>
+    <div id="main-index-rankings" class="graph">
+<?php foreach ($data['charts']['spider'] as $c): ?>
+      <div class="source-graph chart-content">
+        {{>table}}
+<?php if (!$c): ?>
+        <div class="text-center text-muted"><?php echo t('No data available'); ?></div>
+<?php endif; ?>
+      </div>
+<?php endforeach; /* charts */ ?>
+
+      <ul class="spider-legend">
+<?php foreach ($data['charts']['spider']['observations'] as $o): ?>
+        <li>
+          <span class="spider-legen-id"><?php echo $o['indicator']['id']; ?></span>: <?php echo $o['indicator']['name']; ?>
+        </li>
+      </ul>
+<?php endforeach; /* charts/spider/observations */ ?>
+    </div>
+
+    <h2 class="section"><span><?php echo t('Gender issues'); ?></span></h2>
+      <table class="traffic">
+<?php foreach ($data['charts']['trafficLights'] as $c): ?>
+        <tr class="{{^light}}text-muted{{/light}}">
+          <td class="issue"><?php echo $c['indicator']; ?></td>
+          <td><div class="circle"><div class="{{light}}"></div></div></td>
+        </tr>
+<?php endforeach; /* charts/trafficLights */ ?>
+      </table>
+
+
 			<div class="row traffic-legend">
 				<div class="col-xs-6">
 					<div class="circle"><div class="none"></div></div>
-					<span>{{#labels}}{{no_data_inequality}}{{/labels}}</span>
+                          <span><?php echo t('No data'); ?></span>
 				</div>
 				<div class="col-xs-6">
 					<div class="circle"><div class="bad"></div></div>
-					<span>{{#labels}}{{high_inequality}}{{/labels}}</span>
+                          <span><?php echo t('High inequality'); ?></span>
 				</div>
 				<div class="col-xs-6">
 					<div class="circle"><div class="same"></div></div>
-					<span>{{#labels}}{{mid_inequality}}{{/labels}}</span>
+                          <span><?php echo t('Mid inequality'); ?></span>
 				</div>
 				<div class="col-xs-6">
 					<div class="circle"><div class="good"></div></div>
-					<span>{{#labels}}{{low_inequality}}{{/labels}}</span>
+                          <span><?php echo t('Low inequality'); ?></span>
 				</div>
 			</div>
-		  <h2 class="section"><span>{{#labels}}{{rural_development}}{{/labels}}</span></h2>
+
+                          <h2 class="section"><span><?php t('Rural development'); ?></span></h2>
 		  <div class="row">
-			{{#charts}}
-				{{#gaugeIndicators}}
+<?php foreach ($data['charts']['gaugeIndicators'] as $c): ?>
 					<div class="col-xs-4">
-					  <div id="rural-development-{{index}}" class="graph-small text-center no-signature">
+					  <div id="rural-development-<?php echo $c['index']; ?>" class="graph-small text-center no-signature">
 			        <div class="source-graph chart-content">
 				        {{>table}}
 			        </div>
 						</div>
-			      <p class="percentage">{{value}}%</p>
-						<p class="indicator-name">{{indicator}}</p>
+                                <p class="percentage"><?php echo $c['value']; ?>%</p>
+                                <p class="indicator-name"><?php echo $c['indicator']; ?></p>
 					</div>
-				{{/gaugeIndicators}}
-			{{/charts}}
+<?php endforeach; /* charts/gaugeIndicators */ ?>
 	  	</div>
+
+
 			<div class="row">
 				<div class="col-xs-12">
 					<p class="chart-source text-right">
-						{{#labels}}{{source}}{{/labels}}: <a href="/book/sources/fao">FAO</a>
+                          <?php echo t('Source'); ?>: <a href="/book/sources/fao">FAO</a>
 					</p>
 				</div>
 			</div>
 
+
 		</div>
 	  <div class="col-sm-6 graph-section">
-		  <h2 class="section"><span>{{#labels}}{{socio_economic_values}}{{/labels}}</span></h2>
+                          <h2 class="section"><span><?php echo t('Socio-economic values'); ?></span></h2>
           <div class="socioeconomic-values chart-content">
-            {{#charts}}
-                {{#tableIndicators}}
+<?php foreach ($data['charts']['tableIndicators'] as $c): ?>
+
                     {{>table}}
-                {{/tableIndicators}}
-            {{/charts}}
+<?php endforeach; /* charts/tableIndicators */ ?>
+
 						<p class="chart-source text-right">
-							{{#labels}}{{source}}{{/labels}}: <a href="/book/sources/worldbank">{{#labels}}{{world_bank}}{{/labels}}</a>
+              <?php echo t('Source'); ?>: <a href="/book/sources/worldbank"><?php echo t('World bank'); ?></a>
 						</p>
         </div>
-		  <h2 class="section section-name"><span class="indicator-name"></span><span> </span><span>{{#labels}}{{for_countries}}{{/labels}}</span></h2>
+
+
+  <!-- main content (central) -->
+              <h2 class="section section-name"><span class="indicator-name"></span><span> </span><span><?php echo t('For countries'); ?></span></h2>
 		  <div id="mapDiv" class="map-medium indicator-map"></div>
 		  <div id="chart-region-bar-comparison" class="graph-medium"></div>
-		  <h2 class="section section-name"><span class="indicator-name"></span><span> </span><span>{{#labels}}{{across_time}}{{/labels}}</span><span> </span><span class="country-name"><?php echo $data['info']['name']; ?></span></h2>
+              <h2 class="section section-name"><span class="indicator-name"></span><span> </span><span><?php echo t('Across time'); ?></span><span> </span><span class="country-name"><?php echo $data['info']['name']; ?></span></h2>
 		  <div class="row">
-			<div class="col-xs-4">
-				{{#labels}}{{compare_with}}{{/labels}}:
-			</div>
+              <div class="col-xs-4"><?php echo t('Compare with'); ?></div>
 			<div class="col-xs-8 compare-bar">
 			  <select id="country-comparing-select" class="form-control">
-			  	{{#selectors}}
-				  	{{#countries}}
-						<option value="{{iso3}}" data-region="{{region}}" {{^data}}disabled="disabled"{{/data}}>{{name}}</option>
-					{{/countries}}
-				{{/selectors}}
+<?php foreach ($data['selectors']['countries'] as $c): ?>
+                            <option value="<?php echo $c['iso3']; ?>" data-region="<?php echo $c['region']; ?>"
+  <?php if (!$c['data']) { echo ' disabled="disabled"'; } ?>><?php echo $c['name']; ?></option>
+<?php endforeach; /* selectors/countries */ ?>
 			  </select>
 			</div>
 		  </div>
+
 			<div class="row compare-legend">
 				<div class="col-xs-6">
 					<div id="compare-legend-circle-1" class="circle"></div>
@@ -152,6 +153,7 @@ dpm($data);
 				</div>
 			</div>
 		  <div id="chart-timeline-comparison" class="graph">
+
             {{#charts}}
             	<div class="source-graph chart-content">
 	                {{#employment-timeline}}
@@ -160,72 +162,72 @@ dpm($data);
             	</div>
             {{/charts}}
           </div>
-			<h2 class="section section-wide"><span><strong>{{#labels}}{{tendencies}}{{/labels}}</strong></span></h2>
-	  	{{#starred}}
-				{{#topics}}
-					<h2 class="section"><span>{{name}}</span></h2>
-					<div class="row evolutions">
-						{{#indicators}}
-				  		<div class="col-xs-6 col-md-3 no-signature">
-				  			<div id="starred_{{id}}" class="graph-small"></div>
-								<p class="indicator-name">{{name}}</p>
-				  		</div>
-						{{/indicators}}
-					</div>
-				{{/topics}}
-	  	{{/starred}}
+          <h2 class="section section-wide"><span><strong><?php echo t('tendencies'); ?></strong></span></h2>
+<?php foreach ($data['starred']['topics'] as $c): ?>
+          <h2 class="section"><span><?php echo $c['name']; ?></span></h2>
+          <div class="row evolutions">
+  <?php foreach ($c['indicators'] as $i): ?>
+            <div class="col-xs-6 col-md-3 no-signature">
+              <div id="starred_<?php echo $i['id']; ?>" class="graph-small"></div>
+              <p class="indicator-name"><?php echo $i['name']; ?></p>
+            </div>
+  <?php endforeach; ?>
+          </div>
+<?php endforeach; /* starred/topics */ ?>
 
-	  </div>
+        </div>
+
+
+              <!-- Right / second Sidebar -->
 	  <div class="col-sm-3">
-		  <h2 class="section"><span>{{#labels}}{{sources}}{{/labels}}</span></h2>
-		  <select id="source-select" multiple="multiple" class="data-sources">
-		  	{{#selectors}}
-			  	{{#data-sources}}
-					<option {{^with_data}}disabled="disabled"{{/with_data}} title="{{name}}">{{name}}</option>
-				{{/data-sources}}
-			{{/selectors}}
-		  </select>
-		  <h2 class="section"><span>{{#labels}}{{indicators}}{{/labels}}</span></h2>
 
-			<!-- all indicator selects -->
-			<div>
-				{{#selectors}}
-					{{#data-sources}}
-						<select data-source="{{name}}" class="form-control topic-indicator-select hidden">
-							{{#indicators}}
-								<option {{^with_data}}disabled="disabled"{{/with_data}} value="{{id}}" title="{{name}}">{{name}}</option>
-							{{/indicators}}
-						</select>
-					{{/data-sources}}
-				{{/selectors}}
-			</div>
-			<select id="indicator-select" class="form-control">
-			</select>
 
-			<a href="/book/countries/{{entity-id}}/details">
+
+<?php /* SAME SNIPET IN country & regions.tpl.php */ ?>
+<h2 class="section"><span><?php echo t('Data sources'); ?></span></h2>
+<select id="source-select" multiple="multiple" class="data-sources">
+<?php foreach ($data['selectors']['data-sources'] as $d): ?>
+    <option value="<?php echo $d['id']; ?>" title="<?php echo $d['name']; ?>"><?php echo $d['name']; ?></option>
+<?php endforeach; ?>
+  </select>
+
+
+
+<?php /* SAME SNIPET IN country & regions.tpl.php */ ?>
+<h2 class="section"><span><?php echo t('Indicators'); ?></span></h2>
+<div>
+<?php foreach ($data['selectors']['data-sources'] as $d): ?>
+  <select data-source="<?php echo $d['id']; ?>" class="form-control topic-indicator-select data-sources hidden" multiple="multiple">
+<?php foreach ($d['indicators'] as $i): ?>
+    <option value="<?php echo $i['id']; ?>"><?php echo $i['name']; ?></option>
+<?php endforeach; ?>
+  </select>
+<?php endforeach; ?>
+</div>
+<select id="indicator-select" multiple="multiple" class="form-control data-sources"></select>
+
+
+
+			<a href="/book/countries/<?php echo $data['entity-id']; ?>/details">
 			  <button id="full-data-button" class="btn data-button">
-					{{#labels}}{{full_data}}{{/labels}} <span class="country-name"><?php echo $data['info']['name']; ?></span>
+                                  <?php echo t('Full data'); ?> <span class="country-name"><?php echo $data['info']['name']; ?></span>
 				</button>
 			</a>
-		  <a href="/book/indicators" class="more-info">{{#labels}}{{more_about_the_indicators}}{{/labels}}</a>
-		  <h2 class="section"><span>{{#labels}}{{specific_country}}{{/labels}}</span></h2>
+                                  <a href="/book/indicators" class="more-info"><?php echo t('More about the indicators');?></a>
+                                  <h2 class="section"><span><?php echo t('Specific country'); ?></span></h2>
 		  <select id="country-select" class="form-control">
-				<option disabled="disabled" selected="true">{{#labels}}{{select_a_country}}{{/labels}}</option>
-		  	{{#selectors}}
-			  	{{#countries}}
-					<option value="{{iso3}}">{{name}}</option>
-				{{/countries}}
-			{{/selectors}}
+                                  <option disabled="disabled" selected="true"><?php echo t('Select a country'); ?></option>
+<?php foreach ($data['selectors']['countries'] as $i): ?>
+  <option value="<?php echo $i['iso3']; ?>"><?php echo $i['name']; ?></option>
+<?php endforeach; ?>
 		  </select>
-		  <a href="/book/countries" class="more-info">{{#labels}}{{more_about_areas_and_countries}}{{/labels}}</a>
+		  <a href="/book/countries" class="more-info"><?php echo t('More about areas and countries'); ?></a>
 			<a href="http://legacy.landportal.info/area/<?php echo $data['info']['name']; ?>" target="_blank">
 		  <button class="btn data-button-dark">
-                        {{#labels}}{{consult_library}}{{/labels}}
-			  <br/><i>({{#labels}}{{new_coming_soon}}{{/labels}})</i>
-
+                          <?php echo t('Consult the landlibrary (new version coming soon)'); ?>
 		  </button></a>
 		  <a href="/search/site/<?php echo $data['info']['name']; ?>">
-				<button class="btn data-button-dark">{{#labels}}{{debate_with_others}}{{/labels}}</button>
+                          <button class="btn data-button-dark"><?php echo t('Debate with others'); ?></button>
 			</a>
 	  </div>
 	</div>
