@@ -11,17 +11,13 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
-
 require_once(dirname(__FILE__) .'/../../../dbconfig.php');
 require_once(dirname(__FILE__) .'/../utils/database_helper.php');
 require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
 
 $indicator1 = $_GET["indicator1"];
 $indicator2 = $_GET["indicator2"];
-$language = $_GET["language"];
+$language = (isset($_GET["language"]) ? $_GET["language"] : 'en');
 
 header('Content-Type: application/json');
 echo observations_by_indicator_average($indicator1, $indicator2, $language);

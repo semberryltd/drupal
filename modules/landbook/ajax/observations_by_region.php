@@ -18,7 +18,7 @@ require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
 
 $region = $_GET["region"];
 $indicator = $_GET["indicator"];
-$language = $_GET["language"];
+$language = (isset($_GET["language"]) ? $_GET["language"] : 'en');
 
 setlocale(LC_ALL, $language);
 header('Content-Type: application/json');

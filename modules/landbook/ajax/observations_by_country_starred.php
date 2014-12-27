@@ -19,7 +19,7 @@ require_once(dirname(__FILE__) ."/../utils/observations_by_country_indicator.php
 
 $country1 = $_GET["country1"];
 $country2 = $_GET["country2"];
-$language = $_GET["language"];
+$language = (isset($_GET["language"]) ? $_GET["language"] : 'en');
 
 header('Content-Type: application/json');
 echo observations_by_country_starred($country1, $country2, $language);

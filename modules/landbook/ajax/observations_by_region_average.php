@@ -19,7 +19,7 @@ require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
 $region1 = $_GET["region1"];
 $region2 = isset($_GET["region2"]) ? $_GET["region2"] : "";
 $indicator = $_GET["indicator"];
-$language = $_GET["language"];
+$language = (isset($_GET["language"]) ? $_GET["language"] : 'en');
 
 header('Content-Type: application/json');
 echo observations_by_region_average($region1, $region2, $indicator, $language);
