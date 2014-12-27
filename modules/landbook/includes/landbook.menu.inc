@@ -26,7 +26,7 @@ function landbook_menu_build(&$items) {
       'file path'       => drupal_get_path('module', 'landbook').'/modules',
     );
     $items['book/' . $s . '/%'] = array(
-      'title'           => $s.' details',
+      'title'           => preg_replace('/s$/', '', str_replace('ies', 'y', $s)).' details',
       'access callback'	=> TRUE,
       'page callback'   => 'landbook_' . $s,
       'page arguments'  => array(2),
