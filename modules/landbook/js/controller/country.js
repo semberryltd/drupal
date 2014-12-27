@@ -1,8 +1,8 @@
 // Constants
 
-var ajaxURL = document.getElementById('api-url').value;
-var languageCode = document.getElementById('selected-language').value;
-var countryCode = document.getElementById('entity-id').value;
+//var ajaxURL = document.getElementById('api-url').value;
+//var languageCode = document.getElementById('selected-language').value;
+//var countryCode = document.getElementById('entity-id').value;
 
 // Stack to store ajax call indicators
 var callStack = [];
@@ -80,7 +80,7 @@ timelineOptions.getChartData = function(options, data) {
 
 		var comparingSelector = document.getElementById('country-comparing-select');
 
-		var serie1 = countryCode;
+		var serie1 = Drupal.settings.landbook.countryCode;
 		var serie2 = comparingSelector.value;
 
 		var serie2Name = comparingSelector.options[comparingSelector.selectedIndex].innerHTML;
@@ -147,7 +147,7 @@ function getStarredChartData(options, data) {
 
 	var comparingSelector = document.getElementById('country-comparing-select');
 
-	var serie1 = countryCode;
+	var serie1 = Drupal.settings.landbook.countryCode;
 	var serie2 = comparingSelector.value;
 
 	var serie2Name = comparingSelector.options[comparingSelector.selectedIndex].innerHTML;
@@ -176,14 +176,14 @@ wesCountry.stateful.start({
 	init: function(parameters, selectors) {
 		// Set current country selected in select
 		var countrySelect = document.getElementById('country-select');
-		var selected = countrySelect.querySelector('option[value=' + countryCode + ']');
+		var selected = countrySelect.querySelector('option[value=' + Drupal.settings.landbook.countryCode + ']');
 
 		if (selected)
 			countrySelect.selectedIndex = selected.index;
 
 		// Country comparison cannot be this country
 		var thisCountryOption =
-			selectors['#country-comparing-select'].querySelector(String.format('option[value={0}]', countryCode));
+			selectors['#country-comparing-select'].querySelector(String.format('option[value={0}]', Drupal.settings.landbook.countryCode));
 
 		if (thisCountryOption) {
 			thisCountryOption.disabled = "disabled";
@@ -214,7 +214,7 @@ wesCountry.stateful.start({
 		drawCountryWorldMaps();
 	},
 	urlChanged: function(parameters, selectors) {
-		var country = countryCode;
+		var country = Drupal.settings.landbook.countryCode;
 
 		var countrySelector = selectors["#country-comparing-select"];
 		var countryName = countrySelector.querySelector(String.format("option[value={0}]", country)).innerHTML;
@@ -301,7 +301,7 @@ wesCountry.stateful.start({
 				var selector = selectors['#country-comparing-select'];
 				var comparing = parameters["comparing-country"];
 				
-				if (comparing && comparing != "" && comparing != countryCode)  {
+				if (comparing && comparing != "" && comparing != Drupal.settings.landbook.countryCode)  {
 					var option = selector.querySelector(String.format('option[value={0}]', comparing));
 					
 					if (option && option.index)
@@ -311,7 +311,7 @@ wesCountry.stateful.start({
 				// Avoid selecting an unselectable option for country-comparing-select
 				// We select the first selectable country of the same region of this country
 				
-				var thisCountryOption = selector.querySelector(String.format('option[value={0}]', countryCode));
+				var thisCountryOption = selector.querySelector(String.format('option[value={0}]', Drupal.settings.landbook.countryCode));
 
 				var region = thisCountryOption && thisCountryOption.hasAttribute("data-region") ? thisCountryOption.getAttribute("data-region") : "";
 				
@@ -324,7 +324,7 @@ wesCountry.stateful.start({
 					if (option.disabled)
 						continue;
 					
-					if (option.value == countryCode)
+					if (option.value == Drupal.settings.landbook.countryCode)
 						continue;
 					
 					if (!optionSameRegion)
@@ -362,16 +362,16 @@ function loadRegionMap(parameters) {
 	var indicator = parameters["indicator"];
 
 	regionMapLoader.load({
-		url: ajaxURL + '/observations_by_region.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_region.php',
 		parameters: String.format("region={0}&indicator={1}&language={2}",
-															region, indicator, languageCode)
+															region, indicator, Drupal.settings.landbook.languageCode)
 	});
 }
 
 // Refresh comparing timeline
 
 function loadComparingTimeline(parameters) {
-	var country1 = countryCode;
+	var country1 = Drupal.settings.landbook.countryCode;
 	var country2 = parameters["comparing-country"];
 	var indicator = parameters["indicator"];
 	
@@ -381,9 +381,9 @@ function loadComparingTimeline(parameters) {
 	console.log(String.format("load Data country:{0}, comparing:{1}, indicator:{2}", country1, country2, indicator));
 	
 	timelineLoader.load({
-		url: ajaxURL + '/observations_by_country.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_country.php',
 		parameters: String.format("country1={0}&country2={1}&indicator={2}&language={3}",
-															country1, country2, indicator, languageCode),
+															country1, country2, indicator, Drupal.settings.landbook.languageCode),
 	});
 	
 	// Fill call stack
@@ -393,9 +393,9 @@ function loadComparingTimeline(parameters) {
 		callStack.push({
 			indicator: indicator,
 			ajaxOptions: {
-				url: ajaxURL + '/observations_by_country.php',
+				url: Drupal.settings.landbook.ajaxURL + '/observations_by_country.php',
 				parameters: String.format("country1={0}&country2={1}&indicator={2}&language={3}",
-																		country1, country2, indicator, languageCode),
+																		country1, country2, indicator, Drupal.settings.landbook.languageCode),
 			}
 		});
 		
@@ -864,9 +864,9 @@ function selectCountry(e, info) {
 
 	var field = "name";
 
-	if (languageCode == "es")
+	if (Drupal.settings.landbook.languageCode == "es")
 		field = "nombre"
-	else if (languageCode == "fr")
+	else if (Drupal.settings.landbook.languageCode == "fr")
 		field = "nom"
 
 	showCountryInfo({

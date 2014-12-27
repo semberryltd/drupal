@@ -25,6 +25,18 @@ function landbook_help($path, $arg) {
   }
 }
 
+function landbook_add_js_vars($countryCode=NULL) {
+  global $language;
+  // TODO: should come from a module variable (manageable via in admin/settings)
+  $ajaxURL = '/'.drupal_get_path('module', 'landbook').'/ajax';
+  drupal_add_js(array('landbook' => array(
+                                      'ajaxURL'         => $ajaxURL,
+                                      'countryCode'     => $countryCode,
+                                      'languageCode'    => $language->language,
+                )), 'setting'
+  );
+}
+
 function landbook_theme() {
   $struct = array(
     'variables' => array(
@@ -46,13 +58,14 @@ function landbook_add_js_css() {
   //drupal_add_js('misc/jquery.js');
   //drupal_add_js('misc/jquery.once.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/jquery-2.1.0.min.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/util.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/canvg.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/rgbcolor.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/language.js');
   //drupal_add_js(drupal_get_path('module', 'landbook').'/js/search.js');
   //drupal_add_js(drupal_get_path('module', 'landbook').'/js/ajax.js');
+
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/util.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/language.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/canvg.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/rgbcolor.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/StackBlur.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/seedrandom.min.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/country_chart_options.js');

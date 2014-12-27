@@ -12,27 +12,22 @@
 function landbook_countries($args=NULL) {
   global $databases, $language;
   landbook_add_js_css();
-
+  landbook_add_js_vars($args);
   if ($args) {
     $template = 'country';
     $r = new Country();
     $rdata = $r->get($language, $args);
-
+    drupal_set_title($rdata['info']['name']);
     drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/country.js', array('scope'=>'footer'));
   } else {
     $template = 'countries';
     $r = new Countries();
     $rdata = $r->get($language);
-
+    drupal_set_title("Landbook countries");
     drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/countries.js', array('scope'=>'footer'));
   }
-
-  //dpm($rdata);
   return theme($template, array(
-    'meta'      => "lb:countries",
-    'title'     => "LB Countries",
     'data'      => $rdata,
-    //'page'      => array('#show_messages' => array('yoyo')),
   ));
 }
 
@@ -46,8 +41,6 @@ class Country {
 	public function get($options, $iso3) {
 		$lang = $options->language;
 		//$iso3 = 'ESP';
-                drupal_set_message("Selected " . $iso3);
-
 		$cache = new CacheHelper('country', array(
 			$iso3,
 			$lang,
@@ -62,6 +55,7 @@ class Country {
 			$datasources = $database->query("datasources_by_country", array($lang, $safe_iso3));
 			$info = $database->query("country", array($lang, $safe_iso3));
 
+                        // TODO: This is probably wrong way to do it... --Jules, Dec '14
 			if (!$info && function_exists("drupal_goto")) {
 				drupal_goto("e404");
 			}

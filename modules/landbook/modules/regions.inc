@@ -13,15 +13,12 @@ function landbook_regions() {
   global $databases, $language;
   $r = new Regions();
   $rdata = $r->get($language);
-
   landbook_add_js_css();
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/regions.js', array('scope'=>'footer'));
-
+  landbook_add_js_vars();
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/regions.js', array('scope' => 'footer'));
   return theme("regions", array(
-    'meta'      => "lp:regions",
-    'title'     => "LB Regions",
     'data'      => $rdata,
-               ));
+  ));
 }
 
 

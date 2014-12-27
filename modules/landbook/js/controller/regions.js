@@ -1,7 +1,3 @@
-// Constants
-
-var ajaxURL = "/sites/miniplenty/modules/landbook/ajax";
-var languageCode = "en";//document.getElementById('selected-language').value;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                 LOADERS
@@ -197,9 +193,9 @@ function loadMap(parameters) {
 	var indicator = parameters["indicator"];
 
 	mapLoader.load({
-		url: ajaxURL + '/observations_by_region.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_region.php',
 		parameters: String.format("region={0}&indicator={1}&language={2}",
-															region, indicator, languageCode),
+															region, indicator, Drupal.settings.landbook.languageCode),
 		foot: getDatasourceLink(datasource)
 	});
 }
@@ -216,9 +212,9 @@ function loadComparingTimeline(parameters) {
 		return;
 
 	timelineLoader.load({
-		url: ajaxURL + '/observations_by_region_average.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_region_average.php',
 		parameters: String.format("region1={0}&region2={1}&indicator={2}&language={3}",
-															region1, region2, indicator, languageCode),
+															region1, region2, indicator, Drupal.settings.landbook.languageCode),
 		foot: getDatasourceLink(datasource)
 	});
 }

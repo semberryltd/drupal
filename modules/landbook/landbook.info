@@ -1,8 +1,8 @@
 name = Landbook
-description = The landbook section of the landportal. For this module to work properly you will need a running memcached facility and the following packages: php5-curl, php5-memcached .
+description = The landbook section of the landportal. For this module to work properly you will need a running memcached facility and the following packages: php5-curl, php5-memcached.
 package = Landportal
 core = 7.x
-version = 7.x-1.0-alpha3
+version = 7.x-1.0-alpha4
 ; dependencies[] = devel
 dependencies[] = ctools
 dependencies[] = menu
