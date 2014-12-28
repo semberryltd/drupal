@@ -10,6 +10,10 @@
  */
 
 $GLOBALS['landdebate_menu'] = 'landdebate-menu';
+$GLOBALS['landdebate_default_ct'] = 'news';
+
+ctools_include('landdebate.view_default', 'landdebate');
+ctools_include('landdebate.menu', 'landdebate');
 
 function landdebate_help($path, $arg) {
   switch ($path) {
@@ -22,88 +26,87 @@ function landdebate_help($path, $arg) {
   }
 }
 
-function landdebate_views_api() {
-  return array('api' => 3.0);
-}
-
-include_once 'landdebate.view_default.inc';
-
 
 function landdebate_menu() {
   $items = array();
-
-  // Admin section
-  $items['admin/config/landdebate'] = array(
-    'title'             => 'Landdebate',
-    'description'       => 'Configure the landdebate',
-    'postition'         => 'right',
-    'weight'            => -4,
-    'page callback'	=> 'system_admin_menu_block_page',
-    'access arguments'  => array('administer site configuration'),
-    'file'              => 'system.admin.inc',
-    'file path'         => drupal_get_path('module', 'system'),
-  );
-  $items['admin/config/landdebate/settings'] = array(
-    'title'             => 'Landdebate settings',
-    'description'       => 'Base landdebate configuration',
-    'page callback'	=> 'drupal_get_form',
-    'page arguments'	=> array('landdebate_admin_settings'),
-    'access arguments'  => array('administer site configuration'),
-    'type'              => MENU_NORMAL_ITEM,
-    'file'              => 'landdebate.admin.inc',
-  );
-  $items['admin/config/landdebate/social'] = array(
-    'title'             => 'Social networks',
-    'description'       => 'Landdebate social network configurations',
-    'page callback'	=> 'drupal_get_form',
-    'page arguments'	=> array('landdebate_admin_social'),
-    'access arguments'  => array('administer site configuration'),
-    'type'              => MENU_NORMAL_ITEM,
-    'file'              => 'landdebate.admin.inc',
-  );
+  landdebate_admin_menu($items);
 
   // Landdebate frontend
   $items['debate'] = array(
-    'title'		=> 'landdebate',
+    'title'		=> 'Landdebate',
     'menu_name'		=> 'main-menu',
     'access callback'	=> TRUE,
-    //'type'              => MENU_NORMAL_ITEM,
     'weight'            => 1,
     'page callback'	=> 'views_page',
-    'page arguments'	=> array('debate', 'page'),
+    'page arguments'	=> array('debate', $GLOBALS['landdebate_default_ct']),
   );
+  $translatables['debate'][] = t($items['debate']['title']);
 
   $landebate_ct = array('news', 'debate', 'event', 'blog_post', 'organization');
   foreach ($landebate_ct as $s) {
     $items['debate/' . $s] = array(
-      'title'           => ucfirst($s),
+      'title'           => ucfirst(str_replace('_', ' ', $s)),
       'menu_name'       => $GLOBALS['landdebate_menu'],
       'access callback'	=> TRUE,
-      //'type'            => MENU_NORMAL_ITEM,
       'page callback'   => 'landdebate_vcb',
       'page arguments'  => array(1),
     );
+    $translatables['debate'][] = t($items['debate/' . $s]['title']);
   }
-
   return $items;
 }
 
-/** Simple callback to 'debate' conditionnal view (see: landdebate.view_default.inc , for more details)
- */
-function landdebate_vcb($args) {
-  return views_page('debate', 'page', $args);
+function landdebate_views_api() {
+  return array('api' => 3.0);
 }
 
-/** Default block configuration for landbook-menu
- * @TODO bug: pages & visibility doesn't appear in drupal landdebate menu block setting page, though it seems to work
+/**
+ * Blocks configuration for landdebate
+ * Force landdebate-menu to appear in the highlighted section
+ *
+ * TODO: bugfix: pages & visibility config doesn't appear in the block configuration page (it seems to work ok though)
  */
 function landdebate_block_info_alter(&$blocks, $theme, $code_blocks) {
   if ($theme == 'landportal') {
-  //print_r(dpm($blocks['menu'][$GLOBALS['landdebate_menu']]));
     $blocks['menu'][$GLOBALS['landdebate_menu']]['status'] = TRUE;
     $blocks['menu'][$GLOBALS['landdebate_menu']]['region'] = 'highlighted';
+    $blocks['menu'][$GLOBALS['landdebate_menu']]['visibility'] = BLOCK_VISIBILITY_LISTED;
+    $blocks['menu'][$GLOBALS['landdebate_menu']]['pages'] = "debate\ndebate/*";
   }
-  $blocks['menu'][$GLOBALS['landdebate_menu']]['visibility'] = BLOCK_VISIBILITY_LISTED;
-  $blocks['menu'][$GLOBALS['landdebate_menu']]['pages'] = "debate\ndebate/*";
   return $blocks;
 }
+
+
+
+/* function landdebate_node_view($node, $view_mode, $lang) { */
+/*   if ($node->type == 'news') { */
+/*         $breadcrumb = array(); */
+/*         $breadcrumb[] = l(t('Home'), '<front>'); */
+/*         $breadcrumb[] = l(t('landdebate'), 'debate'); */
+/*         $breadcrumb[] = l(t('News'), 'debate/news'); */
+/*         drupal_set_breadcrumb($breadcrumb); */
+/*   } */
+/* } */
+
+
+/* function landdebate_menu_breadcrumb_alter(&$active_trail, $item){ */
+/*   menu_set_active_item('debate'); */
+/*   /\* dpm($item); *\/ */
+/*   //$active_trail[] = $item; */
+/*   // array('title' => t($item['title']), 'href'  => $item['path']); *\/ */
+/*   dpm($active_trail); */
+
+/*   $b = array(); */
+/*   foreach ($active_trail as $i=>$a) { */
+/*     $a['weight'] = $i; */
+/*     $b[$i] = $a; */
+/*   } */
+/*   $item['weight'] = ++$i; */
+/*   $b[$i] = $item; */
+  
+/*   $active_trail = drupal_set_breadcrumb($b);//active_trail); */
+/*   dpm($active_trail); */
+/* } */
+
+
+

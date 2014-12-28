@@ -22,8 +22,8 @@ function landdebate_views_default_views() {
 
   $view = new view();
   $view->name = 'debate';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'A conditional view to overview landdebate content types';
+  $view->tag = 'landportal';
   $view->base_table = 'node';
   $view->human_name = 'Landdebate views';
   $view->core = 7;
@@ -65,10 +65,10 @@ function landdebate_views_default_views() {
   $handler->display->display_options['arguments']['type']['field'] = 'type';
   $handler->display->display_options['arguments']['type']['default_action'] = 'default';
   $handler->display->display_options['arguments']['type']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['type']['default_argument_options']['argument'] = 'debate';
+  $handler->display->display_options['arguments']['type']['default_argument_options']['argument'] = 'news';
   $handler->display->display_options['arguments']['type']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['type']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '10';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
