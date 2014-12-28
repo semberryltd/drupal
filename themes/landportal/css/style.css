@@ -80,6 +80,27 @@ buttons, forms, menus...
   clear: none;
 }
 
+/* line 43, ../scss/modules/_landbook.scss */
+.col-sm-9 {
+  float: left;
+  width: 75%;
+}
+/* line 46, ../scss/modules/_landbook.scss */
+.col-sm-9 h2 {
+  clear: none;
+}
+
+/* line 1, ../scss/modules/_forms.scss */
+select {
+  max-width: 100%;
+}
+
+/* line 6, ../scss/modules/_forms.scss */
+#highlighted #block-search-form {
+  margin: 10px 5em 0 0;
+  float: right;
+}
+
 /* Landportal SCSS: menus */
 /* line 3, ../scss/modules/_menus.scss */
 #header ul.menu {
@@ -106,11 +127,94 @@ buttons, forms, menus...
   content: "";
 }
 
+/* line 26, ../scss/modules/_menus.scss */
+#highlighted {
+  color: #ffffff;
+  min-height: 120px;
+}
+/* line 31, ../scss/modules/_menus.scss */
+#highlighted ul.menu {
+  margin: 0;
+  padding: 0;
+}
+/* line 34, ../scss/modules/_menus.scss */
+#highlighted ul.menu li {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+  float: left;
+  border-right: 1px solid #ffffff;
+}
+/* line 42, ../scss/modules/_menus.scss */
+#highlighted ul.menu li:last-of-type {
+  border-right: 0;
+}
+/* line 45, ../scss/modules/_menus.scss */
+#highlighted ul.menu li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 1.3em 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 100;
+  font-size: 1em;
+}
+/* line 57, ../scss/modules/_menus.scss */
+#highlighted .content:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+/* line 66, ../scss/modules/_menus.scss */
+.page-book #highlighted {
+  background-color: rgba(86, 131, 9, 0.8);
+  background-image: url(../images/header/grass-medium.png);
+}
+/* line 69, ../scss/modules/_menus.scss */
+.page-book #highlighted li {
+  width: 12.5%;
+}
+
+/* line 75, ../scss/modules/_menus.scss */
+.page-debate #highlighted {
+  background-color: #0165C3;
+  background-image: url(../images/header/pebbles-medium.png);
+}
+/* line 79, ../scss/modules/_menus.scss */
+.page-debate #highlighted li {
+  width: 16.6%;
+}
+
 /******************** IMPORT: Screens
 Base and specialized sizes for devices
 */
+@media (min-width: 768px) {
+  /* line 2, ../scss/screens/_base.scss */
+  #breadcrumb,
+  #main-wrapper {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 7, ../scss/screens/_base.scss */
+  #breadcrumb,
+  #main-wrapper {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 11, ../scss/screens/_base.scss */
+  #breadcrumb,
+  #main-wrapper {
+    width: 1170px;
+  }
+}
 /* Landportal SCSS: Base size and positionning */
-/* line 2, ../scss/screens/_base.scss */
+/* line 16, ../scss/screens/_base.scss */
 body {
   color: #222222;
   margin: 0;
@@ -118,94 +222,102 @@ body {
   font-size: 0.9em;
 }
 
-/* line 9, ../scss/screens/_base.scss */
+/* line 23, ../scss/screens/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   clear: both;
 }
-/* line 12, ../scss/screens/_base.scss */
+/* line 26, ../scss/screens/_base.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }
 
-/* line 17, ../scss/screens/_base.scss */
+/* line 31, ../scss/screens/_base.scss */
 #logo {
   float: left;
 }
 
-/* line 24, ../scss/screens/_base.scss */
-#header {
-  border-bottom: 0.36em solid #8fcd1f;
-}
-/* line 27, ../scss/screens/_base.scss */
+/* line 40, ../scss/screens/_base.scss */
 #header .block-menu h2 {
   display: none;
 }
-/* line 30, ../scss/screens/_base.scss */
+/* line 43, ../scss/screens/_base.scss */
 #header .block-menu .contextual-links-wrapper {
   display: none;
 }
-/* line 35, ../scss/screens/_base.scss */
+/* line 48, ../scss/screens/_base.scss */
 #header #block-system-user-menu {
   float: right;
 }
 
-/* line 40, ../scss/screens/_base.scss */
+/* line 53, ../scss/screens/_base.scss */
 #footer {
   border-top: 1px solid #333333;
   height: 100px;
   margin-top: 5px;
 }
 
-/* line 46, ../scss/screens/_base.scss */
+/* line 59, ../scss/screens/_base.scss */
 #header,
 #footer {
   padding: 5px 5em;
   height: 35px;
 }
 
-/* line 57, ../scss/screens/_base.scss */
-#highlighted .block-menu {
-  width: 100%;
-  background-color: #EEE;
-  /* li { */
-  /*     float: left; */
-  /*     width: 20%; */
-  /* } */
-  /* li.last { */
-  /*     clear: right; */
-  /* } */
+/* line 65, ../scss/screens/_base.scss */
+#breadcrumb,
+#main-wrapper {
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
-/* line 70, ../scss/screens/_base.scss */
+/* line 75, ../scss/screens/_base.scss */
+#highlighted {
+  margin-bottom: 5px;
+}
+/* line 76, ../scss/screens/_base.scss */
+#highlighted .block-menu {
+  width: 100%;
+}
+
+/* line 82, ../scss/screens/_base.scss */
 #breadcrumb {
   clear: both;
 }
 
-/* line 73, ../scss/screens/_base.scss */
+/* line 85, ../scss/screens/_base.scss */
 #main-content {
   width: 100%;
   clear: both;
 }
 
-/* line 75, ../scss/screens/_base.scss */
+/* line 90, ../scss/screens/_base.scss */
 .clearfix {
   clear: both;
 }
 
-/* line 80, ../scss/screens/_base.scss */
+/* line 95, ../scss/screens/_base.scss */
 #sidebar-first {
   float: left;
 }
 
-/* line 84, ../scss/screens/_base.scss */
+/* line 99, ../scss/screens/_base.scss */
 #sidebar-second {
   float: right;
 }
 
-/* line 88, ../scss/screens/_base.scss */
+/* line 103, ../scss/screens/_base.scss */
 .view-content {
   clear: both;
+}
+
+/**
+ * Page specific
+ */
+/* line 112, ../scss/screens/_base.scss */
+.front #header {
+  border-bottom: 0.36em solid #8fcd1f;
 }
 
 /*# sourceMappingURL=style.css.map */

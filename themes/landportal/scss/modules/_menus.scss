@@ -22,3 +22,62 @@
         }
     }
 }
+
+#highlighted {
+
+
+    color: $white;
+    min-height: 120px;
+    ul.menu {
+        margin: 0;
+        padding: 0;
+        li {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            list-style-image: none;
+            float: left;
+            border-right: 1px solid $white;
+            &:last-of-type {
+                border-right: 0;
+            }
+            a {
+                text-decoration: none;
+                display: inline-block;
+                padding: 1.3em 0;
+                color: $white;
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                font-weight: 100;
+                font-size: 1em;
+            }
+        }
+    }
+    .content:after {
+        display: block;
+        content: " ";
+        clear: both;
+    }
+
+}
+
+.page-book {
+    #highlighted {
+        background-color: $green-dark;
+        background-image: url(../images/header/grass-medium.png);
+        li {
+            width: 12.5%;
+        }
+    }
+}
+.page-debate {
+    #highlighted {
+        background-color: $blue;
+        background-image: url(../images/header/pebbles-medium.png);
+
+        li {
+            width: 16.6%;
+        }
+    }
+}
