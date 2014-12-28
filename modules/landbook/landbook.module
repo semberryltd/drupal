@@ -14,6 +14,8 @@ require_once(drupal_get_path('module', 'landbook').'/utils/cache_helper.php');
 
 $GLOBALS['landbook_menu'] = 'landbook-menu';
 
+ctools_include('landbook.menu', 'landbook');
+
 function landbook_help($path, $arg) {
   switch ($path) {
   case "admin/help#landbook":
@@ -23,18 +25,6 @@ function landbook_help($path, $arg) {
       ;
     break;
   }
-}
-
-function landbook_add_js_vars($countryCode=NULL) {
-  global $language;
-  // TODO: should come from a module variable (manageable via in admin/settings)
-  $ajaxURL = '/'.drupal_get_path('module', 'landbook').'/ajax';
-  drupal_add_js(array('landbook' => array(
-                                      'ajaxURL'         => $ajaxURL,
-                                      'countryCode'     => $countryCode,
-                                      'languageCode'    => $language->language,
-                )), 'setting'
-  );
 }
 
 function landbook_theme() {
@@ -53,8 +43,19 @@ function landbook_theme() {
   );
 }
 
-function landbook_add_js_css() {
+function landbook_add_js_vars($countryCode=NULL) {
+  global $language;
+  // TODO: should come from a module variable (manageable via in admin/settings)
+  $ajaxURL = '/'.drupal_get_path('module', 'landbook').'/ajax';
+  drupal_add_js(array('landbook' => array(
+                                      'ajaxURL'         => $ajaxURL,
+                                      'countryCode'     => $countryCode,
+                                      'languageCode'    => $language->language,
+                )), 'setting'
+  );
+}
 
+function landbook_add_js_css() {
   //drupal_add_js('misc/jquery.js');
   //drupal_add_js('misc/jquery.once.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/jquery-2.1.0.min.js');
@@ -76,50 +77,29 @@ function landbook_add_js_css() {
 
 function landbook_menu() {
   $items = array();
+  landbook_menu_admin($items);
+  // Automatically build Landbook menu according to available modules
+  landbook_menu_build($items);
 
-  // Admin section
-  $items['admin/config/landbook'] = array(
-    'title'             => 'Landbook',
-    'description'       => 'Configure the landbook',
-    'postition'         => 'right',
-    'weight'            => -4,
-    'page callback'	=> 'system_admin_menu_block_page',
-    'access arguments'  => array('administer site configuration'),
-    'file'              => 'system.admin.inc',
-    'file path'         => drupal_get_path('module', 'system'),
-  );
-  $items['admin/config/landbook/settings'] = array(
-    'title'             => 'Landbook settings',
-    'description'       => 'Base landbook configuration',
-    'page callback'	=> 'drupal_get_form',
-    'page arguments'	=> array('landbook_admin_settings'),
-    'access arguments'  => array('administer site configuration'),
-    'type'              => MENU_NORMAL_ITEM,
-    'file'              => 'landbook.admin.inc',
-    'file path'         => drupal_get_path('module', 'landbook').'/includes'
-  );
-
-  // Landbook frontend
+  // Landbook main-menu link
   $items['book'] = array(
-    'title'		=> 'landbook',
+    'title'		=> 'Landbook',
     'menu_name'		=> 'main-menu',
     'access callback'	=> TRUE,
-    'type'              => MENU_NORMAL_ITEM,
+    // 'type'              => MENU_NORMAL_ITEM,
     'page callback'	=> 'landbook_regions',
     'page arguments'	=> array(),
     'file'              => 'regions.inc',
     'file path'         => drupal_get_path('module', 'landbook').'/modules'
   );
-
-  // Automatically build Landbook menu according to available modules
-  ctools_include('landbook.menu', 'landbook');
-  landbook_menu_build($items);
-
+  $translatables['book'][] = t('Landbook');
   return $items;
 }
 
+/**
+ * Force landbook-menu block to display on landportal theme
+ */
 function landbook_block_info_alter(&$blocks, $theme, $code_blocks) {
-
   if ($theme == 'landportal') {
     $blocks['menu'][$GLOBALS['landbook_menu']]['status'] = TRUE;
     $blocks['menu'][$GLOBALS['landbook_menu']]['region'] = 'highlighted';

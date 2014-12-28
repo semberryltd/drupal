@@ -10,16 +10,23 @@
  */
 
 function landbook_enable() {
-  $lb_menu = array(
-    'menu_name'       => $GLOBALS['landbook_menu'],
-    'title'           => "Landbook menu",
-    'description'     => t("The header menu for the landbook")
-  );
   watchdog('Landbook', 'Enable ' . $GLOBALS['landbook_menu']);
+  $menu = array(
+    'menu_name'       => $GLOBALS['landbook_menu'],
+    'title'           => "Get information by country",
+    'description'     => "The Land Book presents comprehensive country and thematic pages with linked open data on land governance from diverse sources around the world.",
+  );
+
   if (!menu_load($GLOBALS['landbook_menu'])) {
-    menu_save($lb_menu);
+    drupal_set_message('Landbook', 'Adding ' . $GLOBALS['landbook_menu']);
+    menu_save($menu);
+    cache_clear_all('*', 'cache_menu', TRUE);
   }
-  cache_clear_all('*', 'cache_menu', TRUE);
+
+  $translatables['book'] = array(
+    t($menu['title']),
+    t($menu['description']),
+  );
 }
 
 function landbook_disable() {
