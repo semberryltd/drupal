@@ -31,8 +31,9 @@ function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
       $blocks['system'][$m]['status'] = FALSE;
       $blocks['system'][$m]['region'] = '';
     }
-    $blocks['search']['form']['status'] = FALSE;
-    $blocks['search']['form']['region'] = '';
+    $blocks['search']['form']['status'] = TRUE;
+    $blocks['search']['form']['region'] = 'section_header';
+
     $blocks['user']['login']['status'] = FALSE;
     $blocks['user']['login']['region'] = '';
   }
