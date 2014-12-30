@@ -9,8 +9,23 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
+function landdebate_menu_build(&$items) {
+  foreach ($GLOBALS['landdebate_content_types'] as $i => $s) {
+    $items['debate/' . $s] = array(
+      'title'           => ucfirst(str_replace('_', ' ', $s)),
+      'menu_name'       => $GLOBALS['landdebate_menu'],
+      'access callback' => TRUE,
+      'weight'          => $i,
+      'page callback'   => 'landdebate_vcb',
+      'page arguments'  => array(1),
+    );
 
-function landdebate_admin_menu(&$items) {
+    // TODO
+    $translatables['debate'][] = t($items['debate/' . $s]['title']);
+  }
+}
+
+function landdebate_menu_admin(&$items) {
   // Admin section
   $items['admin/config/landdebate'] = array(
     'title'             => 'Landdebate',

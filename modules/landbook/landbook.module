@@ -13,6 +13,7 @@ require_once(drupal_get_path('module', 'landbook').'/utils/database_helper.php')
 require_once(drupal_get_path('module', 'landbook').'/utils/cache_helper.php');
 
 $GLOBALS['landbook_menu'] = 'landbook-menu';
+$GLOBALS['landbook_sections'] = array('regions', 'countries', 'catalog', 'indicators', 'sources', 'reuse', 'widgets');
 
 ctools_include('landbook.menu', 'landbook');
 
@@ -38,8 +39,6 @@ function landbook_theme() {
     'regions'   => $struct,
     'countries' => $struct,
     'country'   => $struct,
-    /* 'file' => 'countries.tpl.php', */
-    /* 'path' => drupal_get_path('module', 'landbook').'/theme', */
   );
 }
 
@@ -73,6 +72,7 @@ function landbook_add_js_css() {
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.js');
 
   drupal_add_css(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.css');
+  //drupal_add_css(drupal_get_path('theme', 'landportal').'/css/bootstrap.min.css');
 }
 
 function landbook_menu() {
@@ -85,8 +85,8 @@ function landbook_menu() {
   $items['book'] = array(
     'title'		=> 'Landbook',
     'menu_name'		=> 'main-menu',
+    'type'              => MENU_NORMAL_ITEM,
     'access callback'	=> TRUE,
-    // 'type'              => MENU_NORMAL_ITEM,
     'page callback'	=> 'landbook_regions',
     'page arguments'	=> array(),
     'file'              => 'regions.inc',
@@ -102,7 +102,7 @@ function landbook_menu() {
 function landbook_block_info_alter(&$blocks, $theme, $code_blocks) {
   if ($theme == 'landportal') {
     $blocks['menu'][$GLOBALS['landbook_menu']]['status'] = TRUE;
-    $blocks['menu'][$GLOBALS['landbook_menu']]['region'] = 'highlighted';
+    $blocks['menu'][$GLOBALS['landbook_menu']]['region'] = 'section_header';
     $blocks['menu'][$GLOBALS['landbook_menu']]['visibility'] = BLOCK_VISIBILITY_LISTED;
     $blocks['menu'][$GLOBALS['landbook_menu']]['pages'] = "book\nbook/*";
   }

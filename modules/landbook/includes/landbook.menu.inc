@@ -13,14 +13,14 @@
  ** Landbook subsections
  */
 function landbook_menu_build(&$items) {
-  $sections = array('catalog', 'countries', 'indicators', 'regions', 'reuse', 'sources', 'widgets');
 
-  foreach ($sections as $i=>$s) {
+  foreach ($GLOBALS['landbook_sections'] as $i=>$s) {
     $items['book/' . $s] = array(
       'title'           => ucfirst($s),
       'menu_name'       => $GLOBALS['landbook_menu'],
       'access callback'	=> TRUE,
-      //'type'            => MENU_NORMAL_ITEM,
+      'weight'          => $i,
+      'type'            => MENU_NORMAL_ITEM,
       'page callback'   => 'landbook_' . $s,
       //'page arguments'  => array(),
       'file'            => $s . '.inc',
@@ -36,7 +36,6 @@ function landbook_menu_build(&$items) {
       'file'            => $s . '.inc',
       'file path'       => drupal_get_path('module', 'landbook').'/modules',
     );
-
   }
 }
 
@@ -59,7 +58,6 @@ function landbook_menu_admin(&$items) {
     'page callback'	=> 'drupal_get_form',
     'page arguments'	=> array('landbook_admin_settings'),
     'access arguments'  => array('administer site configuration'),
-    'type'              => MENU_NORMAL_ITEM,
     'file'              => 'landbook.admin.inc',
     'file path'         => drupal_get_path('module', 'landbook').'/includes'
   );
