@@ -25,6 +25,7 @@ function landdebate_enable() {
     menu_save($menu);
     cache_clear_all('*', 'cache_menu', TRUE);
   }
+  cache_clear_all();
 
   // TODO: check about that...
   $translatables['debate'] = array(
@@ -38,6 +39,6 @@ function landdebate_disable() {
   /* dpm($m); */
   watchdog('Landdebate', 'Removing ' . $GLOBALS['landdebate_menu']);
   menu_delete(array('menu_name' => $GLOBALS['landdebate_menu']));
-  cache_clear_all('*', 'cache_menu', TRUE);
-  //cache_clear_all('*', 'views', TRUE);
+  //cache_clear_all('*', 'cache_menu', TRUE);
+  cache_clear_all();
 }
