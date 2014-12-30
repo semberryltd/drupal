@@ -23,12 +23,21 @@
     }
 }
 
-#highlighted {
-
-
+#section-header {
+    margin: 0;
+    padding: 0;
     color: $white;
-    min-height: 120px;
+    /* min-height: 120px; */
+
+    h2 {
+        clear: left;
+        margin: 0 50px;
+        padding: 10px 0 0;
+    }
+
+
     ul.menu {
+        clear: both;
         margin: 0;
         padding: 0;
         li {
@@ -54,30 +63,43 @@
             }
         }
     }
+
     .content:after {
         display: block;
         content: " ";
         clear: both;
+        visibility: none;
     }
 
 }
-
-.page-book {
-    #highlighted {
+.page-book #section-header {
         background-color: $green-dark;
         background-image: url(../images/header/grass-medium.png);
+}
+
+.node-type-news,
+.node-type-debate,
+.node-type-blog_post,
+.node-type-event,
+.page-debate {
+    #section-header {
+    background-color: $blue;
+    background-image: url(../images/header/pebbles-medium.png);
+}
+}
+
+#section-header {
+
+    #block-menu-landbook-menu {
         li {
             width: 12.5%;
         }
     }
-}
-.page-debate {
-    #highlighted {
-        background-color: $blue;
-        background-image: url(../images/header/pebbles-medium.png);
 
+    #block-menu-landdebate-menu {
         li {
             width: 16.6%;
         }
     }
+
 }

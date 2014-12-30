@@ -1,8 +1,6 @@
 <?php
 // Show [...]/sites/all/themes/book/views/regions.mustache
 ?>
-<input type="hidden" id="api-url" value="http://landportal.info/sites/miniplenty/modules/landbook/ajax" />
-<input type="hidden" id="entity-id" value="" />
 
 <div class="col-sm-9 graph-section">
   <h2 class="section section-name"><span class="indicator-name"></span></h2>
