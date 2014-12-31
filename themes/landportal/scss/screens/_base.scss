@@ -58,7 +58,6 @@ h2 {
     #main-wrapper{ width:750px; }
 }
 @media(min-width:992px){
-
     #breadcrumb,
     #main-wrapper{ width:970px; }
 }
@@ -78,9 +77,20 @@ h2 {
         h2 {
             display: none;
         }
-        .contextual-links-wrapper {
-            display: none;
+
+        float: left;
+        &:after {
+            position: relative;
+            clear: both;
+            display: table;
+            content: " ";
+            visibility: hidden;
         }
+
+        .contextual-links-wrapper {
+            margin-right: -32px;
+        }
+
     }
 
     #block-system-user-menu {
@@ -96,8 +106,8 @@ h2 {
 
 #header,
 #footer {
-    padding: 0.3em 5em 0.1em;
-    height: 44px;
+    padding: 0.8em 5em 0.5em;
+    /* height: 44px; */
 }
 
 #breadcrumb,
@@ -148,7 +158,74 @@ h2 {
  */
 .page-node,
 .front {
+    line-height: 1.8em;
     #header {
         border-bottom: .36em solid $green;
     }
+    #page-title {
+        line-height: 1.4em;
+        letter-spacing: 0.1em;
+        font-weight: 300;
+        font-size: 1.6em;
+        font-family: 'Source Sans Pro',sans-serif;
+        text-transform: uppercase;
+        color: $text-color;
+        padding: 1.2em 1.5em;
+
+    }
+
+    .content {
+        .submitted {
+            display: none;
+        }
+    }
+
+    // TMP
+    .views-label { display: none; }
+
+    .view-front-page-promoted {
+        margin: 0;
+        /* padding: 0 -15px; */
+        width: 100%;
+        .views-row {
+            position: relative;
+            float: left;
+            width: 25%;
+            .views-field-title {
+                background-color: rgba(.3, .3, .3, .6);
+                position: absolute;
+                bottom: 0;
+            }
+            a {
+                color: $white;
+            }
+            img {
+                width: 100%;
+                max-height: 200px;
+            }
+        }
+        &:after {
+            position: relative;
+            clear: both;
+            display: table;
+            content: " ";
+            visibility: hidden;
+        }
+    }
+    .view-front-page-teasers {
+
+        .views-row {
+            float: left;
+            width: 30%;
+            text-align: center;
+        }
+        &:after {
+            position: relative;
+            clear: both;
+            display: table;
+            content: " ";
+            visibility: hidden;
+        }
+    }
+
 }

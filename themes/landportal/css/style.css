@@ -2557,36 +2557,37 @@ select {
 /* line 13, ../scss/modules/_menus.scss */
 #header ul.menu li a {
   text-decoration: none;
+  text-transform: lowercase;
 }
-/* line 17, ../scss/modules/_menus.scss */
+/* line 18, ../scss/modules/_menus.scss */
 #header ul.menu li:before {
   content: "| ";
 }
-/* line 20, ../scss/modules/_menus.scss */
+/* line 21, ../scss/modules/_menus.scss */
 #header ul.menu li:first-of-type:before {
   content: "";
 }
 
-/* line 26, ../scss/modules/_menus.scss */
+/* line 27, ../scss/modules/_menus.scss */
 #section-header {
   margin: 0;
   padding: 0;
   color: #ffffff;
   /* min-height: 120px; */
 }
-/* line 32, ../scss/modules/_menus.scss */
+/* line 33, ../scss/modules/_menus.scss */
 #section-header h2 {
   clear: left;
   margin: 0 50px;
   padding: 10px 0 0;
 }
-/* line 39, ../scss/modules/_menus.scss */
+/* line 40, ../scss/modules/_menus.scss */
 #section-header ul.menu {
   clear: both;
   margin: 0;
   padding: 0;
 }
-/* line 43, ../scss/modules/_menus.scss */
+/* line 44, ../scss/modules/_menus.scss */
 #section-header ul.menu li {
   text-align: center;
   margin: 0;
@@ -2596,11 +2597,11 @@ select {
   float: left;
   border-right: 1px solid #ffffff;
 }
-/* line 51, ../scss/modules/_menus.scss */
+/* line 52, ../scss/modules/_menus.scss */
 #section-header ul.menu li:last-of-type {
   border-right: 0;
 }
-/* line 54, ../scss/modules/_menus.scss */
+/* line 55, ../scss/modules/_menus.scss */
 #section-header ul.menu li a {
   text-decoration: none;
   display: inline-block;
@@ -2611,7 +2612,7 @@ select {
   font-weight: 100;
   font-size: 1em;
 }
-/* line 67, ../scss/modules/_menus.scss */
+/* line 68, ../scss/modules/_menus.scss */
 #section-header .content:after {
   display: block;
   content: " ";
@@ -2619,13 +2620,13 @@ select {
   visibility: none;
 }
 
-/* line 75, ../scss/modules/_menus.scss */
+/* line 76, ../scss/modules/_menus.scss */
 .page-book #section-header {
   background-color: rgba(86, 131, 9, 0.8);
   background-image: url(../images/header/grass-medium.png);
 }
 
-/* line 85, ../scss/modules/_menus.scss */
+/* line 86, ../scss/modules/_menus.scss */
 .node-type-news #section-header,
 .node-type-debate #section-header,
 .node-type-blog_post #section-header,
@@ -2635,11 +2636,11 @@ select {
   background-image: url(../images/header/pebbles-medium.png);
 }
 
-/* line 94, ../scss/modules/_menus.scss */
+/* line 95, ../scss/modules/_menus.scss */
 #section-header #block-menu-landbook-menu li {
   width: 12.5%;
 }
-/* line 100, ../scss/modules/_menus.scss */
+/* line 101, ../scss/modules/_menus.scss */
 #section-header #block-menu-landdebate-menu li {
   width: 16.6%;
 }
@@ -2663,7 +2664,7 @@ body {
 /* line 14, ../scss/screens/_base.scss */
 body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: #222222;
+  color: #333333;
 }
 
 /* line 19, ../scss/screens/_base.scss */
@@ -2710,52 +2711,64 @@ h2 {
   }
 }
 @media (min-width: 992px) {
-  /* line 62, ../scss/screens/_base.scss */
+  /* line 61, ../scss/screens/_base.scss */
   #breadcrumb,
   #main-wrapper {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 66, ../scss/screens/_base.scss */
+  /* line 65, ../scss/screens/_base.scss */
   #breadcrumb,
   #main-wrapper {
     width: 1170px;
   }
 }
-/* line 72, ../scss/screens/_base.scss */
+/* line 71, ../scss/screens/_base.scss */
 #logo {
   float: left;
 }
 
-/* line 78, ../scss/screens/_base.scss */
+/* line 76, ../scss/screens/_base.scss */
+#header .block-menu {
+  float: left;
+}
+/* line 77, ../scss/screens/_base.scss */
 #header .block-menu h2 {
   display: none;
 }
-/* line 81, ../scss/screens/_base.scss */
-#header .block-menu .contextual-links-wrapper {
-  display: none;
+/* line 82, ../scss/screens/_base.scss */
+#header .block-menu:after {
+  position: relative;
+  clear: both;
+  display: table;
+  content: " ";
+  visibility: hidden;
 }
-/* line 86, ../scss/screens/_base.scss */
+/* line 90, ../scss/screens/_base.scss */
+#header .block-menu .contextual-links-wrapper {
+  margin-right: -32px;
+}
+/* line 96, ../scss/screens/_base.scss */
 #header #block-system-user-menu {
   float: right;
 }
 
-/* line 91, ../scss/screens/_base.scss */
+/* line 101, ../scss/screens/_base.scss */
 #footer {
   border-top: 1px solid #333333;
   height: 100px;
   margin-top: 5px;
 }
 
-/* line 97, ../scss/screens/_base.scss */
+/* line 107, ../scss/screens/_base.scss */
 #header,
 #footer {
-  padding: 0.3em 5em 0.1em;
-  height: 44px;
+  padding: 0.8em 5em 0.5em;
+  /* height: 44px; */
 }
 
-/* line 103, ../scss/screens/_base.scss */
+/* line 113, ../scss/screens/_base.scss */
 #breadcrumb,
 #main-wrapper {
   margin: 0 auto;
@@ -2763,42 +2776,42 @@ h2 {
   box-sizing: border-box;
 }
 
-/* line 113, ../scss/screens/_base.scss */
+/* line 123, ../scss/screens/_base.scss */
 #highlighted {
   margin-bottom: 5px;
 }
-/* line 114, ../scss/screens/_base.scss */
+/* line 124, ../scss/screens/_base.scss */
 #highlighted .block-menu {
   width: 100%;
 }
 
-/* line 120, ../scss/screens/_base.scss */
+/* line 130, ../scss/screens/_base.scss */
 #breadcrumb {
   clear: both;
 }
 
-/* line 123, ../scss/screens/_base.scss */
+/* line 133, ../scss/screens/_base.scss */
 #main-content {
   width: 100%;
   clear: both;
 }
 
-/* line 128, ../scss/screens/_base.scss */
+/* line 138, ../scss/screens/_base.scss */
 .clearfix {
   clear: both;
 }
 
-/* line 133, ../scss/screens/_base.scss */
+/* line 143, ../scss/screens/_base.scss */
 #sidebar-first {
   float: left;
 }
 
-/* line 137, ../scss/screens/_base.scss */
+/* line 147, ../scss/screens/_base.scss */
 #sidebar-second {
   float: right;
 }
 
-/* line 141, ../scss/screens/_base.scss */
+/* line 151, ../scss/screens/_base.scss */
 .view-content {
   clear: both;
 }
@@ -2806,10 +2819,94 @@ h2 {
 /**
  * Page specific
  */
-/* line 151, ../scss/screens/_base.scss */
+/* line 159, ../scss/screens/_base.scss */
+.page-node,
+.front {
+  line-height: 1.8em;
+}
+/* line 162, ../scss/screens/_base.scss */
 .page-node #header,
 .front #header {
   border-bottom: 0.36em solid #8fcd1f;
+}
+/* line 165, ../scss/screens/_base.scss */
+.page-node #page-title,
+.front #page-title {
+  line-height: 1.4em;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  font-size: 1.6em;
+  font-family: 'Source Sans Pro',sans-serif;
+  text-transform: uppercase;
+  color: #333333;
+  padding: 1.2em 1.5em;
+}
+/* line 178, ../scss/screens/_base.scss */
+.page-node .content .submitted,
+.front .content .submitted {
+  display: none;
+}
+/* line 184, ../scss/screens/_base.scss */
+.page-node .views-label,
+.front .views-label {
+  display: none;
+}
+/* line 186, ../scss/screens/_base.scss */
+.page-node .view-front-page-promoted,
+.front .view-front-page-promoted {
+  margin: 0;
+  /* padding: 0 -15px; */
+  width: 100%;
+}
+/* line 190, ../scss/screens/_base.scss */
+.page-node .view-front-page-promoted .views-row,
+.front .view-front-page-promoted .views-row {
+  position: relative;
+  float: left;
+  width: 25%;
+}
+/* line 194, ../scss/screens/_base.scss */
+.page-node .view-front-page-promoted .views-row .views-field-title,
+.front .view-front-page-promoted .views-row .views-field-title {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+}
+/* line 199, ../scss/screens/_base.scss */
+.page-node .view-front-page-promoted .views-row a,
+.front .view-front-page-promoted .views-row a {
+  color: #ffffff;
+}
+/* line 202, ../scss/screens/_base.scss */
+.page-node .view-front-page-promoted .views-row img,
+.front .view-front-page-promoted .views-row img {
+  width: 100%;
+  max-height: 200px;
+}
+/* line 207, ../scss/screens/_base.scss */
+.page-node .view-front-page-promoted:after,
+.front .view-front-page-promoted:after {
+  position: relative;
+  clear: both;
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+/* line 217, ../scss/screens/_base.scss */
+.page-node .view-front-page-teasers .views-row,
+.front .view-front-page-teasers .views-row {
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+/* line 222, ../scss/screens/_base.scss */
+.page-node .view-front-page-teasers:after,
+.front .view-front-page-teasers:after {
+  position: relative;
+  clear: both;
+  display: table;
+  content: " ";
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
