@@ -14,7 +14,6 @@ require_once(drupal_get_path('module', 'landbook').'/utils/cache_helper.php');
 
 $GLOBALS['landbook_menu'] = 'landbook-menu';
 $GLOBALS['landbook_sections'] = array('regions', 'countries', 'catalog', 'indicators', 'sources', 'reuse', 'widgets');
-
 ctools_include('landbook.menu', 'landbook');
 
 function landbook_help($path, $arg) {
@@ -28,40 +27,72 @@ function landbook_help($path, $arg) {
   }
 }
 
-function landbook_theme() {
+function landbook_theme($existing, $type, $theme, $path) {
+  //dpm($existing);
   $struct = array(
     'variables' => array(
-      'meta' => NULL,
+      'title' => 'landbook page',
       'data' => NULL,
     ),
+    'path' => drupal_get_path('module', 'landbook') . '/theme',
   );
   return array(
-    'regions'   => $struct,
-    'countries' => $struct,
-    'country'   => $struct,
+    'regions'   => $struct + array('template' => 'regions'),
+    'catalog'   => $struct + array('template' => 'catalog'),
+    'countries' => $struct + array('template' => 'countries'),
+    'country'   => $struct + array('template' => 'country'),
+    'indicator' => $struct + array('template' => 'indicator'),
+    'indicators'=> $struct + array('template' => 'indicators'),
+    'reuse'     => $struct + array('template' => 'reuse'),
   );
 }
 
-function landbook_add_js_vars($countryCode=NULL) {
+
+/* function landbook_theme_registry_alter(&$theme_registry) { */
+/*   $path = drupal_get_path('module', 'landbook'); */
+/*   $templates = drupal_find_theme_templates($theme_registry, '.tpl.php', $path.'/theme'); */
+/*   drupal_set_message('in '.$path.'/theme'); */
+/*   dpm($templates); */
+/*     // Itterate through all found template file objects. */
+/*     foreach ($templates as $key => $t) { */
+/*         // If the template has not already been overridden by a theme. */
+/*         if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) { */
+/*             // Alter the theme path and template elements. */
+/*             $theme_registry[$key]['theme path'] = $path; */
+/*             $theme_registry[$key] = array_merge($theme_registry[$key], $t); */
+/*             $theme_registry[$key]['type'] = 'module'; */
+/*         } */
+/*     } */
+/* } */
+
+
+function landbook_add_js_vars($args=NULL) {
   global $language;
+
   // TODO: should come from a module variable (manageable via in admin/settings)
-  $ajaxURL = '/'.drupal_get_path('module', 'landbook').'/ajax';
+  $path = '/' . drupal_get_path('module', 'landbook');
+  $url = '/' . drupal_get_path('theme', 'landportal');
+
   drupal_add_js(array('landbook' => array(
-                                      'ajaxURL'         => $ajaxURL,
-                                      'countryCode'     => $countryCode,
-                                      'languageCode'    => $language->language,
-                )), 'setting'
+    'imagesURL'       => $url . '/images',
+    'ajaxURL'         => $path . '/ajax',
+    'ckanURL'         => $GLOBALS['landbook_urls']['ckan'],
+    'languageCode'    => $language->language,
+    // only for countries hook
+    'countryCode'     => $args,
+  )), 'setting'
   );
+
 }
 
 function landbook_add_js_css() {
-  //drupal_add_js('misc/jquery.js');
-  //drupal_add_js('misc/jquery.once.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/jquery-2.1.0.min.js');
-  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/search.js');
-  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/ajax.js');
-
+  drupal_add_js('misc/jquery.js');
+  drupal_add_js('misc/jquery.once.js');
+  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/jquery-2.1.0.min.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/search.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/ajax.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
+
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/util.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/language.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/canvg.js');

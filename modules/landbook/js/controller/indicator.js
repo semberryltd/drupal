@@ -1,7 +1,6 @@
 // Constants
+//var ajaxURL = document.getElementById('api-url').value;
 
-var ajaxURL = document.getElementById('api-url').value;
-var languageCode = document.getElementById('selected-language').value;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                 LOADERS
@@ -328,9 +327,9 @@ function loadDescription(parameters) {
 	var indicator = parameters["indicator"];
 
 	wesCountry.ajax.load({
-		url: ajaxURL + '/indicator_description.php',
+		url: Drupal.settings.landbook.ajaxURL + '/indicator_description.php',
 		parameters: String.format("indicator={0}&language={1}",
-															indicator, languageCode),
+					  indicator, Drupal.settings.landbook.languageCode),
 		callback: function(info) {
 			info = JSON.parse(info);
 			var description = info.description;
@@ -356,9 +355,9 @@ function loadMap(parameters) {
 	countryLoader.show();
 
 	mapLoader.load({
-		url: ajaxURL + '/observations_by_region.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_region.php',
 		parameters: String.format("region={0}&indicator={1}&language={2}",
-															region, indicator, languageCode)
+					  region, indicator, Drupal.settings.landbook.languageCode)
 	});
 }
 
@@ -369,9 +368,9 @@ function loadRanking(parameters) {
 	var indicator = parameters["indicator"];
 
 	rankingLoader.load({
-		url: ajaxURL + '/observations_by_region.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_region.php',
 		parameters: String.format("region={0}&indicator={1}&language={2}",
-															region, indicator, languageCode)
+					  region, indicator, Drupal.settings.languageCode)
 	});
 }
 
@@ -382,9 +381,9 @@ function loadComparingTimeline(parameters) {
 	var indicator2 = parameters["comparing-indicator"];
 
 	timelineLoader.load({
-		url: ajaxURL + '/observations_by_indicator_average.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_indicator_average.php',
 		parameters: String.format("indicator1={0}&indicator2={1}&language={2}",
-															indicator1, indicator2, languageCode)
+					  indicator1, indicator2, Drupal.settings.landbook.languageCode)
 	});
 }
 
@@ -395,9 +394,9 @@ function loadRelatingTimeline(parameters) {
 	var indicator2 = parameters["relating-indicator"];
 
 	correlatingLoader.load({
-		url: ajaxURL + '/observations_by_indicator_average.php',
+		url: Drupal.settings.landbook.ajaxURL + '/observations_by_indicator_average.php',
 		parameters: String.format("indicator1={0}&indicator2={1}&language={2}",
-															indicator1, indicator2, languageCode)
+					  indicator1, indicator2, Drupal.settings.landbook.languageCode)
 	});
 }
 
@@ -521,7 +520,7 @@ function updateCountryTable(countryList) {
 
 	tbody.innerHTML = '';
 
-	var path = document.getElementById('path').value;
+  var images = Drupal.settings.landbook.imagesURL; //document.getElementById('path').value;
 
 	for (var i = 0; i < countryList.length; i++) {
 		var country = countryList[i];
@@ -548,10 +547,10 @@ function updateCountryTable(countryList) {
 		td.appendChild(sorter);
 
 		var flag = document.createElement('img');
-		flag.src = path + '/static/images/flags/' + code.toUpperCase() + ".png";
+		flag.src = images + '/flags/' + code.toUpperCase() + ".png";
 		flag.className = "flag";
 		flag.onerror = function() {
-			this.src = path + '/static/images/flags/NO-FLAG.png'
+			this.src = images + '/flags/NO-FLAG.png'
 		}
 
 		td.appendChild(flag);

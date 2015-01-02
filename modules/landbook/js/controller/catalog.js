@@ -1,4 +1,4 @@
-var ckanURL = '/data/';
+var ckanURL = Drupal.settings.landbook.ckanURL;
 
 $( document ).ajaxStart(function() {
 	showLoading();
@@ -560,7 +560,7 @@ function doAjaxQuery(phpFunction, phpArguments, handleData) {
 function doAjaxQuery(phpFunction, phpArguments, handleData) {
 	jQuery.ajax({
 	    type: "POST",
-	    url: $("#api-url").val() + '/ckan_ajax_interface.php',
+	    url: Drupal.settings.landbook.ajaxURL + '/ckan_ajax_interface.php',
 	    dataType: 'json',
 	    data: {functionname: phpFunction, arguments: phpArguments},
 	    success: function (obj, textstatus) {

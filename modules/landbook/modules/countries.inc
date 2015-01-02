@@ -26,6 +26,7 @@ function landbook_countries($args=NULL) {
     drupal_set_title("Landbook countries");
     drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/countries.js', array('scope'=>'footer'));
   }
+  //dpm($rdata);
   return theme($template, array(
     'data'      => $rdata,
   ));

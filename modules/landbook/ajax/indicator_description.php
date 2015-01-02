@@ -17,7 +17,7 @@ require_once(dirname(__FILE__) .'/../utils/database_helper.php');
 require_once(dirname(__FILE__) .'/../utils/cache_helper.php');
 
 $indicator_id = $_GET["indicator"];
-$language = $_GET["language"];
+$language = (isset($_GET["language"]) ? $_GET["language"] : 'en');
 
 header('Content-Type: application/json');
 echo indicator_description($indicator_id, $language);
