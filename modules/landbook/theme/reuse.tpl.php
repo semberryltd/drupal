@@ -1,5 +1,3 @@
-<input type="hidden" id="sparql-url" value="{{#application}}{{sparql-url}}{{/application}}" />
-
 <div class="content main-content container">
 	<div class="row">
 		<div class="col-sm-9">
@@ -9,11 +7,11 @@
 			<form id="run-query" role="form">
 			  <div class="form-group">
 			    <label for="namespace"><?php echo t('Default Namespace'); ?></label>
-			    <input type="text" name="default-graph-uri" class="form-control" id="namespace" value="{{namespace}}" placeholder="<?php echo t('Default Namespace'); ?>">
+			    <input type="text" name="default-graph-uri" class="form-control" id="namespace" value="<?php echo $data['namespace']; ?>" placeholder="<?php echo t('Default Namespace'); ?>">
 			  </div>
 				<div class="form-group">
 					<label for="query"><?php echo t('Query'); ?></label>
-					<textarea name="query" class="form-control query" id="query">{{query}}</textarea>
+					<textarea name="query" class="form-control query" id="query"><?php echo $data['query']; ?></textarea>
 				</div>
 				<div class="form-group">
 					<label for="format"><?php echo t('Format'); ?>:</label>
@@ -31,9 +29,9 @@
 					<?php echo t('Run query'); ?>
 				</button>
 			</form>
-			<div id="query-result-html" class="query-result-html">{{{html}}}</div>
+   <div id="query-result-html" class="query-result-html">{<?php echo $data['html']; ?>}</div>
 			<div id="query-result" class="query-result">
-				<pre class="prettyprint lang-{{language}}">{{result}}</pre>
+   <pre class="prettyprint lang-<? echo $data['language']; ?>"><? echo $data['result']; ?></pre>
 			</div>
 			<h2 class="section"><span><?php echo t('Query examples'); ?></span></h2>
 

@@ -9,8 +9,8 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
-function landbook_regions() {
-  global $databases, $language;
+function landbook_regions($args=NULL) {
+  global $language;
   $r = new Regions();
   $rdata = $r->get($language);
   landbook_add_js_css();

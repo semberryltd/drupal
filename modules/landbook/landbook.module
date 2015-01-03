@@ -37,13 +37,16 @@ function landbook_theme($existing, $type, $theme, $path) {
     'path' => drupal_get_path('module', 'landbook') . '/theme',
   );
   return array(
-    'regions'   => $struct + array('template' => 'regions'),
-    'catalog'   => $struct + array('template' => 'catalog'),
-    'countries' => $struct + array('template' => 'countries'),
-    'country'   => $struct + array('template' => 'country'),
-    'indicator' => $struct + array('template' => 'indicator'),
-    'indicators'=> $struct + array('template' => 'indicators'),
-    'reuse'     => $struct + array('template' => 'reuse'),
+    'regions'           => $struct + array('template' => 'regions'),
+    'catalog'           => $struct + array('template' => 'catalog'),
+    'countries'         => $struct + array('template' => 'countries'),
+    'country'           => $struct + array('template' => 'country'),
+    'datasource'        => $struct + array('template' => 'datasource'),
+    'datasources'       => $struct + array('template' => 'datasources'),
+    'indicator'         => $struct + array('template' => 'indicator'),
+    'indicators'        => $struct + array('template' => 'indicators'),
+    'reuse'             => $struct + array('template' => 'reuse'),
+    'widgets'           => $struct + array('template' => 'widgets'),
   );
 }
 
@@ -77,6 +80,7 @@ function landbook_add_js_vars($args=NULL) {
     'imagesURL'       => $url . '/images',
     'ajaxURL'         => $path . '/ajax',
     'ckanURL'         => $GLOBALS['landbook_urls']['ckan'],
+    //'sparqlURL'       => $url . '/sparql',
     'languageCode'    => $language->language,
     // only for countries hook
     'countryCode'     => $args,
