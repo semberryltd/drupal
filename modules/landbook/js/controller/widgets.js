@@ -1,8 +1,8 @@
 // Constants
 
-var ajaxURL = document.getElementById('api-url').value;
-var apiURL = document.getElementById('api').value;
-var languageCode = document.getElementById('selected-language').value;
+var ajaxURL = Drupal.settings.landbook.ajaxURL;
+var apiURL = Drupal.settings.landbook.apiURL;
+var languageCode = Drupal.settings.landbook.languageCode;
 
 var chartType = 'barchart';
 

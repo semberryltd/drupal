@@ -1,36 +1,24 @@
-{{>header}}
-<input type="hidden" id="api" value="{{#application}}{{api-widgets}}{{/application}}" />
 <canvas id="canvas" class="hidden"></canvas>
 <div class="content main-content container">
-	<ol class="breadcrumb">
-	  <li><a href="/">{{#labels}}{{index}}{{/labels}}</a></li>
-		<li><a href="/book">{{#labels}}{{land_book}}{{/labels}}</a></li>
-	  <li class="active">{{#labels}}{{widgets}}{{/labels}}</li>
-	</ol>
-	<div class="row">
-
-	</div>
 	<div class="row">
 	  <div class="col-sm-9 graph-section">
-		  <h2 class="section"><span>{{#labels}}{{create_own_data_view}}{{/labels}}</span></h2>
+		  <h2 class="section"><span><?php echo t("Create your own Land Portal data visualisation"); ?></span></h2>
 		  <form role="form">
 		  	<div class="row">
 			  	<div class="col-sm-12">
-					<label for="indicator">{{#labels}}{{indicator}}{{/labels}}</label>
+					<label for="indicator"><?php echo t("Indicator"); ?></label>
 					<select id="indicator-select" class="form-control">
-							{{#selectors}}
-								{{#data-sources}}
-									<optgroup label="{{name}}">
-										{{#indicators}}
-										<option value="{{id}}">{{name}}</option>
-									{{/indicators}}
+<?php foreach ($data['selectors']['data-sources'] as $t): ?>
+									<optgroup label="<?php echo $t['name']; ?>">
+<?php foreach ($t['indicators'] as $i): ?>
+										<option value="<?php echo $i['id']; ?>"><?php echo $i['name']; ?></option>
+<?php endforeach; ?>
 									</optgroup>
-							{{/data-sources}}
-						{{/selectors}}
+<?php endforeach; ?>
 					</select>
 				</div>
 				<div class="col-sm-4 hidden">
-					<label for="number_years">{{#labels}}{{number_years}}{{/labels}}</label>
+					<label for="number_years"><?php echo t("Number of years"); ?></label>
 					<select id="number_years" class="form-control">
 						<option>1</option>
 						<option>2</option>
@@ -40,26 +28,24 @@
 					</select>
 				</div>
 		  	</div>
-			<h2 class="section country-form-title"><span>{{#labels}}{{countries}}{{/labels}}</span></h2>
+			<h2 class="section country-form-title"><span><?php echo t("Countries"); ?></span></h2>
 		  	<div class="row">
 
 					<div id="row-prototype" class="hidden">
 						<div class="col-sm-2 delete-row">
-							<label>{{#labels}}{{delete}}{{/labels}}</label>
+							<label><?php echo t("Delete"); ?></label>
 							<i class="fa fa-times fa-2x"></i>
 						</div>
 						<div class="col-sm-6 country-selection-row">
-							<label for="country">{{#labels}}{{select_country}}{{/labels}}</label>
+							<label for="country"><?php echo t("Select a country"); ?></label>
 							<select class="form-control country-select">
-								{{#selectors}}
-									{{#countries}}
-										<option value="{{iso3}}">{{name}}</option>
-									{{/countries}}
-								{{/selectors}}
+<?php foreach ($data['selectors']['countries'] as $c): ?>
+										<option value="<?php echo $c['iso3']; ?>"><?php echo $c['name']; ?></option>
+<?php endforeach; ?>
 							</select>
 						</div>
 						<div class="col-sm-4 country-selection-row">
-							<label>{{#labels}}{{pick_colour}}{{/labels}}</label>
+							<label><?php echo t("Pick a colour"); ?></label>
 							<div class="row palette-empty" row="1">
 							</div>
 						</div>
@@ -69,18 +55,18 @@
 
 					<div class="col-sm-12 text-right">
 						<button id="add-country" type="button" class="btn btn-primary">
-							{{#labels}}{{add_country}}{{/labels}}
+							<?php echo t("Add a country"); ?>
 						</button>
 					</div>
 		  	</div>
 		  </form>
-		  <h2 class="section country-form-title"><span>{{#labels}}{{preview}}{{/labels}}</span></h2>
-		  <p id="chart-title" class="chart-title">{{#labels}}{{title}}{{/labels}}</p>
-		  <p id="chart-description">{{#labels}}{{description}}{{/labels}}</p>
+		  <h2 class="section country-form-title"><span><?php echo t("Preview"); ?></span></h2>
+		  <p id="chart-title" class="chart-title"><?php echo t("Title"); ?></p>
+		  <p id="chart-description"><?php echo t("Description"); ?></p>
 		  <div id="mapDiv" class="graph graph-huge"></div>
 		  <div class="row">
 		  	<div class="col-sm-6">
-			  <h2 class="section country-form-title"><span>{{#labels}}{{share}}{{/labels}}</span></h2>
+			  <h2 class="section country-form-title"><span><?php echo t("Share"); ?></span></h2>
 			  <div class="row">
 			  	<div class="col-xs-6 col-sm-3 text-center share-widget">
 				  	<a id="mail-link" href="" target="_blank">
@@ -105,7 +91,7 @@
 			  </div>
 		  	</div>
 		  	<div class="col-sm-6">
-			  <h2 class="section country-form-title"><span>{{#labels}}{{download}}{{/labels}}</span></h2>
+			  <h2 class="section country-form-title"><span><?php echo t("Download"); ?></span></h2>
 			  <div class="row image-links">
 			  	<div class="col-sm-3 text-center image-format">
 				  	<a id="png-link" target="_blank" href="data:image/png;" download="chart.png">PNG</a>
@@ -122,88 +108,87 @@
 			  </div>
 		  	</div>
 		  </div>
-		  <h2 class="section country-form-title"><span>{{#labels}}{{permalink}}{{/labels}}</span></h2>
+		  <h2 class="section country-form-title"><span><?php echo t("Permalink"); ?></span></h2>
 		  <p class="text-center permalink">
 			  <a href="" id="permalink"></a>
 		  </p>
-		  <h2 class="section country-form-title"><span>{{#labels}}{{website_insert}}{{/labels}}</span></h2>
-		  <label for="copy_code">{{#labels}}{{copy_code}}{{/labels}}</label>
+		  <h2 class="section country-form-title"><span><?php echo t("Include in your website"); ?></span></h2>
+		  <label for="copy_code"><?php echo t("Copy and paste the following code into the HTML of your website to include the chart"); ?></label>
 		  <textarea class="form-control" id="copy_code" rows="8"></textarea>
       </div>
 	  <div class="col-sm-3">
-	  	  <h2 class="section"><span>{{#labels}}{{graph_type}}{{/labels}}</span></h2>
+	  	  <h2 class="section"><span><?php echo t("Graph type"); ?></span></h2>
 	  	  <div class="row chart-type-texts">
 	  	  	<div class="col-sm-4 text-center widget-chart-button widget-button-selected" chart-type="barchart">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/bar-selected.png" alt="{{#labels}}{{bar_chart}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/bar-selected.png" alt="<?php echo t("Bar chart"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{bar_chart}}{{/labels}}</span>
+	  	  		<span><?php echo t("Bar chart"); ?></span>
 	  	  	</div>
 	  	  	<div class="col-sm-4 text-center widget-chart-button" chart-type="linechart">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/line.png" alt="{{#labels}}{{line_chart}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/line.png" alt="<?php echo t("Line chart"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{line_chart}}{{/labels}}</span>
+	  	  		<span><?php echo t("Line chart"); ?></span>
 	  	  	</div>
 	  	  	<div class="col-sm-4 text-center widget-chart-button" chart-type="piechart">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/pie.png" alt="{{#labels}}{{pie_chart}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/pie.png" alt="<?php echo t("Pie chart"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{pie_chart}}{{/labels}}</span>
+	  	  		<span><?php echo t("Pie chart"); ?></span>
 	  	  	</div>
 	  	  </div>
 	  	  <div class="row chart-type-texts">
 	  	  	<div class="col-sm-4 text-center widget-chart-button" chart-type="map">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/map.png" alt="{{#labels}}{{map_chart}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/map.png" alt="<?php echo t("Map chart"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{map_chart}}{{/labels}}</span>
+	  	  		<span><?php echo t("Map chart"); ?></span>
 	  	  	</div>
 	  	  	<div class="col-sm-4 text-center widget-chart-button" chart-type="areachart">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/area.png" alt="{{#labels}}{{area_chart}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/area.png" alt="<?php echo t("Area chart"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{area_chart}}{{/labels}}</span>
+	  	  		<span><?php echo t("Area chart"); ?></span>
 	  	  	</div>
 	  	  	<div class="col-sm-4 text-center widget-chart-button" chart-type="table">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/table.png" alt="{{#labels}}{{data_table}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/table.png" alt="<?php echo t("Data table"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{data_table}}{{/labels}}</span>
+	  	  		<span><?php echo t("Data table"); ?></span>
 	  	  	</div>
 	  	  </div>
 	  	  <div class="row chart-type-texts">
 					<div class="col-sm-4"></div>
 	  	  	<div class="col-sm-4 text-center widget-chart-button" chart-type="polarchart">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/polar.png" alt="{{#labels}}{{polar_chart}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/polar.png" alt="<?php echo t("Polar chart"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{polar_chart}}{{/labels}}</span>
+	  	  		<span><?php echo t("Polar chart"); ?></span>
 	  	  	</div>
 	  	  	<div class="col-sm-4 text-center widget-chart-button disabled hidden" chart-type="scatterchart">
 	  	  		<div>
-		  	  		<img src="{{path}}/static/images/widgets/scatter.png" alt="{{#labels}}{{scatter_chart}}{{/labels}}" />
+		  	  		<img src="/<?php echo drupal_get_path('theme', 'landportal'); ?>/images/widgets/scatter.png" alt="<?php echo t("Scatter chart"); ?>" />
 	  	  		</div>
-	  	  		<span>{{#labels}}{{scatter_chart}}{{/labels}}</span>
+	  	  		<span><?php echo t("Scatter chart"); ?></span>
 	  	  	</div>
 	  	  	<div class="col-sm-4 text-center">
 
 	  	  	</div>
 	  	  </div>
-	  	  <h2 class="section"><span>{{#labels}}{{tell_story}}{{/labels}}</span></h2>
+	  	  <h2 class="section"><span><?php echo t("Tell the story"); ?></span></h2>
 	  	  <form role="form" class="widget-description">
 			  <div class="form-group">
-			    <label for="title">{{#labels}}{{title}}{{/labels}}</label>
-			    <input type="text" class="form-control" id="title" value="{{#labels}}{{title}}{{/labels}}" placeholder="{{#labels}}{{title}}{{/labels}}">
-			    <label for="description">{{#labels}}{{description}}{{/labels}}</label>
-			    <textarea class="form-control" id="description" rows="3">{{#labels}}{{description}}{{/labels}}</textarea>
-			    <label for="label_x">{{#labels}}{{label_x}}{{/labels}}</label>
-			    <input type="text" class="form-control" id="label_x" value="{{#labels}}{{years}}{{/labels}}" placeholder="{{#labels}}{{label_x}}{{/labels}}">
-			    <label for="label_y">{{#labels}}{{label_y}}{{/labels}}</label>
-			    <input type="text" class="form-control" id="label_y" value="{{#labels}}{{values}}{{/labels}}" placeholder="{{#labels}}{{label_y}}{{/labels}}">
+			    <label for="title"><?php echo t("Title"); ?></label>
+			    <input type="text" class="form-control" id="title" value="<?php echo t("Title"); ?>" placeholder="<?php echo t("Title"); ?>">
+			    <label for="description"><?php echo t("Description"); ?></label>
+			    <textarea class="form-control" id="description" rows="3"><?php echo t("Description"); ?></textarea>
+			    <label for="label_x"><?php echo t("label_x"); ?></label>
+			    <input type="text" class="form-control" id="label_x" value="<?php echo t("Years"); ?>" placeholder="<?php echo t("Label_x"); ?>">
+			    <label for="label_y"><?php echo t("label_y"); ?></label>
+			    <input type="text" class="form-control" id="label_y" value="<?php echo t("Values"); ?>" placeholder="<?php echo t("label_y"); ?>">
 			  </div>
 	  	  </form>
 	  </div>
 	</div>
 </div>
-{{>footer}}
