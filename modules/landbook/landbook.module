@@ -20,15 +20,15 @@ function landbook_help($path, $arg) {
   switch ($path) {
   case "admin/help#landbook":
     return '<p>' . t("Landbook section of the Landportal") . '</p>'
-      . '<p>'. t("This come with a (header) Block, customised View(s) and a landbook main-menu item").'</p>'
-      . '<p>'. t("The Landbook is composed of different modules: catalog, countries, indicators, regions, reuse, sources, widgets").'</p>'
+      . '<p>' . t("This come with a (header) Block, customised View(s) and a landbook main-menu item") .'</p>'
+      . '<p>' . t("The Landbook is composed of different modules: catalog, countries, indicators, regions, reuse, sources, widgets") . '</p>'
+      . '<p>' . t("Each comes with a set of template and JS to allow dynamic actions.") . '</p>'
       ;
     break;
   }
 }
 
 function landbook_theme($existing, $type, $theme, $path) {
-  //dpm($existing);
   $struct = array(
     'variables' => array(
       'title' => 'landbook page',
@@ -51,54 +51,55 @@ function landbook_theme($existing, $type, $theme, $path) {
 }
 
 
-/* function landbook_theme_registry_alter(&$theme_registry) { */
-/*   $path = drupal_get_path('module', 'landbook'); */
-/*   $templates = drupal_find_theme_templates($theme_registry, '.tpl.php', $path.'/theme'); */
-/*   drupal_set_message('in '.$path.'/theme'); */
-/*   dpm($templates); */
-/*     // Itterate through all found template file objects. */
-/*     foreach ($templates as $key => $t) { */
-/*         // If the template has not already been overridden by a theme. */
-/*         if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) { */
-/*             // Alter the theme path and template elements. */
-/*             $theme_registry[$key]['theme path'] = $path; */
-/*             $theme_registry[$key] = array_merge($theme_registry[$key], $t); */
-/*             $theme_registry[$key]['type'] = 'module'; */
-/*         } */
-/*     } */
-/* } */
-
-
+/**
+ * Register JS variables through Drupal system.
+ * They are (only?) used by landbook/js/controller/*js files
+ */
 function landbook_add_js_vars($args=NULL) {
   global $language;
-
   // TODO: should come from a module variable (manageable via in admin/settings)
   $path = '/' . drupal_get_path('module', 'landbook');
   $url = '/' . drupal_get_path('theme', 'landportal');
 
+  // Use those variables in javascript with:
+  //  var XXX = Drupal.settings.landbook.XXX
   drupal_add_js(array('landbook' => array(
-    'imagesURL'       => $url . '/images',
-    'ajaxURL'         => $path . '/ajax',
-    'ckanURL'         => $GLOBALS['landbook_urls']['ckan'],
-    //'sparqlURL'       => $url . '/sparql',
     'languageCode'    => $language->language,
+    'imagesURL'       => $url . '/images',              // landportal theme related
+    'ajaxURL'         => $path . '/ajax',               // landbook module related
+
     // only for countries hook
     'countryCode'     => $args,
+
+    // Should be configurable through admin/settings/landbook/ , default values in local.settings.php
+    'apiURL'          => $GLOBALS['landbook_urls']['api'],
+    'ckanURL'         => $GLOBALS['landbook_urls']['ckan'],
+    'sparqlURL'       => $GLOBALS['landbook_urls']['sparql'],
   )), 'setting'
   );
-
 }
 
+/**
+ * Includes specific Landbook Javascripts and CSS
+ * This is directly included by the 'page callback' functions (in landbook/modules/*inc)
+ * Not all pages require this to work.
+ */
 function landbook_add_js_css() {
-  drupal_add_js('misc/jquery.js');
-  drupal_add_js('misc/jquery.once.js');
+  // TODO: work out (fix weso scripts?) jquery stuff Drupal way.
+  /* drupal_add_js('misc/jquery.js'); */
+  /* drupal_add_js('misc/jquery.once.js'); */
   //drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/jquery-2.1.0.min.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/search.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/ajax.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
 
+  // Global stuff for the portal, should live in theme (?)
+  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/search.js');
+  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/ajax.js');
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
+  // Some helpers to generate HTML and stuff
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/util.js');
-  drupal_add_js(drupal_get_path('module', 'landbook').'/js/language.js');
+  // Weird shit from WESO students re-inventing the wheel
+  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/language.js');
+
+  // Below this, it should be OK (clean)
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/canvg.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/rgbcolor.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/StackBlur.js');
@@ -106,8 +107,11 @@ function landbook_add_js_css() {
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/country_chart_options.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.js');
 
+  // TODO: use separate function to do CSS includes: hook_preprocess_html (?)
+  // bootstrap is (should be?) included form theme/landbook (?)
+  drupal_add_css(drupal_get_path('theme', 'landportal').'/css/bootstrap.min.css');
+  drupal_add_css(drupal_get_path('theme', 'landportal').'/css/font-awesome.min.css');
   drupal_add_css(drupal_get_path('module', 'landbook').'/js/libraries/wesCountry.min.css');
-  //drupal_add_css(drupal_get_path('theme', 'landportal').'/css/bootstrap.min.css');
 }
 
 function landbook_menu() {
@@ -143,3 +147,20 @@ function landbook_block_info_alter(&$blocks, $theme, $code_blocks) {
   }
   return $blocks;
 }
+
+/* function landbook_theme_registry_alter(&$theme_registry) { */
+/*   $path = drupal_get_path('module', 'landbook'); */
+/*   $templates = drupal_find_theme_templates($theme_registry, '.tpl.php', $path.'/theme'); */
+/*   drupal_set_message('in '.$path.'/theme'); */
+/*   dpm($templates); */
+/*     // Itterate through all found template file objects. */
+/*     foreach ($templates as $key => $t) { */
+/*         // If the template has not already been overridden by a theme. */
+/*         if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) { */
+/*             // Alter the theme path and template elements. */
+/*             $theme_registry[$key]['theme path'] = $path; */
+/*             $theme_registry[$key] = array_merge($theme_registry[$key], $t); */
+/*             $theme_registry[$key]['type'] = 'module'; */
+/*         } */
+/*     } */
+/* } */

@@ -3,6 +3,8 @@
 //                                 LOADERS
 ////////////////////////////////////////////////////////////////////////////////
 
+var languageCode = Drupal.settings.landbook.languageCode;
+
 // Map loader
 
 var mapLoader = wesCountry.loader.renderChart({
@@ -195,7 +197,7 @@ function loadMap(parameters) {
 	mapLoader.load({
 		url: Drupal.settings.landbook.ajaxURL + '/observations_by_region.php',
 		parameters: String.format("region={0}&indicator={1}&language={2}",
-															region, indicator, Drupal.settings.landbook.languageCode),
+															region, indicator, languageCode),
 		foot: getDatasourceLink(datasource)
 	});
 }

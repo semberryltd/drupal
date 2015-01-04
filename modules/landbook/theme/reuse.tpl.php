@@ -29,7 +29,7 @@
 					<?php echo t('Run query'); ?>
 				</button>
 			</form>
-   <div id="query-result-html" class="query-result-html">{<?php echo $data['html']; ?>}</div>
+   <div id="query-result-html" class="query-result-html"><?php echo $data['html']; ?></div>
 			<div id="query-result" class="query-result">
    <pre class="prettyprint lang-<? echo $data['language']; ?>"><? echo $data['result']; ?></pre>
 			</div>

@@ -17,7 +17,7 @@ require_once(dirname(__FILE__) . '/ckan_client.php');
 
 // Create CKAN object
 // Takes optional API key parameter. Required for POST and PUT methods.
-$ckan = new CkanClient($GLOBALS['landbook_urls']['ckan'], 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');
+$ckan = new CkanClient($GLOBALS['landbook_urls']['ckan'].'/api/%d/', 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');
 
 if (isset($_POST['functionname'])) {
 	
