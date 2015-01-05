@@ -26,7 +26,7 @@ var util = new (function() {
 		util.tooltipIndicator(info);
 	},
 	this.tooltipIndicator = function(info) {
-		var path = document.getElementById('path').value;
+          var path = Drupal.settings.landbook.imagesURL;
 
 		var code = info.serie;
 		var value = info.value == null || info.value == "null" ? null : info.value;
@@ -46,7 +46,7 @@ var util = new (function() {
 	}
 
 	this.tooltipWidgets = function(info) {
-		var path = document.getElementById('path').value;
+          var path = Drupal.settings.landbook.imagesURL;
 
 		var code = info.id;
 		var value = info.value == null || info.value == "null" ? null : info.value;
@@ -61,7 +61,7 @@ var util = new (function() {
 
 		var time = info.pos;
 
-		var flagSrc = path + '/static/images/flags/' + code.toUpperCase() + ".png";
+		var flagSrc = path + '/images/flags/' + code.toUpperCase() + ".png";
 
 		var tooltipHeader = String.format('<div class="tooltip-header"><img src="{0}" /><div class="title"><p class="countryName">{1}</p><p class="continentName">{2}</p></div></div>',
 			flagSrc, name, continent);
@@ -75,7 +75,7 @@ var util = new (function() {
 	}
 
 	this.tooltipRanking = function(info) {
-		var path = document.getElementById('path').value;
+          var path = Drupal.settings.landbook.imagesURL;
 
 		var code = info.serie;
 		var value = info.value == null || info.value == "null" ? null : info.value;
@@ -84,7 +84,7 @@ var util = new (function() {
 		var time = info["data-time"] ? info["data-time"] : "-";
 		var ranking = info["data-ranking"] ? info["data-ranking"] : "";
 
-		var flagSrc = path + '/static/images/flags/' + code.toUpperCase() + ".png";
+		var flagSrc = path + '/images/flags/' + code.toUpperCase() + ".png";
 
 		var tooltipHeader = String.format('<div class="tooltip-header"><img src="{0}" /><div class="title"><p class="countryName">{1}</p><p class="continentName">{2}</p></div></div>',
 			flagSrc, name, continent);
