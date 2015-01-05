@@ -46,7 +46,7 @@ function observations_by_region_average($region1, $region2, $indicator, $languag
     ));
     $cached = $cache->get();
     if ($cached !== null) {
-      var_dump($cached);
+      //var_dump($cached);
         return $cached;
     }
     $database = new DataBaseHelper();
