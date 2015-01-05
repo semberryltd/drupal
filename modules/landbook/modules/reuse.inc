@@ -11,20 +11,15 @@
 
 function landbook_reuse($args=NULL) {
   global $language;
-
-  // add js (from reuse.mustache)
+  // add some JS (from reuse.mustache)
   drupal_add_js("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js", array('type'=>'external'));
   drupal_add_js("https://google-code-prettify.googlecode.com/svn/trunk/src/lang-sql.js", array('type'=>'external'));
   //drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/reuse.js', array('scope' => 'footer'));
 
   $params = array(
     'language'          => $language->language,
-    'sparql'            => 'http://landportal.info/sparql', // used?
-    'querystring'       => $_GET,//SERVER['QUERY_STRING'],
-    // Looked for in querystring (by Reuse class)
-    'namespace'         => ' default-graph-uri ?',
-    // format
-    // query
+    'sparql'            => $GLOBALS['landbook_urls']['sparql'],
+    'querystring'       => $_GET,
    );
   $r = new Reuse();
   $data = $r->get($params);
@@ -79,10 +74,10 @@ class Reuse {
 		if ($query != '') {
 			$query = urlencode($query);
 
-			$url = "$sparql?default-graph-uri=$namespace&query=$query&format=$format";
+			$url = $sparql . "?default-graph-uri=$namespace&query=$query&format=$format";
 			$result = file_get_contents($url);
 
-			$url = "$sparql?default-graph-uri=$namespace&query=$query&format=text/html";
+			$url = $sparql . "?default-graph-uri=$namespace&query=$query&format=text/html";
 			$html = file_get_contents($url);
 
 			//$html = str_replace('border="1"', 'border="0"', $html);
