@@ -12,15 +12,28 @@
 function landbook_regions($args=NULL) {
   global $language;
   $r = new Regions();
-  $rdata = $r->get($language);
-  landbook_add_js_css();
+  $data = $r->get($language);
+  //dpm($data);
   landbook_add_js_vars();
+  landbook_add_js_css();
+  drupal_add_js(drupal_get_path('module', 'landbook').'/js/country_chart_options.js');
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/regions.js', array('scope' => 'footer'));
-  return theme("regions", array(
-    'data'      => $rdata,
+  return array('content' => array(
+    '#theme'    => 'regions',
+    '#data'     => $data,
   ));
 }
 
+function landbook_preprocess_regions(&$variables) {
+/*   global $page; */
+/*   $page['sidebar_second']['truc'] = array( */
+/*     '#type'     => 'markup', */
+/*     '#markup'   => 'toto', */
+/*     '#weight'    => -3, */
+/*   ); */
+/*   //drupal_set_title(''); */
+  //dpm($variables);
+}
 
 class Regions {
 

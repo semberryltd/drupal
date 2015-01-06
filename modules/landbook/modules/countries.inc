@@ -10,26 +10,29 @@
  */
 
 function landbook_countries($args=NULL) {
-  global $databases, $language;
+  global $language;
   landbook_add_js_css();
   landbook_add_js_vars($args);
   if ($args) {
     $template = 'country';
     $r = new Country();
-    $rdata = $r->get($language, $args);
-    drupal_set_title($rdata['info']['name']);
+    $data = $r->get($language, $args);
+    //dpm($data, 'data from Country '.$args);
+    //drupal_add_js(array('landbook' => array('countryCode' => $args)), 'setting');
+    drupal_add_js(drupal_get_path('module', 'landbook').'/js/country_chart_options.js');
     drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/country.js', array('scope'=>'footer'));
   } else {
     $template = 'countries';
     $r = new Countries();
-    $rdata = $r->get($language);
-    drupal_set_title("Landbook countries");
+    $data = $r->get($language);
     drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/countries.js', array('scope'=>'footer'));
   }
-  //dpm($rdata);
-  return theme($template, array(
-    'data'      => $rdata,
-  ));
+  return array(
+    'content' => array(
+      '#theme'    => $template,
+      '#data'     => $data,
+     ),
+  );
 }
 
 

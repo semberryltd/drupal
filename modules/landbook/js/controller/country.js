@@ -75,7 +75,7 @@ var timelineOptions = chartOptions['chart-timeline-comparison'];
 timelineOptions.cache = true;
 timelineOptions.getChartData = function(options, data) {
 		data = JSON.parse(data);
-
+  console.log('Start timeline');
 		var series = [];
 
 		var comparingSelector = document.getElementById('country-comparing-select');
@@ -364,7 +364,7 @@ function loadRegionMap(parameters) {
 	regionMapLoader.load({
 		url: Drupal.settings.landbook.ajaxURL + '/observations_by_region.php',
 		parameters: String.format("region={0}&indicator={1}&language={2}",
-															region, indicator, Drupal.settings.landbook.languageCode)
+					  region, indicator, Drupal.settings.landbook.languageCode)
 	});
 }
 
