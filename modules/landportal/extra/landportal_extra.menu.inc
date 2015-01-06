@@ -12,13 +12,14 @@
  */
 function landportal_extra_menu_default_menu_links() {
   $menu_links = array();
+  drupal_set_message('add Sign-in link to user menu');
 
   // Exported menu link: user-menu_login:user/login
   $menu_links['user-menu_login:user/login'] = array(
     'menu_name' => 'user-menu',
     'link_path' => 'user/login',
     'router_path' => 'user/login',
-    'link_title' => 'Login',
+    'link_title' => 'Sign in',
     'options' => array(
       'attributes' => array(
         'title' => '',
@@ -35,7 +36,7 @@ function landportal_extra_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Login');
+  t('Sign in');
   return $menu_links;
 }
 

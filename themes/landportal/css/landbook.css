@@ -4,8 +4,6 @@
 /* @screen-md-min 992px */
 /* @screen-lg-min 1200px */
 
-.page-book {
-
 
 div.description {
 	color: #eee;
@@ -1515,8 +1513,6 @@ li.clickable:hover {
 	padding-top: 0.4em;
 }
 
-
-}
 /* .graph-medium { */
 /*     min-height: 22em; */
 /* } */

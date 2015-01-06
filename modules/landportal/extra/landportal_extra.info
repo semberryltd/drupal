@@ -9,6 +9,7 @@ dependencies[] = calendar
 dependencies[] = ckeditor
 dependencies[] = ctools
 dependencies[] = features
+dependencies[] = i18n
 dependencies[] = i18n_taxonomy
 dependencies[] = location
 dependencies[] = menu

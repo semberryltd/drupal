@@ -11,6 +11,12 @@ function landportal_extra_init() {
   //drupal_set_message('helo');
 }
 
+function landportal_extra_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+}
+
 module_load_include('inc', 'landportal_extra', 'landportal_extra.blocks');
 module_load_include('inc', 'landportal_extra', 'landportal_extra.menu');
 

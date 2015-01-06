@@ -27,15 +27,14 @@
 #section-header {
     margin: 0;
     padding: 0;
-    color: $white;
     /* min-height: 120px; */
 
     h2 {
         clear: left;
         margin: 0 50px;
         padding: 10px 0 0;
+        color: $white;
     }
-
 
     ul.menu {
         clear: both;
@@ -71,11 +70,11 @@
         clear: both;
         visibility: none;
     }
-
 }
 .page-book #section-header {
-        background-color: $green-dark;
-        background-image: url(../images/header/grass-medium.png);
+    border-top: 0;
+    background-color: $green-dark;
+    background-image: url(../images/header/grass-medium.png);
 }
 
 .node-type-news,
@@ -84,8 +83,9 @@
 .node-type-event,
 .page-debate {
     #section-header {
-    background-color: $blue;
-    background-image: url(../images/header/pebbles-medium.png);
+        border-top: 0;
+        background-color: $blue;
+        background-image: url(../images/header/pebbles-medium.png);
 }
 }
 
