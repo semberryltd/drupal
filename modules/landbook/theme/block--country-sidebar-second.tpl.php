@@ -1,7 +1,3 @@
-<?php dpm($data['selectors']); ?>
-<?php /* SAME SNIPET IN country & regions.tpl.php */ ?>
-
-
       <h2 class="section"><span><?php echo t('Data sources'); ?></span></h2>
       <select id="source-select" multiple="multiple" class="data-sources">
 <?php foreach ($data['selectors']['data-sources'] as $d): ?>
