@@ -1,18 +1,18 @@
 var ckanURL = Drupal.settings.landbook.ckanURL;
 
-$( document ).ajaxStart(function() {
-	showLoading();
+jQuery( document ).ajaxStart(function() {
+       showLoading();
 });
-$( document ).ajaxComplete(function() {
-	hideLoading();
+jQuery( document ).ajaxComplete(function() {
+       hideLoading();
 });
 
 firstLoad();
 
-$("#srch-term-ckan").keypress(function(event) {
+jQuery("#srch-term-ckan").keypress(function(event) {
 	if(event.which == 13) {
 		loadSearchResults();
-		$(this).val("");
+		jQuery(this).val("");
 	}
 });
 
@@ -23,32 +23,32 @@ function showLoading() {
 function hideLoading() {
     //$("#loading-dialog").modal('hide');
 }
-		
+
 function firstLoad() {
 	getFullPackages(100,0, function(output) {
 		var packages = output;
 		if(packages.success) {
 			formatContent(packages.result, true);
 		} else {
-		$(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>{{#labels}}{{no_datasets}}{{/labels}}</div></div>");
+		jQuery(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>No datasets found</div></div>");
 		}
 	});
 }
 
 function loadSearchResults() {
-	var keywords = $("#srch-term-ckan").val();
+	var keywords = jQuery("#srch-term-ckan").val();
 	searchPackages(keywords, function(output) {
 		var packages = output;
 		if(packages.success) {
 			formatContent(packages.result.results, true);
 		} else {
-		$(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>{{#labels}}{{no_datasets}}{{/labels}}</div></div>");
+		jQuery(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>No datasets found</div></div>");
 	}
 	}); 
 }
 
 function formatContent(packages, fullMode) {
-	$("#panel-datasets").empty();		
+	jQuery("#panel-datasets").empty();		
 	organizations = {};
 	organizations_ids = {};
 	groups = {};
@@ -64,8 +64,8 @@ function formatContent(packages, fullMode) {
 		datasets = packages.packages;
 	}
 	
-	$.each(datasets, function(index, dataset) {
-		$("#panel-datasets").append(formatDatasetResult(dataset, index));
+	jQuery.each(datasets, function(index, dataset) {
+		jQuery("#panel-datasets").append(formatDatasetResult(dataset, index));
 		if(fullMode) {
 			extractDatasetOrganizations(dataset, organizations, organizations_ids);
 			extractDatasetGroups(dataset, groups, groups_ids);
@@ -113,7 +113,7 @@ function extractDatasetOrganizations(dataset, organizations, organizations_ids) 
 
 function extractDatasetGroups(dataset, groups, groups_ids) {
 	if (typeof dataset.groups != 'undefined') {
-		$.each(dataset.groups, function(index, group) {
+		jQuery.each(dataset.groups, function(index, group) {
 			groupTitle = group.title;
 			
 			if(groups[groupTitle] != undefined) {
@@ -128,7 +128,7 @@ function extractDatasetGroups(dataset, groups, groups_ids) {
 
 function extractDatasetTags(dataset, tags, tags_ids) {
 	if (typeof dataset.tags != 'undefined') {
-		$.each(dataset.tags, function(index, tag) {
+		jQuery.each(dataset.tags, function(index, tag) {
 			tagTitle = tag.display_name;
 			
 			if(tags[tagTitle] != undefined) {
@@ -143,7 +143,7 @@ function extractDatasetTags(dataset, tags, tags_ids) {
 
 function extractDatasetFormats(dataset, formats) {
 	if(typeof dataset.resources != 'undefined') {
-		$.each(dataset.resources, function(index, resource) {
+		jQuery.each(dataset.resources, function(index, resource) {
 			format = resource.format;
 			
 			if (format != "") {
@@ -170,16 +170,16 @@ function extractDatasetLicenses(dataset, licenses) {
 }
 
 function formatOrganizations(organizations, organizations_ids) {
-	if (!$.isEmptyObject(organizations)) {
-		$("#panel-organizations .panel-footer").remove();
+	if (!jQuery.isEmptyObject(organizations)) {
+		jQuery("#panel-organizations .panel-footer").remove();
 
-		organizationsPanel = $("#panel-organizations .list-group");
+		organizationsPanel = jQuery("#panel-organizations .list-group");
 		organizationsPanel.empty();
 		counter=0;
 		
-		$.each(organizations, function(organizationName, appearances) {
-			organizationLink = $("<a>", {href: ckanURL + "organization/" + organizations_ids[organizationName]});
-			organizationRow = $("<li>", {class: "list-group-item"});
+		jQuery.each(organizations, function(organizationName, appearances) {
+			organizationLink = jQuery("<a>", {href: Drupal.settings.landbook.ckanURL + "organization/" + organizations_ids[organizationName]});
+			organizationRow = jQuery("<li>", {class: "list-group-item"});
 			organizationLink.html(organizationName + " (" + appearances + ")");
 			organizationRow.append(organizationLink);
 			organizationsPanel.append(organizationRow);
@@ -187,22 +187,22 @@ function formatOrganizations(organizations, organizations_ids) {
 		});	
 		
 		if(counter > 5) {
-			$("#panel-organizations").append(createFilterPanelFooter());
+			jQuery("#panel-organizations").append(createFilterPanelFooter());
 		}
 	}
 }
 
 function formatGroups(groups, groups_ids) {
-	if(!$.isEmptyObject(groups)) {
-		$("#panel-groups .panel-footer").remove();
+	if(!jQuery.isEmptyObject(groups)) {
+		jQuery("#panel-groups .panel-footer").remove();
 
-		groupsPanel = $("#panel-groups .list-group");
+		groupsPanel = jQuery("#panel-groups .list-group");
 		groupsPanel.empty();
 		
 		counter = 0;
-		$.each(groups, function(groupName, appearances) {
-			groupLink = $("<a>", {href: ckanURL + "group/" + groups_ids[groupName]});
-			groupRow = $("<li>", {class: "list-group-item"});
+		jQuery.each(groups, function(groupName, appearances) {
+			groupLink = jQuery("<a>", {href: Drupal.settings.landbook.ckanURL + "group/" + groups_ids[groupName]});
+			groupRow = jQuery("<li>", {class: "list-group-item"});
 			groupLink.html(groupName + " (" + appearances + ")");
 			groupRow.append(groupLink);
 			groupsPanel.append(groupRow);
@@ -210,21 +210,21 @@ function formatGroups(groups, groups_ids) {
 		});	
 		
 		if(counter > 5) {
-			$("#panel-groups").append(createFilterPanelFooter());
+			jQuery("#panel-groups").append(createFilterPanelFooter());
 		}
 	}
 }
 
 function formatTags(tags, tags_ids) {
-	if(!$.isEmptyObject(tags)) {
-		$("#panel-tags .panel-footer").remove();
+	if(!jQuery.isEmptyObject(tags)) {
+		jQuery("#panel-tags .panel-footer").remove();
 
-		tagsPanel = $("#panel-tags .list-group");
+		tagsPanel = jQuery("#panel-tags .list-group");
 		tagsPanel.empty();
 		counter = 0;
-		$.each(tags, function(tagName, appearances) {
-			tagLink = $("<a>", {href: ckanURL + "tag/" + tags_ids[tagName]});
-			tagRow = $("<li>", {class: "list-group-item"});
+		jQuery.each(tags, function(tagName, appearances) {
+			tagLink = jQuery("<a>", {href: Drupal.settings.landbook.ckanURL + "tag/" + tags_ids[tagName]});
+			tagRow = jQuery("<li>", {class: "list-group-item"});
 			tagLink.html(tagName + " (" + appearances + ")");
 			tagRow.append(tagLink);
 			tagsPanel.append(tagRow);
@@ -232,21 +232,21 @@ function formatTags(tags, tags_ids) {
 		});
 		
 		if(counter > 5) {
-			$("#panel-tags").append(createFilterPanelFooter());
+			jQuery("#panel-tags").append(createFilterPanelFooter());
 		}
 	}
 }
 
 function formatFormats(formats) {
-	if(!$.isEmptyObject(formats)) {
-		$("#panel-formats .panel-footer").remove();
+	if(!jQuery.isEmptyObject(formats)) {
+		jQuery("#panel-formats .panel-footer").remove();
 
-		formatsPanel = $("#panel-formats .list-group");
+		formatsPanel = jQuery("#panel-formats .list-group");
 		formatsPanel.empty();
 		counter = 0;
-		$.each(formats, function(formatName, appearances) {
-			formatLink = $("<a>", {href: ckanURL + "dataset?res_format=" + formatName})
-			formatRow = $("<li>", {class: "list-group-item"});
+		jQuery.each(formats, function(formatName, appearances) {
+			formatLink = jQuery("<a>", {href: Drupal.settings.landbook.ckanURL + "dataset?res_format=" + formatName})
+			formatRow = jQuery("<li>", {class: "list-group-item"});
 			formatLink.html(formatName + " (" + appearances + ")");
 			formatRow.append(formatLink);
 			formatsPanel.append(formatRow);
@@ -254,20 +254,20 @@ function formatFormats(formats) {
 		});	
 		
 		if(counter > 5) {
-			$("#panel-formats").append(createFilterPanelFooter());
+			jQuery("#panel-formats").append(createFilterPanelFooter());
 		}
 	}
 }
 
 function formatLicenses(licenses) {
-	if(!$.isEmptyObject(licenses)) {
-		$("#panel-licenses .panel-footer").remove();
-		licensesPanel = $("#panel-licenses .list-group");
+	if(!jQuery.isEmptyObject(licenses)) {
+		jQuery("#panel-licenses .panel-footer").remove();
+		licensesPanel = jQuery("#panel-licenses .list-group");
 		licensesPanel.empty();
 		counter = 0;
-		$.each(licenses, function(licenseName, appearances) {
-			licenseLink = $("<a>", {href: ckanURL + "dataset?license_title=" + licenseName})
-			licenseRow = $("<li>", {class: "list-group-item"});
+		jQuery.each(licenses, function(licenseName, appearances) {
+			licenseLink = jQuery("<a>", {href: Drupal.settings.landbook.ckanURL + "dataset?license_title=" + licenseName})
+			licenseRow = jQuery("<li>", {class: "list-group-item"});
 			licenseLink.html(licenseName + " (" + appearances + ")");
 			licenseRow.append(licenseLink);
 			licensesPanel.append(licenseRow);
@@ -275,72 +275,72 @@ function formatLicenses(licenses) {
 		});	
 		
 		if(counter > 5) {
-			$("#panel-licenses").append(createFilterPanelFooter());
+			jQuery("#panel-licenses").append(createFilterPanelFooter());
 		}
 	}
 }
 
 function createFilterPanelFooter() {
-	panelFooter = $("<div>", {class: "panel-footer  clickable", onclick: "expandPanel(this)"});
+	panelFooter = jQuery("<div>", {class: "panel-footer  clickable", onclick: "expandPanel(this)"});
 	panelFooter.html("Show more");
 	return panelFooter;
 }
 
 function expandPanel(panel) {
-	$(panel).parent().toggleClass("ckan-filter-panel");
-	if ($(panel).parent().hasClass("ckan-filter-panel")) {
-		$(panel).html("Show more");
+	jQuery(panel).parent().toggleClass("ckan-filter-panel");
+	if (jQuery(panel).parent().hasClass("ckan-filter-panel")) {
+		jQuery(panel).html("Show more");
 	} else {
-		$(panel).html("Show less");	
+		jQuery(panel).html("Show less");	
 	}
 	
 }
 
 function showElement(elementId) {
-	$("#" + elementId).removeClass("hidden");
+	jQuery("#" + elementId).removeClass("hidden");
 }
 
 function hideElement(elementId) {
-	$("#" + elementId).addClass("hidden");
+	jQuery("#" + elementId).addClass("hidden");
 }
 
 function formatDatasetResult(dataset, index){
-	$packagePanel = $("<li>", {class: "list-group-item", 
+	$packagePanel = jQuery("<li>", {class: "list-group-item", 
 							   onmouseover: "showElement( 'package" + index+"');",
 							   onmouseout: "hideElement( 'package" + index+"');"});
-	$packageTitle = $("<a>", {href: ckanURL + "dataset/" + dataset.name});
+	$packageTitle = jQuery("<a>", {href: Drupal.settings.landbook.ckanURL + "dataset/" + dataset.name});
 	$packageTitle.html(dataset.title);
 	$packagePanel.hover(function() {
-						$("#" + elementId).toggleClass("hidden");
+						jQuery("#" + elementId).toggleClass("hidden");
 						alert("Hey!");
 						},
 						function() {
-						$("#" + elementId).toggleClass("hidden");
+						jQuery("#" + elementId).toggleClass("hidden");
 						});
 	
-	$packageResourcesNumber = $("<span>", {class: "package-resources"});
+	$packageResourcesNumber = jQuery("<span>", {class: "package-resources"});
 	$packageResourcesNumber.html("(" + dataset.num_resources + ")");
 	$packagePanel.append($packageTitle);
 	$packagePanel.append($packageResourcesNumber);
 	
-	$collapsableDiv = $("<div>", {id: "package" + index, class: "hidden"});
+	$collapsableDiv = jQuery("<div>", {id: "package" + index, class: "hidden"});
 	
-	$packagePanelBody = $("<div>", {class: "panel-body"});
-	$packageDescription = $("<p>", {class: "package-description"});
+	$packagePanelBody = jQuery("<div>", {class: "panel-body"});
+	$packageDescription = jQuery("<p>", {class: "package-description"});
 	$packageDescription.html(dataset.notes);
 	
-	$packageFormats = $("<div>", {class: "package-formats"});
+	$packageFormats = jQuery("<div>", {class: "package-formats"});
 	
 	$packagePanelBody.append($packageDescription);
 	
 	if(typeof dataset.resources != 'undefined') {
-		$.each(dataset.resources, function(index, resource) {
-			$resourceDiv = $("<div>", {class: "package-resource"});
-			$resourceLink = $("<a>", {href: resource.url});
+		jQuery.each(dataset.resources, function(index, resource) {
+			$resourceDiv = jQuery("<div>", {class: "package-resource"});
+			$resourceLink = jQuery("<a>", {href: resource.url});
 			$resourceLink.html(resource.name);
 			
-			$formatLabelLink = $("<a>", {href: resource.url});
-			$formatLabel = $("<span>", {class: "label label-primary ckan-resource-url"});
+			$formatLabelLink = jQuery("<a>", {href: resource.url});
+			$formatLabel = jQuery("<span>", {class: "label label-primary ckan-resource-url"});
 			$formatLabel.html(resource.format);
 			$formatLabelLink.append($formatLabel);
 			$resourceDiv.append($formatLabelLink);
@@ -359,15 +359,15 @@ function formatDatasetResult(dataset, index){
 /* Collapsabe code, replaced by simple lists */
 /*
 function formatDatasetResult(dataset, index){
-	$packagePanel = $("<div>", {class: "panel panel-default"});
+	$packagePanel = jQuery("<div>", {class: "panel panel-default"});
 	
-	$packageHeading = $("<div>", {class: "panel-heading"});
-	$packagePanelTitle = $("<h4>", {class : "panel-title"});
-	$packageTitle = $("<a>", {href: ckanURL + "dataset/" + dataset.name});
+	$packageHeading = jQuery("<div>", {class: "panel-heading"});
+	$packagePanelTitle = jQuery("<h4>", {class : "panel-title"});
+	$packageTitle = jQuery("<a>", {href: Drupal.settings.landbook.ckanURL + "dataset/" + dataset.name});
 	$packageTitle.attr("data-toggle", "collapse");
 	$packageTitle.attr("data-parent", "#accordion"); 
 	$packageTitle.html(dataset.title);
-	$packageResourcesNumber = $("<span>", {class: "package-resources"});
+	$packageResourcesNumber = jQuery("<span>", {class: "package-resources"});
 	$packageResourcesNumber.html("(" + dataset.num_resources + ")");
 	$packagePanelTitle.append($packageTitle);
 	$packagePanelTitle.append($packageResourcesNumber);
@@ -375,25 +375,25 @@ function formatDatasetResult(dataset, index){
 	$packagePanel.append($packageHeading);
 	
 	if (index == 0) {
-		$collapsableDiv = $("<div>", {id: "package" + index, class: "panel-collapse collapse in"});
+		$collapsableDiv = jQuery("<div>", {id: "package" + index, class: "panel-collapse collapse in"});
 	} else {
-		$collapsableDiv = $("<div>", {id: "package" + index, class: "panel-collapse collapse"});
+		$collapsableDiv = jQuery("<div>", {id: "package" + index, class: "panel-collapse collapse"});
 	}
-	$packagePanelBody = $("<div>", {class: "panel-body"});
-	$packageDescription = $("<p>", {class: "package-description"});
+	$packagePanelBody = jQuery("<div>", {class: "panel-body"});
+	$packageDescription = jQuery("<p>", {class: "package-description"});
 	$packageDescription.html(dataset.notes);
 	
-	$packageFormats = $("<div>", {class: "package-formats"});
+	$packageFormats = jQuery("<div>", {class: "package-formats"});
 	
 	$packagePanelBody.append($packageDescription);
 	if(typeof dataset.resources != 'undefined') {
-		$.each(dataset.resources, function(index, resource) {
-			$resourceDiv = $("<div>", {class: "package-resource"});
-			$resourceLink = $("<a>", {href: resource.url});
+		jQuery.each(dataset.resources, function(index, resource) {
+			$resourceDiv = jQuery("<div>", {class: "package-resource"});
+			$resourceLink = jQuery("<a>", {href: resource.url});
 			$resourceLink.html(resource.name);
 			
-			$formatLabelLink = $("<a>", {href: resource.url});
-			$formatLabel = $("<span>", {class: "label label-primary ckan-resource-url"});
+			$formatLabelLink = jQuery("<a>", {href: resource.url});
+			$formatLabel = jQuery("<span>", {class: "label label-primary ckan-resource-url"});
 			$formatLabel.html(resource.format);
 			$formatLabelLink.append($formatLabel);
 			$resourceDiv.append($formatLabelLink);
@@ -450,14 +450,14 @@ function getGroupPackages(groupId) {
 		var packages = output;
 		emptyFilterPanels();
 		if(packages.success) {
-			groupsPanel = $("#panel-groups .list-group");
+			groupsPanel = jQuery("#panel-groups .list-group");
 			groupsPanel.empty();
-			groupRow = $("<li>", {id: packages.id, class: "list-group-item active-filter clickable", onclick: "firstLoad()"});
+			groupRow = jQuery("<li>", {id: packages.id, class: "list-group-item active-filter clickable", onclick: "firstLoad()"});
 			groupRow.html(packages.result.display_name + " (" + packages.result.package_count + ")");
 			groupsPanel.append(groupRow);
 			formatContent(packages.result, false);
 		} else {
-			$(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>{{#labels}}{{no_datasets}}{{/labels}}</div></div>");
+			jQuery(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>No datasets found</div></div>");
 		}
 	});
 }
@@ -468,12 +468,12 @@ function getOrganizationPackages(organizationId) {
 		var packages = output;
 		emptyFilterPanels();
 		if(packages.success) {
-			organizationsPanel = $("#panel-organizations .list-group");
+			organizationsPanel = jQuery("#panel-organizations .list-group");
 			organizationsPanel.empty();
-			organizationRow = $("<li>", {id: packages.id, class: "list-group-item active-filter clickable", onclick: "firstLoad()"});
-			organizationIcon = $("<i>", {class: "glyphicon glyphicon-remove"});
+			organizationRow = jQuery("<li>", {id: packages.id, class: "list-group-item active-filter clickable", onclick: "firstLoad()"});
+			organizationIcon = jQuery("<i>", {class: "glyphicon glyphicon-remove"});
 			organizationRow.append(organizationIcon);
-			organizationTitle = $("<span>");
+			organizationTitle = jQuery("<span>");
 			organizationTitle.html(packages.result.display_name + " (" + packages.result.package_count + ")");
 			organizationRow.append(organizationIcon);
 			organizationRow.append(organizationTitle);
@@ -481,7 +481,7 @@ function getOrganizationPackages(organizationId) {
 			organizationsPanel.append(organizationRow);
 			formatContent(packages.result, false);
 		} else {
-			$(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>{{#labels}}{{no_datasets}}{{/labels}}</div></div>");
+			jQuery(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>No datasets found</div></div>");
 		}
 	});
 }
@@ -507,14 +507,14 @@ function getTagPackages(tagId) {
 		emptyFilterPanels();
 		if(packages.success) {
 			console.log(JSON.stringify(packages));
-			tagsPanel = $("#panel-tags .list-group");
+			tagsPanel = jQuery("#panel-tags .list-group");
 			tagsPanel.empty();
-			tagRow = $("<li>", {id: packages.id, class: "list-group-item active-filter clickable", onclick: "firstLoad()"});
+			tagRow = jQuery("<li>", {id: packages.id, class: "list-group-item active-filter clickable", onclick: "firstLoad()"});
 			tagRow.html(packages.result.display_name + " (" + packages.result.packages.length + ")");
 			tagsPanel.append(tagRow);
 			formatContent(packages.result, false);
 		} else {
-			$(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>{{#labels}}{{no_datasets}}{{/labels}}</div></div>");
+			jQuery(".result-content").html("<div class='row'><div class='col-sm-9 dataset-message'>No datasets found</div></div>");
 		}
 	});
 }
@@ -529,23 +529,23 @@ function searchPackages(keywords, callback) {
 }
 
 function emptyFilterPanels() {
-		$("#panel-organizations .list-group").empty();
-		$("#panel-groups .list-group").empty();
-		$("#panel-tags .list-group").empty();
-		$("#panel-formats .list-group").empty();
-		$("#panel-licenses .list-group").empty();
-		$("#panel-organizations .panel-footer").remove();
-		$("#panel-groups .panel-footer").remove();
-		$("#panel-tags .panel-footer").remove();
-		$("#panel-formats .panel-footer").remove();
-		$("#panel-licenses .panel-footer").remove();
+		jQuery("#panel-organizations .list-group").empty();
+		jQuery("#panel-groups .list-group").empty();
+		jQuery("#panel-tags .list-group").empty();
+		jQuery("#panel-formats .list-group").empty();
+		jQuery("#panel-licenses .list-group").empty();
+		jQuery("#panel-organizations .panel-footer").remove();
+		jQuery("#panel-groups .panel-footer").remove();
+		jQuery("#panel-tags .panel-footer").remove();
+		jQuery("#panel-formats .panel-footer").remove();
+		jQuery("#panel-licenses .panel-footer").remove();
 }
 
 /*
 function doAjaxQuery(phpFunction, phpArguments, handleData) {
 	jQuery.ajax({
 	    type: "POST",
-	    url: $("#api-url").val() + '/ckan_ajax_interface.php',
+	    url: jQuery("#api-url").val() + '/ckan_ajax_interface.php',
 	    data: {functionname: phpFunction, arguments: phpArguments},
 	    success: function (obj, textstatus) {
 				console.log(obj);
