@@ -29,7 +29,7 @@ function landbook_menu_build(&$items) {
     $translatables['book'][] = t($items['book/' . $s]['title']);
 
     $items['book/' . $s . '/%'] = array(
-      'title'           => preg_replace('/s$/', '', str_replace('ies', 'y', $s)).' details',
+      'title'           => preg_replace('/s$/', '', str_replace('ies', 'y', $s)),
       'access callback'	=> TRUE,
       'page callback'   => 'landbook_' . $s,
       'page arguments'  => array(2),
@@ -37,6 +37,17 @@ function landbook_menu_build(&$items) {
       'file path'       => drupal_get_path('module', 'landbook').'/modules',
     );
   }
+
+  // Add country details page hook
+    $items['book/countries/%/details'] = array(
+      'title'           => 'Country details',
+      'access callback'	=> TRUE,
+      'page callback'   => 'landbook_countries_details',
+      'page arguments'  => array(2),
+      'file'            => 'countries.inc',
+      'file path'       => drupal_get_path('module', 'landbook').'/modules',
+    );
+
 }
 
 

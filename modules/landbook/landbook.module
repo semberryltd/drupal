@@ -46,6 +46,7 @@ function landbook_theme($existing, $type, $theme, $path) {
     'catalog'           => $struct + array('template' => 'catalog'),
     'countries'         => $struct + array('template' => 'countries'),
     'country'           => $struct + array('template' => 'country', 'country' => NULL),
+    'details'           => $struct + array('template' => 'details', 'country' => NULL),
     'datasource'        => $struct + array('template' => 'datasource', 'datasource' => NULL),
     'datasources'       => $struct + array('template' => 'datasources'),
     'indicator'         => $struct + array('template' => 'indicator', 'indicator' => NULL),
@@ -61,7 +62,9 @@ function landbook_theme($existing, $type, $theme, $path) {
 function landbook_page_alter(&$page) {
   $breadcrumb = drupal_get_breadcrumb();
   $breadcrumb[0] = l(t('Landbook'), 'book');
-  $breadcrumb[] = l(t(drupal_get_title()), '');
+  //if (count($breadcrumb) > 1) {
+  $breadcrumb[] = l(t(drupal_get_title()), $_GET['q']);
+    //}
   drupal_set_breadcrumb($breadcrumb);
 }
 
@@ -75,18 +78,21 @@ function landbook_page_build(&$page) {
   // not a landbook page.
   if (!isset($page['content']['system_main']['content']['#data'])) return;
   $data = $page['content']['system_main']['content']['#data'];
+  $type = $page['content']['system_main']['content']['#theme'];
 
   //dpm($page['content']['system_main']['content']['#data'], 'system_main data');
-  // 
-  if (isset($data['entity-id'])) {
+  if ($type == 'country' && isset($data['entity-id'])) {
     $page['sidebar_first']['landbook_country_sidebar_first']['#markup'] =
       landbook_country_sidebar_first($data);
     $page['sidebar_second']['landbook_country_sidebar_second']['#markup'] =
       landbook_country_sidebar_second($data);
+    $page['sidebar_first']['#sorted'] = FALSE;
+    $page['sidebar_second']['#sorted'] = FALSE;
   }
   if (isset($data['selectors']['regions'])) {
     $page['sidebar_second']['landbook_regions_selectors']['#markup'] =
       landbook_regions_selectors($data);
+    $page['sidebar_second']['#sorted'] = FALSE;
   }
 }
 
@@ -102,8 +108,8 @@ function landbook_menu() {
     'menu_name'		=> 'main-menu',
     'type'              => MENU_NORMAL_ITEM,
     'access callback'	=> TRUE,
-    'page callback'	=> 'landbook_regions',
-    'page arguments'	=> array(),
+    'page callback'	=> 'drupal_goto',
+    'page arguments'	=> 'region',//array(),
     'file'              => 'regions.inc',
     'file path'         => drupal_get_path('module', 'landbook').'/modules'
   );
