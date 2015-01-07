@@ -27,9 +27,9 @@
    <h2 class="section"><span><?php echo t('Gender issues'); ?></span></h2>
    <table class="traffic">
    <?php foreach ($data['charts']['trafficLights'] as $c): ?>
-   <tr class="{{^light}}text-muted{{/light}}">
+   <tr class="<?php echo ($c['light'] ? 'text-muted' : ''); ?>">
    <td class="issue"><?php echo $c['indicator']; ?></td>
-   <td><div class="circle"><div class="{{light}}"></div></div></td>
+   <td><div class="circle"><div class="<?php echo $c['light']; ?>"></div></div></td>
    </tr>
    <?php endforeach; /* charts/trafficLights */ ?>
    </table>
