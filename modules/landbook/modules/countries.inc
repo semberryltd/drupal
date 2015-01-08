@@ -492,10 +492,9 @@ class Countries {
 			);
 			array_push($regions[$region_id]["countries"], $country);
 		}
-
 		for ($i = 0; $i < count($conts); $i++) {
 			array_push($countries, array(
-				"id" => $conts[$i]["country_id"],
+				"id" => $conts[$i]["id"],
 				"faoURI" => utf8_encode($conts[$i]["faoURI"]),
 				"iso3" => $conts[$i]["iso3"],
 				"iso2" => $conts[$i]["iso2"],
