@@ -17,8 +17,9 @@ function landbook_widgets($args=NULL) {
 
   $r = new Widgets();
   $data = $r->get($language);
-  return theme("widgets", array(
-    'data'      => $data,
+  return array("content" => array(
+    '#theme'    => 'widgets',
+    '#data'     => $data,
   ));
 }
 
@@ -75,9 +76,9 @@ class Widgets {
 				"starred" => $data[$i]["starred"],
 				"name" => utf8_encode($data[$i]["ind_name"]),
 				"description" => utf8_encode($data[$i]["ind_description"]),
-				"with_data" => $data[$i]["data"],
+				"with_data" => isset($data[$i]["data"]),
 			);
-			if ($data[$i]["data"] > 0)
+			if (isset($data[$i]["data"]))
 				$result[$datasource_id]["with_data"] = true;
 			array_push($result[$datasource_id]["indicators"], $indicator);
 		}
