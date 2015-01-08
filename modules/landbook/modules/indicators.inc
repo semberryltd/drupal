@@ -17,7 +17,6 @@
 
 function landbook_indicators($args=NULL) {
   global $language;
-
   if ($args) {
     $template = 'indicator';
     $d = new Indicator();
@@ -29,7 +28,11 @@ function landbook_indicators($args=NULL) {
   landbook_add_js_vars($args);
   landbook_add_js_css();
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/' . $template . '.js', array('scope'=>'footer'));
-  return theme($template, array('data' => $data));
+  return array('content' => array(
+    '#theme'    => $template,
+    '#data'     => $data,
+    )
+  );
 }
 
 
