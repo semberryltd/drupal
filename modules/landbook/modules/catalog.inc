@@ -10,13 +10,8 @@
  */
 
 function landbook_catalog($args=NULL) {
-
   landbook_add_js_vars($args);
-  //landbook_add_js_css();
-  drupal_add_js('misc/jquery.js');
-
+  landbook_add_js_css();
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/catalog.js', array('scope'=>'footer'));
-  return theme("catalog", array(
-                                //'data'      => $rdata,
-  ));
+  return array('content', array('#theme' => 'catalog', '#data'=>'stuff'));
 }
