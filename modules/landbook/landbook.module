@@ -22,9 +22,10 @@ function landbook_help($path, $arg) {
   switch ($path) {
   case "admin/help#landbook":
     return '<p>' . t("Landbook section of the Landportal") . '</p>'
-      . '<p>' . t("This come with a (header) Block, customised View(s) and a landbook main-menu item") .'</p>'
+      . '<p>' . t("It provides differents menus, block, pages and hooks plus a few configuration pages"). '</p>'
       . '<p>' . t("The Landbook is composed of different modules: catalog, countries, indicators, regions, reuse, sources, widgets") . '</p>'
-      . '<p>' . t("Each comes with a set of template and JS to allow dynamic actions.") . '</p>'
+      . '<p>' . t("Each submodule comes with some JS to allow dynamic actions and template(s) for main content and eventually sidebars elements.") . '</p>'
+      . '<p>' . t("This module also provides ajax ready pages (which output some JSON, see: ajax/) for JS callbacks.") . '</p>'
       ;
     break;
   }
@@ -41,6 +42,7 @@ function landbook_theme($existing, $type, $theme, $path) {
     'regions-selectors'         => $struct + array('template' => 'regions--selectors'),
     'country-sidebar-first'     => $struct + array('template' => 'block--country-sidebar-first'),
     'country-sidebar-second'    => $struct + array('template' => 'block--country-sidebar-second'),
+    'indicator-sidebar-second'  => $struct + array('template' => 'block--indicator-sidebar-second'),
 
     'regions'           => $struct + array('template' => 'regions'),
     'catalog'           => $struct + array('template' => 'catalog'),
@@ -61,7 +63,7 @@ function landbook_theme($existing, $type, $theme, $path) {
  */
 function landbook_page_alter(&$page) {
   $breadcrumb = drupal_get_breadcrumb();
-  $breadcrumb[0] = l(t('Landbook'), 'book');
+  // $breadcrumb[0] = l(t('Landbook'), 'book');
   //if (count($breadcrumb) > 1) {
   $breadcrumb[] = l(t(drupal_get_title()), $_GET['q']);
     //}
@@ -81,6 +83,8 @@ function landbook_page_build(&$page) {
   $type = $page['content']['system_main']['content']['#theme'];
 
   //dpm($page['content']['system_main']['content']['#data'], 'system_main data');
+
+  // Country pages
   if ($type == 'country' && isset($data['entity-id'])) {
     $page['sidebar_first']['landbook_country_sidebar_first']['#markup'] =
       landbook_country_sidebar_first($data);
@@ -89,7 +93,16 @@ function landbook_page_build(&$page) {
     $page['sidebar_first']['#sorted'] = FALSE;
     $page['sidebar_second']['#sorted'] = FALSE;
   }
-  if (isset($data['selectors']['regions'])) {
+
+  // Indicator
+  if ($type == 'indicator') {
+    $page['sidebar_second']['landbook_indicator_sidebar_second']['#markup'] =
+      landbook_indicator_sidebar_second($data);
+    $page['sidebar_second']['#sorted'] = FALSE;
+  }
+
+  // Regions
+  if ($type == 'regions') {
     $page['sidebar_second']['landbook_regions_selectors']['#markup'] =
       landbook_regions_selectors($data);
     $page['sidebar_second']['#sorted'] = FALSE;
@@ -109,9 +122,7 @@ function landbook_menu() {
     'type'              => MENU_NORMAL_ITEM,
     'access callback'	=> TRUE,
     'page callback'	=> 'drupal_goto',
-    'page arguments'	=> 'region',//array(),
-    'file'              => 'regions.inc',
-    'file path'         => drupal_get_path('module', 'landbook').'/modules'
+    'page arguments'    => array('book/regions'),
   );
   $translatables['book'][] = t('Landbook');
   return $items;

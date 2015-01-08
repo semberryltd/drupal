@@ -1,3 +1,15 @@
+<?php
+/**
+ * @file
+ * Widget page main content template
+ *
+ * The Landportal landbook
+ *
+ * Original work by: WESO (http://www.weso.es/)
+ * Drupal refactoring: Jules <jules@ker.bz>
+ */
+?>
+
 <canvas id="canvas" class="hidden"></canvas>
 <div class="content main-content container">
 	<div class="row">

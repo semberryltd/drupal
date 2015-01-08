@@ -1,5 +1,6 @@
 /*
 PR.prettyPrint();
+*/
 
 document.getElementById('run-query').onsubmit = function() {
 	var sqarql = document.getElementById('sparql-url').value;
@@ -91,4 +92,3 @@ document.getElementById('run-query').onsubmit = function() {
 
 	return false;
 }
-*/
