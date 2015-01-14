@@ -17,16 +17,19 @@ function landbook_sources($args=NULL) {
   if ($args) {
     $template = 'datasource';
     $r = new Datasource($language);
+    $data = $r->get($language, $args);
+    drupal_set_title($data['info']['name']);
   } else {
     $template = 'datasources';
     $r = new Datasources($language);
+    $data = $r->get($language, $args);
   }
-  $data = $r->get($language, $args);
+
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/datasource.js', array('scope' => 'footer'));
-  return theme($template, array(
-    '#title'      => 'DS',
-    'data'      => $data,
-  ));
+  return array(
+    '#theme'    => $template,
+    '#data'     => $data,
+  );
 }
 
 class Datasources {

@@ -9,8 +9,12 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
+
+
+
+
 function landbook_enable() {
-  watchdog('Landbook', 'Enable ' . $GLOBALS['landbook_menu']);
+  watchdog('Landbook', 'Adding ' . $GLOBALS['landbook_menu']);
   $menu = array(
     'menu_name'       => $GLOBALS['landbook_menu'],
     'title'           => "Get information by country",
@@ -22,6 +26,7 @@ function landbook_enable() {
     menu_save($menu);
     cache_clear_all('*', 'cache_menu', TRUE);
   }
+  cache_clear_all();
 
   $translatables['book'] = array(
     t($menu['title']),
@@ -30,6 +35,7 @@ function landbook_enable() {
 }
 
 function landbook_disable() {
-  watchdog('Landbook', 'Disabling ' . $GLOBALS['landbook_menu']);
+  watchdog('Landbook', 'Removing ' . $GLOBALS['landbook_menu']);
   menu_delete(array('menu_name' => $GLOBALS['landbook_menu']));
+  cache_clear_all();
 }

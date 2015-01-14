@@ -1,36 +1,32 @@
   <div class="row">
-		<div class="col-sm-9">
-			<h1 class="country-name">
-				<span><?php echo t("All available indicators for"); ?> <?php echo $data['info']['name']; ?></span>
-			</h1>	
+    <div class="col-sm-9">
 <?php foreach ($data['topics'] as $c): ?>
-						<h2 class="section"><span><?php echo $c['name']; ?></span></h2>
-						<table class="table table-striped">
-							<thead>
-								<tr>
-									<th><?php echo t("Indicator"); ?></th>
-									<th><?php echo t("Value"); ?></th>
-									<th><?php echo t("Last updated"); ?></th>
-									<th><?php echo t("Source"); ?></th>
-								</tr>
-							</thead>
-							<tbody>
+      <h2 class="section"><span><?php echo $c['name']; ?></span></h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><?php echo t("Indicator"); ?></th>
+            <th><?php echo t("Value"); ?></th>
+            <th><?php echo t("Last updated"); ?></th>
+            <th><?php echo t("Source"); ?></th>
+            </tr>
+          </thead>
+        <tbody>
 <?php foreach ($c['indicators'] as $i): ?>
-
-									<tr>
-										<td><?php echo $i['name']; ?></td>
-										<td><?php echo $i['value']; ?></td>
-										<td><?php echo $i['last_update']; ?></td>
-										<td><?php echo $i['source']; ?></td>
-									</tr>
+          <tr>
+            <td><?php echo $i['name']; ?></td>
+            <td><?php echo $i['value']; ?></td>
+            <td><?php echo $i['last_update']; ?></td>
+            <td><?php echo $i['source']; ?></td>
+          </tr>
 <?php endforeach; ?>
-
-							</tbody>
-						</table>
+        </tbody>
+      </table>
 <?php endforeach; ?>
-		</div>
-		<div class="col-sm-3">
-			<h2 class="section"><span><?php echo t("Specific country"); ?></span></h2>
+    </div>
+
+    <div class="col-sm-3">
+      <h2 class="section"><span><?php echo t("Specific country"); ?></span></h2>
 			<select id="country-select" class="form-control">
 				<option disabled="disabled" selected="true"><?php echo t("Select one"); ?></option>
 <?php foreach ($data['selectors']['countries'] as $c): ?>

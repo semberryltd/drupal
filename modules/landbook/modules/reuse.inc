@@ -14,7 +14,7 @@ function landbook_reuse($args=NULL) {
   // add some JS (from reuse.mustache)
   drupal_add_js("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js", array('type'=>'external'));
   drupal_add_js("https://google-code-prettify.googlecode.com/svn/trunk/src/lang-sql.js", array('type'=>'external'));
-
+  drupal_set_title('Linked Open Data store');
   landbook_add_js_vars();
   landbook_add_js_css();
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/reuse.js', array('scope' => 'footer'));
@@ -25,10 +25,11 @@ function landbook_reuse($args=NULL) {
    );
   $r = new Reuse();
   $data = $r->get($params);
-  return array("content" => array(
+  return array(
     '#data'     => $data,
+    '#type'     => 'markup',
     '#theme'    => 'reuse',
-  ));
+  );
 }
 
 

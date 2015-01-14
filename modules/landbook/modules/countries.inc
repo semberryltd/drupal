@@ -17,6 +17,7 @@ function landbook_countries($args=NULL) {
     $template = 'country';
     $r = new Country();
     $data = $r->get($language, $args);
+    drupal_set_title($data['info']['name']);
     //dpm($data, 'data from Country '.$args);
     //drupal_add_js(array('landbook' => array('countryCode' => $args)), 'setting');
     drupal_add_js(drupal_get_path('module', 'landbook').'/js/country_chart_options.js');
@@ -27,6 +28,8 @@ function landbook_countries($args=NULL) {
     $data = $r->get($language);
     drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/countries.js', array('scope'=>'footer'));
   }
+  $translatables['book'][] = t('All available indicators for ');
+
   return array(
     'content' => array(
       '#theme'    => $template,
@@ -42,6 +45,10 @@ function landbook_countries_details($args) {
   $r = new Details();
   $data = $r->get($language, $args);
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/details.js', array('scope'=>'footer'));
+  drupal_set_title(t('All available indicators for ') . $data['info']['name']);
+
+  $translatables['book'][] = t('All available indicators for ');
+
   return array(
     'content' => array(
       '#theme'    => 'details',
@@ -50,14 +57,23 @@ function landbook_countries_details($args) {
   );
 }
 
+/* // Would break Drupal's trail & breadcrumbs for deeper items (eg: country details) */
+/* function landbook_countries_title($arg=NULL) { */
+/*   drupal_set_title('CC: '.$arg); */
+/* } */
+
+
+/**
+ * Port WESO Class
+ */
 
 class Details {
 
   /**
    * Return the detailed info of a certain country.
-   * @param $options Array containing the selected language under the variable 'language' and the
+   * @param $options    Array containing the selected language under the variable 'language' and the
    *    API path under 'host'
-   * @param $iso3 ISO3 of the country to load its detailed info.
+   * @param $iso3       ISO3 of the country to load its detailed info.
    */
   public function get($options, $iso3) {
     $lang = $options->language;

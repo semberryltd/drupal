@@ -20,14 +20,21 @@ function landbook_indicators($args=NULL) {
   if ($args) {
     $template = 'indicator';
     $d = new Indicator();
+    $data = $d->get($language);
+    foreach ($data['selectors']['indicators'] as $i) {
+      if ($i['id'] == $_GET['indicator']) break;
+    }
+    drupal_set_title(t($i['name']));
+    $translatables['book'][] = t($i['name']);
   } else {
     $template = 'indicators';
     $d = new Indicators();
+    $data = $d->get($language);
   }
-  $data = $d->get($language);
   landbook_add_js_vars($args);
   landbook_add_js_css();
   drupal_add_js(drupal_get_path('module', 'landbook').'/js/controller/' . $template . '.js', array('scope'=>'footer'));
+
   return array('content' => array(
     '#theme'    => $template,
     '#data'     => $data,
