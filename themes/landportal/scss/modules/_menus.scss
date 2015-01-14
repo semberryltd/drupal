@@ -30,12 +30,25 @@
     /* min-height: 120px; */
 
     h2 {
+        font-family: 'Source Sans Pro',sans-serif;
         clear: left;
-        margin: 0 50px;
+        font-size: 2.8em;
+        font-weight: 300;
+        margin: 0.1em 50px;
         padding: 10px 0 0;
         color: $white;
+        letter-spacing: .1em;
+        text-shadow: $grey 0 0.04em 0;
     }
+    p {
+        font-size: 1.3em;
+        letter-spacing: .1em;
+        margin: 1em 50px;
+        color: $white;
+        font-weight: 300;
+    font-family: 'Source Sans Pro',sans-serif;
 
+    }
     ul.menu {
         clear: both;
         margin: 0;
@@ -57,10 +70,19 @@
                 padding: 1.3em 0;
                 color: $white;
                 text-transform: uppercase;
-                letter-spacing: 0.2em;
                 font-weight: 100;
-                font-size: 1em;
+                letter-spacing: .1em;
+                font-size: 1.1em;
+                width: 100%;
+                line-height: 1.2em;
+font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                &.active {
+                    border-bottom: 0.5em solid $yellow-light;
+                    padding-bottom: 0.8em;
+                    text-decoration: underline;
+                }
             }
+
         }
     }
 
@@ -86,20 +108,20 @@
         border-top: 0;
         background-color: $blue;
         background-image: url(../images/header/pebbles-medium.png);
-}
+    }
 }
 
 #section-header {
 
     #block-menu-landbook-menu {
         li {
-            width: 12.5%;
+            width: 12.4%;
         }
     }
 
     #block-menu-landdebate-menu {
         li {
-            width: 16.6%;
+            width: 16.5%;
         }
     }
 

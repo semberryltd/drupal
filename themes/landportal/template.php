@@ -14,9 +14,28 @@ function landportal_theme($existing, $type, $theme, $path) {
   return $items;
 }
 
+/**
+ * The right place to add common css & js for all pages
+ */
 function landportal_preprocess_html(&$variables) {
   drupal_add_css(
     "http://fonts.googleapis.com/css?family=News+Cycle|Source+Sans+Pro:300,400|Josefin+Sans:300",
     array('type' => 'external')
   );
+  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
+  drupal_add_css(drupal_get_path('theme', 'landportal').'/css/font-awesome.min.css');
+  drupal_add_css(drupal_get_path('theme', 'landportal').'/css/bootstrap.min.css');
+}
+
+/**
+ * Add description to header-section menus
+ */
+function landportal_page_alter(&$page) {
+  if (!isset($page['section_header'])) return;
+  foreach (array('landbook', 'landdebate', 'landlibrary') as $i) {
+    if (isset($page['section_header']['menu_' . $i . '-menu'])) {
+      $m = menu_load($i . '-menu');
+      $page['section_header']['menu_'. $i . '-menu']['#block']->description = $m['description'];
+    }
+  }
 }

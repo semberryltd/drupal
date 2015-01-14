@@ -9,10 +9,18 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
-/*
- ** Landbook subsections
- */
 function landbook_menu_build(&$items) {
+
+  // Landbook main-menu link
+  $items['book/<front>'] = array(
+    'title'		=> 'Home',
+    'menu_name'		=> $GLOBALS['landbook_menu'],
+    'type'              => MENU_NORMAL_ITEM,
+    'access callback'	=> TRUE,
+    'page callback'	=> 'drupal_goto',
+    'page arguments'    => array('<front>'),
+  );
+  $translatables['book'][] = t('Home');
 
   foreach ($GLOBALS['landbook_sections'] as $i=>$s) {
     $items['book/' . $s] = array(
@@ -26,7 +34,6 @@ function landbook_menu_build(&$items) {
       'file'            => $s . '.inc',
       'file path'       => drupal_get_path('module', 'landbook').'/modules',
     );
-    $translatables['book'][] = t($items['book/' . $s]['title']);
 
     $items['book/' . $s . '/%'] = array(
       'title'           => preg_replace('/s$/', '', str_replace('ies', 'y', $s)),
@@ -36,20 +43,22 @@ function landbook_menu_build(&$items) {
       'file'            => $s . '.inc',
       'file path'       => drupal_get_path('module', 'landbook').'/modules',
     );
+
+    $translatables['book'][] = t($items['book/' . $s]['title']);
+    $translatables['book'][] = t($items['book/' . $s . '/%']['title']);
   }
 
   // Add country details page hook
-    $items['book/countries/%/details'] = array(
-      'title'           => 'Country details',
-      'access callback'	=> TRUE,
-      'page callback'   => 'landbook_countries_details',
-      'page arguments'  => array(2),
-      'file'            => 'countries.inc',
-      'file path'       => drupal_get_path('module', 'landbook').'/modules',
-    );
-
+  $items['book/countries/%/details'] = array(
+    'title'           => 'All available indicators for',
+    'access callback'	=> TRUE,
+    'page callback'   => 'landbook_countries_details',
+    'page arguments'  => array(2),
+    'file'            => 'countries.inc',
+    'file path'       => drupal_get_path('module', 'landbook').'/modules',
+  );
+  $translatables['book'][] = t('All available indicators for');
 }
-
 
 function landbook_menu_admin(&$items) {
   // Admin section
@@ -72,11 +81,4 @@ function landbook_menu_admin(&$items) {
     'file'              => 'landbook.admin.inc',
     'file path'         => drupal_get_path('module', 'landbook').'/includes'
   );
-
 }
-
-/* function landbook_page_callback($name='default') { */
-/*   drupal_set_message("Landbook ".$name." called"); */
-/*   if ($params) { dpm($params); } */
-/*   return theme('landbook', '-HELO pcallback-'); */
-/* } */
