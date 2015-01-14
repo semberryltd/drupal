@@ -39,8 +39,8 @@ function landdebate_menu() {
     'menu_name'		=> 'main-menu',
     'access callback'	=> TRUE,
     'weight'            => 1,
-    'page callback'	=> 'views_page',
-    'page arguments'	=> array('debate', $GLOBALS['landdebate_default_ct']),
+    'page callback'	=> 'drupal_goto', //views_page',
+    'page arguments'	=> array('debate/debate'), //array('debate', 'page', $GLOBALS['landdebate_default_ct']),
   );
   $translatables['debate'][] = t($items['debate']['title']);
   return $items;
@@ -56,6 +56,40 @@ function landdebate_ctools_plugin_api($module = NULL, $api = NULL) {
   }
 }
 
+
+function landdebate_node_view_alter(&$build) {
+    $node = $build['#node'];
+    if($build['#view_mode'] == "full" && in_array($node->type, $GLOBALS['landdebate_content_types'])) {
+      $title = ucfirst($node->type).(substr($node->type, -1) != 's' ? 's' : '');
+      $breadcrumb[0] = l(t('Landdebate'), 'debate');
+      $breadcrumb[] = l(t($title), 'debate/' . $node->type);
+      $breadcrumb[] = l(t(drupal_get_title()), $_GET['q']);
+      drupal_set_breadcrumb($breadcrumb);
+    }
+}
+
+/**
+ * Rebuild breadcrumbs for Landdebate pages
+ */
+function landdebate_page_alter(&$page) {
+
+  $e = explode('/', $_GET['q']);
+  if ($e[0] == 'debate') {
+    $breadcrumb = drupal_get_breadcrumb();
+    $breadcrumb[0] = l(t('Landdebate'), 'debate');
+
+    if (count($e) > 1 && in_array($e[1], $GLOBALS['landdebate_content_types'])) {
+      $title = ucfirst($e[1]).(substr($e[1], -1) != 's' ? 's' : '');
+      $breadcrumb[] = l(t($title), 'debate/'.$e[1]);
+    }
+    //dpm($breadcrumb);
+    //$breadcrumb[] = l(t(drupal_get_title()), $_GET['q']);
+    drupal_set_breadcrumb($breadcrumb);
+  }
+  $translatables['debate'][] = t('Landdebate');
+}
+
+
 /**
  * Blocks configuration for landdebate section header
  *
@@ -70,54 +104,3 @@ function landdebate_block_info_alter(&$blocks, $theme, $code_blocks) {
   }
   return $blocks;
 }
-
-
-/* function landdebate_page_alter(&$page) { */
-/*   $block = module_invoke('menu', 'block_view', 'landdebate-menu'); */
-/*   dpm($block); */
-/*   //$menu = menu_load($GLOBALS['landdebate_menu']); */
-/*   /\* $tree = menu_tree($GLOBALS['landdebate_menu']); *\/ */
-/*   /\* dpm($tree); *\/ */
-/* } */
-
-/* function landdebate_process(&$variables, $hook) { */
-/*   if ($hook == 'page') { */
-/*     dpm($variables['page']['section_header']); */
-/*     //dpm($variables['attributes_array']); */
-    
-/*   } */
-/* } */
-
-/* function landdebate_node_view($node, $view_mode, $lang) { */
-/*   if ($node->type == 'news') { */
-/*     dpm($node); */
-/*     $menu = menu_load($GLOBALS['landdebate_menu']); */
-/*     dpm($menu); */
-/*     $node->section_header['menu_landdebate-menu'] = $menu; */
-/*         /\* $breadcrumb = array(); *\/ */
-/*         /\* $breadcrumb[] = l(t('Home'), '<front>'); *\/ */
-/*         /\* $breadcrumb[] = l(t('landdebate'), 'debate'); *\/ */
-/*         /\* $breadcrumb[] = l(t('News'), 'debate/news'); *\/ */
-/*         /\* drupal_set_breadcrumb($breadcrumb); *\/ */
-/*   } */
-/* } */
-
-/* function landdebate_menu_breadcrumb_alter(&$active_trail, $item){ */
-/*   menu_set_active_item('debate'); */
-/*   /\* dpm($item); *\/ */
-/*   //$active_trail[] = $item; */
-/*   // array('title' => t($item['title']), 'href'  => $item['path']); *\/ */
-/*   dpm($active_trail); */
-/*   $b = array(); */
-/*   foreach ($active_trail as $i=>$a) { */
-/*     $a['weight'] = $i; */
-/*     $b[$i] = $a; */
-/*   } */
-/*   $item['weight'] = ++$i; */
-/*   $b[$i] = $item; */  
-/*   $active_trail = drupal_set_breadcrumb($b);//active_trail); */
-/*   dpm($active_trail); */
-/* } */
-
-
-

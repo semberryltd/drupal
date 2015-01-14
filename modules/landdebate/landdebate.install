@@ -14,7 +14,7 @@
  * see also: landdebate.menu.inc
  */
 function landdebate_enable() {
-  watchdog('Landdebate', 'Enabling');
+  watchdog('Landdebate', 'Adding ' . $GLOBALS['landdebate_menu']);
   $menu = array(
     'menu_name'		=> $GLOBALS['landdebate_menu'],
     'title'		=> "Debate with others",
@@ -35,10 +35,11 @@ function landdebate_enable() {
 }
 
 function landdebate_disable() {
-  /* $m = menu_load_links('main-menu'); */
-  /* dpm($m); */
   watchdog('Landdebate', 'Removing ' . $GLOBALS['landdebate_menu']);
   menu_delete(array('menu_name' => $GLOBALS['landdebate_menu']));
-  //cache_clear_all('*', 'cache_menu', TRUE);
   cache_clear_all();
+
+  $status = variable_get('views_defaults', array());
+  $status['debate'] = TRUE;
+  variable_set('views_defaults', $status);
 }
