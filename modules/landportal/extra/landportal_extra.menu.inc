@@ -12,10 +12,10 @@
  */
 function landportal_extra_menu_default_menu_links() {
   $menu_links = array();
-  drupal_set_message('add Sign-in link to user menu');
 
-  // Exported menu link: user-menu_login:user/login
-  $menu_links['user-menu_login:user/login'] = array(
+  // Exported menu link: user-menu_sign-in:user/login
+  //$menu_links['user-menu_sign-in:user/login'] = array(
+  $menu_links['user/login'] = array(
     'menu_name' => 'user-menu',
     'link_path' => 'user/login',
     'router_path' => 'user/login',
@@ -24,7 +24,7 @@ function landportal_extra_menu_default_menu_links() {
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'user-menu_login:user/login',
+      'identifier' => 'user-menu_sign-in:user/login',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -37,20 +37,8 @@ function landportal_extra_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Sign in');
+
+
   return $menu_links;
 }
 
-function landportal_extra_menu_default_menu_custom() {
-  $menus = array();
-  // Exported menu: user-menu.
-  $menus['user-menu'] = array(
-    'menu_name' => 'user-menu',
-    'title' => 'User menu',
-    'description' => 'The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.',
-  );
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.');
-  t('User menu');
-  return $menus;
-}

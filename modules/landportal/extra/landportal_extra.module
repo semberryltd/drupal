@@ -7,39 +7,29 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
-function landportal_extra_init() {
-  //drupal_set_message('helo');
-}
-
-function landportal_extra_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "context" && $api == "context") {
-    return array("version" => "3");
-  }
-}
-
 module_load_include('inc', 'landportal_extra', 'landportal_extra.blocks');
 module_load_include('inc', 'landportal_extra', 'landportal_extra.menu');
 
-/** Default block configuration for main-menu
- * @TODO bug: pages & visibility doesn't appear in drupal landdebate menu block setting page, though it seems to work
+/**
+ * Default block configuration for the Landportal
+ *  - main-menu goes in header
+ *  - hide 'power-by' (default drupal footer)
+ *  - Search form goes in section_header
+ *  - user login form: hide
  */
 function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
   if ($theme == 'landportal') {
-    // Show default menus in header
     foreach (array('main-menu', 'user-menu') as $m) {
-      //dpm($blocks['system'][$m]);
       $blocks['system'][$m]['status'] = TRUE;
       $blocks['system'][$m]['region'] = 'header';
     }
     // Disable Drupal default block
     foreach (array('powered-by', 'navigation') as $m) {
-      //dpm($blocks['system'][$m]);
       $blocks['system'][$m]['status'] = FALSE;
       $blocks['system'][$m]['region'] = '';
     }
     $blocks['search']['form']['status'] = TRUE;
     $blocks['search']['form']['region'] = 'section_header';
-
     $blocks['user']['login']['status'] = FALSE;
     $blocks['user']['login']['region'] = '';
   }

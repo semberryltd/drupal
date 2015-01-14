@@ -10,12 +10,44 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
+
+
+
 function landportal_extra_block_info() {
-  $blocks['landportal_footer'] = array(
-    'info' => t('Landportal Footer'),
-    'status' => TRUE,
-    'region' => 'footer',
+  $blocks = array(
+    'landportal_footer' => array(
+      'info' => t('Landportal Footer'),
+      'status' => TRUE,
+      'region' => 'footer',
+    ),
+    'lp_footer_social' => array(
+      'info' => t('Footer social icons'),
+      'status' => TRUE,
+      'region' => 'footer',
+    ),
+    'lp_twitter' => array(
+      'info'            => t('Twitter widget'),
+      'status'          => TRUE,
+      'region'          => 'sidebar_second',
+      'visibility'      => BLOCK_VISIBILITY_LISTED,
+      'pages'           => "debate/debate\ndebate/news\ndebate/event",
+    ),
+    'lp_facebook' => array(
+      'info'            => t('Facebook widget'),
+      'status'          => TRUE,
+      'region'          => 'sidebar_second',
+      'visibility'      => BLOCK_VISIBILITY_LISTED,
+      'pages'           => "debate/organization",
+    ),
+    'lp_shareit' => array(
+      'info'            => t('Share it widget'),
+      'status'          => TRUE,
+      'region'          => 'sidebar_first',
+      'visibility'      => BLOCK_VISIBILITY_LISTED,
+      'pages'           => "debate/debate/*\ndebate/news/*\ndebate/event/*",
+    ),
   );
+  //dpm($blocks);
   return $blocks;
 }
 
@@ -30,6 +62,35 @@ function landportal_extra_block_configure($delta='') {
        '#default_value' => variable_get('landportal_footer_text', 'Landportal | (c)'),
      );
      break;
+   case 'lp_twitter' :
+     $form['text_body'] = array(
+       '#type' => 'textarea',
+       '#title' => t('Twitter widget (follow landportal)'),
+       '#default_value' => variable_get('lp_twitter', '<a class="twitter-timeline" href="https://twitter.com/search?q=%23landportal" data-widget-id="515155865456766978" data-chrome="nofooter transparent noscrollbar" data-tweet-limit="5">Landportal on Twitter</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>'),
+     );
+     break;
+   case 'lp_facebook' :
+     $form['text_body'] = array(
+       '#type' => 'textarea',
+       '#title' => t('Facebook iframe (HTML)'),
+       '#default_value' => variable_get('lp_facebook', '<iframe src="//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/landportal&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;bordercolor&amp;stream=true&amp;header=true&amp;height=880&amp;show_border=false&amp;force_wall=true" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 340px; height: 880px;" allowtransparency="true" title="Like us on Facebook"></iframe>'),
+     );
+     break;
+   case 'lp_footer_social' :
+     $form['text_body'] = array(
+       '#type' => 'text_format',
+       '#title' => t('Footer Social Networks (check if icon exists at: http://fortawesome.github.io/Font-Awesome/icons/#brand)'),
+       '#default_value' => variable_get('lp_footer_social', 'twitter, facebook'),
+     );
+     break;
+   case 'lp_shareit' :
+     $form['text_body'] = array(
+       '#type' => 'text_format',
+       '#title' => t('List of link to share current page'),
+       '#default_value' => variable_get('lp_shareit', 'mail, twitter, facebook, linkedin'),
+     );
+     break;
    }
    return $form;
  }
@@ -37,20 +98,44 @@ function landportal_extra_block_configure($delta='') {
 function landportal_extra_block_save($delta = '', $edit = array()) {
   switch($delta) {
   case 'landportal_footer' :
-    // Saving the WYSIWYG text      
     variable_set('landportal_footer_text', $edit['text_body']['value']);
+    break;
+  case 'lp_twitter' :
+    variable_set('lp_twitter', $edit['text_body']);
+    break;
+  case 'lp_facebook' :
+    variable_set('lp_facebook', $edit['text_body']);
+    break;
+  case 'lp_footer_social' :
+    variable_set('lp_footer_social', $edit['text_body']['value']);
+    break;
+  case 'lp_shareit' :
+    variable_set('lp_shareit', $edit['text_body']['value']);
     break;
   }
 }
 
 function landportal_extra_block_view($delta = '') {
-  // This example is adapted from node.module.
   $block = array();
-
   switch ($delta) {
   case 'landportal_footer':
     $text = variable_get('landportal_footer_text', '');
     $block['content'] = $text;
+    break;
+  case 'lp_footer_social':
+    $esi = variable_get('lp_footer_social', '');
+    $str = preg_replace('/(<a[^>]+>)([^<]*)/', '\1<i class="fa fa-\2"></i>', $esi);
+    $block['content'] = array('#type' => 'markup', '#markup' => $str);
+    break;
+  case 'lp_twitter':
+    $block['content'] = variable_get('lp_twitter', '');
+    break;
+  case 'lp_facebook':
+    $block['content'] = variable_get('lp_facebook', '');
+    break;
+  case 'lp_shareit':
+    $block['title'] = 'Share it';
+    $block['content'] = variable_get('lp_shareit', '');
     break;
   }
   return $block;
