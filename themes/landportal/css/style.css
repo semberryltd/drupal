@@ -2069,11 +2069,16 @@ img {
   min-height: 2.5em;
   color: #666666;
 }
-/* line 297, ../scss/screens/_base.scss */
+/* line 293, ../scss/screens/_base.scss */
+.front .view-front-page-teasers .views-row h3 a {
+  text-decoration: none;
+  color: #666666;
+}
+/* line 298, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row p {
   text-align: justify;
 }
-/* line 301, ../scss/screens/_base.scss */
+/* line 302, ../scss/screens/_base.scss */
 .front .view-front-page-teasers:after {
   position: relative;
   clear: both;

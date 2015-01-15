@@ -290,6 +290,7 @@ img {
                 }
             }
             h3 {
+                a { text-decoration: none; color: $grey-light; }
                 text-transform: uppercase;
                 min-height: 2.5em;
                 color: $grey-light;
