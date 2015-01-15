@@ -7,15 +7,12 @@
  * See also: /usr/share/drupal7/modules/system/page.tpl.php
  *
  * For: Landportal theme
- * Original work by: WESO
+ * Original work by: WESO (http://www.weso.es)
  * Drupal refactoring: Jules <jules@ker.bz>
  *
  * Git: https://github.com/landportal/drupal/
  */
-
-//dpm($page);
 ?>
-
 
   <div id="page-wrapper"><div id="page">
 

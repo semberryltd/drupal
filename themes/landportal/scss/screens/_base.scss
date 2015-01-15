@@ -209,10 +209,14 @@ img {
     .submitted,
     .views-label { display: none; }
 
+    .library { color: $yellow; }
+    .book { color: $green; }
+    .debate { color: $blue; }
+
     #header {
         border-bottom: .36em solid $green;
     }
-    #content {
+    #main {
         line-height: 1.4em;
         width: 100%;
         color: $grey-light;
@@ -226,12 +230,10 @@ img {
             font-weight: 300;
             font-size: 1.2em;
             text-transform: uppercase;
-            padding: 0 50px;
             margin: 1.2em 0 0;
         }
 
         .region-content {
-            padding: 0 50px;
             margin: 0.5em 0 1em 0;
         }
 

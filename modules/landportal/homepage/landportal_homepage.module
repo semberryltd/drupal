@@ -3,21 +3,12 @@
  * @file
  * This module provide blocks to be use for the landportal homepage
  *
- * The Landportal landdebate
+ * The Landportal
+ * Those views should be directly included by the theme page--front template.
  *
  * Original work by: WESO
  * Drupal refactoring: Jules <jules@ker.bz>
  */
-
-/* function landportal_homepage_block_info_alter(&$blocks, $theme, $code_blocks) { */
-/*   //dpm($blocks); */
-/*   $blocks['views']['front_page_promoted-block']['status'] = TRUE; */
-/*   $blocks['views']['front_page_promoted-block']['region'] = 'content'; */
-/*   $blocks['views']['front_page_teasers-block']['status'] = TRUE; */
-/*   $blocks['views']['front_page_teasers-block']['region'] = 'content'; */
-/*   return $blocks; */
-/* } */
-
 
 function landportal_homepage_views_api() {
   return array('api' => 3.0);

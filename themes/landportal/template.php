@@ -28,14 +28,18 @@ function landportal_preprocess_html(&$variables) {
 }
 
 /**
- * Add description to header-section menus
+ * Add description to section-header menus
+ * If no menu are found in the section-header remove the whole block
  */
 function landportal_page_alter(&$page) {
   if (!isset($page['section_header'])) return;
+  $check = FALSE;
   foreach (array('landbook', 'landdebate', 'landlibrary') as $i) {
     if (isset($page['section_header']['menu_' . $i . '-menu'])) {
       $m = menu_load($i . '-menu');
       $page['section_header']['menu_'. $i . '-menu']['#block']->description = $m['description'];
+      $check = TRUE;
     }
   }
+  if (!$check) unset($page['section_header']);
 }

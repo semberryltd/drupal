@@ -1968,11 +1968,23 @@ img {
   display: none;
 }
 /* line 212, ../scss/screens/_base.scss */
+.front .library {
+  color: #e3ab03;
+}
+/* line 213, ../scss/screens/_base.scss */
+.front .book {
+  color: #8fcd1f;
+}
+/* line 214, ../scss/screens/_base.scss */
+.front .debate {
+  color: #0165C3;
+}
+/* line 216, ../scss/screens/_base.scss */
 .front #header {
   border-bottom: 0.36em solid #8fcd1f;
 }
-/* line 215, ../scss/screens/_base.scss */
-.front #content {
+/* line 219, ../scss/screens/_base.scss */
+.front #main {
   line-height: 1.4em;
   width: 100%;
   color: #666666;
@@ -1981,51 +1993,49 @@ img {
   font-family: 'Source Sans Pro',sans-serif;
   font-weight: 300;
 }
-/* line 223, ../scss/screens/_base.scss */
-.front #content #page-title {
+/* line 227, ../scss/screens/_base.scss */
+.front #main #page-title {
   line-height: 1.4em;
   font-family: 'Source Sans Pro',sans-serif;
   font-weight: 300;
   font-size: 1.2em;
   text-transform: uppercase;
-  padding: 0 50px;
   margin: 1.2em 0 0;
 }
-/* line 233, ../scss/screens/_base.scss */
-.front #content .region-content {
-  padding: 0 50px;
+/* line 236, ../scss/screens/_base.scss */
+.front #main .region-content {
   margin: 0.5em 0 1em 0;
 }
-/* line 241, ../scss/screens/_base.scss */
+/* line 243, ../scss/screens/_base.scss */
 .front .view-front-page-promoted {
   margin: 0;
   /* padding: 0 -15px; */
   width: 100%;
 }
-/* line 247, ../scss/screens/_base.scss */
+/* line 249, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row {
   position: relative;
   float: left;
   width: 25%;
 }
-/* line 253, ../scss/screens/_base.scss */
+/* line 255, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row .views-field-title {
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   padding: 0.5em 1em;
   bottom: 0;
 }
-/* line 259, ../scss/screens/_base.scss */
+/* line 261, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row a {
   text-decoration: none;
   color: #ffffff;
 }
-/* line 263, ../scss/screens/_base.scss */
+/* line 265, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row img {
   width: 100%;
   max-height: 200px;
 }
-/* line 268, ../scss/screens/_base.scss */
+/* line 270, ../scss/screens/_base.scss */
 .front .view-front-page-promoted:after {
   position: relative;
   clear: both;
@@ -2033,37 +2043,37 @@ img {
   content: " ";
   visibility: hidden;
 }
-/* line 276, ../scss/screens/_base.scss */
+/* line 278, ../scss/screens/_base.scss */
 .front .view-front-page-teasers {
   padding: 1em 5em;
 }
-/* line 278, ../scss/screens/_base.scss */
+/* line 280, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row {
   float: left;
   width: 33.3%;
   text-align: center;
   padding: 0 1em;
 }
-/* line 283, ../scss/screens/_base.scss */
+/* line 285, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title {
   text-transform: lowercase;
   font-size: 2.5em;
 }
-/* line 286, ../scss/screens/_base.scss */
+/* line 288, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title a {
   color: #333333;
 }
-/* line 290, ../scss/screens/_base.scss */
+/* line 292, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 {
   text-transform: uppercase;
   min-height: 2.5em;
   color: #666666;
 }
-/* line 295, ../scss/screens/_base.scss */
+/* line 297, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row p {
   text-align: justify;
 }
-/* line 299, ../scss/screens/_base.scss */
+/* line 301, ../scss/screens/_base.scss */
 .front .view-front-page-teasers:after {
   position: relative;
   clear: both;
