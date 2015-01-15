@@ -205,35 +205,38 @@ img {
  * Page specific
  */
 .front {
+    // TMP
+    .submitted,
+    .views-label { display: none; }
 
     #header {
         border-bottom: .36em solid $green;
     }
     #content {
-        line-height: 1.8em;
-        width: 100%;
-        color: $text-color;
-    }
-    #page-title {
         line-height: 1.4em;
+        width: 100%;
+        color: $grey-light;
+        font-size: 1.4em;
         letter-spacing: 0.1em;
-        font-weight: 300;
-        font-size: 1.5em;
         font-family: 'Source Sans Pro',sans-serif;
-        text-transform: uppercase;
-        color: $text-color;
-        padding: 0 50px;
-        margin: 1.2em 0 0;
-    }
-    .region-content {
-        padding: 0 50px;
-        .submitted {
-            display: none;
+        font-weight: 300;
+        #page-title {
+            line-height: 1.4em;
+            font-family: 'Source Sans Pro',sans-serif;
+            font-weight: 300;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            padding: 0 50px;
+            margin: 1.2em 0 0;
         }
+
+        .region-content {
+            padding: 0 50px;
+            margin: 0.5em 0 1em 0;
+        }
+
     }
 
-    // TMP
-    .views-label { display: none; }
 
     .view-front-page-promoted {
         margin: 0;
@@ -242,13 +245,15 @@ img {
         .views-row {
 
             &{
-            position: relative;
-            float: left;
-            width: 25%;
+                position: relative;
+                float: left;
+                width: 25%;
             }
+
             .views-field-title {
                 background-color: rgba(.3, .3, .3, .6);
                 position: absolute;
+                padding: 0.5em 1em;
                 bottom: 0;
             }
             a {
@@ -274,6 +279,20 @@ img {
             float: left;
             width: 33.3%;
             text-align: center;
+            padding: 0 1em;
+            .views-field-title {
+                font-size: 2.5em;
+                a {
+                    color: $grey;
+                }
+            }
+            h3 {
+                min-height: 2.5em;
+                color: $grey-light;
+            }
+            p {
+                text-align: justify;
+            }
         }
         &:after {
             position: relative;
