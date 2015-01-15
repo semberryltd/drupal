@@ -2046,22 +2046,24 @@ img {
 }
 /* line 283, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title {
+  text-transform: lowercase;
   font-size: 2.5em;
 }
-/* line 285, ../scss/screens/_base.scss */
+/* line 286, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title a {
   color: #333333;
 }
-/* line 289, ../scss/screens/_base.scss */
+/* line 290, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 {
+  text-transform: uppercase;
   min-height: 2.5em;
   color: #666666;
 }
-/* line 293, ../scss/screens/_base.scss */
+/* line 295, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row p {
   text-align: justify;
 }
-/* line 297, ../scss/screens/_base.scss */
+/* line 299, ../scss/screens/_base.scss */
 .front .view-front-page-teasers:after {
   position: relative;
   clear: both;
