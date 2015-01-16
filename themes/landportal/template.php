@@ -25,6 +25,16 @@ function landportal_preprocess_html(&$variables) {
   //drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
   drupal_add_css(drupal_get_path('theme', 'landportal').'/css/font-awesome.min.css');
   drupal_add_css(drupal_get_path('theme', 'landportal').'/css/bootstrap.min.css');
+
+  $meta_viewport = array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'content' => 'width=device-width',
+      'name' => 'viewport',
+    )
+  );
+  drupal_add_html_head($meta_viewport, 'viewport');
+
 }
 
 /**
