@@ -11,14 +11,14 @@
 
 function landdebate_context_default_context() {
   $conditions = array('node' => array('values' => array()), 'options' => array('node_form' => '0'));
-  foreach ($GLOBALS['landdebate_content_types'] as $ct) {
+  foreach (array_keys($GLOBALS['landdebate_content_types']) as $ct) {
     $conditions['node']['values'][$ct] = $ct;
   }
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'Landdebate menu context';
+  $context->name = 'debate-menu-context';
   $context->description = 'Contextually display landdebate section header menu';
   $context->tag = '';
   $context->conditions = $conditions;

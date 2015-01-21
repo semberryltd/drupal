@@ -10,9 +10,8 @@
  */
 
 function landdebate_menu_build(&$items) {
-
   // Landbook main-menu link
-  $items['debate/<front>'] = array(
+  $items['debate:<front>'] = array(
     'title'		=> 'Home',
     'menu_name'		=> $GLOBALS['landdebate_menu'],
     'type'              => MENU_NORMAL_ITEM,
@@ -21,13 +20,13 @@ function landdebate_menu_build(&$items) {
     'page arguments'    => array('<front>'),
   );
   $translatables['debate'][] = t('Home');
-
-  foreach ($GLOBALS['landdebate_content_types'] as $i => $s) {
+  $i=0;
+  foreach ($GLOBALS['landdebate_content_types'] as $k => $s) {
     $items['debate/' . $s] = array(
       'title'           => ucfirst(str_replace('_', ' ', $s)),
       'menu_name'       => $GLOBALS['landdebate_menu'],
       'access callback' => TRUE,
-      'weight'          => $i,
+      'weight'          => $i++,
       'page callback'   => 'landdebate_vcb',
       'page arguments'  => array(1),
     );
