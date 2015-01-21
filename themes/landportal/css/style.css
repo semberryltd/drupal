@@ -61,28 +61,28 @@ buttons, forms, menus...
 }
 
 /* line 24, ../scss/modules/_debate.scss */
-.page-debate-community .node-organization-teaser {
+.page-debate-community .node-organization.node-teaser {
   width: 33%;
   float: left;
   position: relative;
   text-align: center;
   margin: 1em 0 2em 0;
+  /* .content { */
+  /*     width: 100%; */
+  /* } */
 }
 /* line 31, ../scss/modules/_debate.scss */
-.page-debate-community .node-organization-teaser h2 {
-  position: absolute;
-  bottom: 0;
+.page-debate-community .node-organization.node-teaser h2 {
+  margin-top: 1em;
   width: 100%;
   text-align: center;
 }
-/* line 37, ../scss/modules/_debate.scss */
-.page-debate-community .node-organization-teaser .content {
-  width: 100%;
-  min-height: 200px;
-  margin: 0 0 2.5em 0;
+/* line 39, ../scss/modules/_debate.scss */
+.page-debate-community .node-organization.node-teaser .content-info {
+  min-height: 150px;
 }
 /* line 42, ../scss/modules/_debate.scss */
-.page-debate-community .node-organization-teaser img {
+.page-debate-community .node-organization.node-teaser img {
   min-width: 200px;
 }
 

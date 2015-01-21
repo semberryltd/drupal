@@ -21,7 +21,7 @@
 }
 
 .page-debate-community {
-    .node-organization-teaser {
+    .node-organization.node-teaser {
         width: 33%;
         float: left;
         position: relative;
@@ -29,15 +29,15 @@
         margin: 1em 0 2em 0;
 
         h2 {
-            position: absolute;
-            bottom: 0;
+            margin-top: 1em;
             width: 100%;
             text-align: center;
         }
-        .content {
-            width: 100%;
-            min-height: 200px;
-            margin: 0 0 2.5em 0;
+        /* .content { */
+        /*     width: 100%; */
+        /* } */
+        .content-info {
+            min-height: 150px;
         }
         img {
             min-width: 200px;
