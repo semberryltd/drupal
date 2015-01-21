@@ -20,6 +20,7 @@ features[features_api][] = api:2
 features[views_view][] = blog
 features[views_view][] = community
 features[views_view][] = debates
+features[views_view][] = events
 features[views_view][] = news
 features[views_view][] = users
 files[] = landdebate.module

@@ -286,21 +286,12 @@ $handler->display->display_options['filters']['language']['value'] = array(
                                     t('Page'),
                                     );
 
-/* Filter criterion: Content: Language */
-$handler->display->display_options['filters']['language']['id'] = 'language';
-$handler->display->display_options['filters']['language']['table'] = 'node';
-$handler->display->display_options['filters']['language']['field'] = 'language';
-$handler->display->display_options['filters']['language']['value'] = array(
-  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-);
-
-
   /* Export this view */
   $views[$view->name] = $view;
 
   $view = new view();
-  $view->name = 'event';
-  $view->description = 'Overview of Landportal Event';
+  $view->name = 'events';
+  $view->description = 'Overview of Landportal Events';
   $view->tag = 'landportal';
   $view->base_table = 'node';
   $view->human_name = 'Events overview';
@@ -352,6 +343,14 @@ $handler->display->display_options['filters']['language']['value'] = array(
     'event' => 'event',
   );
 
+/* Filter criterion: Content: Language */
+$handler->display->display_options['filters']['language']['id'] = 'language';
+$handler->display->display_options['filters']['language']['table'] = 'node';
+$handler->display->display_options['filters']['language']['field'] = 'language';
+$handler->display->display_options['filters']['language']['value'] = array(
+  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+);
+
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'debate/events';
@@ -380,6 +379,7 @@ $handler->display->display_options['filters']['language']['value'] = array(
 
   /* Export this view */
   $views[$view->name] = $view;
+
 
   $view = new view();
   $view->name = 'community';
