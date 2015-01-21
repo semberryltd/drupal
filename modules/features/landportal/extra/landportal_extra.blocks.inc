@@ -30,7 +30,7 @@ function landportal_extra_block_info() {
       'status'          => TRUE,
       'region'          => 'sidebar_second',
       'visibility'      => BLOCK_VISIBILITY_LISTED,
-      'pages'           => "debate/debate\ndebate/news\ndebate/event",
+      'pages'           => "debate/debates\ndebate/news\ndebate/event",
     ),
     'lp_facebook' => array(
       'info'            => t('Facebook widget'),
@@ -44,7 +44,7 @@ function landportal_extra_block_info() {
       'status'          => TRUE,
       'region'          => 'sidebar_first',
       'visibility'      => BLOCK_VISIBILITY_LISTED,
-      'pages'           => "debate/debate/*\ndebate/news/*\ndebate/event/*",
+      'pages'           => "debate/debates/*\ndebate/news/*\ndebate/event/*",
     ),
   );
   //dpm($blocks);
