@@ -6,4 +6,5 @@ version = 7.x-1.0-alpha
 ; dependencies[] = devel
 dependencies[] = ctools
 dependencies[] = views
+features[features_api][] = api:3
 files[] = landportal_homepage.module
