@@ -3,5 +3,3 @@
  * @file
  * Code for the Landportal field base feature.
  */
-
-include_once 'landportal_field_base.features.inc';
