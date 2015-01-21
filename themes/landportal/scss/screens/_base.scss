@@ -36,6 +36,10 @@ h2 {
 img {
     max-width: 100%;
 }
+a {
+    color: $blue;
+}
+
 /* .view-content { */
 /*     clear: both; */
 /* } */
@@ -69,6 +73,7 @@ img {
 
 #logo {
     float: left;
+    margin: 0 2em 0 0;
 }
 
 #header {
@@ -199,6 +204,22 @@ img {
 #sidebar-second {
     float: right;
 }
+
+
+/*****************************************
+ * Drupal specific
+ */
+.view .pager {
+    margin: 0;
+    li {
+        margin: 0 .5em;
+        padding: 0;
+        a {
+            margin: 0.5em 0;
+        }
+    }
+}
+
 
 
 /*****************************************
