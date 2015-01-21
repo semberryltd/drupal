@@ -1,0 +1,10 @@
+.field-name-field-status {
+    margin: 1em 0;
+    padding: .5em 0;
+    border: 1px solid $grey-light;
+    border-radius: .25em;
+    .field-item[content="Closed"] {
+        background-color: $status-red;
+        color: white;
+    }
+}

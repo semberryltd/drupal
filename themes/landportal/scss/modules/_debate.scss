@@ -1,0 +1,86 @@
+
+.field-name-body h1,
+.field-name-body h2,
+.field-name-body h3,
+.field-name-body h4,
+.field-name-body h5 {
+    clear: none;
+}
+.field-name-body h1 { font-size: 2em; }
+.field-name-body h2 { font-size: 1.8em; }
+.field-name-body h3 { font-size: 1.5em; }
+.field-name-body h4 { font-size: 1.2em; }
+
+.page-debate-debates,
+.page-debate-news,
+.page-debate-community {
+    .submitted {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.page-debate-community {
+    .node-organization-teaser {
+        width: 33%;
+        float: left;
+        position: relative;
+        text-align: center;
+        margin: 1em 0 2em 0;
+
+        h2 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .content {
+            min-height: 200px;
+            margin: 0 0 2.5em 0;
+        }
+        img {
+            min-width: 200px;
+        }
+    }
+}
+
+
+.page-debate-news {
+    .node-news-teaser {
+        border-bottom: 1px dotted $grey-light;
+    }
+}
+
+.page-debate-debates {
+    .view-content {
+        padding: 0 2em 0 0;
+    }
+    .node-debate-teaser {
+        border-bottom: 1px dotted $grey-light;
+        margin: 2em 0;
+        h2 {
+            font-size: 2.2em;
+        }
+
+        .content {
+            text-align: justify;
+            float: left;
+            width: 75%;
+            padding: 0 0 0 2em;
+        }
+        .content-info {
+            text-align: center;
+            float: left;
+            width: 25%;
+            
+            .field-label {
+            }
+            .field-name-field-facilitators {
+                .field {
+                    float: left; 
+                    padding: 0 .4em 0 0;
+                }
+            }
+        }
+    }
+}
