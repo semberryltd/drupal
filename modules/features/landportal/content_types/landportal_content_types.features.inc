@@ -21,7 +21,7 @@ function landportal_content_types_node_info() {
     'blog_post' => array(
       'name' => t('Blog post'),
       'base' => 'node_content',
-      'description' => t('Landportal Blog post'),
+      'description' => t('A post in the Landportal Debate Blog'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -29,7 +29,9 @@ function landportal_content_types_node_info() {
     'debate' => array(
       'name' => t('Debate'),
       'base' => 'node_content',
-      'description' => t('Landportal Debate'),
+      'description' => t('A Land Debate. This content type is used to create a Debate on the Landportal website.
+By default comments are enabled in Debates, the comments may be open or close regardless of the Debate status.
+'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -37,15 +39,15 @@ function landportal_content_types_node_info() {
     'event' => array(
       'name' => t('Event'),
       'base' => 'node_content',
-      'description' => t('An event referenced in the Landportal'),
+      'description' => t('A concrete event (meeting, conference, show...) that will happen at a given time in a given place.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Event name'),
       'help' => '',
     ),
     'news' => array(
       'name' => t('News'),
       'base' => 'node_content',
-      'description' => t('a Landportal news'),
+      'description' => t('A temporal piece of information posted on the website used to inform people of a new publication, an interesting website to look at, something that will happen soon, etc...'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -53,9 +55,9 @@ function landportal_content_types_node_info() {
     'organization' => array(
       'name' => t('Organization'),
       'base' => 'node_content',
-      'description' => t('An organisation in the Landportal'),
+      'description' => t('An organization (Private companies, NGOs, universities, associations...) referenced in the Landportal.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Organization Name'),
       'help' => '',
     ),
   );
