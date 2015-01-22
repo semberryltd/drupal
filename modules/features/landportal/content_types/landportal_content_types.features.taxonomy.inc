@@ -17,7 +17,7 @@ function landportal_content_types_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
       'language' => 'und',
-      'i18n_mode' => 0,
+      'i18n_mode' => 4,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -63,6 +63,31 @@ function landportal_content_types_taxonomy_default_vocabularies() {
       'name' => 'Regions',
       'machine_name' => 'regions',
       'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 1,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'topics' => array(
+      'name' => 'Topics',
+      'machine_name' => 'topics',
+      'description' => 'Topics for the LandPortal',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
