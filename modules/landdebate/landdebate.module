@@ -24,15 +24,8 @@ $GLOBALS['landdebate_content_types'] = array(
   'organization' => 'community'
 );
 
-//ctools_include('landdebate.view_default',       'landdebate'); // automatically called by hook_views_api (?)
-//ctools_include('landdebate.context',            'landdebate');
 ctools_include('landdebate.menu',               'landdebate');
 
-function landdebate_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "context" && $api == "context") {
-    return array("version" => "3");
-  }
-}
 
 
 function landdebate_help($path, $arg) {
