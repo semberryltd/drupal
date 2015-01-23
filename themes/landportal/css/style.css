@@ -333,12 +333,18 @@ buttons, forms, menus...
   color: white;
 }
 
-/* line 16, ../scss/modules/_buttons.scss */
+/* line 15, ../scss/modules/_buttons.scss */
+.field-name-field-status .field-item {
+  margin: 1.5em 0;
+  padding: .5em;
+}
+
+/* line 19, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item {
   float: none;
   border: 1px solid #666666;
 }
-/* line 19, ../scss/modules/_buttons.scss */
+/* line 22, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item .field-item[content="Closed"] {
   background-color: #fe2e2e;
 }

@@ -18,12 +18,23 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['field_image']);
       hide($content['field_date']);
-if ($teaser) hide($content['locations']);
       hide($content['links']);
       hide($content['comments']);
       print render($content['field_image']);
+if (isset($content['field_status'])) {
+      hide($content['field_status']);
+      print render($content['field_status']);
+}
       print render($content['field_date']);
-if ($teaser) print render($content['locations']);
+
+if ($teaser) {
+      hide($content['locations']);
+      print render($content['locations']);
+}
+if (isset($content['field_facilitators'])) {
+      hide($content['field_facilitators']);
+      print render($content['field_facilitators']);
+}
     ?>
   </div>
 
