@@ -17,6 +17,7 @@
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['body']);
+      hide($content['locations']);
       hide($content['links']);
       hide($content['comments']);
       print render($content);
@@ -40,6 +41,7 @@
     <?php
       // We hide the comments and links now so that we can render them later.
       print render($content['body']);
+      print render($content['locations']);
     ?>
   </div>
 

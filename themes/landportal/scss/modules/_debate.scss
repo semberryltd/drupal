@@ -12,7 +12,7 @@
 .field-name-body h4 { font-size: 1.2em; }
 
 .page-debate-debates,
-.page-debate-news,
+.page-debate-events,
 .page-debate-community {
     .submitted {
         display: none;
@@ -48,6 +48,7 @@
 .node-type-debate,
 .page-debate-news,
 .page-debate-blog,
+.page-debate-events,
 .page-debate-debates {
     .view-content {
         padding: 0 2em 0 0;
@@ -69,6 +70,11 @@
             width: 75%;
             padding: 0 0 0 2em;
         }
+            .field-items:after { content: ""; display: block; float: none; clear: both; }
+            .field {
+                margin: 0 0 .5em;
+                &:last-of-type { margin: 0; }
+            }
         .content-info {
             text-align: center;
             float: left;
@@ -77,10 +83,6 @@
             img {
                 width: 100%;
                 height: auto;
-            }
-            .field {
-                margin: 0 0 1em;
-                &:last-of-type { margin: 0; }
             }
             .field-label {
                 font-family: 'News Cycle',sans-serif;
@@ -117,13 +119,20 @@
     }
 }
 
+.page-debate-events,
 .page-debate-blog {
     .views-row {
         border-bottom: 0;
         width: 48%;
         float: left;
         margin: 0 1%;
+    }
+}
 
+.page-debate-events {
+    .views-row-odd { clear: left; }
+}
+.page-debate-blog {
         &:first-of-type {
             border-bottom: 1px dotted $grey-light;
             margin: 0;
@@ -135,7 +144,7 @@
             clear: both;
         }
     }
-}
+
 
 .node-debate {
     .content-info .field-name-field-facilitators {

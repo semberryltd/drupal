@@ -54,7 +54,7 @@ buttons, forms, menus...
 
 /* line 17, ../scss/modules/_debate.scss */
 .page-debate-debates .submitted,
-.page-debate-news .submitted,
+.page-debate-events .submitted,
 .page-debate-community .submitted {
   display: none;
   visibility: hidden;
@@ -86,79 +86,100 @@ buttons, forms, menus...
   min-width: 200px;
 }
 
-/* line 52, ../scss/modules/_debate.scss */
+/* line 53, ../scss/modules/_debate.scss */
 .node-type-debate .view-content,
 .page-debate-news .view-content,
 .page-debate-blog .view-content,
+.page-debate-events .view-content,
 .page-debate-debates .view-content {
   padding: 0 2em 0 0;
 }
-/* line 55, ../scss/modules/_debate.scss */
+/* line 56, ../scss/modules/_debate.scss */
 .node-type-debate .views-row,
 .page-debate-news .views-row,
 .page-debate-blog .views-row,
+.page-debate-events .views-row,
 .page-debate-debates .views-row {
   border-bottom: 1px dotted #666666;
 }
-/* line 59, ../scss/modules/_debate.scss */
+/* line 60, ../scss/modules/_debate.scss */
 .node-type-debate .node,
 .page-debate-news .node,
 .page-debate-blog .node,
+.page-debate-events .node,
 .page-debate-debates .node {
   margin: 2em 0;
 }
-/* line 61, ../scss/modules/_debate.scss */
+/* line 62, ../scss/modules/_debate.scss */
 .node-type-debate .node h2,
 .page-debate-news .node h2,
 .page-debate-blog .node h2,
+.page-debate-events .node h2,
 .page-debate-debates .node h2 {
   font-size: 1.8em;
 }
-/* line 66, ../scss/modules/_debate.scss */
+/* line 67, ../scss/modules/_debate.scss */
 .node-type-debate .node .content,
 .page-debate-news .node .content,
 .page-debate-blog .node .content,
+.page-debate-events .node .content,
 .page-debate-debates .node .content {
   text-align: justify;
   float: left;
   width: 75%;
   padding: 0 0 0 2em;
 }
-/* line 72, ../scss/modules/_debate.scss */
+/* line 73, ../scss/modules/_debate.scss */
+.node-type-debate .node .field-items:after,
+.page-debate-news .node .field-items:after,
+.page-debate-blog .node .field-items:after,
+.page-debate-events .node .field-items:after,
+.page-debate-debates .node .field-items:after {
+  content: "";
+  display: block;
+  float: none;
+  clear: both;
+}
+/* line 74, ../scss/modules/_debate.scss */
+.node-type-debate .node .field,
+.page-debate-news .node .field,
+.page-debate-blog .node .field,
+.page-debate-events .node .field,
+.page-debate-debates .node .field {
+  margin: 0 0 .5em;
+}
+/* line 76, ../scss/modules/_debate.scss */
+.node-type-debate .node .field:last-of-type,
+.page-debate-news .node .field:last-of-type,
+.page-debate-blog .node .field:last-of-type,
+.page-debate-events .node .field:last-of-type,
+.page-debate-debates .node .field:last-of-type {
+  margin: 0;
+}
+/* line 78, ../scss/modules/_debate.scss */
 .node-type-debate .node .content-info,
 .page-debate-news .node .content-info,
 .page-debate-blog .node .content-info,
+.page-debate-events .node .content-info,
 .page-debate-debates .node .content-info {
   text-align: center;
   float: left;
   width: 25%;
 }
-/* line 77, ../scss/modules/_debate.scss */
+/* line 83, ../scss/modules/_debate.scss */
 .node-type-debate .node .content-info img,
 .page-debate-news .node .content-info img,
 .page-debate-blog .node .content-info img,
+.page-debate-events .node .content-info img,
 .page-debate-debates .node .content-info img {
   width: 100%;
   height: auto;
 }
-/* line 81, ../scss/modules/_debate.scss */
-.node-type-debate .node .content-info .field,
-.page-debate-news .node .content-info .field,
-.page-debate-blog .node .content-info .field,
-.page-debate-debates .node .content-info .field {
-  margin: 0 0 1em;
-}
-/* line 83, ../scss/modules/_debate.scss */
-.node-type-debate .node .content-info .field:last-of-type,
-.page-debate-news .node .content-info .field:last-of-type,
-.page-debate-blog .node .content-info .field:last-of-type,
-.page-debate-debates .node .content-info .field:last-of-type {
-  margin: 0;
-}
-/* line 85, ../scss/modules/_debate.scss */
+/* line 87, ../scss/modules/_debate.scss */
 .node-type-debate .node .content-info .field-label,
 .page-debate-news .node .content-info .field-label,
 .page-debate-blog .node .content-info .field-label,
+.page-debate-events .node .content-info .field-label,
 .page-debate-debates .node .content-info .field-label {
   font-family: 'News Cycle',sans-serif;
   margin-bottom: .5em;
@@ -166,10 +187,11 @@ buttons, forms, menus...
   color: #666666;
   position: relative;
 }
-/* line 91, ../scss/modules/_debate.scss */
+/* line 93, ../scss/modules/_debate.scss */
 .node-type-debate .node .content-info .field-label:before,
 .page-debate-news .node .content-info .field-label:before,
 .page-debate-blog .node .content-info .field-label:before,
+.page-debate-events .node .content-info .field-label:before,
 .page-debate-debates .node .content-info .field-label:before {
   width: 100%;
   left: 0;
@@ -179,10 +201,11 @@ buttons, forms, menus...
   border-top: 1px solid #666666;
   z-index: -1;
 }
-/* line 100, ../scss/modules/_debate.scss */
+/* line 102, ../scss/modules/_debate.scss */
 .node-type-debate .node .content-info .field-label span,
 .page-debate-news .node .content-info .field-label span,
 .page-debate-blog .node .content-info .field-label span,
+.page-debate-events .node .content-info .field-label span,
 .page-debate-debates .node .content-info .field-label span {
   font-size: 0.9em;
   color: #666666;
@@ -190,54 +213,63 @@ buttons, forms, menus...
   padding: 0 1em;
   background-color: #FFF;
 }
-/* line 109, ../scss/modules/_debate.scss */
+/* line 111, ../scss/modules/_debate.scss */
 .node-type-debate .node ul.links.inline li,
 .page-debate-news .node ul.links.inline li,
 .page-debate-blog .node ul.links.inline li,
+.page-debate-events .node ul.links.inline li,
 .page-debate-debates .node ul.links.inline li {
   float: right;
   font-style: italic;
 }
-/* line 112, ../scss/modules/_debate.scss */
+/* line 114, ../scss/modules/_debate.scss */
 .node-type-debate .node ul.links.inline li.comment-add,
 .page-debate-news .node ul.links.inline li.comment-add,
 .page-debate-blog .node ul.links.inline li.comment-add,
+.page-debate-events .node ul.links.inline li.comment-add,
 .page-debate-debates .node ul.links.inline li.comment-add {
   display: none;
   visibility: hidden;
 }
 
-/* line 121, ../scss/modules/_debate.scss */
+/* line 124, ../scss/modules/_debate.scss */
+.page-debate-events .views-row,
 .page-debate-blog .views-row {
   border-bottom: 0;
   width: 48%;
   float: left;
   margin: 0 1%;
 }
-/* line 127, ../scss/modules/_debate.scss */
-.page-debate-blog .views-row:first-of-type {
+
+/* line 133, ../scss/modules/_debate.scss */
+.page-debate-events .views-row-odd {
+  clear: left;
+}
+
+/* line 136, ../scss/modules/_debate.scss */
+.page-debate-blog:first-of-type {
   border-bottom: 1px dotted #666666;
   margin: 0;
   width: 100%;
 }
-/* line 132, ../scss/modules/_debate.scss */
-.page-debate-blog .views-row:after {
+/* line 141, ../scss/modules/_debate.scss */
+.page-debate-blog:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 142, ../scss/modules/_debate.scss */
+/* line 151, ../scss/modules/_debate.scss */
 .node-debate .content-info .field-name-field-facilitators .profile {
   margin: 0 0 .5em 0;
 }
-/* line 143, ../scss/modules/_debate.scss */
+/* line 152, ../scss/modules/_debate.scss */
 .node-debate .content-info .field-name-field-facilitators .profile:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 150, ../scss/modules/_debate.scss */
+/* line 159, ../scss/modules/_debate.scss */
 .node-debate .content-info .field-name-field-facilitators .field {
   float: left;
   padding: 0 .4em 0 0;
@@ -248,7 +280,7 @@ buttons, forms, menus...
 .field-name-field-topics .field-item,
 .field-name-field-geographical-focus .field-item,
 .field-name-field-status .field-item {
-  margin: 1em 0;
+  margin: .2em;
   padding: 0.2em 0.5em;
   border-radius: .25em;
   color: white;
