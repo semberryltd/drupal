@@ -18,10 +18,12 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['field_image']);
       hide($content['field_date']);
+if ($teaser) hide($content['locations']);
       hide($content['links']);
       hide($content['comments']);
       print render($content['field_image']);
       print render($content['field_date']);
+if ($teaser) print render($content['locations']);
     ?>
   </div>
 
@@ -41,7 +43,8 @@
 
     <?php
       // We hide the comments and links now so that we can render them later.
-        print render($content);
+  print render($content);
+
     ?>
   </div>
 
