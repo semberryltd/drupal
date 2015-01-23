@@ -16,11 +16,12 @@
   <div class="content-info"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
-      hide($content['body']);
-      hide($content['locations']);
+      hide($content['field_image']);
+      hide($content['field_date']);
       hide($content['links']);
       hide($content['comments']);
-      print render($content);
+      print render($content['field_image']);
+      print render($content['field_date']);
     ?>
   </div>
 
@@ -40,8 +41,7 @@
 
     <?php
       // We hide the comments and links now so that we can render them later.
-      print render($content['body']);
-      print render($content['locations']);
+        print render($content);
     ?>
   </div>
 
