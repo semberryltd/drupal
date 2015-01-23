@@ -29,5 +29,3 @@ features[field_base][] = field_related_continents
 features[field_base][] = field_related_countries
 features[field_base][] = field_status
 features[field_base][] = field_topics
-features[taxonomy][] = continents
-features_exclude[dependencies][landportal_content_types] = landportal_content_types
