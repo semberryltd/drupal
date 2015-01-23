@@ -27,11 +27,9 @@ function landdebate_menu_build(&$items) {
       'menu_name'       => $GLOBALS['landdebate_menu'],
       'access callback' => TRUE,
       'weight'          => $i++,
-      'page callback'   => 'landdebate_vcb',
-      'page arguments'  => array(1),
+      'page callback'   => 'views_page',
+      'page arguments'  => array('debate', 'page', 1),
     );
-
-    // TODO
     $translatables['debate'][] = t($items['debate/' . $s]['title']);
   }
 }
@@ -66,13 +64,4 @@ function landdebate_menu_admin(&$items) {
     'type'              => MENU_NORMAL_ITEM,
     'file'              => 'landdebate.admin.inc',
   );
-}
-
-/**
- * Simple callback to 'debate' conditionnal view
- *
- * @see: landdebate.view_default.inc
- */
-function landdebate_vcb($args) {
-  return views_page('debate', 'page', $args);
 }

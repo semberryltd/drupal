@@ -20,12 +20,6 @@ function landdebate_admin_settings() {
     '#description'      => t('Comma separated list of content types to be included in the landdebate'),
     '#default_value'    => variable_get('landdebate_content_types', 'news, blog_post, event, debate, organization'),
   );
-  $form['landdebate_display_entries'] = array(
-    '#type'             => 'textfield',
-    '#title'            => 'Number of entries',
-    '#description'      => t('Number of entries (including sticky) to display in each Debate sections'),
-    '#default_value'    => variable_get('landdebate_display_entries', 5),
-  );
 
   $form['#submit'][] = 'landdebate_admin_settings_submit';
   return system_settings_form($form);
