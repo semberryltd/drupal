@@ -306,17 +306,20 @@ buttons, forms, menus...
 .node-debate .content-info .field-name-field-facilitators > .field-items > .field-item:last-of-type {
   border-bottom: 0;
 }
-/* line 164, ../scss/modules/_debate.scss */
+/* line 163, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile,
 .node-debate .content-info .field-name-field-facilitators .user-profile {
   margin: .5em 0;
 }
 /* line 166, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile:after,
 .node-debate .content-info .field-name-field-facilitators .user-profile:after {
   content: "";
   display: table;
   clear: both;
 }
 /* line 171, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile .field-name-field-organization,
 .node-debate .content-info .field-name-field-facilitators .user-profile .field-name-field-organization {
   font-size: .8em;
 }
