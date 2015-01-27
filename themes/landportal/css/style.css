@@ -298,17 +298,29 @@ buttons, forms, menus...
   clear: both;
 }
 
-/* line 156, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators .profile {
-  margin: 0 0 .5em 0;
-}
 /* line 157, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators .profile:after {
+.node-debate .content-info .field-name-field-facilitators > .field-items > .field-item {
+  border-bottom: 1px dotted #666666;
+}
+/* line 159, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators > .field-items > .field-item:last-of-type {
+  border-bottom: 0;
+}
+/* line 164, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .user-profile {
+  margin: .5em 0;
+}
+/* line 166, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .user-profile:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 164, ../scss/modules/_debate.scss */
+/* line 171, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .user-profile .field-name-field-organization {
+  font-size: .8em;
+}
+/* line 176, ../scss/modules/_debate.scss */
 .node-debate .content-info .field-name-field-facilitators .field {
   float: left;
   padding: 0 .4em 0 0;
@@ -2020,7 +2032,8 @@ select {
   background-image: url(../images/header/grass-medium.png);
 }
 
-/* line 107, ../scss/modules/_menus.scss */
+/* line 108, ../scss/modules/_menus.scss */
+.node-type-organization #section-header,
 .node-type-news #section-header,
 .node-type-debate #section-header,
 .node-type-blog-post #section-header,
@@ -2031,11 +2044,11 @@ select {
   background-image: url(../images/header/pebbles-medium.png);
 }
 
-/* line 117, ../scss/modules/_menus.scss */
+/* line 118, ../scss/modules/_menus.scss */
 #section-header #block-menu-landbook-menu li {
   width: 12.4%;
 }
-/* line 123, ../scss/modules/_menus.scss */
+/* line 124, ../scss/modules/_menus.scss */
 #section-header #block-menu-landdebate-menu li {
   width: 16.5%;
 }
