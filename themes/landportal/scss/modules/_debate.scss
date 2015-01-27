@@ -153,13 +153,25 @@
 
 .node-debate {
     .content-info .field-name-field-facilitators {
-        .profile {
+
+        & > .field-items > .field-item {
+            border-bottom: 1px dotted $grey-light;
+            &:last-of-type {
+                border-bottom: 0;
+            }
+        }
+
+        .user-profile {
+            margin: .5em 0;
             &:after {
                 content: "";
                 display: table;
                 clear: both;
             }
-            margin: 0 0 .5em 0;
+            .field-name-field-organization {
+                font-size: .8em;
+            }
+
         }
         .field {
             float: left; 

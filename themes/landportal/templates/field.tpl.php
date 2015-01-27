@@ -1,6 +1,6 @@
 <?php
 /**
- * @file field--debate.tpl.php
+ * @file field.tpl.php
  * Display name & value(s) of a field
  *
  * For the landdebate, field_name isn't followed by a column (:)
