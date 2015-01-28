@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the Landportal Extra feature.
+ */
+
+include_once 'landportal_extra.features.inc';
+/**
+ * @file
  * Landportal extra module
  *
  * Original work by: WESO (http://weso.es/)
