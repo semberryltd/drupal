@@ -35,6 +35,12 @@ function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
       $blocks['system'][$m]['status'] = FALSE;
       $blocks['system'][$m]['region'] = '';
     }
+
+    $blocks['system']['user-signin']['status'] = TRUE;
+    $blocks['system']['user-signin']['region'] = 'section_header';
+    $blocks['system']['user-signin']['visibility'] = BLOCK_VISIBILITY_LISTED;
+    $blocks['system']['user-signin']['pages'] = "user\nuser/login\nuser/register\nuser/password";
+
     $blocks['search']['form']['status'] = TRUE;
     $blocks['search']['form']['region'] = 'section_header';
     $blocks['search']['form']['visibility'] = BLOCK_VISIBILITY_NOTLISTED;
