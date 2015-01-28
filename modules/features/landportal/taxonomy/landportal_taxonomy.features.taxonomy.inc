@@ -84,6 +84,31 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'organization_types' => array(
+      'name' => 'Organization Types',
+      'machine_name' => 'organization_types',
+      'description' => 'Specific types for organizations (needs rework)',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'regions' => array(
       'name' => 'Regions',
       'machine_name' => 'regions',

@@ -319,11 +319,17 @@ buttons, forms, menus...
   clear: both;
 }
 /* line 171, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile .user-picture,
+.node-debate .content-info .field-name-field-facilitators .user-profile .user-picture {
+  float: left;
+}
+/* line 174, ../scss/modules/_debate.scss */
 .node-debate .content-info .field-name-field-facilitators .profile .field-name-field-organization,
 .node-debate .content-info .field-name-field-facilitators .user-profile .field-name-field-organization {
   font-size: .8em;
+  padding: 0;
 }
-/* line 176, ../scss/modules/_debate.scss */
+/* line 180, ../scss/modules/_debate.scss */
 .node-debate .content-info .field-name-field-facilitators .field {
   float: left;
   padding: 0 .4em 0 0;
@@ -2262,7 +2268,7 @@ a {
 /* line 176, ../scss/screens/_base.scss */
 .sidebar-first #content,
 .sidebar-second #content {
-  width: 75%;
+  width: 73%;
 }
 
 /* line 180, ../scss/screens/_base.scss */

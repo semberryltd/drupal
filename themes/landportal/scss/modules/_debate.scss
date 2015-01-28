@@ -168,8 +168,12 @@
                 display: table;
                 clear: both;
             }
+            .user-picture {
+                float: left;
+            }
             .field-name-field-organization {
                 font-size: .8em;
+                padding: 0;
             }
 
         }
