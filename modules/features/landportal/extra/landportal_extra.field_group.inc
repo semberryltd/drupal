@@ -20,21 +20,22 @@ function landportal_extra_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Interests',
+    'label' => 'Your interests',
     'weight' => '3',
     'children' => array(
       0 => 'field_geographical_focus',
       1 => 'field_interests',
+      2 => 'field_description',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Interests',
+      'label' => 'Your interests',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-interests field-group-fieldset',
-        'description' => '',
+        'description' => 'Tell us a bit more about your interests in joining the Land Portal. What are your focus point, projects you are working on and more!',
       ),
-      'formatter' => 'collapsible',
+      'formatter' => 'open',
     ),
   );
   $export['group_interests|user|user|form'] = $field_group;
@@ -49,7 +50,7 @@ function landportal_extra_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Personal',
+    'label' => 'More about you',
     'weight' => '1',
     'children' => array(
       0 => 'field_firstname',
@@ -60,12 +61,13 @@ function landportal_extra_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'More about you',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-perso field-group-fieldset',
         'required_fields' => 1,
+        'classes' => 'group-perso field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_perso|user|user|form'] = $field_group;

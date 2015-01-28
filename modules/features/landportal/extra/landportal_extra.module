@@ -27,6 +27,8 @@ function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
     foreach (array('main-menu', 'user-menu') as $m) {
       $blocks['system'][$m]['status'] = TRUE;
       $blocks['system'][$m]['region'] = 'header';
+      $blocks['system'][$m]['visibility'] = BLOCK_VISIBILITY_NOTLISTED;
+      $blocks['system'][$m]['pages'] = "user\nuser/login\nuser/register\nuser/password";
     }
     // Disable Drupal default block
     foreach (array('powered-by', 'navigation') as $m) {
@@ -35,8 +37,21 @@ function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
     }
     $blocks['search']['form']['status'] = TRUE;
     $blocks['search']['form']['region'] = 'section_header';
+    $blocks['search']['form']['visibility'] = BLOCK_VISIBILITY_NOTLISTED;
+    $blocks['search']['form']['pages'] = "user\nuser/login\nuser/register\nuser/password";
+
     $blocks['user']['login']['status'] = FALSE;
     $blocks['user']['login']['region'] = '';
   }
   return $blocks;
+}
+/**
+ * Hide default user tabs
+ */
+function landportal_extra_menu_alter(&$items) {
+  $items['user']['type'] = MENU_CALLBACK;
+  $items['user/register']['type'] = MENU_CALLBACK;
+  $items['user/password']['type'] = MENU_CALLBACK;
+
+  $items['user/login']['title'] = 'User account';
 }
