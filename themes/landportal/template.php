@@ -44,10 +44,10 @@ function landportal_preprocess_html(&$variables) {
 function landportal_page_alter(&$page) {
   if (!isset($page['section_header'])) return;
   $check = FALSE;
-  foreach (array('landbook', 'landdebate', 'landlibrary') as $i) {
-    if (isset($page['section_header']['menu_' . $i . '-menu'])) {
-      $m = menu_load($i . '-menu');
-      $page['section_header']['menu_'. $i . '-menu']['#block']->description = $m['description'];
+  foreach (array('landbook-menu', 'landdebate-menu', 'landlibrary-menu', 'user-signin') as $i) {
+    if (isset($page['section_header']['menu_' . $i])) {
+      $m = menu_load($i);
+      $page['section_header']['menu_'. $i]['#block']->description = $m['description'];
       $check = TRUE;
     }
   }

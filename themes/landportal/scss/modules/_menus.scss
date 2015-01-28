@@ -49,6 +49,7 @@
     font-family: 'Source Sans Pro',sans-serif;
 
     }
+    ul.primary,
     ul.menu {
         clear: both;
         margin: 0;
@@ -75,7 +76,7 @@
                 font-size: 1.1em;
                 width: 100%;
                 line-height: 1.2em;
-font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
                 &.active {
                     border-bottom: 0.5em solid $yellow-light;
                     padding-bottom: 0.8em;
@@ -88,11 +89,12 @@ font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 
     .content:after {
         display: block;
-        content: " ";
+        content: "";
         clear: both;
         visibility: none;
     }
 }
+.page-user #section-header,
 .page-book #section-header {
     border-top: 0;
     background-color: $green-dark;
@@ -126,4 +128,7 @@ font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
         }
     }
 
+    #block-menu-user-signin {
+        li { width: 50%; }
+    }
 }
