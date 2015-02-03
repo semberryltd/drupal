@@ -23,6 +23,7 @@ drush --yes vdel site_403
 drush --yes vdel site_404
 drush --yes vdel theme_book_settings
 
+
 # Re-set basic theme_settings (tobogan, favicon, logo...)
 drush php-eval "variable_set('theme_settings', array('toggle_logo' => 1, 'toggle_name' => 1, 'toggle_slogan' => 1, 'toggle_node_user_picture' => 1, 'toggle_comment_user_picture' => 1, 'toggle_comment_user_verification' => 1, 'toggle_favicon' => 1, 'toggle_main_menu' => 1, 'toggle_secondary_menu' => 1, 'default_logo' => 1, 'logo_path' => '', 'logo_upload' => '', 'default_favicon' => 1, 'favicon_path' => '', 'favicon_upload' => ''))"
 
@@ -39,6 +40,8 @@ drush -y fr landportal_extra
 drush -y en landportal_homepage
 drush -y en landbook
 drush -y en landdebate
+
+drush -y vset pathauto_update_action 1
 
 echo "Add base pages (mainly for home/landing page)"
 drush -y vset node_export_reset_path_page 0
