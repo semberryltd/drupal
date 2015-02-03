@@ -37,6 +37,19 @@ function landportal_preprocess_html(&$variables) {
 
 }
 
+function landportal_preprocess_page(&$variables) {
+  if (arg(0) == 'user') {
+    switch (arg(1)) {
+      case 'register':
+      case 'password':
+      case '':
+      case 'login':
+        drupal_set_title(t('Join us'));
+        break;
+    }
+  }
+}
+
 /**
  * Add description to section-header menus
  * If no menu are found in the section-header remove the whole block
@@ -54,44 +67,14 @@ function landportal_page_alter(&$page) {
   if (!$check) unset($page['section_header']);
 }
 
-/* /\** */
-/*  * Add helpful variables (not too sensitive) to users account */
-/*  * for template purposes */
-/*  *\/ */
-/* function landportal_preprocess_user_profile(&$variables) { */
-/*   $account = $variables['elements']['#account']; */
-/*   foreach (element_children($variables['elements']) as $key) { */
-/*     $variables['user_profile'][$key] = $variables['elements'][$key]; */
-/*   } */
-/*   //$account->content['field_email'] =  */
-/*   $variables['user_profile']['field_email'] = array( */
-/*         '#theme' => 'field', */
-/*         '#weight' => 8, */
-/*         '#field_type' => 'text', */
-/*         '#label_display' => 'above', */
-/*         '#field_name' => 'email', */
-/*         '#bundle' => 'user', */
-/*         '#entity_type' => 'user', */
-/*         '#title' => t('Email'), */
-/*         '#items' => array(array('value'=>$account->mail)), */
-/*         0 => array('#markup' =>  l($account->mail, 'mailto:'.$account->mail)), */
-/*   ); */
-
-/*   //$account->content['name'] =  */
-/*   $variables['user_profile']['name'] = array( */
-/*     '#theme' => 'field', */
-/*         '#weight' => 7, */
-/*     '#title' => t('Name'), */
-/*     '#field_type' => 'text', */
-/*     '#label_display' => 'above', */
-/*     '#field_name' => 'email', */
-/*     '#bundle' => 'user', */
-/*     '#entity_type' => 'user', */
-/*     '#items' => array(array('value' => $account->name)), */
-/*     0 => array('#markup' => l($account->name, 'users/'.$account->name)), */
-/*   ); */
-
-/*   // Preprocess fields. */
-/*   field_attach_preprocess('user', $account, $variables['elements'], $variables); */
-/*   //dpm($variables['user_profile']); */
-/* } */
+/**
+ * Override language switcher locale block links
+ * Display ISO (2 letters) code instead of the full lang name.
+ */
+function landportal_links__locale_block(&$vars) {
+  foreach($vars['links'] as $language => $langInfo) {
+        $vars['links'][$language]['title'] = $vars['links'][$language]['language']->language;
+  }
+  $content = theme_links($vars);
+  return $content;
+}

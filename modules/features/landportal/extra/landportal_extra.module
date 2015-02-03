@@ -35,6 +35,9 @@ function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
       $blocks['system'][$m]['status'] = FALSE;
       $blocks['system'][$m]['region'] = '';
     }
+    $blocks['locale']['language']['status'] = TRUE;
+    $blocks['locale']['language']['region'] = 'header';
+    $blocks['locale']['language']['weight'] = 3;
 
     $blocks['menu']['user-signin']['status'] = TRUE;
     $blocks['menu']['user-signin']['region'] = 'section_header';
@@ -58,6 +61,5 @@ function landportal_extra_menu_alter(&$items) {
   $items['user']['type'] = MENU_CALLBACK;
   $items['user/register']['type'] = MENU_CALLBACK;
   $items['user/password']['type'] = MENU_CALLBACK;
-
   $items['user/login']['title'] = 'User account';
 }

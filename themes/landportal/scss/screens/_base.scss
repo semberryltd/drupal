@@ -97,6 +97,7 @@ a {
 
     }
 
+    #block-locale-language,
     #block-system-user-menu {
         float: right;
     }
@@ -181,11 +182,11 @@ a {
     margin-left: 25%;
 }
 .two-sidebars #content {
-    width: 50%;
-    margin-left: 25%;
+    width: 48%;
+    margin-left: 26%;
 }
 .sidebar {
-    width: 25%;
+    width: 24%;
 }
 
 /**
@@ -199,7 +200,7 @@ a {
     top: 50px;
     position: absolute;
     float: left;
-    width: 25%;
+    /* width: 24%; */
 }
 #sidebar-second {
     float: right;
@@ -249,7 +250,7 @@ a {
             line-height: 1.4em;
             font-family: 'Source Sans Pro',sans-serif;
             font-weight: 300;
-            font-size: 1.2em;
+            font-size: 1.4em;
             text-transform: uppercase;
             margin: 1.2em 0 0;
         }
@@ -329,4 +330,9 @@ a {
         }
     }
 
+}
+/* Book */
+.content .content.container {
+    padding: 0;
+    width: 100%;
 }

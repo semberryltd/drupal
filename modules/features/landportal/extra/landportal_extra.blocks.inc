@@ -10,9 +10,6 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
-
-
-
 function landportal_extra_block_info() {
   $blocks = array(
     'landportal_footer' => array(
@@ -25,6 +22,7 @@ function landportal_extra_block_info() {
       'status' => TRUE,
       'region' => 'footer',
     ),
+
     'lp_twitter' => array(
       'info'            => t('Twitter widget'),
       'status'          => TRUE,
@@ -47,7 +45,6 @@ function landportal_extra_block_info() {
       'pages'           => "debate/debates/*\ndebate/news/*\ndebate/event/*",
     ),
   );
-  //dpm($blocks);
   return $blocks;
 }
 

@@ -244,56 +244,6 @@ function landportal_extra_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_organization'
-  $field_instances['user-user-field_organization'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 0,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 4,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
-      ),
-      'token' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_organization',
-    'label' => 'Organization',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_title'
   $field_instances['user-user-field_title'] = array(
     'bundle' => 'user',
@@ -345,7 +295,6 @@ function landportal_extra_field_default_field_instances() {
   t('First name');
   t('Geographical focus');
   t('Last name');
-  t('Organization');
   t('This field stores the user\'s authentication token for the LandBook API.');
   t('Title');
   t('api_token');

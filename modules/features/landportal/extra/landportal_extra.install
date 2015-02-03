@@ -20,13 +20,10 @@ function landportal_extra_enable() {
     'title'		=> "Join us",
     'description'       => "Welcome to the Land Portal! Fill out this form to create an account. Once you submit, we will receive a notification to approve your account.",
                              );
-  //if (!menu_load('user-signin'])) {
   drupal_set_message('Landportal_extra', 'Adding user-signin menu');
   menu_save($menu);
   cache_clear_all('*', 'cache_menu', TRUE);
 
-  $translatables['extra'] = array(
-    t($menu['title']),
-    t($menu['description']),
-  );
+  t("Join us");
+  t("Welcome to the Land Portal! Fill out this form to create an account. Once you submit, we will receive a notification to approve your account.");
 }

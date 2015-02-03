@@ -1,11 +1,13 @@
 /* Landportal SCSS: menus */
 
 #header {
-
+    font-family: FontAwesome;
+    ul.language-switcher-locale-url,
     ul.menu {
         margin: 0;
         padding: 0;
         li {
+            margin: 0 0 0 .5em;
             padding: 0;
             float: left;
             list-style-type: none;
@@ -22,6 +24,24 @@
             }
         }
     }
+    ul.language-switcher-locale-url {
+        margin-right: 1em;
+        li a {
+            display: inline-block;
+            padding: 0;
+            border: 0;
+            background-color: inherit;
+            color: $blue;
+            &.active {
+                color: $grey;
+            }
+        }
+    }
+}
+.not-logged-in #header #block-system-user-menu ul.menu li.first a:before {
+    content: "\f007";
+    font-size: 1.2em;
+    margin-right: .5em;
 }
 
 #section-header {
