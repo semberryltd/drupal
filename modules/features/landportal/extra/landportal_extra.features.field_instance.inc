@@ -41,6 +41,7 @@ function landportal_extra_field_default_field_instances() {
     'label' => 'api_token',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -87,6 +88,7 @@ function landportal_extra_field_default_field_instances() {
     'label' => 'Description',
     'required' => 1,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -135,6 +137,7 @@ function landportal_extra_field_default_field_instances() {
     'label' => 'First name',
     'required' => 1,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -182,6 +185,7 @@ function landportal_extra_field_default_field_instances() {
     'label' => 'Geographical focus',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -230,6 +234,7 @@ function landportal_extra_field_default_field_instances() {
     'label' => 'Last name',
     'required' => 1,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -278,6 +283,7 @@ function landportal_extra_field_default_field_instances() {
     'label' => 'Title',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
     ),
     'widget' => array(

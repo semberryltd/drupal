@@ -29,6 +29,8 @@ function landportal_extra_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
   );
   // Exported menu link: user-signin_sign-in:user/login
   $menu_links['user-signin_sign-in:user/login'] = array(
@@ -49,6 +51,8 @@ function landportal_extra_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
   );
   // Exported menu link: user-signin_sign-up:user/register
   $menu_links['user-signin_sign-up:user/register'] = array(
@@ -69,6 +73,8 @@ function landportal_extra_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
   );
   // Translatables
   // Included for use with string extractors like potx.
