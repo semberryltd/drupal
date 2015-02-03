@@ -53,11 +53,11 @@ function landportal_extra_block_default_body($name) {
     'lp_facebook'       => '<iframe src="//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/landportal&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;bordercolor&amp;stream=true&amp;header=true&amp;height=880&amp;show_border=false&amp;force_wall=true" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 340px; height: 880px;" allowtransparency="true" title="Like us on Facebook"></iframe>',
     'lp_twitter'        => '<a class="twitter-timeline" href="https://twitter.com/search?q=%23landportal" data-widget-id="515155865456766978" data-chrome="nofooter transparent noscrollbar" data-tweet-limit="5">Landportal on Twitter</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>',
-    'landportal_footer' => 'Copyright &copy; 2009-' . date('Y') . ' Landportal',
+    'landportal_footer' => 'Copyright &copy; 2009-' . date('Y') . ' Landportal - <a href="/about">about</a>',
     'lp_footer_social'  => '<ul><li><a href="http://twitter.com/landportal"><i class="fa fa-twitter"></i></a></li><li><a href="http://facebook.com/landportal"><i class="fa fa-facebook"></i></a></li></ul>',
   );
 
-  return variable_get('lp_'.$name, $default[$name]);
+  return variable_get($name, $default[$name]);
 }
 
 function landportal_extra_block_configure($delta='') {
@@ -68,7 +68,7 @@ function landportal_extra_block_configure($delta='') {
      $form['text_body'] = array(
        '#type' => 'text_format',
        '#title' => t('Landportal footer text'),
-       '#default_value' => variable_get('landportal_footer_text', 'Landportal | (c)'),
+       '#default_value' => landportal_extra_block_default_body('landportal_footer'),
      );
      break;
    case 'lp_twitter' :
@@ -106,7 +106,7 @@ function landportal_extra_block_configure($delta='') {
 function landportal_extra_block_save($delta = '', $edit = array()) {
   switch($delta) {
   case 'landportal_footer' :
-    variable_set('landportal_footer_text', $edit['text_body']['value']);
+    variable_set('landportal_footer', $edit['text_body']['value']);
     break;
   case 'lp_twitter' :
     variable_set('lp_twitter', $edit['text_body']);
