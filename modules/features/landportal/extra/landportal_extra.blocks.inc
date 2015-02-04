@@ -35,7 +35,7 @@ function landportal_extra_block_info() {
       'status'          => TRUE,
       'region'          => 'sidebar_second',
       'visibility'      => BLOCK_VISIBILITY_LISTED,
-      'pages'           => "debate/organization",
+      'pages'           => "debate/community",
     ),
     'lp_shareit' => array(
       'info'            => t('Share it widget'),
@@ -53,7 +53,9 @@ function landportal_extra_block_default_body($name) {
     'lp_facebook'       => '<iframe src="//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/landportal&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;bordercolor&amp;stream=true&amp;header=true&amp;height=880&amp;show_border=false&amp;force_wall=true" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 340px; height: 880px;" allowtransparency="true" title="Like us on Facebook"></iframe>',
     'lp_twitter'        => '<a class="twitter-timeline" href="https://twitter.com/search?q=%23landportal" data-widget-id="515155865456766978" data-chrome="nofooter transparent noscrollbar" data-tweet-limit="5">Landportal on Twitter</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>',
-    'landportal_footer' => 'Copyright &copy; 2009-' . date('Y') . ' Landportal - <a href="/about">about</a>',
+    'landportal_footer' => '<p>Copyright © 2014-' . date('Y') . '&nbsp;Land Portal Foundation /&nbsp;RSIN 854330045<br />
+Contact&nbsp;<a href="mailto:hello@landportal.info">hello@landportal.info</a>&nbsp;/&nbsp;Read more <a href="/about">about us</a>&nbsp;/ See our <a href="/about/privacy-policy">privacy&nbsp;policy</a><br />
+&nbsp;</p>',
     'lp_footer_social'  => '<ul><li><a href="http://twitter.com/landportal"><i class="fa fa-twitter"></i></a></li><li><a href="http://facebook.com/landportal"><i class="fa fa-facebook"></i></a></li></ul>',
   );
 
