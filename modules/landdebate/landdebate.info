@@ -17,6 +17,7 @@ dependencies[] = views
 dependencies[] = views_ui
 configure = admin/config/landdebate/settings
 features[context][] = debate-menu-context
+features[context][] = debate-twitter-context
 features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0

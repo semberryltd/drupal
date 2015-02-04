@@ -31,9 +31,9 @@ function landdebate_help($path, $arg) {
   }
 }
 
-ctools_include('landdebate.menu', 'landdebate');
 function landdebate_menu() {
   $items = array();
+  ctools_include('landdebate.menu', 'landdebate');
   landdebate_menu_admin($items);
   landdebate_menu_build($items);
 
@@ -41,12 +41,13 @@ function landdebate_menu() {
   $items['debate'] = array(
     'title'		=> 'Landdebate',
     'menu_name'		=> 'main-menu',
+    //'type'              => MENU_NORMAL_ITEM,
     'access callback'	=> TRUE,
-    'weight'            => 1,
     'page callback'	=> 'drupal_goto',
     'page arguments'	=> array('debate/debates'),
   );
-  $translatables['debate'][] = t($items['debate']['title']);
+  //$translatables['debate'][] = t($items['debate']['title']);
+  //dpm($items);
   return $items;
 }
 
