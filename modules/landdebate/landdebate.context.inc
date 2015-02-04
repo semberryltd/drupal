@@ -88,8 +88,7 @@ function landdebate_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Contextually display landdebate section header menu');
   t('landdebate');
-  $export['debate-menu-context'] = $context;
-
+  $export['debate-twitter-context'] = $context;
 
   return $export;
 }
