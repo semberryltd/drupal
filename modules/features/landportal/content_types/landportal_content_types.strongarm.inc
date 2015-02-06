@@ -260,26 +260,7 @@ function landportal_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__blog_post';
   $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'rss' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_index' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_result' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
+    'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
@@ -287,9 +268,6 @@ function landportal_content_types_strongarm() {
         ),
         'title' => array(
           'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
         ),
       ),
       'display' => array(),
@@ -318,20 +296,14 @@ function landportal_content_types_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
         'locations' => array(
           'weight' => '30',
         ),
-        'path' => array(
-          'weight' => '30',
+        'title' => array(
+          'weight' => '-5',
         ),
       ),
       'display' => array(),
@@ -376,6 +348,10 @@ function landportal_content_types_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
@@ -396,7 +372,7 @@ function landportal_content_types_strongarm() {
         'title' => array(
           'weight' => '-5',
         ),
-        'path' => array(
+        'locations' => array(
           'weight' => '30',
         ),
       ),
@@ -410,11 +386,36 @@ function landportal_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__organization';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '1',
+        ),
+        'locations' => array(
+          'weight' => '9',
+        ),
+        'path' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(),
@@ -471,7 +472,7 @@ function landportal_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_debate';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'landdebate-menu',
   );
   $export['menu_options_debate'] = $strongarm;
 
@@ -513,7 +514,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_debate';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'landdebate-menu:2021';
   $export['menu_parent_debate'] = $strongarm;
 
   $strongarm = new stdClass();
