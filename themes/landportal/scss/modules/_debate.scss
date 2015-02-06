@@ -28,16 +28,17 @@
         text-align: center;
         margin: 1em 0 2em 0;
 
+        .views-row:nth-child(3n+3) {
+            clear: left;
+        }
+
         h2 {
             margin-top: 1em;
             width: 100%;
             text-align: center;
         }
-        /* .content { */
-        /*     width: 100%; */
-        /* } */
         .content-info {
-            min-height: 150px;
+            min-height: 200px;
         }
         img {
             min-width: 200px;

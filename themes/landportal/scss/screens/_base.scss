@@ -90,7 +90,8 @@ a {
             content: " ";
             visibility: hidden;
         }
-
+    }
+    .block-menu, .block-locale {
         .contextual-links-wrapper {
             margin-right: -32px;
         }
@@ -226,6 +227,10 @@ a {
 /*****************************************
  * Page specific
  */
+.page-node {
+    .submitted { display: none; }
+}
+
 .front {
     // TMP
     .submitted,
