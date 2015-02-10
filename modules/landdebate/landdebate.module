@@ -31,9 +31,9 @@ function landdebate_help($path, $arg) {
   }
 }
 
+ctools_include('landdebate.menu', 'landdebate');
 function landdebate_menu() {
   $items = array();
-  ctools_include('landdebate.menu', 'landdebate');
   landdebate_menu_admin($items);
   landdebate_menu_build($items);
 
@@ -46,8 +46,6 @@ function landdebate_menu() {
     'page callback'	=> 'drupal_goto',
     'page arguments'	=> array('debate/debates'),
   );
-  //$translatables['debate'][] = t($items['debate']['title']);
-  //dpm($items);
   return $items;
 }
 
