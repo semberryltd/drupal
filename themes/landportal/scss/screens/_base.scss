@@ -329,7 +329,9 @@ a {
             h3 {
                 a { text-decoration: none; color: $grey-light; }
                 border: 1px solid $grey;
-                border-radius: 0.7em;
+                border-radius: 0.3em;
+                padding: 1em 0;
+                font-size: 1.3em;
             }
             p {
                 min-height: 150px;

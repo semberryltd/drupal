@@ -2523,19 +2523,21 @@ a {
 /* line 329, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 {
   border: 1px solid #333333;
-  border-radius: 0.7em;
+  border-radius: 0.3em;
+  padding: 1em 0;
+  font-size: 1.3em;
 }
 /* line 330, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 a {
   text-decoration: none;
   color: #666666;
 }
-/* line 334, ../scss/screens/_base.scss */
+/* line 336, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row p {
   min-height: 150px;
   text-align: justify;
 }
-/* line 339, ../scss/screens/_base.scss */
+/* line 341, ../scss/screens/_base.scss */
 .front .view-front-page-teasers:after {
   position: relative;
   clear: both;
@@ -2545,7 +2547,7 @@ a {
 }
 
 /* Book */
-/* line 350, ../scss/screens/_base.scss */
+/* line 352, ../scss/screens/_base.scss */
 .content .content.container {
   padding: 0;
   width: 100%;
