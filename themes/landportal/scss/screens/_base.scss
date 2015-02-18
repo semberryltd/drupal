@@ -289,9 +289,13 @@ a {
                 text-decoration: none;
                 color: $white;
             }
+            .views-field-field-image {
+                height: 200px;
+                overflow: hidden; 
+            }
             img {
                 width: 100%;
-                max-height: 200px;
+                height: auto;
             }
         }
         &:after {
@@ -316,13 +320,19 @@ a {
                     color: $grey;
                 }
             }
-            h3 {
+            h2 {
                 a { text-decoration: none; color: $grey-light; }
                 text-transform: uppercase;
                 min-height: 2.5em;
                 color: $grey-light;
             }
+            h3 {
+                a { text-decoration: none; color: $grey-light; }
+                border: 1px solid $grey;
+                border-radius: 0.7em;
+            }
             p {
+                min-height: 150px;
                 text-align: justify;
             }
         }
