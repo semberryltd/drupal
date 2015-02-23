@@ -4,6 +4,7 @@
     font-family: FontAwesome;
     ul.language-switcher-locale-url,
     ul.menu {
+        font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
         margin: 0;
         padding: 0;
         li {
@@ -39,6 +40,7 @@
     }
 }
 .not-logged-in #header #block-system-user-menu ul.menu li.first a:before {
+    font-family: FontAwesome;
     content: "\f007";
     font-size: 1.2em;
     margin-right: .5em;
@@ -85,6 +87,18 @@
             &:last-of-type {
                 border-right: 0;
             }
+
+            //rgba(95,131,87,0.3);
+
+            &:nth-child(3n+1) {
+                background-color: rgba(1,169,219,0.3);
+            }
+            &:nth-child(3n+2) {
+                background-color: rgba(46,100,254,0.3);
+            }
+            &:nth-child(3n+3) {
+                background-color: rgba(10,104,172,0.3);
+            }
             a {
                 text-decoration: none;
                 display: inline-block;
@@ -103,16 +117,17 @@
                     text-decoration: underline;
                 }
             }
-
         }
-    }
 
-    .content:after {
+    &:after {
         display: block;
         content: "";
         clear: both;
         visibility: none;
     }
+
+    }
+
 }
 .page-user #section-header,
 .page-book #section-header {
@@ -138,13 +153,13 @@
 
     #block-menu-landbook-menu {
         li {
-            width: 12.4%;
+            width: 12.49%;
         }
     }
 
     #block-menu-landdebate-menu {
         li {
-            width: 16.5%;
+            width: 16.65%;
         }
     }
 

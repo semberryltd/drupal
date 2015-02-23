@@ -272,14 +272,20 @@ a {
         /* padding: 0 -15px; */
         width: 100%;
         .views-row {
+                &{
+                    position: relative;
+                }
+            @media(min-width:768px){
 
-            &{
-                position: relative;
-                float: left;
-                width: 25%;
+                &{
+                    position: relative;
+                    float: left;
+                    width: 25%;
+                }
             }
 
             .views-field-title {
+                width: 100%;
                 background-color: rgba(.3, .3, .3, .6);
                 position: absolute;
                 padding: 0.5em 1em;
@@ -309,8 +315,12 @@ a {
     .view-front-page-teasers {
         padding: 1em 5em;
         .views-row {
-            float: left;
-            width: 33.3%;
+            @media(min-width:768px){
+                & {
+                    float: left;
+                    width: 33.3%;
+                    }
+                }
             text-align: center;
             padding: 0 1em;
             .views-field-title {
@@ -327,10 +337,19 @@ a {
                 color: $grey-light;
             }
             h3 {
-                a { text-decoration: none; color: $grey-light; }
-                border: 1px solid $grey;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075);
+                vertical-align: middle;
+                font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+                font-style: italic;
+                color: #ADADAD;
+                a {
+                    text-decoration: none;
+                    color: $grey;
+                    font-style: normal;
+                }
+                border: 1px solid #ADADAD;
                 border-radius: 0.3em;
-                padding: 1em 0;
+                padding: .45em 0 .4em 0;
                 font-size: 1.3em;
             }
             p {
@@ -352,4 +371,10 @@ a {
 .content .content.container {
     padding: 0;
     width: 100%;
+}
+// TMP HACK REMOVE ONCE landbook page title are cleanup (eg: on country page)
+.page-book-countries {
+    #page-title {
+        display: none;
+    }
 }
