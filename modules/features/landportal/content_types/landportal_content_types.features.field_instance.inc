@@ -655,7 +655,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -685,7 +685,7 @@ function landportal_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -694,14 +694,15 @@ function landportal_content_types_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Give the name, eventually the email of the contact organiser.
+',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -713,7 +714,7 @@ function landportal_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact',
-    'label' => 'Contact',
+    'label' => 'Contact / Event organiser',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -724,7 +725,7 @@ function landportal_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 80,
       ),
       'type' => 'text_textfield',
       'weight' => 7,
@@ -735,7 +736,8 @@ function landportal_content_types_field_default_field_instances() {
   $field_instances['node-event-field_date'] = array(
     'bundle' => 'event',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'When is this event taking place?
+If it is only a one day event, the end date should be the same as the starting date.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -791,7 +793,7 @@ function landportal_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -802,11 +804,11 @@ function landportal_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -844,7 +846,7 @@ function landportal_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => -3,
+      'weight' => 3,
     ),
   );
 
@@ -864,7 +866,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -887,7 +889,7 @@ function landportal_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
@@ -949,7 +951,65 @@ function landportal_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_link'
+  $field_instances['node-event-field_link'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link',
+    'label' => 'Official page',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 8,
     ),
   );
 
@@ -965,7 +1025,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -991,7 +1051,7 @@ function landportal_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => 4,
     ),
   );
 
@@ -1685,12 +1745,15 @@ function landportal_content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Attach a  file');
   t('Body');
-  t('Contact');
+  t('Contact / Event organiser');
   t('Date');
   t('Facilitators');
   t('Geographical focus');
+  t('Give the name, eventually the email of the contact organiser.
+');
   t('Image');
   t('Language');
+  t('Official page');
   t('Organization type');
   t('Related region');
   t('Related topics');
@@ -1698,6 +1761,8 @@ function landportal_content_types_field_default_field_instances() {
   t('Status');
   t('The date in which the debate will be open to participate.');
   t('Website');
+  t('When is this event taking place?
+If it is only a one day event, the end date should be the same as the starting date.');
   t('contact');
 
   return $field_instances;
