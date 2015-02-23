@@ -44,6 +44,37 @@ function landportal_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_opt|node|news|form';
+  $field_group->group_name = 'group_opt';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'More details',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_geographical_focus',
+      1 => 'field_language',
+      2 => 'field_file',
+      3 => 'field_related_topics',
+      4 => 'field_link',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-opt field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_opt|node|news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_status|node|debate|form';
   $field_group->group_name = 'group_status';
   $field_group->entity_type = 'node';
