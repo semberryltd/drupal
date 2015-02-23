@@ -521,48 +521,6 @@ function landportal_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_related_region'
-  $field_instances['node-debate-field_related_region'] = array(
-    'bundle' => 'debate',
-    'default_value' => array(
-      0 => array(
-        'tid' => 1542,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_related_region',
-    'label' => 'Related region',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 16,
-    ),
-  );
-
   // Exported field_instance: 'node-debate-field_related_topics'
   $field_instances['node-debate-field_related_topics'] = array(
     'bundle' => 'debate',
@@ -1405,7 +1363,8 @@ If it is only a one day event, the end date should be the same as the starting d
     'bundle' => 'organization',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'A short text introducing this organisation.
+',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1423,7 +1382,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
+    'label' => 'Description',
     'required' => 1,
     'settings' => array(
       'display_summary' => 0,
@@ -1435,11 +1394,11 @@ If it is only a one day event, the end date should be the same as the starting d
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 2,
     ),
   );
 
@@ -1451,11 +1410,11 @@ If it is only a one day event, the end date should be the same as the starting d
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1466,36 +1425,41 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact',
-    'label' => 'contact',
-    'required' => FALSE,
+    'label' => 'Organisation contact',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 6,
     ),
   );
 
   // Exported field_instance: 'node-organization-field_geographical_focus'
   $field_instances['node-organization-field_geographical_focus'] = array(
     'bundle' => 'organization',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 1542,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1507,19 +1471,16 @@ If it is only a one day event, the end date should be the same as the starting d
     'entity_type' => 'node',
     'field_name' => 'field_geographical_focus',
     'label' => 'Geographical focus',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 4,
     ),
   );
@@ -1528,14 +1489,14 @@ If it is only a one day event, the end date should be the same as the starting d
   $field_instances['node-organization-field_image'] = array(
     'bundle' => 'organization',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'A medium sized image for the organisation. Make sure you comply to their policies / guideline when uploading it.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'large',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -1553,7 +1514,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Image',
+    'label' => 'Logo',
     'required' => 1,
     'settings' => array(
       'alt_field' => 1,
@@ -1572,17 +1533,18 @@ If it is only a one day event, the end date should be the same as the starting d
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'public' => 'public',
         ),
         'allowed_types' => array(
-          0 => 'image',
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
         ),
-        'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -1594,7 +1556,7 @@ If it is only a one day event, the end date should be the same as the starting d
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -1635,7 +1597,7 @@ If it is only a one day event, the end date should be the same as the starting d
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -1647,11 +1609,10 @@ If it is only a one day event, the end date should be the same as the starting d
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1673,7 +1634,7 @@ If it is only a one day event, the end date should be the same as the starting d
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -1689,7 +1650,7 @@ If it is only a one day event, the end date should be the same as the starting d
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1748,19 +1709,24 @@ If it is only a one day event, the end date should be the same as the starting d
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A medium sized image for the organisation. Make sure you comply to their policies / guideline when uploading it.');
+  t('A short text introducing this organisation.
+');
   t('Attach a  file');
   t('Body');
   t('Contact / Event organiser');
   t('Date');
+  t('Description');
   t('Facilitators');
   t('Geographical focus');
   t('Give the name, eventually the email of the contact organiser.
 ');
   t('Image');
   t('Language');
+  t('Logo');
   t('Official page');
+  t('Organisation contact');
   t('Organization type');
-  t('Related region');
   t('Related topics');
   t('Source');
   t('Status');
@@ -1768,7 +1734,6 @@ If it is only a one day event, the end date should be the same as the starting d
   t('Website');
   t('When is this event taking place?
 If it is only a one day event, the end date should be the same as the starting date.');
-  t('contact');
 
   return $field_instances;
 }

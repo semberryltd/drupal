@@ -496,13 +496,13 @@ function landportal_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'locations' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '7',
         ),
       ),
       'display' => array(),
@@ -581,9 +581,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_organization';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_organization'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -653,7 +651,9 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_organization';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'revision',
+  );
   $export['node_options_organization'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -688,7 +688,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_organization';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['node_preview_organization'] = $strongarm;
 
   $strongarm = new stdClass();
