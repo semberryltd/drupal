@@ -52,14 +52,18 @@ function landportal_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 2,
     ),
   );
 
   // Exported field_instance: 'node-blog_post-field_geographical_focus'
   $field_instances['node-blog_post-field_geographical_focus'] = array(
     'bundle' => 'blog_post',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 1542,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -81,7 +85,7 @@ function landportal_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_geographical_focus',
     'label' => 'Geographical focus',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -91,7 +95,7 @@ function landportal_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 32,
+      'weight' => 3,
     ),
   );
 
@@ -125,7 +129,7 @@ function landportal_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_image',
     'label' => 'Image',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -143,18 +147,18 @@ function landportal_content_types_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'public' => 'public',
         ),
         'allowed_types' => array(
-          0 => 'image',
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
         ),
-        'imce_filefield_on' => 1,
-        'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => -2,
+      'weight' => 1,
     ),
   );
 
@@ -173,10 +177,11 @@ function landportal_content_types_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -195,7 +200,7 @@ function landportal_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 

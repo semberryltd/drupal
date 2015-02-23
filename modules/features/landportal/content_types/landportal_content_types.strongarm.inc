@@ -49,7 +49,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_blog_post';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -283,16 +283,22 @@ function landportal_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '30',
+          'weight' => '6',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
+        ),
+        'language' => array(
+          'weight' => '7',
+        ),
+        'path' => array(
+          'weight' => '5',
         ),
       ),
       'display' => array(
         'language' => array(
           'teaser' => array(
-            'weight' => '0',
+            'weight' => '4',
             'visible' => FALSE,
           ),
           'default' => array(
@@ -508,7 +514,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_blog_post';
-  $strongarm->value = '4';
+  $strongarm->value = '2';
   $export['language_content_type_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -543,9 +549,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_blog_post';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -656,7 +660,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_blog_post';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['node_preview_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
