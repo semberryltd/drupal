@@ -211,7 +211,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -241,7 +241,7 @@ function landportal_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 1,
     ),
   );
 
@@ -263,7 +263,7 @@ function landportal_content_types_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -305,7 +305,7 @@ function landportal_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 2,
+      'weight' => 26,
     ),
   );
 
@@ -324,7 +324,7 @@ function landportal_content_types_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -340,7 +340,7 @@ function landportal_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_facilitators',
     'label' => 'Facilitators',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -351,14 +351,10 @@ function landportal_content_types_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 31,
+      'weight' => 27,
     ),
   );
 
@@ -373,7 +369,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -411,7 +407,7 @@ function landportal_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => -3,
+      'weight' => 14,
     ),
   );
 
@@ -431,7 +427,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -454,7 +450,7 @@ function landportal_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 17,
     ),
   );
 
@@ -476,11 +472,12 @@ function landportal_content_types_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'media_preview',
+          'image_link' => 'content',
+          'image_style' => 'medium',
         ),
-        'type' => 'file_rendered',
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -515,7 +512,49 @@ function landportal_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance: 'node-debate-field_related_region'
+  $field_instances['node-debate-field_related_region'] = array(
+    'bundle' => 'debate',
+    'default_value' => array(
+      0 => array(
+        'tid' => 1542,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_region',
+    'label' => 'Related region',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 16,
     ),
   );
 
@@ -557,7 +596,7 @@ function landportal_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => 15,
     ),
   );
 
@@ -566,7 +605,7 @@ function landportal_content_types_field_default_field_instances() {
     'bundle' => 'debate',
     'default_value' => array(
       0 => array(
-        'tid' => 521,
+        'tid' => 537,
       ),
     ),
     'deleted' => 0,
@@ -600,7 +639,7 @@ function landportal_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 25,
     ),
   );
 
@@ -870,11 +909,12 @@ function landportal_content_types_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'media_preview',
+          'image_link' => 'content',
+          'image_style' => 'medium',
         ),
-        'type' => 'file_rendered',
+        'type' => 'image',
         'weight' => 1,
       ),
     ),
@@ -967,7 +1007,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1122,7 +1162,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1162,7 +1202,7 @@ function landportal_content_types_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 7,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1224,10 +1264,9 @@ function landportal_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1265,7 +1304,7 @@ function landportal_content_types_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1433,11 +1472,12 @@ function landportal_content_types_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'media_preview',
+          'image_link' => 'content',
+          'image_style' => 'medium',
         ),
-        'type' => 'file_rendered',
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -1647,6 +1687,7 @@ function landportal_content_types_field_default_field_instances() {
   t('Image');
   t('Language');
   t('Organization type');
+  t('Related region');
   t('Related topics');
   t('Status');
   t('The date in which the debate will be open to participate.');

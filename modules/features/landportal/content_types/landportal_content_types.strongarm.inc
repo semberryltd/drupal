@@ -196,7 +196,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_debate';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['comment_preview_debate'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -260,7 +260,26 @@ function landportal_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__blog_post';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
@@ -270,7 +289,18 @@ function landportal_content_types_strongarm() {
           'weight' => '-5',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__blog_post'] = $strongarm;
@@ -296,17 +326,33 @@ function landportal_content_types_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '30',
+          'weight' => '5',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '6',
+        ),
+        'language' => array(
+          'weight' => '4',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__debate'] = $strongarm;
@@ -353,7 +399,7 @@ function landportal_content_types_strongarm() {
           ),
           'teaser' => array(
             'weight' => '0',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -366,7 +412,26 @@ function landportal_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__news';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -427,28 +492,28 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_blog_post';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_debate';
-  $strongarm->value = '0';
+  $strongarm->value = '2';
   $export['language_content_type_debate'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_event';
-  $strongarm->value = '1';
+  $strongarm->value = '4';
   $export['language_content_type_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_news';
-  $strongarm->value = '1';
+  $strongarm->value = 4;
   $export['language_content_type_news'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -584,7 +649,7 @@ function landportal_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_debate';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['node_preview_debate'] = $strongarm;
 
   $strongarm = new stdClass();

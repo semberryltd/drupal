@@ -33,7 +33,7 @@ function landportal_content_types_node_info() {
 By default comments are enabled in Debates, the comments may be open or close regardless of the Debate status.
 '),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Title for this debate'),
       'help' => '',
     ),
     'event' => array(
