@@ -11,7 +11,7 @@
 ?>
 
 <div class="row">
-  <div class="col-sm-9 graph-section">
+
     <p class="indicator-description" id="indicator-description"></p>
     <div id="map" class="map"></div>
 
@@ -76,5 +76,5 @@
         </tbody>
       </table>
     </div>
-  </div>
+
 </div>
