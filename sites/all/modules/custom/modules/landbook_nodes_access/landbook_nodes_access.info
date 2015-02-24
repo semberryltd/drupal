@@ -1,5 +1,0 @@
-name = LandBook nodes access
-description = Custom access for the LandBook nodes
-package = LandBook
-core = 7.x
-dependencies[] = landbook_nodes

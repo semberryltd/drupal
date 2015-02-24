@@ -11,13 +11,16 @@ cd /usr/share/drupal7 || exit 1
 
 # Disable all WESO modules
 echo "Disable Landportal 2.0 theme & modules"
-drush -y dis ckan_integration_endpoint druser_resource landbook_nodes_access landportal_api_auth landportal_uris session_resource taxonomy_dictionary unit_testing facebook_login landbook_nodes_importers landdebate_permissions twitter_login landbook_nodes landdebate_content_types landdebate_views book
+drush -y dis ckan_integration_endpoint druser_resource landbook_nodes_access landportal_api_auth unit_testing facebook_login landbook_nodes_importers landdebate_permissions twitter_login
+drush -y dis oauth_connector logintoboggan session_resource taxonomy_dictionary
+
+# landportal_uris landbook_nodes landdebate_content_types landdebate_views
 # also disable 'standard' Drupal modules
-drush -y dis feeds context group_fields
+#drush -y dis feeds context group_fields
 
 # Reset view, delete useless ones
 drush vr community latest_news latest_debates debate_facilitators
-drush vdis latest_news latest_debates debate_facilitators
+drush vdis latest_news latest_debates debate_facilitators community
 # Remove some configuration variable
 drush --yes vdel site_403
 drush --yes vdel site_404
@@ -33,6 +36,7 @@ drush cc all
 
 echo "Enable landportal 2.1 theme & modules"
 drush -y en landportal
+drush -y dis book
 drush vset theme_default landportal
 
 drush -y en landportal_extra
@@ -51,7 +55,6 @@ nei=$(drush ne-import --file=$DIR/pages-home-export.php)
 nid=$(echo $nei | sed -E "s/^Imported node ([C0-9]+):.*/\1/" -)
 drush -y vset site_frontpage node/$nid
 
-echo "Remember to set home page in /admin/config/system/site-information (doesn't work by setting the site_frontpage variable unless you know have the nid)."
 drush cc all
 
 exit 0
