@@ -20,6 +20,16 @@
     }
 }
 
+.node-type-blog-post,
+.node-type-organization {
+                        .content-info {
+                        float: left;
+                        width: 240px;
+                        margin: 0 2em 1em 0;
+                        img { height: auto; }
+                        }
+}
+
 .page-debate-community {
     //.node-organization.node-teaser {
     .views-row {

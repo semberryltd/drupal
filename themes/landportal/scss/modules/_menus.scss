@@ -1,12 +1,27 @@
 /* Landportal SCSS: menus */
+ul.language-switcher-locale-url,
+ul.menu {
+        font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+        margin: 0;
+        padding: 0;
+        &>li {
+            list-style-type: none;
+            list-style-image: none;
+            margin: 0;
+            a.active-trail { font-weight: bold; }
 
+            li {
+               // TMP remove ?
+               a.active-trail { font-weight: normal; }
+               list-style-type: circle;
+               margin: 0 0 0 1.5em;
+            }
+        }
+}
 #header {
     font-family: FontAwesome;
     ul.language-switcher-locale-url,
     ul.menu {
-        font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-        margin: 0;
-        padding: 0;
         li {
             margin: 0 0 0 .5em;
             padding: 0;
