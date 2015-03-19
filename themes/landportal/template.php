@@ -57,10 +57,11 @@ function landportal_preprocess_page(&$variables) {
 function landportal_page_alter(&$page) {
   if (!isset($page['section_header'])) return;
   $check = FALSE;
-  foreach (array('landbook-menu', 'landdebate-menu', 'landlibrary-menu', 'user-signin') as $i) {
+  foreach (array('landbook-menu', 'landdebate-menu', 'menu-landlibrary-menu', 'user-signin') as $i) {
     if (isset($page['section_header']['menu_' . $i])) {
       $m = menu_load($i);
-      $page['section_header']['menu_'. $i]['#block']->description = $m['description'];
+      $m_desc = i18n_string_translate('menu:menu:'.$i.':description', $m['description']);
+      $page['section_header']['menu_'. $i]['#block']->description = $m_desc;
       $check = TRUE;
     }
   }
