@@ -2,9 +2,17 @@
 /*settings.php
 /*config.php
 /files
+/private
 /themes/landportal/scss/.sass-cache/
 
 # Ignore backup & temp files
 *~
 .DS_Store
 \#*
+
+# TMP (while the modules that should be managed by drupal are back to their default location)
+# Ignore local modules except landportal-related, features and custom ones
+/modules/*
+!/modules/land*
+!/modules/features
+!/modules/custom
