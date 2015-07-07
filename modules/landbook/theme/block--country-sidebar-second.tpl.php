@@ -31,7 +31,7 @@
 <?php endforeach; ?>
       </select>
       <a href="/book/countries" class="more-info"><?php echo t('More about areas and countries'); ?></a>
-      <a href="http://legacy.landportal.info/area/<?php echo $data['info']['name']; ?>" target="_blank"><button class="btn data-button-dark"><?php echo t('Consult the landlibrary (new version coming soon)'); ?></button></a>
+      <a href="http://landportal.info/library/search?keyword=<?php echo $data['info']['name']; ?>" target="_blank"><button class="btn data-button-dark"><?php echo t('Consult the landlibrary'); ?></button></a>
 
       <a href="/search/site/<?php echo $data['info']['name']; ?>"><button class="btn data-button-dark"><?php echo t('Debate with others'); ?></button></a>
 
