@@ -35,6 +35,10 @@ function landportal_preprocess_html(&$variables) {
   );
   drupal_add_html_head($meta_viewport, 'viewport');
 
+  $p = drupal_get_path_alias();
+  if (substr($p, 0, 7) == 'library') {
+    $variables['classes_array'][] = 'page-library';
+  }
 }
 
 function landportal_preprocess_page(&$variables) {
@@ -57,7 +61,7 @@ function landportal_preprocess_page(&$variables) {
 function landportal_page_alter(&$page) {
   if (!isset($page['section_header'])) return;
   $check = FALSE;
-  foreach (array('landbook-menu', 'landdebate-menu', 'landlibrary-menu', 'user-signin') as $i) {
+  foreach (array('landbook-menu', 'landdebate-menu', 'menu-landlibrary-menu', 'user-signin') as $i) {
     if (isset($page['section_header']['menu_' . $i])) {
       $m = menu_load($i);
       $page['section_header']['menu_'. $i]['#block']->description = $m['description'];

@@ -23,333 +23,6 @@ a {
 Common Elements to the website such as:
 buttons, forms, menus...
 */
-/* line 6, ../scss/modules/_debate.scss */
-.field-name-body h1,
-.field-name-body h2,
-.field-name-body h3,
-.field-name-body h4,
-.field-name-body h5 {
-  clear: none;
-}
-
-/* line 9, ../scss/modules/_debate.scss */
-.field-name-body h1 {
-  font-size: 2em;
-}
-
-/* line 10, ../scss/modules/_debate.scss */
-.field-name-body h2 {
-  font-size: 1.8em;
-}
-
-/* line 11, ../scss/modules/_debate.scss */
-.field-name-body h3 {
-  font-size: 1.5em;
-}
-
-/* line 12, ../scss/modules/_debate.scss */
-.field-name-body h4 {
-  font-size: 1.2em;
-}
-
-/* line 17, ../scss/modules/_debate.scss */
-.page-debate-debates .submitted,
-.page-debate-events .submitted,
-.page-debate-community .submitted {
-  display: none;
-  visibility: hidden;
-}
-
-/* line 25, ../scss/modules/_debate.scss */
-.node-type-blog-post .content-info,
-.node-type-organization .content-info {
-  float: left;
-  width: 240px;
-  margin: 0 2em 1em 0;
-}
-/* line 29, ../scss/modules/_debate.scss */
-.node-type-blog-post .content-info img,
-.node-type-organization .content-info img {
-  height: auto;
-}
-
-/* line 35, ../scss/modules/_debate.scss */
-.page-debate-community .views-row {
-  width: 33%;
-  float: left;
-  position: relative;
-  text-align: center;
-  margin: 1em 0 2em 0;
-}
-/* line 42, ../scss/modules/_debate.scss */
-.page-debate-community .views-row:nth-child(3n+1) {
-  clear: left;
-}
-/* line 46, ../scss/modules/_debate.scss */
-.page-debate-community .views-row h2 {
-  margin-top: 1em;
-  width: 100%;
-  text-align: center;
-}
-/* line 51, ../scss/modules/_debate.scss */
-.page-debate-community .views-row .content-info {
-  min-height: 200px;
-}
-/* line 54, ../scss/modules/_debate.scss */
-.page-debate-community .views-row img {
-  min-width: 200px;
-}
-
-/* line 68, ../scss/modules/_debate.scss */
-.node-type-debate .view-content,
-.node-type-event .view-content,
-.node-type-news .view-content,
-.page-debate-news .view-content,
-.page-debate-blog .view-content,
-.page-debate-events .view-content,
-.page-debate-debates .view-content {
-  padding: 0 2em 0 0;
-}
-/* line 71, ../scss/modules/_debate.scss */
-.node-type-debate .views-row,
-.node-type-event .views-row,
-.node-type-news .views-row,
-.page-debate-news .views-row,
-.page-debate-blog .views-row,
-.page-debate-events .views-row,
-.page-debate-debates .views-row {
-  border-bottom: 1px dotted #666666;
-}
-/* line 75, ../scss/modules/_debate.scss */
-.node-type-debate .node,
-.node-type-event .node,
-.node-type-news .node,
-.page-debate-news .node,
-.page-debate-blog .node,
-.page-debate-events .node,
-.page-debate-debates .node {
-  margin: 2em 0;
-}
-/* line 77, ../scss/modules/_debate.scss */
-.node-type-debate .node h2,
-.node-type-event .node h2,
-.node-type-news .node h2,
-.page-debate-news .node h2,
-.page-debate-blog .node h2,
-.page-debate-events .node h2,
-.page-debate-debates .node h2 {
-  font-size: 1.8em;
-}
-/* line 80, ../scss/modules/_debate.scss */
-.node-type-debate .node .field-items:after,
-.node-type-event .node .field-items:after,
-.node-type-news .node .field-items:after,
-.page-debate-news .node .field-items:after,
-.page-debate-blog .node .field-items:after,
-.page-debate-events .node .field-items:after,
-.page-debate-debates .node .field-items:after {
-  content: "";
-  display: block;
-  float: none;
-  clear: both;
-}
-/* line 81, ../scss/modules/_debate.scss */
-.node-type-debate .node .field,
-.node-type-event .node .field,
-.node-type-news .node .field,
-.page-debate-news .node .field,
-.page-debate-blog .node .field,
-.page-debate-events .node .field,
-.page-debate-debates .node .field {
-  margin: 0 0 .5em;
-}
-/* line 83, ../scss/modules/_debate.scss */
-.node-type-debate .node .field:last-of-type,
-.node-type-event .node .field:last-of-type,
-.node-type-news .node .field:last-of-type,
-.page-debate-news .node .field:last-of-type,
-.page-debate-blog .node .field:last-of-type,
-.page-debate-events .node .field:last-of-type,
-.page-debate-debates .node .field:last-of-type {
-  margin: 0;
-}
-/* line 85, ../scss/modules/_debate.scss */
-.node-type-debate .node .content,
-.node-type-event .node .content,
-.node-type-news .node .content,
-.page-debate-news .node .content,
-.page-debate-blog .node .content,
-.page-debate-events .node .content,
-.page-debate-debates .node .content {
-  float: left;
-  width: 75%;
-  padding: 0 0 0 2em;
-}
-/* line 90, ../scss/modules/_debate.scss */
-.node-type-debate .node .content p,
-.node-type-event .node .content p,
-.node-type-news .node .content p,
-.page-debate-news .node .content p,
-.page-debate-blog .node .content p,
-.page-debate-events .node .content p,
-.page-debate-debates .node .content p {
-  text-align: justify;
-}
-/* line 94, ../scss/modules/_debate.scss */
-.node-type-debate .node .content-info,
-.node-type-event .node .content-info,
-.node-type-news .node .content-info,
-.page-debate-news .node .content-info,
-.page-debate-blog .node .content-info,
-.page-debate-events .node .content-info,
-.page-debate-debates .node .content-info {
-  text-align: center;
-  float: left;
-  width: 25%;
-}
-/* line 99, ../scss/modules/_debate.scss */
-.node-type-debate .node .content-info img,
-.node-type-event .node .content-info img,
-.node-type-news .node .content-info img,
-.page-debate-news .node .content-info img,
-.page-debate-blog .node .content-info img,
-.page-debate-events .node .content-info img,
-.page-debate-debates .node .content-info img {
-  width: 100%;
-  height: auto;
-}
-/* line 103, ../scss/modules/_debate.scss */
-.node-type-debate .node .content-info .field-label,
-.node-type-event .node .content-info .field-label,
-.node-type-news .node .content-info .field-label,
-.page-debate-news .node .content-info .field-label,
-.page-debate-blog .node .content-info .field-label,
-.page-debate-events .node .content-info .field-label,
-.page-debate-debates .node .content-info .field-label {
-  font-family: 'News Cycle',sans-serif;
-  margin-bottom: .5em;
-  text-transform: uppercase;
-  color: #666666;
-  position: relative;
-}
-/* line 109, ../scss/modules/_debate.scss */
-.node-type-debate .node .content-info .field-label:before,
-.node-type-event .node .content-info .field-label:before,
-.node-type-news .node .content-info .field-label:before,
-.page-debate-news .node .content-info .field-label:before,
-.page-debate-blog .node .content-info .field-label:before,
-.page-debate-events .node .content-info .field-label:before,
-.page-debate-debates .node .content-info .field-label:before {
-  width: 100%;
-  left: 0;
-  top: .6em;
-  content: "";
-  position: absolute;
-  border-top: 1px solid #666666;
-  z-index: -1;
-}
-/* line 118, ../scss/modules/_debate.scss */
-.node-type-debate .node .content-info .field-label span,
-.node-type-event .node .content-info .field-label span,
-.node-type-news .node .content-info .field-label span,
-.page-debate-news .node .content-info .field-label span,
-.page-debate-blog .node .content-info .field-label span,
-.page-debate-events .node .content-info .field-label span,
-.page-debate-debates .node .content-info .field-label span {
-  font-size: 0.9em;
-  color: #666666;
-  font-weight: normal;
-  padding: 0 1em;
-  background-color: #FFF;
-}
-/* line 127, ../scss/modules/_debate.scss */
-.node-type-debate .node ul.links.inline li,
-.node-type-event .node ul.links.inline li,
-.node-type-news .node ul.links.inline li,
-.page-debate-news .node ul.links.inline li,
-.page-debate-blog .node ul.links.inline li,
-.page-debate-events .node ul.links.inline li,
-.page-debate-debates .node ul.links.inline li {
-  float: right;
-  font-style: italic;
-}
-/* line 130, ../scss/modules/_debate.scss */
-.node-type-debate .node ul.links.inline li.comment-add,
-.node-type-event .node ul.links.inline li.comment-add,
-.node-type-news .node ul.links.inline li.comment-add,
-.page-debate-news .node ul.links.inline li.comment-add,
-.page-debate-blog .node ul.links.inline li.comment-add,
-.page-debate-events .node ul.links.inline li.comment-add,
-.page-debate-debates .node ul.links.inline li.comment-add {
-  display: none;
-  visibility: hidden;
-}
-
-/* line 140, ../scss/modules/_debate.scss */
-.page-debate-events .views-row,
-.page-debate-blog .views-row {
-  border-bottom: 0;
-  width: 48%;
-  float: left;
-  margin: 0 1%;
-}
-
-/* line 149, ../scss/modules/_debate.scss */
-.page-debate-events .views-row-odd {
-  clear: left;
-}
-
-/* line 153, ../scss/modules/_debate.scss */
-.page-debate-blog .views-row:first-of-type {
-  border-bottom: 1px dotted #666666;
-  margin: 0;
-  width: 100%;
-}
-/* line 158, ../scss/modules/_debate.scss */
-.page-debate-blog .views-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* line 169, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators > .field-items > .field-item {
-  border-bottom: 1px dotted #666666;
-}
-/* line 171, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators > .field-items > .field-item:last-of-type {
-  border-bottom: 0;
-}
-/* line 176, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators .profile,
-.node-debate .content-info .field-name-field-facilitators .user-profile {
-  margin: .5em 0;
-}
-/* line 178, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators .profile:after,
-.node-debate .content-info .field-name-field-facilitators .user-profile:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* line 183, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators .profile .user-picture,
-.node-debate .content-info .field-name-field-facilitators .user-profile .user-picture {
-  float: left;
-}
-/* line 186, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators .profile .field-name-field-organization,
-.node-debate .content-info .field-name-field-facilitators .user-profile .field-name-field-organization {
-  font-size: .8em;
-  padding: 0;
-}
-/* line 192, ../scss/modules/_debate.scss */
-.node-debate .content-info .field-name-field-facilitators .field {
-  float: left;
-  padding: 0 .4em 0 0;
-  margin: 0;
-}
-
 /* line 4, ../scss/modules/_buttons.scss */
 .field-name-field-related-topics .field-item,
 .field-name-field-geographical-focus .field-item,
@@ -417,7 +90,7 @@ span.flag img.flag {
   margin-right: 1em;
 }
 
-/* line 78, ../scss/modules/_flags.scss */
+/* line 30, ../scss/modules/_flags.scss */
 .flag-ABW, .flag-AFG, .flag-AGO, .flag-AIA, .flag-ALB,
 .flag-AND, .flag-ARE, .flag-ARG, .flag-ARM, .flag-ASM,
 .flag-ATA, .flag-ATC, .flag-ATF, .flag-ATG, .flag-AUS,
@@ -1990,7 +1663,7 @@ html.js fieldset.collapsed {
 }
 
 /* Landportal SCSS: menus */
-/* line 3, ../scss/modules/_menus.scss */
+/* line 2, ../scss/modules/_menus.scss */
 ul.language-switcher-locale-url,
 ul.menu {
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
@@ -2060,7 +1733,7 @@ ul.menu > li li a.active-trail {
   padding: 0;
   border: 0;
   background-color: inherit;
-  color: #0165c3;
+  color: #0165C3;
 }
 /* line 51, ../scss/modules/_menus.scss */
 #header ul.language-switcher-locale-url li a.active {
@@ -2089,7 +1762,7 @@ ul.menu > li li a.active-trail {
   font-weight: 300;
   margin: 0.1em 50px;
   padding: 10px 0 0;
-  color: white;
+  color: #ffffff;
   letter-spacing: .1em;
   text-shadow: #333333 0 0.04em 0;
 }
@@ -2098,11 +1771,11 @@ ul.menu > li li a.active-trail {
   font-size: 1.3em;
   letter-spacing: .1em;
   margin: 1em 50px;
-  color: white;
+  color: #ffffff;
   font-weight: 300;
   font-family: 'Source Sans Pro',sans-serif;
 }
-/* line 90, ../scss/modules/_menus.scss */
+/* line 89, ../scss/modules/_menus.scss */
 #section-header ul.primary,
 #section-header ul.menu {
   clear: both;
@@ -2118,7 +1791,7 @@ ul.menu > li li a.active-trail {
   list-style-type: none;
   list-style-image: none;
   float: left;
-  border-right: 1px solid white;
+  border-right: 1px solid #ffffff;
 }
 /* line 102, ../scss/modules/_menus.scss */
 #section-header ul.primary li:last-of-type,
@@ -2146,7 +1819,7 @@ ul.menu > li li a.active-trail {
   text-decoration: none;
   display: inline-block;
   padding: 1.3em 0;
-  color: white;
+  color: #ffffff;
   text-transform: uppercase;
   font-weight: 100;
   letter-spacing: .1em;
@@ -2171,7 +1844,7 @@ ul.menu > li li a.active-trail {
   visibility: none;
 }
 
-/* line 148, ../scss/modules/_menus.scss */
+/* line 147, ../scss/modules/_menus.scss */
 .page-user #section-header,
 .page-book #section-header {
   border-top: 0;
@@ -2187,7 +1860,7 @@ ul.menu > li li a.active-trail {
 .node-type-event #section-header,
 .page-debate #section-header {
   border-top: 0;
-  background-color: #0165c3;
+  background-color: #0165C3;
   background-image: url(../images/header/pebbles-medium.png);
 }
 
@@ -2204,6 +1877,661 @@ ul.menu > li li a.active-trail {
   width: 50%;
 }
 
+/* line 2, ../scss/modules/_debate.scss */
+.field-name-body h1,
+.field-name-body h2,
+.field-name-body h3,
+.field-name-body h4,
+.field-name-body h5 {
+  clear: none;
+}
+
+/* line 9, ../scss/modules/_debate.scss */
+.field-name-body h1 {
+  font-size: 2em;
+}
+
+/* line 10, ../scss/modules/_debate.scss */
+.field-name-body h2 {
+  font-size: 1.8em;
+}
+
+/* line 11, ../scss/modules/_debate.scss */
+.field-name-body h3 {
+  font-size: 1.5em;
+}
+
+/* line 12, ../scss/modules/_debate.scss */
+.field-name-body h4 {
+  font-size: 1.2em;
+}
+
+/* line 17, ../scss/modules/_debate.scss */
+.page-debate-debates .submitted,
+.page-debate-events .submitted,
+.page-debate-community .submitted {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 25, ../scss/modules/_debate.scss */
+.node-type-blog-post .content-info,
+.node-type-organization .content-info {
+  float: left;
+  width: 240px;
+  margin: 0 2em 1em 0;
+}
+/* line 29, ../scss/modules/_debate.scss */
+.node-type-blog-post .content-info img,
+.node-type-organization .content-info img {
+  height: auto;
+}
+
+/* line 35, ../scss/modules/_debate.scss */
+.page-debate-community .views-row {
+  width: 33%;
+  float: left;
+  position: relative;
+  text-align: center;
+  margin: 1em 0 2em 0;
+}
+/* line 42, ../scss/modules/_debate.scss */
+.page-debate-community .views-row:nth-child(3n+1) {
+  clear: left;
+}
+/* line 46, ../scss/modules/_debate.scss */
+.page-debate-community .views-row h2 {
+  margin-top: 1em;
+  width: 100%;
+  text-align: center;
+}
+/* line 51, ../scss/modules/_debate.scss */
+.page-debate-community .views-row .content-info {
+  min-height: 200px;
+}
+/* line 54, ../scss/modules/_debate.scss */
+.page-debate-community .views-row img {
+  min-width: 200px;
+}
+
+/* line 68, ../scss/modules/_debate.scss */
+.node-type-debate .view-content,
+.node-type-event .view-content,
+.node-type-news .view-content,
+.page-debate-news .view-content,
+.page-debate-blog .view-content,
+.page-debate-events .view-content,
+.page-debate-debates .view-content {
+  padding: 0 2em 0 0;
+}
+/* line 71, ../scss/modules/_debate.scss */
+.node-type-debate .views-row,
+.node-type-event .views-row,
+.node-type-news .views-row,
+.page-debate-news .views-row,
+.page-debate-blog .views-row,
+.page-debate-events .views-row,
+.page-debate-debates .views-row {
+  border-bottom: 1px dotted #666666;
+}
+/* line 75, ../scss/modules/_debate.scss */
+.node-type-debate .node,
+.node-type-event .node,
+.node-type-news .node,
+.page-debate-news .node,
+.page-debate-blog .node,
+.page-debate-events .node,
+.page-debate-debates .node {
+  margin: 2em 0;
+}
+/* line 77, ../scss/modules/_debate.scss */
+.node-type-debate .node h2,
+.node-type-event .node h2,
+.node-type-news .node h2,
+.page-debate-news .node h2,
+.page-debate-blog .node h2,
+.page-debate-events .node h2,
+.page-debate-debates .node h2 {
+  font-size: 1.8em;
+}
+/* line 80, ../scss/modules/_debate.scss */
+.node-type-debate .node .field-items:after,
+.node-type-event .node .field-items:after,
+.node-type-news .node .field-items:after,
+.page-debate-news .node .field-items:after,
+.page-debate-blog .node .field-items:after,
+.page-debate-events .node .field-items:after,
+.page-debate-debates .node .field-items:after {
+  content: "";
+  display: block;
+  float: none;
+  clear: both;
+}
+/* line 81, ../scss/modules/_debate.scss */
+.node-type-debate .node .field,
+.node-type-event .node .field,
+.node-type-news .node .field,
+.page-debate-news .node .field,
+.page-debate-blog .node .field,
+.page-debate-events .node .field,
+.page-debate-debates .node .field {
+  margin: 0 0 .5em;
+}
+/* line 83, ../scss/modules/_debate.scss */
+.node-type-debate .node .field:last-of-type,
+.node-type-event .node .field:last-of-type,
+.node-type-news .node .field:last-of-type,
+.page-debate-news .node .field:last-of-type,
+.page-debate-blog .node .field:last-of-type,
+.page-debate-events .node .field:last-of-type,
+.page-debate-debates .node .field:last-of-type {
+  margin: 0;
+}
+/* line 85, ../scss/modules/_debate.scss */
+.node-type-debate .node .content,
+.node-type-event .node .content,
+.node-type-news .node .content,
+.page-debate-news .node .content,
+.page-debate-blog .node .content,
+.page-debate-events .node .content,
+.page-debate-debates .node .content {
+  float: left;
+  width: 75%;
+  padding: 0 0 0 2em;
+}
+/* line 90, ../scss/modules/_debate.scss */
+.node-type-debate .node .content p,
+.node-type-event .node .content p,
+.node-type-news .node .content p,
+.page-debate-news .node .content p,
+.page-debate-blog .node .content p,
+.page-debate-events .node .content p,
+.page-debate-debates .node .content p {
+  text-align: justify;
+}
+/* line 94, ../scss/modules/_debate.scss */
+.node-type-debate .node .content-info,
+.node-type-event .node .content-info,
+.node-type-news .node .content-info,
+.page-debate-news .node .content-info,
+.page-debate-blog .node .content-info,
+.page-debate-events .node .content-info,
+.page-debate-debates .node .content-info {
+  text-align: center;
+  float: left;
+  width: 25%;
+}
+/* line 99, ../scss/modules/_debate.scss */
+.node-type-debate .node .content-info img,
+.node-type-event .node .content-info img,
+.node-type-news .node .content-info img,
+.page-debate-news .node .content-info img,
+.page-debate-blog .node .content-info img,
+.page-debate-events .node .content-info img,
+.page-debate-debates .node .content-info img {
+  width: 100%;
+  height: auto;
+}
+/* line 103, ../scss/modules/_debate.scss */
+.node-type-debate .node .content-info .field-label,
+.node-type-event .node .content-info .field-label,
+.node-type-news .node .content-info .field-label,
+.page-debate-news .node .content-info .field-label,
+.page-debate-blog .node .content-info .field-label,
+.page-debate-events .node .content-info .field-label,
+.page-debate-debates .node .content-info .field-label {
+  font-family: 'News Cycle',sans-serif;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+  color: #666666;
+  position: relative;
+}
+/* line 109, ../scss/modules/_debate.scss */
+.node-type-debate .node .content-info .field-label:before,
+.node-type-event .node .content-info .field-label:before,
+.node-type-news .node .content-info .field-label:before,
+.page-debate-news .node .content-info .field-label:before,
+.page-debate-blog .node .content-info .field-label:before,
+.page-debate-events .node .content-info .field-label:before,
+.page-debate-debates .node .content-info .field-label:before {
+  width: 100%;
+  left: 0;
+  top: .6em;
+  content: "";
+  position: absolute;
+  border-top: 1px solid #666666;
+  z-index: -1;
+}
+/* line 118, ../scss/modules/_debate.scss */
+.node-type-debate .node .content-info .field-label span,
+.node-type-event .node .content-info .field-label span,
+.node-type-news .node .content-info .field-label span,
+.page-debate-news .node .content-info .field-label span,
+.page-debate-blog .node .content-info .field-label span,
+.page-debate-events .node .content-info .field-label span,
+.page-debate-debates .node .content-info .field-label span {
+  font-size: 0.9em;
+  color: #666666;
+  font-weight: normal;
+  padding: 0 1em;
+  background-color: #FFF;
+}
+/* line 127, ../scss/modules/_debate.scss */
+.node-type-debate .node ul.links.inline li,
+.node-type-event .node ul.links.inline li,
+.node-type-news .node ul.links.inline li,
+.page-debate-news .node ul.links.inline li,
+.page-debate-blog .node ul.links.inline li,
+.page-debate-events .node ul.links.inline li,
+.page-debate-debates .node ul.links.inline li {
+  float: right;
+  font-style: italic;
+}
+/* line 130, ../scss/modules/_debate.scss */
+.node-type-debate .node ul.links.inline li.comment-add,
+.node-type-event .node ul.links.inline li.comment-add,
+.node-type-news .node ul.links.inline li.comment-add,
+.page-debate-news .node ul.links.inline li.comment-add,
+.page-debate-blog .node ul.links.inline li.comment-add,
+.page-debate-events .node ul.links.inline li.comment-add,
+.page-debate-debates .node ul.links.inline li.comment-add {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 140, ../scss/modules/_debate.scss */
+.page-debate-events .views-row,
+.page-debate-blog .views-row {
+  border-bottom: 0;
+  width: 48%;
+  float: left;
+  margin: 0 1%;
+}
+
+/* line 149, ../scss/modules/_debate.scss */
+.page-debate-events .views-row-odd {
+  clear: left;
+}
+
+/* line 153, ../scss/modules/_debate.scss */
+.page-debate-blog .views-row:first-of-type {
+  border-bottom: 1px dotted #666666;
+  margin: 0;
+  width: 100%;
+}
+/* line 158, ../scss/modules/_debate.scss */
+.page-debate-blog .views-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 169, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators > .field-items > .field-item {
+  border-bottom: 1px dotted #666666;
+}
+/* line 171, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators > .field-items > .field-item:last-of-type {
+  border-bottom: 0;
+}
+/* line 175, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile,
+.node-debate .content-info .field-name-field-facilitators .user-profile {
+  margin: .5em 0;
+}
+/* line 178, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile:after,
+.node-debate .content-info .field-name-field-facilitators .user-profile:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 183, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile .user-picture,
+.node-debate .content-info .field-name-field-facilitators .user-profile .user-picture {
+  float: left;
+}
+/* line 186, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .profile .field-name-field-organization,
+.node-debate .content-info .field-name-field-facilitators .user-profile .field-name-field-organization {
+  font-size: .8em;
+  padding: 0;
+}
+/* line 192, ../scss/modules/_debate.scss */
+.node-debate .content-info .field-name-field-facilitators .field {
+  float: left;
+  padding: 0 .4em 0 0;
+  margin: 0;
+}
+
+/****** Agro-Know ********/
+/* line 3, ../scss/modules/_library.scss */
+#views-exposed-form-library-search-page {
+  margin-left: 0%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+/* line 9, ../scss/modules/_library.scss */
+#edit-keyword-wrapper {
+  width: 60%;
+}
+
+/* line 13, ../scss/modules/_library.scss */
+#edit-keyword {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  font-size: 1.5em;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/* line 29, ../scss/modules/_library.scss */
+.source-list-row {
+  float: left;
+  margin: 20px 20px 20px 20px;
+}
+
+/* line 34, ../scss/modules/_library.scss */
+.views-exposed-widget .views-submit-button {
+  font-size: 1.5em;
+}
+
+/* line 38, ../scss/modules/_library.scss */
+#edit-submit-library-search {
+  margin-top: 0px !important;
+  font-size: 1.5em;
+}
+
+/* line 43, ../scss/modules/_library.scss */
+.search-block-provider {
+  float: right;
+}
+
+/* line 47, ../scss/modules/_library.scss */
+.search-block-provider img {
+  width: 60px;
+}
+
+/* line 51, ../scss/modules/_library.scss */
+.search-block-keyword a {
+  font-size: 1.0em;
+  font-family: 'News Cycle', sans-serif;
+}
+
+/* line 56, ../scss/modules/_library.scss */
+.browse-block-subject {
+  width: 150px;
+  height: 150px;
+}
+
+/* line 61, ../scss/modules/_library.scss */
+.browse-block-subject a span {
+  font-size: 1.0em;
+  width: 100px;
+  text-align: center;
+  display: block;
+  font-family: 'News Cycle', sans-serif;
+}
+
+/* line 69, ../scss/modules/_library.scss */
+.browse-block-subject a img {
+  width: 100px;
+}
+
+/* line 73, ../scss/modules/_library.scss */
+.browse-block-type {
+  width: 150px;
+}
+
+/* line 77, ../scss/modules/_library.scss */
+.browse-block-type a span {
+  font-size: 1.0em;
+  width: 100px;
+  text-align: center;
+  display: block;
+  font-family: 'News Cycle', sans-serif;
+}
+
+/* line 85, ../scss/modules/_library.scss */
+.browse-block-type a img {
+  width: 100px;
+}
+
+/* line 90, ../scss/modules/_library.scss */
+.block-facetapi {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  padding: 10px 10px 10px 10px;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* line 108, ../scss/modules/_library.scss */
+.block-facetapi h2 {
+  cursor: hand;
+  cursor: pointer;
+}
+
+/* line 113, ../scss/modules/_library.scss */
+.page-library-search .view-content {
+  margin-top: 20px;
+}
+
+/* line 117, ../scss/modules/_library.scss */
+a {
+  color: #2a6496;
+}
+
+/* line 121, ../scss/modules/_library.scss */
+.grid-row {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+/* line 126, ../scss/modules/_library.scss */
+.views-field-field-doc-provider {
+  text-align: center;
+}
+
+/* line 130, ../scss/modules/_library.scss */
+#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+1) {
+  background-color: rgba(219, 51, 1, 0.3);
+}
+
+/* line 134, ../scss/modules/_library.scss */
+#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+2) {
+  background-color: rgba(157, 85, 63, 0.3);
+}
+
+/* line 138, ../scss/modules/_library.scss */
+#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+3) {
+  background-color: rgba(218, 66, 20, 0.3);
+}
+
+/* Useless, this is BAD coding
+.page-node-6 #section-header,
+.page-node-227 #section-header,
+.page-node-23 #section-header,
+.page-node-228 #section-header,
+*/
+/* line 149, ../scss/modules/_library.scss */
+.page-library #section-header,
+.page-library-search #section-header,
+.page-library-sources #section-header {
+  border-top: 0;
+  background-color: #91594d;
+  background-image: url(../images/header/rocky-land-medium.png);
+}
+
+/* Useless, this is BAD coding
+.page-node-6   #section-header #block-search-form,
+.page-node-227 #section-header #block-search-form,
+.page-node-228 #section-header #block-search-form,
+.page-node-23  #section-header #block-search-form,
+.page-node-6   #section-header #block-search-form,
+*/
+/* line 165, ../scss/modules/_library.scss */
+.page-library #section-header #block-search-form,
+.page-library-search #section-header #block-search-form,
+.page-library-sources #section-header #block-search-form {
+  display: none;
+}
+
+/* line 172, ../scss/modules/_library.scss */
+#section-header #block-menu-menu-landlibrary-menu li {
+  width: 16.65%;
+}
+
+/* line 175, ../scss/modules/_library.scss */
+.views-field-field-doc-is-shown-by a {
+  width: 100%;
+  margin-top: 1em;
+  background-color: #01A9DB;
+  color: #fff;
+  border-color: #2a7085;
+}
+
+/* line 183, ../scss/modules/_library.scss */
+.views-field-field-doc-is-shown-at a {
+  width: 100%;
+  margin-top: 1em;
+  background-color: #01A9DB;
+  color: #fff;
+  border-color: #2a7085;
+}
+
+/* line 191, ../scss/modules/_library.scss */
+.node-type-landlibrary-resource .field-label-above {
+  margin-top: 20px;
+}
+
+/* line 195, ../scss/modules/_library.scss */
+.node-type-landlibrary-resource .field-group-fieldset {
+  margin-top: 20px;
+}
+
+/* line 199, ../scss/modules/_library.scss */
+view-landlibrary-promoted:after {
+  position: relative;
+  clear: both;
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+
+/* line 207, ../scss/modules/_library.scss */
+.view-landlibrary-promoted {
+  margin: 0;
+  /* padding: 0 -15px; */
+  width: 100%;
+}
+
+/* line 213, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-row {
+  position: relative;
+}
+
+/* line 217, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-row a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 222, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-row .views-field-doc-thumb {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 228, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-row img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  /* line 234, ../scss/modules/_library.scss */
+  .view-landlibrary-promoted .views-row {
+    position: relative;
+    float: left;
+    width: 25%;
+  }
+}
+/* line 241, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-row .views-field-title {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  padding: 0.5em 1em;
+  bottom: 0;
+}
+
+/* line 249, ../scss/modules/_library.scss */
+.view-landlibrary-promoted {
+  margin-bottom: 50px;
+}
+
+/* line 253, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-field-field-image {
+  width: 100%;
+  padding: 5px 5px 5px 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+
+/* line 260, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-field-field-image img {
+  max-height: 30px;
+  max-width: 80px;
+  float: right;
+}
+
+/* line 266, ../scss/modules/_library.scss */
+.view-landlibrary-promoted .views-row {
+  position: relative;
+}
+
+/* line 270, ../scss/modules/_library.scss */
+.view-library-search .field-content a {
+  font-size: 1.2em;
+}
+
+/* line 274, ../scss/modules/_library.scss */
+.view-browse-by-subject .views-row {
+  display: inline;
+  float: left;
+}
+
+/* line 279, ../scss/modules/_library.scss */
+.view-browse-resource-type .views-row {
+  display: inline;
+  float: left;
+}
+
+/* line 284, ../scss/modules/_library.scss */
+#block-views-browse-resource-type-block {
+  margin-top: 50px;
+}
+
 /******************** IMPORT: Screens
 Base and specialized sizes for devices
 */
@@ -2212,7 +2540,7 @@ Base and specialized sizes for devices
  * Base size and positionning
  */
 /* Default elements */
-/* line 8, ../scss/screens/_base.scss */
+/* line 7, ../scss/screens/_base.scss */
 html,
 body {
   height: 100%;
@@ -2259,10 +2587,10 @@ img {
 
 /* line 39, ../scss/screens/_base.scss */
 a {
-  color: #0165c3;
+  color: #0165C3;
 }
 
-/* line 43, ../scss/screens/_base.scss */
+/* line 42, ../scss/screens/_base.scss */
 li a.active,
 a.active {
   color: #2a6496;
@@ -2285,22 +2613,22 @@ a:not([href]) {
 /* @screen-sm-min 768px */
 /* @screen-md-min 992px */
 /* @screen-lg-min 1200px */
-@media (min-width:768px) {
-  /* line 66, ../scss/screens/_base.scss */
+@media (min-width: 768px) {
+  /* line 65, ../scss/screens/_base.scss */
   #breadcrumb,
   #main-wrapper {
     width: 750px;
   }
 }
-@media (min-width:992px) {
-  /* line 70, ../scss/screens/_base.scss */
+@media (min-width: 992px) {
+  /* line 69, ../scss/screens/_base.scss */
   #breadcrumb,
   #main-wrapper {
     width: 970px;
   }
 }
-@media (min-width:1200px) {
-  /* line 74, ../scss/screens/_base.scss */
+@media (min-width: 1200px) {
+  /* line 73, ../scss/screens/_base.scss */
   #breadcrumb,
   #main-wrapper {
     width: 1170px;
@@ -2335,7 +2663,7 @@ a:not([href]) {
 #header .block-menu .contextual-links-wrapper, #header .block-locale .contextual-links-wrapper {
   margin-right: -32px;
 }
-/* line 110, ../scss/screens/_base.scss */
+/* line 109, ../scss/screens/_base.scss */
 #header #block-locale-language,
 #header #block-system-user-menu {
   float: right;
@@ -2381,14 +2709,14 @@ a:not([href]) {
 }
 /* line 148, ../scss/screens/_base.scss */
 #footer #block-landportal-extra-lp-footer-social li a {
-  color: white;
+  color: #ffffff;
 }
 /* line 154, ../scss/screens/_base.scss */
 #footer .contextual-links-wrapper {
   margin-right: -32px;
 }
 
-/* line 160, ../scss/screens/_base.scss */
+/* line 159, ../scss/screens/_base.scss */
 #header,
 #footer {
   padding: 0.8em 5em 0.5em;
@@ -2403,7 +2731,7 @@ a:not([href]) {
 /*****************************************
  * Main / Content areas
  */
-/* line 174, ../scss/screens/_base.scss */
+/* line 173, ../scss/screens/_base.scss */
 #breadcrumb,
 #main-wrapper {
   margin: 0 auto;
@@ -2420,7 +2748,7 @@ a:not([href]) {
   width: 100%;
 }
 
-/* line 187, ../scss/screens/_base.scss */
+/* line 186, ../scss/screens/_base.scss */
 .sidebar-first #content,
 .sidebar-second #content {
   width: 73%;
@@ -2505,7 +2833,7 @@ a:not([href]) {
   display: none;
 }
 
-/* line 256, ../scss/screens/_base.scss */
+/* line 255, ../scss/screens/_base.scss */
 .front .submitted,
 .front .views-label {
   display: none;
@@ -2520,7 +2848,7 @@ a:not([href]) {
 }
 /* line 260, ../scss/screens/_base.scss */
 .front .debate {
-  color: #0165c3;
+  color: #0165C3;
 }
 /* line 262, ../scss/screens/_base.scss */
 .front #header {
@@ -2559,7 +2887,7 @@ a:not([href]) {
 .front .view-front-page-promoted .views-row {
   position: relative;
 }
-@media (min-width:768px) {
+@media (min-width: 768px) {
   /* line 299, ../scss/screens/_base.scss */
   .front .view-front-page-promoted .views-row {
     position: relative;
@@ -2578,7 +2906,7 @@ a:not([href]) {
 /* line 313, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 /* line 317, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row .views-field-field-image {
@@ -2607,7 +2935,7 @@ a:not([href]) {
   text-align: center;
   padding: 0 1em;
 }
-@media (min-width:768px) {
+@media (min-width: 768px) {
   /* line 338, ../scss/screens/_base.scss */
   .front .view-front-page-teasers .views-row {
     float: left;
@@ -2677,3 +3005,5 @@ a:not([href]) {
 .page-book-countries #page-title {
   display: none;
 }
+
+/*# sourceMappingURL=style.css.map */

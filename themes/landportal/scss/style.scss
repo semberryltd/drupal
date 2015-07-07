@@ -34,20 +34,16 @@ Common Elements to the website such as:
 buttons, forms, menus...
 */
 
-// Landdebate
-@import "modules/debate";
-
-// Buttons
+// Common elements
 @import "modules/buttons";
-
-// Flags
 @import "modules/flags";
-
-// Forms
 @import "modules/forms";
-
-// Menus
 @import "modules/menus";
+
+// Landportal modules
+@import "modules/debate";
+@import "modules/library";
+
 
 /******************** IMPORT: Screens
 Base and specialized sizes for devices
