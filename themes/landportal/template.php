@@ -35,6 +35,10 @@ function landportal_preprocess_html(&$variables) {
   );
   drupal_add_html_head($meta_viewport, 'viewport');
 
+  $p = drupal_get_path_alias();
+  if (substr($p, 0, 7) == 'library') {
+    $variables['classes_array'][] = 'page-library';
+  }
 }
 
 function landportal_preprocess_page(&$variables) {
