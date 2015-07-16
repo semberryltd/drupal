@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Code for the LandLibrary feature.
+ */
+
+include_once 'landlibrary.features.inc';
+
+/* LandLibrary breadcrumbs */
+function landlibrary_node_view_alter(&$build) {
+    $node = $build['#node'];
+    if ($node->type == 'landlibrary_resource') {
+	$breadcrumb[] = l('LandLibrary', 'library');
+    }
+    $breadcrumb[] = l(t(drupal_get_title()), $_GET['q']);
+    drupal_set_breadcrumb($breadcrumb);
+
+}
+
+
