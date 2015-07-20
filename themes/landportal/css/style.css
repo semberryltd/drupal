@@ -2373,6 +2373,7 @@ a {
 .page-node-228 #section-header,
 */
 /* line 149, ../scss/modules/_library.scss */
+.node-type-landlibrary-resource #section-header,
 .page-library #section-header,
 .page-library-search #section-header,
 .page-library-sources #section-header {
@@ -2388,19 +2389,19 @@ a {
 .page-node-23  #section-header #block-search-form,
 .page-node-6   #section-header #block-search-form,
 */
-/* line 165, ../scss/modules/_library.scss */
+/* line 166, ../scss/modules/_library.scss */
 .page-library #section-header #block-search-form,
 .page-library-search #section-header #block-search-form,
 .page-library-sources #section-header #block-search-form {
   display: none;
 }
 
-/* line 172, ../scss/modules/_library.scss */
+/* line 173, ../scss/modules/_library.scss */
 #section-header #block-menu-menu-landlibrary-menu li {
   width: 16.65%;
 }
 
-/* line 175, ../scss/modules/_library.scss */
+/* line 176, ../scss/modules/_library.scss */
 .views-field-field-doc-is-shown-by a {
   width: 100%;
   margin-top: 1em;
@@ -2409,7 +2410,7 @@ a {
   border-color: #2a7085;
 }
 
-/* line 183, ../scss/modules/_library.scss */
+/* line 184, ../scss/modules/_library.scss */
 .views-field-field-doc-is-shown-at a {
   width: 100%;
   margin-top: 1em;
@@ -2418,17 +2419,17 @@ a {
   border-color: #2a7085;
 }
 
-/* line 191, ../scss/modules/_library.scss */
+/* line 192, ../scss/modules/_library.scss */
 .node-type-landlibrary-resource .field-label-above {
   margin-top: 20px;
 }
 
-/* line 195, ../scss/modules/_library.scss */
+/* line 196, ../scss/modules/_library.scss */
 .node-type-landlibrary-resource .field-group-fieldset {
   margin-top: 20px;
 }
 
-/* line 199, ../scss/modules/_library.scss */
+/* line 200, ../scss/modules/_library.scss */
 view-landlibrary-promoted:after {
   position: relative;
   clear: both;
@@ -2437,46 +2438,46 @@ view-landlibrary-promoted:after {
   visibility: hidden;
 }
 
-/* line 207, ../scss/modules/_library.scss */
+/* line 208, ../scss/modules/_library.scss */
 .view-landlibrary-promoted {
   margin: 0;
   /* padding: 0 -15px; */
   width: 100%;
 }
 
-/* line 213, ../scss/modules/_library.scss */
+/* line 214, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row {
   position: relative;
 }
 
-/* line 217, ../scss/modules/_library.scss */
+/* line 218, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row a {
   text-decoration: none;
   color: white;
 }
 
-/* line 222, ../scss/modules/_library.scss */
+/* line 223, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row .views-field-doc-thumb {
   height: 200px;
   overflow: hidden;
   position: relative;
 }
 
-/* line 228, ../scss/modules/_library.scss */
+/* line 229, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row img {
   width: 100%;
   height: auto;
 }
 
 @media (min-width: 768px) {
-  /* line 234, ../scss/modules/_library.scss */
+  /* line 235, ../scss/modules/_library.scss */
   .view-landlibrary-promoted .views-row {
     position: relative;
     float: left;
     width: 25%;
   }
 }
-/* line 241, ../scss/modules/_library.scss */
+/* line 242, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row .views-field-title {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -2485,12 +2486,12 @@ view-landlibrary-promoted:after {
   bottom: 0;
 }
 
-/* line 249, ../scss/modules/_library.scss */
+/* line 250, ../scss/modules/_library.scss */
 .view-landlibrary-promoted {
   margin-bottom: 50px;
 }
 
-/* line 253, ../scss/modules/_library.scss */
+/* line 254, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-field-field-image {
   width: 100%;
   padding: 5px 5px 5px 5px;
@@ -2498,36 +2499,36 @@ view-landlibrary-promoted:after {
   position: absolute;
 }
 
-/* line 260, ../scss/modules/_library.scss */
+/* line 261, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-field-field-image img {
   max-height: 30px;
   max-width: 80px;
   float: right;
 }
 
-/* line 266, ../scss/modules/_library.scss */
+/* line 267, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row {
   position: relative;
 }
 
-/* line 270, ../scss/modules/_library.scss */
+/* line 271, ../scss/modules/_library.scss */
 .view-library-search .field-content a {
   font-size: 1.2em;
 }
 
-/* line 274, ../scss/modules/_library.scss */
+/* line 275, ../scss/modules/_library.scss */
 .view-browse-by-subject .views-row {
   display: inline;
   float: left;
 }
 
-/* line 279, ../scss/modules/_library.scss */
+/* line 280, ../scss/modules/_library.scss */
 .view-browse-resource-type .views-row {
   display: inline;
   float: left;
 }
 
-/* line 284, ../scss/modules/_library.scss */
+/* line 285, ../scss/modules/_library.scss */
 #block-views-browse-resource-type-block {
   margin-top: 50px;
 }
