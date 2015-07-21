@@ -19,7 +19,7 @@ function landportal_theme($existing, $type, $theme, $path) {
  */
 function landportal_preprocess_html(&$variables) {
   drupal_add_css(
-    "http://fonts.googleapis.com/css?family=News+Cycle|Source+Sans+Pro:300,400|Josefin+Sans:300",
+    "//fonts.googleapis.com/css?family=News+Cycle|Source+Sans+Pro:300,400|Josefin+Sans:300",
     array('type' => 'external')
   );
   //drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
