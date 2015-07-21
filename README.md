@@ -1,22 +1,27 @@
-# Landportal Drupal (v7.x)
+# Landportal Drupal (v7.x-1.2)
 
 This repository contain the theme and modules used to setup the Landportal website.
 
 Theme: landportal
 
-Features:
- - landportal_taxonomy
- - landportal_field_base
- - landportal_content_type
-
 Modules:
  - landbook
  - landdebate
- - landportal_homepage
- - landportal_extra
+ - landlibrary
+ - landlibrary_rdfext
 
-Original work for the new Landportal version (as of 2014) and development of the Landbook was made by WESO (http://github.com/weso) and SBC4D (http://sbc4d.com). The Drupal refactoring have been done by Jules Clement (http://jcpc.ker.bz).
+Features (in modules/features/):
+ - landlibrary
+ - landportal/
+   - taxonomy
+   - homepage
+   - extra
+   - field_base
+   - content_types
 
+Original work for the new Landportal version (as of 2014) and development of the Landbook was made by WESO (http://github.com/weso) and SBC4D (http://sbc4d.com).
+A Drupal refactoring have been done by Jules Clement (http://jcpc.ker.bz) late 2014.
+The Landlibrary "module" / part have been added by Agroknow in June 2015.
 
 # Installation
 
@@ -28,10 +33,6 @@ Example (on a Debian-based distro):
   ...
   sites -> /etc/drupal/7/sites
   ...
-~# ls /etc/drupal/7
-  apache2.conf
-  htaccess
-  sites/
 ~# cd /etc/drupal/7/sites
 /etc/drupal/7/sites# git clone https://github.com/landportal/drupal [SITENAME]
 /etc/drupal/7/sites# ls -l
@@ -46,11 +47,13 @@ Aside of the Drupal 7.x install you need to have the following services accessib
  - DB: mysql, postgresql, virtuoso
  - Caching: memcached
  - Search: SOLR
+   with the following 'entry point' configured
+   - library
+   - drupal
  - Landportal services: api, receiver
  - Web based service: CKAN, Wesby (by WESO)
 
 Refer to the Landportal Administrator handbook for further details.
-
 
 ## Configuration
 
@@ -65,10 +68,11 @@ To have the website up and running:
    - landportal_taxonomy
    - landportal_field_base
    - landportal_content_type
- - Enable modules:
    - landportal_homepage
+ - Enable modules:
    - landdebate
    - landbook
+   - landlibrary
 
 # Components
 
@@ -83,6 +87,7 @@ Implements the new Landportal design style.
 Pulls dependencies for the landportal base modules and theme.
 Set default configuration for menus and few other things.
 This module should be enabled first.
+
 ### landportal_homepage
 
 Provides views and configuration for the landing page.
