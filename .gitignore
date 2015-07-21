@@ -12,7 +12,3 @@
 
 # TMP (while the modules that should be managed by drupal are back to their default location)
 # Ignore local modules except landportal-related, features and custom ones
-/modules/*
-!/modules/land*
-!/modules/features
-!/modules/custom
