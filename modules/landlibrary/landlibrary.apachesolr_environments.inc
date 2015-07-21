@@ -12,9 +12,9 @@ function landlibrary_apachesolr_environments() {
 
   $environment = new stdClass();
   $environment->api_version = 1;
-  $environment->env_id = 'landlibrary_search';
-  $environment->name = 'Landlibrary search';
-  $environment->url = 'http://localhost:8983/solr/landlibrary';
+  $environment->env_id = 'index_landportal_v2';
+  $environment->name = 'index landportal v2';
+  $environment->url = 'http://83.212.124.64:8080/solr/landportal';
   $environment->service_class = '';
   $environment->conf = array(
     'apachesolr_direct_commit' => 0,
