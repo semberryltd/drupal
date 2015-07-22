@@ -197,14 +197,6 @@ margin-top:20px;
 margin-top:20px;
 }
 
-.view-landlibrary-promoted:after {
-  position: relative;
-  clear: both;
-  display: table;
-  content: " ";
-  visibility: hidden;
-}
-
 .view-landlibrary-promoted {
   margin: 0;
   /* padding: 0 -15px; */
@@ -238,6 +230,7 @@ margin-top:20px;
     width: 25%;
   }
 }
+
 
 .view-landlibrary-promoted .views-row .views-field-title {
   width: 100%;
@@ -282,7 +275,22 @@ margin-top:20px;
         float:left;
 }
 
-#block-views-browse-resource-type-block {
-        margin-top:50px;
-}
+/* #block-views-browse-resource-type-block { */
+/*         margin-top:50px; */
+/* } */
 
+
+
+/* SCSS - reviewed by Jules */
+
+.page-library {
+    /* Force outer block height when inner elements "float" */
+    .region .block-views .content:after,
+    .view-landlibrary-promoted:after {
+        position: relative;
+        clear: both;
+        display: table;
+        content: " ";
+        visibility: hidden;
+    }
+}

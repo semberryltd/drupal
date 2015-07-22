@@ -2430,54 +2430,45 @@ a {
 }
 
 /* line 200, ../scss/modules/_library.scss */
-.view-landlibrary-promoted:after {
-  position: relative;
-  clear: both;
-  display: table;
-  content: " ";
-  visibility: hidden;
-}
-
-/* line 208, ../scss/modules/_library.scss */
 .view-landlibrary-promoted {
   margin: 0;
   /* padding: 0 -15px; */
   width: 100%;
 }
 
-/* line 214, ../scss/modules/_library.scss */
+/* line 206, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row {
   position: relative;
 }
 
-/* line 218, ../scss/modules/_library.scss */
+/* line 210, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row a {
   text-decoration: none;
   color: white;
 }
 
-/* line 223, ../scss/modules/_library.scss */
+/* line 215, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row .views-field-doc-thumb {
   height: 200px;
   overflow: hidden;
   position: relative;
 }
 
-/* line 229, ../scss/modules/_library.scss */
+/* line 221, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row img {
   width: 100%;
   height: auto;
 }
 
 @media (min-width: 768px) {
-  /* line 235, ../scss/modules/_library.scss */
+  /* line 227, ../scss/modules/_library.scss */
   .view-landlibrary-promoted .views-row {
     position: relative;
     float: left;
     width: 25%;
   }
 }
-/* line 242, ../scss/modules/_library.scss */
+/* line 235, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row .views-field-title {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -2486,12 +2477,12 @@ a {
   bottom: 0;
 }
 
-/* line 250, ../scss/modules/_library.scss */
+/* line 243, ../scss/modules/_library.scss */
 .view-landlibrary-promoted {
   margin-bottom: 50px;
 }
 
-/* line 254, ../scss/modules/_library.scss */
+/* line 247, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-field-field-image {
   width: 100%;
   padding: 5px 5px 5px 5px;
@@ -2499,38 +2490,51 @@ a {
   position: absolute;
 }
 
-/* line 261, ../scss/modules/_library.scss */
+/* line 254, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-field-field-image img {
   max-height: 30px;
   max-width: 80px;
   float: right;
 }
 
-/* line 267, ../scss/modules/_library.scss */
+/* line 260, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row {
   position: relative;
 }
 
-/* line 271, ../scss/modules/_library.scss */
+/* line 264, ../scss/modules/_library.scss */
 .view-library-search .field-content a {
   font-size: 1.2em;
 }
 
-/* line 275, ../scss/modules/_library.scss */
+/* line 268, ../scss/modules/_library.scss */
 .view-browse-by-subject .views-row {
   display: inline;
   float: left;
 }
 
-/* line 280, ../scss/modules/_library.scss */
+/* line 273, ../scss/modules/_library.scss */
 .view-browse-resource-type .views-row {
   display: inline;
   float: left;
 }
 
-/* line 285, ../scss/modules/_library.scss */
-#block-views-browse-resource-type-block {
-  margin-top: 50px;
+/* #block-views-browse-resource-type-block { */
+/*         margin-top:50px; */
+/* } */
+/* SCSS - reviewed by Jules */
+/* line 286, ../scss/modules/_library.scss */
+.page-library {
+  /* Force outer block height when inner elements "float" */
+}
+/* line 288, ../scss/modules/_library.scss */
+.page-library .region .block-views .content:after,
+.page-library .view-landlibrary-promoted:after {
+  position: relative;
+  clear: both;
+  display: table;
+  content: " ";
+  visibility: hidden;
 }
 
 /******************** IMPORT: Screens
