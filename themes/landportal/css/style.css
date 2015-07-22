@@ -2430,7 +2430,7 @@ a {
 }
 
 /* line 200, ../scss/modules/_library.scss */
-view-landlibrary-promoted:after {
+.view-landlibrary-promoted:after {
   position: relative;
   clear: both;
   display: table;
