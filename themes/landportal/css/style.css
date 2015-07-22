@@ -2207,17 +2207,15 @@ ul.menu > li li a.active-trail {
 /****** Agro-Know ********/
 /* line 3, ../scss/modules/_library.scss */
 #views-exposed-form-library-search-page {
-  margin-left: 0%;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin: 1em 0;
 }
 
-/* line 9, ../scss/modules/_library.scss */
+/* line 7, ../scss/modules/_library.scss */
 #edit-keyword-wrapper {
   width: 60%;
 }
 
-/* line 13, ../scss/modules/_library.scss */
+/* line 11, ../scss/modules/_library.scss */
 #edit-keyword {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -2233,46 +2231,46 @@ ul.menu > li li a.active-trail {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-/* line 29, ../scss/modules/_library.scss */
+/* line 27, ../scss/modules/_library.scss */
 .source-list-row {
   float: left;
   margin: 20px 20px 20px 20px;
 }
 
-/* line 34, ../scss/modules/_library.scss */
+/* line 32, ../scss/modules/_library.scss */
 .views-exposed-widget .views-submit-button {
   font-size: 1.5em;
 }
 
-/* line 38, ../scss/modules/_library.scss */
+/* line 36, ../scss/modules/_library.scss */
 #edit-submit-library-search {
   margin-top: 0px !important;
   font-size: 1.5em;
 }
 
-/* line 43, ../scss/modules/_library.scss */
+/* line 41, ../scss/modules/_library.scss */
 .search-block-provider {
   float: right;
 }
 
-/* line 47, ../scss/modules/_library.scss */
+/* line 45, ../scss/modules/_library.scss */
 .search-block-provider img {
   width: 60px;
 }
 
-/* line 51, ../scss/modules/_library.scss */
+/* line 49, ../scss/modules/_library.scss */
 .search-block-keyword a {
   font-size: 1.0em;
   font-family: 'News Cycle', sans-serif;
 }
 
-/* line 56, ../scss/modules/_library.scss */
+/* line 54, ../scss/modules/_library.scss */
 .browse-block-subject {
   width: 150px;
   height: 150px;
 }
 
-/* line 61, ../scss/modules/_library.scss */
+/* line 59, ../scss/modules/_library.scss */
 .browse-block-subject a span {
   font-size: 1.0em;
   width: 100px;
@@ -2281,17 +2279,17 @@ ul.menu > li li a.active-trail {
   font-family: 'News Cycle', sans-serif;
 }
 
-/* line 69, ../scss/modules/_library.scss */
+/* line 67, ../scss/modules/_library.scss */
 .browse-block-subject a img {
   width: 100px;
 }
 
-/* line 73, ../scss/modules/_library.scss */
+/* line 71, ../scss/modules/_library.scss */
 .browse-block-type {
   width: 150px;
 }
 
-/* line 77, ../scss/modules/_library.scss */
+/* line 75, ../scss/modules/_library.scss */
 .browse-block-type a span {
   font-size: 1.0em;
   width: 100px;
@@ -2300,12 +2298,12 @@ ul.menu > li li a.active-trail {
   font-family: 'News Cycle', sans-serif;
 }
 
-/* line 85, ../scss/modules/_library.scss */
+/* line 83, ../scss/modules/_library.scss */
 .browse-block-type a img {
   width: 100px;
 }
 
-/* line 90, ../scss/modules/_library.scss */
+/* line 88, ../scss/modules/_library.scss */
 .block-facetapi {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -2324,44 +2322,44 @@ ul.menu > li li a.active-trail {
   margin-bottom: 10px;
 }
 
-/* line 108, ../scss/modules/_library.scss */
+/* line 106, ../scss/modules/_library.scss */
 .block-facetapi h2 {
   cursor: hand;
   cursor: pointer;
 }
 
-/* line 113, ../scss/modules/_library.scss */
+/* line 111, ../scss/modules/_library.scss */
 .page-library-search .view-content {
   margin-top: 20px;
 }
 
-/* line 117, ../scss/modules/_library.scss */
+/* line 115, ../scss/modules/_library.scss */
 a {
   color: #2a6496;
 }
 
-/* line 121, ../scss/modules/_library.scss */
+/* line 119, ../scss/modules/_library.scss */
 .grid-row {
   text-align: center;
   padding-bottom: 50px;
 }
 
-/* line 126, ../scss/modules/_library.scss */
+/* line 124, ../scss/modules/_library.scss */
 .views-field-field-doc-provider {
   text-align: center;
 }
 
-/* line 130, ../scss/modules/_library.scss */
+/* line 128, ../scss/modules/_library.scss */
 #block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+1) {
   background-color: rgba(219, 51, 1, 0.3);
 }
 
-/* line 134, ../scss/modules/_library.scss */
+/* line 132, ../scss/modules/_library.scss */
 #block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+2) {
   background-color: rgba(157, 85, 63, 0.3);
 }
 
-/* line 138, ../scss/modules/_library.scss */
+/* line 136, ../scss/modules/_library.scss */
 #block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+3) {
   background-color: rgba(218, 66, 20, 0.3);
 }
@@ -2372,7 +2370,7 @@ a {
 .page-node-23 #section-header,
 .page-node-228 #section-header,
 */
-/* line 149, ../scss/modules/_library.scss */
+/* line 147, ../scss/modules/_library.scss */
 .node-type-landlibrary-resource #section-header,
 .page-library #section-header,
 .page-library-search #section-header,
@@ -2389,19 +2387,19 @@ a {
 .page-node-23  #section-header #block-search-form,
 .page-node-6   #section-header #block-search-form,
 */
-/* line 166, ../scss/modules/_library.scss */
+/* line 164, ../scss/modules/_library.scss */
 .page-library #section-header #block-search-form,
 .page-library-search #section-header #block-search-form,
 .page-library-sources #section-header #block-search-form {
   display: none;
 }
 
-/* line 173, ../scss/modules/_library.scss */
+/* line 171, ../scss/modules/_library.scss */
 #section-header #block-menu-menu-landlibrary-menu li {
   width: 16.65%;
 }
 
-/* line 176, ../scss/modules/_library.scss */
+/* line 174, ../scss/modules/_library.scss */
 .views-field-field-doc-is-shown-by a {
   width: 100%;
   margin-top: 1em;
@@ -2410,7 +2408,7 @@ a {
   border-color: #2a7085;
 }
 
-/* line 184, ../scss/modules/_library.scss */
+/* line 182, ../scss/modules/_library.scss */
 .views-field-field-doc-is-shown-at a {
   width: 100%;
   margin-top: 1em;
@@ -2419,56 +2417,56 @@ a {
   border-color: #2a7085;
 }
 
-/* line 192, ../scss/modules/_library.scss */
+/* line 190, ../scss/modules/_library.scss */
 .node-type-landlibrary-resource .field-label-above {
   margin-top: 20px;
 }
 
-/* line 196, ../scss/modules/_library.scss */
+/* line 194, ../scss/modules/_library.scss */
 .node-type-landlibrary-resource .field-group-fieldset {
   margin-top: 20px;
 }
 
-/* line 200, ../scss/modules/_library.scss */
+/* line 198, ../scss/modules/_library.scss */
 .view-landlibrary-promoted {
   margin: 0;
   /* padding: 0 -15px; */
   width: 100%;
 }
 
-/* line 206, ../scss/modules/_library.scss */
+/* line 204, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row {
   position: relative;
 }
 
-/* line 210, ../scss/modules/_library.scss */
+/* line 208, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row a {
   text-decoration: none;
   color: white;
 }
 
-/* line 215, ../scss/modules/_library.scss */
+/* line 213, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row .views-field-doc-thumb {
   height: 200px;
   overflow: hidden;
   position: relative;
 }
 
-/* line 221, ../scss/modules/_library.scss */
+/* line 219, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row img {
   width: 100%;
   height: auto;
 }
 
 @media (min-width: 768px) {
-  /* line 227, ../scss/modules/_library.scss */
+  /* line 225, ../scss/modules/_library.scss */
   .view-landlibrary-promoted .views-row {
     position: relative;
     float: left;
     width: 25%;
   }
 }
-/* line 235, ../scss/modules/_library.scss */
+/* line 233, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row .views-field-title {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -2477,12 +2475,12 @@ a {
   bottom: 0;
 }
 
-/* line 243, ../scss/modules/_library.scss */
+/* line 241, ../scss/modules/_library.scss */
 .view-landlibrary-promoted {
   margin-bottom: 50px;
 }
 
-/* line 247, ../scss/modules/_library.scss */
+/* line 245, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-field-field-image {
   width: 100%;
   padding: 5px 5px 5px 5px;
@@ -2490,30 +2488,30 @@ a {
   position: absolute;
 }
 
-/* line 254, ../scss/modules/_library.scss */
+/* line 252, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-field-field-image img {
   max-height: 30px;
   max-width: 80px;
   float: right;
 }
 
-/* line 260, ../scss/modules/_library.scss */
+/* line 258, ../scss/modules/_library.scss */
 .view-landlibrary-promoted .views-row {
   position: relative;
 }
 
-/* line 264, ../scss/modules/_library.scss */
+/* line 262, ../scss/modules/_library.scss */
 .view-library-search .field-content a {
   font-size: 1.2em;
 }
 
-/* line 268, ../scss/modules/_library.scss */
+/* line 266, ../scss/modules/_library.scss */
 .view-browse-by-subject .views-row {
   display: inline;
   float: left;
 }
 
-/* line 273, ../scss/modules/_library.scss */
+/* line 271, ../scss/modules/_library.scss */
 .view-browse-resource-type .views-row {
   display: inline;
   float: left;
@@ -2523,11 +2521,11 @@ a {
 /*         margin-top:50px; */
 /* } */
 /* SCSS - reviewed by Jules */
-/* line 286, ../scss/modules/_library.scss */
+/* line 284, ../scss/modules/_library.scss */
 .page-library {
   /* Force outer block height when inner elements "float" */
 }
-/* line 288, ../scss/modules/_library.scss */
+/* line 286, ../scss/modules/_library.scss */
 .page-library .region .block-views .content:after,
 .page-library .view-landlibrary-promoted:after {
   position: relative;
