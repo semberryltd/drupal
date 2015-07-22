@@ -486,105 +486,106 @@ $translatables['library_search'] = array(
 
   $export['library_search'] = $view;
 
+$view = new view();
+$view->name = 'library_sources';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'Sources';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
-  $view = new view();
-  $view->name = 'library_sources';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Sources';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Data Sources';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['style_options']['row_class'] = 'source-list-row';
+$handler->display->display_options['row_plugin'] = 'fields';
+/* Relationship: Entity Reference: Referenced Entity */
+$handler->display->display_options['relationships']['field_doc_provider_target_id']['id'] = 'field_doc_provider_target_id';
+$handler->display->display_options['relationships']['field_doc_provider_target_id']['table'] = 'field_data_field_doc_provider';
+$handler->display->display_options['relationships']['field_doc_provider_target_id']['field'] = 'field_doc_provider_target_id';
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'field_doc_provider_target_id';
+$handler->display->display_options['fields']['nid']['label'] = '';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+/* Field: Content: Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['relationship'] = 'field_doc_provider_target_id';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => '',
+  'image_link' => 'content',
+);
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['relationship'] = 'field_doc_provider_target_id';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['text'] = '<span style="text-align:center; margin-top:100px;"><a href="/node/[nid]">[title]</a></span>';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Provider (field_doc_provider) */
+$handler->display->display_options['filters']['field_doc_provider_target_id']['id'] = 'field_doc_provider_target_id';
+$handler->display->display_options['filters']['field_doc_provider_target_id']['table'] = 'field_data_field_doc_provider';
+$handler->display->display_options['filters']['field_doc_provider_target_id']['field'] = 'field_doc_provider_target_id';
+$handler->display->display_options['filters']['field_doc_provider_target_id']['operator'] = 'not empty';
+/* Filter criterion: Content: Title */
+$handler->display->display_options['filters']['title']['id'] = 'title';
+$handler->display->display_options['filters']['title']['table'] = 'node';
+$handler->display->display_options['filters']['title']['field'] = 'title';
+$handler->display->display_options['filters']['title']['relationship'] = 'field_doc_provider_target_id';
+$handler->display->display_options['filters']['title']['operator'] = '!=';
+$handler->display->display_options['filters']['title']['value'] = 'unknown';
 
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Data Sources';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'source-list-row';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_doc_provider_target_id']['id'] = 'field_doc_provider_target_id';
-  $handler->display->display_options['relationships']['field_doc_provider_target_id']['table'] = 'field_data_field_doc_provider';
-  $handler->display->display_options['relationships']['field_doc_provider_target_id']['field'] = 'field_doc_provider_target_id';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'field_doc_provider_target_id';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_doc_provider_target_id';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_doc_provider_target_id';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-                                                                                  'image_style' => 'medium',
-                                                                                  'image_link' => 'content',
-                                                                                  );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Provider (field_doc_provider) */
-  $handler->display->display_options['filters']['field_doc_provider_target_id']['id'] = 'field_doc_provider_target_id';
-  $handler->display->display_options['filters']['field_doc_provider_target_id']['table'] = 'field_data_field_doc_provider';
-  $handler->display->display_options['filters']['field_doc_provider_target_id']['field'] = 'field_doc_provider_target_id';
-  $handler->display->display_options['filters']['field_doc_provider_target_id']['operator'] = 'not empty';
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['relationship'] = 'field_doc_provider_target_id';
-  $handler->display->display_options['filters']['title']['operator'] = '!=';
-  $handler->display->display_options['filters']['title']['value'] = 'unknown';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'library/sources';
-  $translatables['library_sources'] = array(
-                                            t('Master'),
-                                            t('Data Sources'),
-                                            t('more'),
-                                            t('Apply'),
-                                            t('Reset'),
-                                            t('Sort by'),
-                                            t('Asc'),
-                                            t('Desc'),
-                                            t('Content entity referenced from field_doc_provider'),
-                                            t('Page'),
-                                            );
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['path'] = 'library/sources';
+$translatables['library_sources'] = array(
+  t('Master'),
+  t('Data Sources'),
+  t('more'),
+  t('Apply'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Content entity referenced from field_doc_provider'),
+  t('<span style="text-align:center; margin-top:100px;"><a href="/node/[nid]">[title]</a></span>'),
+  t('Page'),
+);
 
   $export['library_sources'] = $view;
 
