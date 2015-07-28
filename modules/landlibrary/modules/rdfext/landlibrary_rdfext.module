@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * SemBerry LTD
+ * Custom functions and overrides for the Land Library RDF.
+ */
+
+/**
+ * Callback function for Facetapi to alter value before display.
+ */
+function landlibrary_rdfext_facet_items_alter(&$build, &$settings) {
+	 if (strpos($settings->facet, "field_uris_used_in_dataset") !== false ||
+	   strpos($settings->facet, "field_uris_linked") !== false) {
+       foreach($build as $key => $item) {
+				 switch ($item["#markup"]) {
+				   case "0": 
+					   $build[$key]["#markup"] = "No";
+						 break;
+					 case "1":
+					   $build[$key]["#markup"] = "Yes";
+						 break;
+					 default:
+					   $build[$key]["#markup"] = "N/A";
+						 break;
+					}
+       }
+   }
+}
+
+/**
+ * Override of core RDF mappings for special entity bundles, e.g. bibliographic resources.
+ * Do not use dc:date and sub-properties for the metadata record creation 
+ * Do not use default sioc mappings 
+ */
+
+function landlibrary_rdfext_rdf_mapping() {
+  return array(
+    array(
+      'type' => 'node',
+      'bundle' => 'landlibrary_resource',
+      'mapping' => array(
+        'rdftype' => array('dc:BibliographicResource'),
+        'title' => array(
+          'predicates' => array(),
+        ),
+        'created' => array(
+          'predicates' => array(),
+        ),
+        'changed' => array(
+          'predicates' => array(),
+        ),
+        'body' => array(
+          'predicates' => array('content:encoded'),
+        ),
+        'uid' => array(
+          'predicates' => array(),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(),
+        ),
+        'comment_count' => array(
+          'predicates' => array(),
+        ),
+        'last_activity' => array(
+          'predicates' => array(),
+        ),
+      ),
+    ),
+  );
+}
+
+
