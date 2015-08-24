@@ -1,4 +1,5 @@
 # Ignore configuration files that may contain sensitive information.
+/baseurl.php
 /*settings.php
 /*config.php
 /files
