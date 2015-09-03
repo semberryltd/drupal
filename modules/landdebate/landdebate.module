@@ -44,7 +44,7 @@ function landdebate_menu() {
     //'type'              => MENU_NORMAL_ITEM,
     'access callback'	=> TRUE,
     'page callback'	=> 'drupal_goto',
-    'page arguments'	=> array('debate/debates'),
+    'page arguments'	=> array('debate/news'),
   );
   return $items;
 }
