@@ -4,14 +4,13 @@
  * User profile page
  */
 
-//dpm($variables);
+dpm($variables);
 
 $account = $variables['elements']['#account'];
 
 print '#'. $account->uid;
-
 echo $variables['elements']['#account']->name;
+
 print render($user_profile);
 
-print '<div class="view-profile"l
-><a href="/user/'. $account->uid .'">'. t('View profile') .'</a></div>';
+/* print '<div class="view-profile"><a href="/user/'. $account->uid .'">'. t('View profile') .'</a></div>'; */

@@ -22,7 +22,6 @@ function landportal_preprocess_html(&$variables) {
     "//fonts.googleapis.com/css?family=News+Cycle|Source+Sans+Pro:300,400|Josefin+Sans:300",
     array('type' => 'external')
   );
-  //drupal_add_js(drupal_get_path('module', 'landbook').'/js/libraries/bootstrap.min.js');
   drupal_add_css(drupal_get_path('theme', 'landportal').'/css/font-awesome.min.css');
   drupal_add_css(drupal_get_path('theme', 'landportal').'/css/bootstrap.min.css');
 
@@ -35,12 +34,18 @@ function landportal_preprocess_html(&$variables) {
   );
   drupal_add_html_head($meta_viewport, 'viewport');
 
+  // This should be in the Landlibrary module... prone to fail this is all bad
   $p = drupal_get_path_alias();
   if (substr($p, 0, 7) == 'library') {
     $variables['classes_array'][] = 'page-library';
   }
 }
 
+/**
+ * Force page title to be 'Join us' on user registration and login pages
+ *
+ * TODO: pretty bad hook in there, surely a better way to do that.
+ */
 function landportal_preprocess_page(&$variables) {
   if (arg(0) == 'user') {
     switch (arg(1)) {
@@ -55,8 +60,8 @@ function landportal_preprocess_page(&$variables) {
 }
 
 /**
- * Add description to section-header menus
- * If no menu are found in the section-header remove the whole block
+ * Add the menu description to section-header (used as a tagline for the section)
+ * If no menu is found, remove the whole block.
  */
 function landportal_page_alter(&$page) {
   if (!isset($page['section_header'])) return;
@@ -70,11 +75,13 @@ function landportal_page_alter(&$page) {
     }
   }
   if (!$check) unset($page['section_header']);
+
+  // Remove sidebars from homepage?
 }
 
 /**
- * Override language switcher locale block links
- * Display ISO (2 letters) code instead of the full lang name.
+ * Override the 'language switcher' block links
+ * Display ISO 2 letters code instead of the full language name.
  */
 function landportal_links__locale_block(&$vars) {
   foreach($vars['links'] as $language => $langInfo) {

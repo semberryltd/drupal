@@ -23,38 +23,73 @@ a {
 Common Elements to the website such as:
 buttons, forms, menus...
 */
-/* line 4, ../scss/modules/_buttons.scss */
-.field-name-field-related-topics .field-item,
-.field-name-field-geographical-focus .field-item,
-.field-name-field-status .field-item {
+/* line 3, ../scss/modules/_buttons.scss */
+.field-type-taxonomy-term-reference .field-label {
+  font-size: .8em;
+  font-style: italic;
+  min-width: 50px;
+  color: #666666;
+  display: inline-block;
+}
+/* line 10, ../scss/modules/_buttons.scss */
+.field-type-taxonomy-term-reference .field-items {
+  display: inline-block;
+}
+/* line 14, ../scss/modules/_buttons.scss */
+.field-type-taxonomy-term-reference .field-item a {
   margin: .2em;
   padding: 0.2em 0.5em;
   border-radius: .25em;
-  color: white;
   background-color: #428bca;
+  color: white;
+}
+
+/* line 27, ../scss/modules/_buttons.scss */
+.field-name-field-related-topics .field-item,
+.field-name-field-geographical-focus .field-item,
+.field-name-field-status .field-item {
   float: left;
 }
-/* line 11, ../scss/modules/_buttons.scss */
+/* line 29, ../scss/modules/_buttons.scss */
 .field-name-field-related-topics .field-item a,
 .field-name-field-geographical-focus .field-item a,
 .field-name-field-status .field-item a {
   color: white;
 }
 
-/* line 15, ../scss/modules/_buttons.scss */
+/* line 33, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item {
   margin: 1.5em 0;
   padding: .5em;
 }
 
-/* line 19, ../scss/modules/_buttons.scss */
+/* line 37, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item {
   float: none;
   border: 1px solid #666666;
 }
-/* line 22, ../scss/modules/_buttons.scss */
+/* line 40, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item .field-item[content="Closed"] {
   background-color: #fe2e2e;
+}
+
+/* line 1, ../scss/modules/_links.scss */
+.links.inline {
+  float: right;
+  font-style: italic;
+}
+/* line 4, ../scss/modules/_links.scss */
+.links.inline li {
+  padding-right: 0;
+}
+/* line 7, ../scss/modules/_links.scss */
+.links.inline a {
+  font-size: .9em;
+}
+/* line 9, ../scss/modules/_links.scss */
+.links.inline a::before {
+  content: "\2192";
+  padding-right: .4em;
 }
 
 /* line 1, ../scss/modules/_flags.scss */
@@ -2828,36 +2863,51 @@ a:not([href]) {
   margin: 0.5em 0;
 }
 
+/* line 245, ../scss/screens/_base.scss */
+.node .content:after {
+  position: relative;
+  clear: both;
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+
 /*****************************************
  * Page specific
  */
-/* line 250, ../scss/screens/_base.scss */
-.page-node .submitted {
-  display: none;
+/* .page-node { */
+/*     .submitted { display: none; } */
+/* } */
+/* line 262, ../scss/screens/_base.scss */
+.submitted {
+  float: right;
+  font-style: italic;
+  font-size: .8em;
+  color: #666666;
 }
 
-/* line 255, ../scss/screens/_base.scss */
+/* line 271, ../scss/screens/_base.scss */
 .front .submitted,
 .front .views-label {
   display: none;
 }
-/* line 258, ../scss/screens/_base.scss */
+/* line 274, ../scss/screens/_base.scss */
 .front .library {
   color: #e3ab03;
 }
-/* line 259, ../scss/screens/_base.scss */
+/* line 275, ../scss/screens/_base.scss */
 .front .book {
   color: #8fcd1f;
 }
-/* line 260, ../scss/screens/_base.scss */
+/* line 276, ../scss/screens/_base.scss */
 .front .debate {
   color: #0165C3;
 }
-/* line 262, ../scss/screens/_base.scss */
+/* line 278, ../scss/screens/_base.scss */
 .front #header {
   border-bottom: 0.36em solid #8fcd1f;
 }
-/* line 265, ../scss/screens/_base.scss */
+/* line 281, ../scss/screens/_base.scss */
 .front #main {
   line-height: 1.4em;
   width: 100%;
@@ -2867,7 +2917,7 @@ a:not([href]) {
   font-family: 'Source Sans Pro',sans-serif;
   font-weight: 300;
 }
-/* line 273, ../scss/screens/_base.scss */
+/* line 289, ../scss/screens/_base.scss */
 .front #main #page-title {
   line-height: 1.4em;
   font-family: 'Source Sans Pro',sans-serif;
@@ -2876,29 +2926,29 @@ a:not([href]) {
   text-transform: uppercase;
   margin: 1.2em 0 0;
 }
-/* line 282, ../scss/screens/_base.scss */
+/* line 298, ../scss/screens/_base.scss */
 .front #main .region-content {
   margin: 0.5em 0 1em 0;
 }
-/* line 289, ../scss/screens/_base.scss */
+/* line 305, ../scss/screens/_base.scss */
 .front .view-front-page-promoted {
   margin: 0;
   /* padding: 0 -15px; */
   width: 100%;
 }
-/* line 294, ../scss/screens/_base.scss */
+/* line 310, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row {
   position: relative;
 }
 @media (min-width: 768px) {
-  /* line 299, ../scss/screens/_base.scss */
+  /* line 315, ../scss/screens/_base.scss */
   .front .view-front-page-promoted .views-row {
     position: relative;
     float: left;
     width: 25%;
   }
 }
-/* line 306, ../scss/screens/_base.scss */
+/* line 322, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row .views-field-title {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -2906,22 +2956,22 @@ a:not([href]) {
   padding: 0.5em 1em;
   bottom: 0;
 }
-/* line 313, ../scss/screens/_base.scss */
+/* line 329, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row a {
   text-decoration: none;
   color: #ffffff;
 }
-/* line 317, ../scss/screens/_base.scss */
+/* line 333, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row .views-field-field-image {
   height: 200px;
   overflow: hidden;
 }
-/* line 321, ../scss/screens/_base.scss */
+/* line 337, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row img {
   width: 100%;
   height: auto;
 }
-/* line 326, ../scss/screens/_base.scss */
+/* line 342, ../scss/screens/_base.scss */
 .front .view-front-page-promoted:after {
   position: relative;
   clear: both;
@@ -2929,43 +2979,43 @@ a:not([href]) {
   content: " ";
   visibility: hidden;
 }
-/* line 334, ../scss/screens/_base.scss */
+/* line 350, ../scss/screens/_base.scss */
 .front .view-front-page-teasers {
   padding: 1em 5em;
 }
-/* line 336, ../scss/screens/_base.scss */
+/* line 352, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row {
   text-align: center;
   padding: 0 1em;
 }
 @media (min-width: 768px) {
-  /* line 338, ../scss/screens/_base.scss */
+  /* line 354, ../scss/screens/_base.scss */
   .front .view-front-page-teasers .views-row {
     float: left;
     width: 33.3%;
   }
 }
-/* line 345, ../scss/screens/_base.scss */
+/* line 361, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title {
   text-transform: lowercase;
   font-size: 2.5em;
 }
-/* line 348, ../scss/screens/_base.scss */
+/* line 364, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title a {
   color: #333333;
 }
-/* line 352, ../scss/screens/_base.scss */
+/* line 368, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h2 {
   text-transform: uppercase;
   min-height: 2.5em;
   color: #666666;
 }
-/* line 353, ../scss/screens/_base.scss */
+/* line 369, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h2 a {
   text-decoration: none;
   color: #666666;
 }
-/* line 358, ../scss/screens/_base.scss */
+/* line 374, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   vertical-align: middle;
@@ -2977,18 +3027,18 @@ a:not([href]) {
   padding: .45em 0 .4em 0;
   font-size: 1.3em;
 }
-/* line 364, ../scss/screens/_base.scss */
+/* line 380, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 a {
   text-decoration: none;
   color: #333333;
   font-style: normal;
 }
-/* line 374, ../scss/screens/_base.scss */
+/* line 390, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row p {
   min-height: 150px;
   text-align: justify;
 }
-/* line 379, ../scss/screens/_base.scss */
+/* line 395, ../scss/screens/_base.scss */
 .front .view-front-page-teasers:after {
   position: relative;
   clear: both;
@@ -2998,13 +3048,13 @@ a:not([href]) {
 }
 
 /* Book */
-/* line 390, ../scss/screens/_base.scss */
+/* line 406, ../scss/screens/_base.scss */
 .content .content.container {
   padding: 0;
   width: 100%;
 }
 
-/* line 396, ../scss/screens/_base.scss */
+/* line 412, ../scss/screens/_base.scss */
 .page-book-countries #page-title {
   display: none;
 }

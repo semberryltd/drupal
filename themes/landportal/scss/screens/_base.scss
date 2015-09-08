@@ -241,13 +241,29 @@ a:not([href]) {
     }
 }
 
+.node .content {
+    &:after {
+        position: relative;
+        clear: both;
+        display: table;
+        content: " ";
+        visibility: hidden;
+    }
+}
+
 
 
 /*****************************************
  * Page specific
  */
-.page-node {
-    .submitted { display: none; }
+/* .page-node { */
+/*     .submitted { display: none; } */
+/* } */
+.submitted {
+    float: right;
+    font-style: italic;
+    font-size: .8em;
+    color: $grey-light;
 }
 
 .front {
