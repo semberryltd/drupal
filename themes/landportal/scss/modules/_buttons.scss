@@ -1,4 +1,13 @@
 
+.lp-button {
+    padding: 0.2em 0.5em;
+    border-radius: .25em;
+    background-color: $blue-light;
+    color: white;
+}
+
+
+
 .field-type-taxonomy-term-reference {
     .field-label {
         font-size: .8em;
@@ -12,11 +21,8 @@
     }
     .field-item {
         a {
-        margin: .2em;
-        padding: 0.2em 0.5em;
-        border-radius: .25em;
-        background-color: $blue-light;
-            color: white;
+            @extend .lp-button;
+            margin: .2em;
         }
     }
 }

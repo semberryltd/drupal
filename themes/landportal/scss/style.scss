@@ -33,6 +33,8 @@ Variables & function for SASS files
 Common Elements to the website such as:
 buttons, forms, menus...
 */
+// Override bootstrap
+@import "modules/bootstrap";
 
 // Common elements
 @import "modules/buttons";

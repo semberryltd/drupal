@@ -7,7 +7,6 @@ project = landportal_taxonomy
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = i18n_taxonomy
-dependencies[] = landportal_field_base
 dependencies[] = taxonomy
 dependencies[] = uuid
 dependencies[] = uuid_features

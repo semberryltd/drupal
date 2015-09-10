@@ -39,6 +39,24 @@ img {
 a {
     color: $blue;
 }
+ul.tabs li a {
+    @extend .lp-button;
+    &.active {
+        background-color: $blue-dark;
+        border:  0;
+    }
+    border: 0;
+}
+ul.primary.tabs,
+ul.secondary.tabs {
+    a.active {
+        border-bottom: 0; /*3px solid $blue-dark;*/
+    }
+    float: right;
+    border-bottom: 0;
+    padding: 1em 0;
+    margin: 0;
+}
 li a.active,
 a.active {
     color: $blue-dark;
@@ -251,7 +269,24 @@ a:not([href]) {
     }
 }
 
-
+/* Administration */
+body.overlay {
+    #overlay {
+        #header,
+        #section-header,
+        #page-title,
+        #breadcrumb {
+            display: none;
+        }
+        /* table { */
+        /*     width: 100%; */
+        /* } */
+    }
+    html[dir=rtl] #admin-menu {
+        margin: 0 -20px 0 0;
+        padding: 0 20px 0 0;
+    }
+}
 
 /*****************************************
  * Page specific

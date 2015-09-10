@@ -1,0 +1,13 @@
+table {
+    thead {
+        .checkbox {
+            display: table-cell;
+            margin: 0;
+        }
+    }
+    .checkbox {
+        input[type="checkbox"] {
+            float: none;
+        }
+    }
+}
