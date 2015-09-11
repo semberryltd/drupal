@@ -50,8 +50,6 @@ function landdebate_context_default_contexts() {
   t('landdebate');
   $export['debate-menu-context'] = $context;
 
-
-
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -86,7 +84,7 @@ function landdebate_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Contextually display landdebate section header menu');
+  t('Contextually display twitter for some landdebate CT');
   t('landdebate');
   $export['debate-twitter-context'] = $context;
 

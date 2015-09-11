@@ -9,6 +9,7 @@ dependencies[] = features
 dependencies[] = feeds
 dependencies[] = feeds_crawler
 dependencies[] = feeds_tamper
+dependencies[] = landlibrary
 dependencies[] = landportal_base
 dependencies[] = menu
 dependencies[] = node
