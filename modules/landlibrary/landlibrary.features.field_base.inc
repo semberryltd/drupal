@@ -321,7 +321,7 @@ function landlibrary_field_default_field_bases() {
   // Exported field_base: 'field_doc_country'
   $field_bases['field_doc_country'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_doc_country',
@@ -459,7 +459,7 @@ function landlibrary_field_default_field_bases() {
   // Exported field_base: 'field_doc_description'
   $field_bases['field_doc_description'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_doc_description',
@@ -1815,8 +1815,7 @@ $entity_field[0][\'value\'] = $external_url;
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'subjects' => 'subjects',
-          'topics' => 'topics',
+          'landportal_topics' => 'landportal_topics',
         ),
       ),
       'target_type' => 'taxonomy_term',
@@ -1885,36 +1884,6 @@ $entity_field[0][\'value\'] = $external_url;
     ),
     'translatable' => 0,
     'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_website'
-  $field_bases['field_website'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_website',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'entity_translation_sync' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'link_field',
   );
 
   // Exported field_base: 'name_field'
