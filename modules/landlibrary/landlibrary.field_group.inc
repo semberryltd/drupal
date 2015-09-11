@@ -21,7 +21,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Citation',
-    'weight' => '44',
+    'weight' => '60',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -47,7 +47,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Citation',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_doc_citation',
       1 => 'field_doc_citation_chronology',
@@ -78,7 +78,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Spatial Coverage',
-    'weight' => '41',
+    'weight' => '58',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -104,7 +104,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Spatial Coverage',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_doc_country',
       1 => 'field_doc_geographic_region',
@@ -133,7 +133,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Creator',
-    'weight' => '50',
+    'weight' => '28',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -187,7 +187,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description Information',
-    'weight' => '38',
+    'weight' => '55',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -213,7 +213,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description Information',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_doc_description',
       1 => 'field_doc_thumb',
@@ -243,7 +243,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '42',
+    'weight' => '59',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -269,7 +269,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_doc_is_shown_at',
       1 => 'field_doc_is_shown_by',
@@ -300,7 +300,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Physical Characteristics',
-    'weight' => '39',
+    'weight' => '56',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -326,7 +326,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Physical Characteristics',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_doc_creation_date',
       1 => 'field_doc_edition',
@@ -359,7 +359,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publisher',
-    'weight' => '52',
+    'weight' => '66',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -414,22 +414,8 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Relations',
-    'weight' => '36',
-    'children' => array(
-      0 => 'field_doc_has_part',
-      1 => 'field_doc_has_translation',
-      2 => 'field_doc_has_version',
-      3 => 'field_doc_is_part_of',
-      4 => 'field_doc_is_referenced_by',
-      5 => 'field_doc_is_replaced_by',
-      6 => 'field_doc_is_required_by',
-      7 => 'field_doc_is_translation_of',
-      8 => 'field_doc_is_version_of',
-      9 => 'field_doc_references',
-      10 => 'field_doc_relation',
-      11 => 'field_doc_replaces',
-      12 => 'field_doc_requires',
-    ),
+    'weight' => '53',
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Relations',
@@ -453,7 +439,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Relations',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_doc_has_part',
       1 => 'field_doc_has_translation',
@@ -493,7 +479,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Responsible body',
-    'weight' => '45',
+    'weight' => '61',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -552,7 +538,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Rights',
-    'weight' => '40',
+    'weight' => '57',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -578,7 +564,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Rights',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_doc_copyrights_statement',
       1 => 'field_doc_licencing',
@@ -608,7 +594,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subject',
-    'weight' => '43',
+    'weight' => '25',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -634,7 +620,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subject',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_doc_keyword',
       1 => 'field_doc_subject',
@@ -663,7 +649,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Title Information',
-    'weight' => '37',
+    'weight' => '54',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -688,7 +674,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Title Information',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_doc_alt_title',
     ),

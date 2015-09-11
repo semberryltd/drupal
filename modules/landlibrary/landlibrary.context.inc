@@ -32,6 +32,11 @@ function landlibrary_context_default_contexts() {
         'library/sources' => 'library/sources',
         'library/search' => 'library/search',
         'library/contribute' => 'library/contribute',
+        'library/*' => 'library/*',
+        'node/10160' => 'node/10160',
+        'node/11473' => 'node/11473',
+        'node/10159' => 'node/10159',
+        'node/11474' => 'node/11474',
       ),
     ),
   );

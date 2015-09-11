@@ -22,7 +22,6 @@ function landlibrary_apachesolr_environments() {
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
     'apachesolr_search_date_boost' => '0:0',
-    'apachesolr_search_facet_pages' => 'library-search',
     'apachesolr_search_promote_boost' => '0',
     'apachesolr_search_sticky_boost' => '0',
     'apachesolr_search_type_boosts' => array(
