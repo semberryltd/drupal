@@ -42,7 +42,6 @@ a {
 ul.tabs li a {
     @extend .lp-button;
     &.active {
-        background-color: $blue-dark;
         border:  0;
     }
     border: 0;
@@ -295,7 +294,7 @@ body.overlay {
 /*     .submitted { display: none; } */
 /* } */
 .submitted {
-    float: right;
+    //float: right;
     font-style: italic;
     font-size: .8em;
     color: $grey-light;

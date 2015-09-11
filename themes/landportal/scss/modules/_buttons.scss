@@ -4,9 +4,10 @@
     border-radius: .25em;
     background-color: $blue-light;
     color: white;
+    &.active {
+        background-color: $blue-dark;
+    }
 }
-
-
 
 .field-type-taxonomy-term-reference {
     .field-label {
@@ -17,25 +18,21 @@
         display: inline-block;
     }
     .field-items {
-        display: inline-block;
+        display: inline;
     }
     .field-item {
+        display: inline-block;
+        margin: .2em;
         a {
             @extend .lp-button;
-            margin: .2em;
         }
     }
 }
 
-.field-name-field-related-topics,
-.field-name-field-geographical-focus,
-.field-name-field-status {
-    .field-item {
-    float: left;
-    a { color: white; }
-
-    }
-}
+/* .field-name-field-related-topics, */
+/* .field-name-field-geographical-focus, */
+/* .field-name-field-status { */
+/* } */
 .field-name-field-status .field-item {
     margin: 1.5em 0;
     padding: .5em;
