@@ -238,13 +238,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_oai_pmh_importer';
-  $strongarm->value = 0;
-  $export['comment_anonymous_oai_pmh_importer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_page';
   $strongarm->value = 0;
   $export['comment_anonymous_page'] = $strongarm;
@@ -269,13 +262,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'comment_anonymous_worldbank_feed';
   $strongarm->value = 0;
   $export['comment_anonymous_worldbank_feed'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_oai_pmh_importer';
-  $strongarm->value = 1;
-  $export['comment_default_mode_oai_pmh_importer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -308,13 +294,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_oai_pmh_importer';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_oai_pmh_importer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_page';
   $strongarm->value = '50';
   $export['comment_default_per_page_page'] = $strongarm;
@@ -343,13 +322,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_oai_pmh_importer';
-  $strongarm->value = 1;
-  $export['comment_form_location_oai_pmh_importer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_page';
   $strongarm->value = 1;
   $export['comment_form_location_page'] = $strongarm;
@@ -374,20 +346,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'comment_form_location_worldbank_feed';
   $strongarm->value = 1;
   $export['comment_form_location_worldbank_feed'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_oai_pmh_importer';
-  $strongarm->value = '2';
-  $export['comment_oai_pmh_importer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_oai_pmh_importer';
-  $strongarm->value = '1';
-  $export['comment_preview_oai_pmh_importer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -430,13 +388,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'comment_subject_field_landlibrary_resource';
   $strongarm->value = 1;
   $export['comment_subject_field_landlibrary_resource'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_oai_pmh_importer';
-  $strongarm->value = 1;
-  $export['comment_subject_field_oai_pmh_importer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -498,7 +449,7 @@ function landlibrary_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1441965813;
+  $strongarm->value = 1441969450;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1050,7 +1001,7 @@ function landlibrary_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'elysia_cron_last_run';
-  $strongarm->value = 1441965797;
+  $strongarm->value = 1441969442;
   $export['elysia_cron_last_run'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1501,14 +1452,14 @@ function landlibrary_strongarm() {
       'views_view' => 'c06d5a7da66f926ca124d569fa479d1c',
     ),
     'landlibrary' => array(
-      'dependencies' => '51c6273879dd832dc49d59385cb270a5',
-      'field_base' => '8c406f2b635a1a932abc23e3e81c8b32',
-      'field_instance' => '37f20b26ec71416148ba5d787f759c8b',
+      'dependencies' => 'fce1c8e6210dcaf2acab35d801aafd09',
+      'field_base' => '1f6457908ce7b1df82674d1a845d4ccf',
+      'field_instance' => '7f206e9ce118a8f5d431445cb4c770d3',
       'language' => '49dd66f2128657e4384f0118ccc306e9',
       'menu_custom' => '9b73a9442ad775793f93bb136a44c045',
-      'taxonomy' => '3b00b384ceb8fd6e837a0b103a135d28',
+      'taxonomy' => '2dc70c73dbc06d72d28be858c96d1701',
       'variable' => '8f28d315f4174f8f9aa2a4ff79f616ec',
-      'node' => '6495cba2ed3a3b2948cd5254bc50c337',
+      'node' => '4510ee7d5cf3e96faba2e4638dd541cc',
       'apachesolr_environment' => '39d508419e3e9d3afe8b82cce15edb01',
       'context' => '3efb485a4ef71ebe7be546c208ff8892',
       'ds_fields' => '88ebc53e84b51659c562aa87b25b9f69',
@@ -1536,6 +1487,8 @@ function landlibrary_strongarm() {
       'user_permission' => '9e8664e00c3b42a6b997e83e9d11ee3b',
       'dependencies' => 'd974d8229eaa77f7b61a0dfa119a89ab',
       'rdf_mappings' => 'acd08b0bc651c7e7e2369c0269a603aa',
+      'feeds_importer' => 'fb0798a982636897c707022257f95bc4',
+      'feeds_tamper' => 'b4e4341e1331db5490fdab0607289248',
     ),
     'landlibrary_importers_ifpri' => array(
       'node' => '24a6ce282c1dcdd92278e3b9738c6593',
@@ -1564,6 +1517,8 @@ function landlibrary_strongarm() {
       'menu_links' => '4a74e4fdaf270e8eb35e00324b0fa343',
       'user_permission' => 'c2299534d2aaccb85d114d55e4554db1',
       'dependencies' => '3f5bdba391caf9b9f14f59f7fd7eed8c',
+      'feeds_importer' => '585041debe4b7f5f4693d0aad200bacd',
+      'feeds_tamper' => 'ca94f05e717143be603257a637e96ba4',
     ),
   );
   $export['features_codecache'] = $strongarm;
@@ -1840,48 +1795,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'features_semaphore';
   $strongarm->value = array();
   $export['features_semaphore'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'feeds_oai:from:*:http://cdm15738.contentdm.oclc.org/oai/oai.php';
-  $strongarm->value = 0;
-  $export['feeds_oai:from:*:http://cdm15738.contentdm.oclc.org/oai/oai.php'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'feeds_oai:from::http://cdm15738.contentdm.oclc.org/oai/oai.php';
-  $strongarm->value = 0;
-  $export['feeds_oai:from::http://cdm15738.contentdm.oclc.org/oai/oai.php'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'feeds_oai:from:p15738coll2:http://cdm15738.contentdm.oclc.org/oai/oai.php';
-  $strongarm->value = 0;
-  $export['feeds_oai:from:p15738coll2:http://cdm15738.contentdm.oclc.org/oai/oai.php'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'feeds_oai:resumptionToken:*:http://cdm15738.contentdm.oclc.org/oai/oai.php';
-  $strongarm->value = 'p15738coll2:8768:oclc-cdm-allsets:0000-00-00:9999-99-99:oai_dc';
-  $export['feeds_oai:resumptionToken:*:http://cdm15738.contentdm.oclc.org/oai/oai.php'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'feeds_oai:resumptionToken::http://cdm15738.contentdm.oclc.org/oai/oai.php';
-  $strongarm->value = 'p15738coll2:19815:oclc-cdm-allsets:0000-00-00:9999-99-99:oai_dc';
-  $export['feeds_oai:resumptionToken::http://cdm15738.contentdm.oclc.org/oai/oai.php'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'feeds_oai:resumptionToken:p15738coll2:http://cdm15738.contentdm.oclc.org/oai/oai.php';
-  $strongarm->value = 'p15738coll2:47511:p15738coll2:0000-00-00:9999-99-99:oai_dc';
-  $export['feeds_oai:resumptionToken:p15738coll2:http://cdm15738.contentdm.oclc.org/oai/oai.php'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2574,6 +2487,9 @@ function landlibrary_strongarm() {
     22 => 'sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.position.min.js',
     23 => 'sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.resizable.min.js',
     24 => 'sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.dialog.min.js',
+    25 => 'sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js',
+    26 => 'sites/all/modules/google_analytics/googleanalytics.js',
+    27 => 'modules/contextual/contextual.js',
   );
   $export['javascript_parsed'] = $strongarm;
 
@@ -2581,7 +2497,7 @@ function landlibrary_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'job_scheduler_rebuild_all';
-  $strongarm->value = TRUE;
+  $strongarm->value = FALSE;
   $export['job_scheduler_rebuild_all'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2625,13 +2541,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'language_content_type_landlibrary_resource';
   $strongarm->value = '4';
   $export['language_content_type_landlibrary_resource'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_oai_pmh_importer';
-  $strongarm->value = '0';
-  $export['language_content_type_oai_pmh_importer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -3456,15 +3365,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_oai_pmh_importer';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
-  $export['menu_options_oai_pmh_importer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -3536,13 +3436,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'menu_parent_landlibrary_resource';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_landlibrary_resource'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_oai_pmh_importer';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_oai_pmh_importer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -3635,16 +3528,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_oai_pmh_importer';
-  $strongarm->value = array(
-    0 => 'status',
-    1 => 'promote',
-  );
-  $export['node_options_oai_pmh_importer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_person';
   $strongarm->value = array(
     0 => 'status',
@@ -3715,13 +3598,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_oai_pmh_importer';
-  $strongarm->value = '1';
-  $export['node_preview_oai_pmh_importer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_page';
   $strongarm->value = '1';
   $export['node_preview_page'] = $strongarm;
@@ -3774,13 +3650,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'node_submitted_landlibrary_resource';
   $strongarm->value = 1;
   $export['node_submitted_landlibrary_resource'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_oai_pmh_importer';
-  $strongarm->value = 1;
-  $export['node_submitted_oai_pmh_importer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -4476,7 +4345,7 @@ function landlibrary_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'update_last_check';
-  $strongarm->value = 1441965813;
+  $strongarm->value = 1441969450;
   $export['update_last_check'] = $strongarm;
 
   $strongarm = new stdClass();

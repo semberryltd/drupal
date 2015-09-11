@@ -65,14 +65,6 @@ function landlibrary_node_info() {
       'title_label' => t('Node Title'),
       'help' => '',
     ),
-    'oai_pmh_importer' => array(
-      'name' => t('OAI PMH importer'),
-      'base' => 'node_content',
-      'description' => t('This content type is used as a fetcher from OAI-PM importer\'s configuration.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'person' => array(
       'name' => t('Person'),
       'base' => 'node_content',
