@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Landlibrary IFPRI Importer feature.
+ */
+
+include_once 'landlibrary_importers_ifpri.features.inc';

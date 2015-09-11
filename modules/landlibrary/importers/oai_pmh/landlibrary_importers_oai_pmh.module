@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Landlibrary OAI PMH Importer feature.
+ */
+
+include_once 'landlibrary_importers_oai_pmh.features.inc';

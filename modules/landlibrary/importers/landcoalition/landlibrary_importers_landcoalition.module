@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Landlibrary LandCoalition Importer feature.
+ */
+
+include_once 'landlibrary_importers_landcoalition.features.inc';

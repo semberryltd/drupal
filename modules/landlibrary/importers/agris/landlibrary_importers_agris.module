@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Landlibrary Agris Importer feature.
+ */
+
+include_once 'landlibrary_importers_agris.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Landlibrary USAID Importer feature.
+ */
+
+include_once 'landlibrary_importers_usaid.features.inc';
