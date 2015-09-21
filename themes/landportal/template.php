@@ -47,6 +47,9 @@ function landportal_preprocess_html(&$variables) {
  * TODO: pretty bad hook in there, surely a better way to do that.
  */
 function landportal_preprocess_page(&$variables) {
+    if (isset($variables['node']->type)) {
+        $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
+    }
   if (arg(0) == 'user') {
     switch (arg(1)) {
       case 'register':

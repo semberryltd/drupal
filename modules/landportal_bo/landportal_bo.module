@@ -1,0 +1,5 @@
+<?php
+/**
+ * Provide facilities to manage the Land Portal
+ */
+include_once 'landportal_bo.views_default.inc';

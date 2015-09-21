@@ -1954,6 +1954,67 @@ ul.menu > li li a.active-trail {
 }
 
 /* line 35, ../scss/modules/_users.scss */
+.node-organization.node {
+  min-height: 500px;
+}
+/* line 37, ../scss/modules/_users.scss */
+.node-organization.node .side {
+  text-align: center;
+  position: absolute;
+  left: 0;
+}
+/* line 41, ../scss/modules/_users.scss */
+.node-organization.node .side .field-type-taxonomy-term-reference {
+  display: inline-block;
+}
+/* line 45, ../scss/modules/_users.scss */
+.node-organization.node .content {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjNjY2NjY2Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGRkZGRkIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dddddd), color-stop(50%, #666666), color-stop(100%, #dddddd));
+  background-image: -moz-linear-gradient(#dddddd, #666666 50%, #dddddd);
+  background-image: -webkit-linear-gradient(#dddddd, #666666 50%, #dddddd);
+  background-image: linear-gradient(#dddddd, #666666 50%, #dddddd);
+  background-size: 1px 90%;
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  padding-left: 1em;
+  margin-left: 500px;
+  /* & *, & *:after { */
+  /*     clear: none; */
+  /* } */
+}
+/* line 57, ../scss/modules/_users.scss */
+.node-organization.node .field-label {
+  color: #666666;
+  font-style: italic;
+  font-weight: normal;
+  margin-right: .2em;
+}
+/* line 63, ../scss/modules/_users.scss */
+.node-organization.node .field-label:after {
+  content: ": ";
+}
+/* line 69, ../scss/modules/_users.scss */
+.node-organization.node .field-name-field-user > .field-items > .field-item {
+  margin: 0 1.5em 1.5em 0;
+  padding: .5em;
+  float: left;
+  width: 200px;
+  height: 80px;
+  border: 1px solid #EEE;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/* line 78, ../scss/modules/_users.scss */
+.node-organization.node .field-name-field-user > .field-items > .field-item div {
+  display: inline-block;
+}
+/* line 84, ../scss/modules/_users.scss */
 .node-organization.node-teaser {
   text-align: center;
   height: 220px;
@@ -1961,34 +2022,34 @@ ul.menu > li li a.active-trail {
   margin: 1em;
   position: relative;
 }
-/* line 42, ../scss/modules/_users.scss */
+/* line 91, ../scss/modules/_users.scss */
 .node-organization.node-teaser .content {
   position: absolute;
   width: 100%;
   bottom: 0;
 }
-/* line 47, ../scss/modules/_users.scss */
+/* line 96, ../scss/modules/_users.scss */
 .node-organization.node-teaser .field-type-image {
   /* max-height: 175px; */
   overflow: hidden;
 }
-/* line 51, ../scss/modules/_users.scss */
+/* line 100, ../scss/modules/_users.scss */
 .node-organization.node-teaser h2 {
   margin-bottom: 1em;
   font-size: 2em;
   font-weight: bold;
 }
-/* line 57, ../scss/modules/_users.scss */
+/* line 106, ../scss/modules/_users.scss */
 .node-organization.node-teaser span {
   font-style: italic;
   font-size: .8em;
   padding-top: .2em;
 }
-/* line 62, ../scss/modules/_users.scss */
+/* line 111, ../scss/modules/_users.scss */
 .node-organization.node-teaser a {
   color: #666666;
 }
-/* line 65, ../scss/modules/_users.scss */
+/* line 114, ../scss/modules/_users.scss */
 .node-organization.node-teaser:after {
   height: 1px;
   width: 100%;
