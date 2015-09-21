@@ -3212,42 +3212,63 @@ body.overlay html[dir=rtl] #admin-menu {
   visibility: hidden;
 }
 /* line 384, ../scss/screens/_base.scss */
+.front .view-news {
+  text-align: center;
+  width: 90%;
+  margin: 1em auto;
+}
+/* line 388, ../scss/screens/_base.scss */
+.front .view-news td {
+  width: 33%;
+}
+/* line 389, ../scss/screens/_base.scss */
+.front .view-news .view-header {
+  color: #666666;
+  font-size: 1.7em;
+}
+/* line 393, ../scss/screens/_base.scss */
+.front .view-news .views-field-title {
+  font-style: italic;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+/* line 401, ../scss/screens/_base.scss */
 .front .view-front-page-teasers {
   padding: 1em 5em;
 }
-/* line 386, ../scss/screens/_base.scss */
+/* line 403, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row {
   text-align: center;
   padding: 0 1em;
 }
 @media (min-width: 768px) {
-  /* line 388, ../scss/screens/_base.scss */
+  /* line 405, ../scss/screens/_base.scss */
   .front .view-front-page-teasers .views-row {
     float: left;
     width: 33.3%;
   }
 }
-/* line 395, ../scss/screens/_base.scss */
+/* line 412, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title {
   text-transform: lowercase;
   font-size: 2.5em;
 }
-/* line 398, ../scss/screens/_base.scss */
+/* line 415, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title a {
   color: #333333;
 }
-/* line 402, ../scss/screens/_base.scss */
+/* line 419, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h2 {
   text-transform: uppercase;
   min-height: 2.5em;
   color: #666666;
 }
-/* line 403, ../scss/screens/_base.scss */
+/* line 420, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h2 a {
   text-decoration: none;
   color: #666666;
 }
-/* line 408, ../scss/screens/_base.scss */
+/* line 425, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   vertical-align: middle;
@@ -3259,18 +3280,18 @@ body.overlay html[dir=rtl] #admin-menu {
   padding: .45em 0 .4em 0;
   font-size: 1.3em;
 }
-/* line 414, ../scss/screens/_base.scss */
+/* line 431, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 a {
   text-decoration: none;
   color: #333333;
   font-style: normal;
 }
-/* line 424, ../scss/screens/_base.scss */
+/* line 441, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row p {
   min-height: 150px;
   text-align: justify;
 }
-/* line 429, ../scss/screens/_base.scss */
+/* line 446, ../scss/screens/_base.scss */
 .front .view-front-page-teasers:after {
   position: relative;
   clear: both;
@@ -3280,13 +3301,13 @@ body.overlay html[dir=rtl] #admin-menu {
 }
 
 /* Book */
-/* line 440, ../scss/screens/_base.scss */
+/* line 457, ../scss/screens/_base.scss */
 .content .content.container {
   padding: 0;
   width: 100%;
 }
 
-/* line 446, ../scss/screens/_base.scss */
+/* line 463, ../scss/screens/_base.scss */
 .page-book-countries #page-title {
   display: none;
 }

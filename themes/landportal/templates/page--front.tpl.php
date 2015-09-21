@@ -67,6 +67,7 @@
     </div></div> <!-- /#main, /#main-wrapper -->
 
 <?php echo views_embed_view('front_page_promoted', 'block'); ?>
+<?php echo views_embed_view('news', 'block_1'); ?>
 <?php echo views_embed_view('front_page_teasers', 'block'); ?>
 
     <div id="footer"><div class="section">

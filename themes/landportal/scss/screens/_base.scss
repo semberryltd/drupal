@@ -381,6 +381,23 @@ body.overlay {
             visibility: hidden;
         }
     }
+    .view-news {
+        text-align: center;
+        width: 90%;
+        margin: 1em auto;
+        td { width: 33%; }
+        .view-header {
+            color: $grey-light;
+            font-size: 1.7em;
+        }
+        .views-field-title {
+            font-style: italic;
+            font-size: 1.5em;
+            font-weight: bold;
+            
+        }
+    }
+    
     .view-front-page-teasers {
         padding: 1em 5em;
         .views-row {
