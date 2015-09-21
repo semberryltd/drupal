@@ -1981,12 +1981,14 @@ ul.menu > li li a.active-trail {
   background-repeat: no-repeat;
   padding-left: 1em;
   margin-left: 500px;
+  clear: both;
+  position: relative;
 }
-/* line 53, ../scss/modules/_users.scss */
+/* line 55, ../scss/modules/_users.scss */
 .page-node .node-organization.node .content .field-name-body {
   padding: 1em 0;
 }
-/* line 57, ../scss/modules/_users.scss */
+/* line 59, ../scss/modules/_users.scss */
 .page-node .node-organization.node .field-label {
   min-width: 70px;
   color: #666666;
@@ -1994,11 +1996,29 @@ ul.menu > li li a.active-trail {
   font-weight: normal;
   margin-right: .2em;
 }
-/* line 64, ../scss/modules/_users.scss */
+/* line 66, ../scss/modules/_users.scss */
 .page-node .node-organization.node .field-label:after {
   content: ": ";
 }
 /* line 70, ../scss/modules/_users.scss */
+.page-node .node-organization.node .field-name-field-organization-relationship {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 74, ../scss/modules/_users.scss */
+.page-node .node-organization.node .field-name-field-organization-relationship .field-items {
+  text-align: right;
+}
+/* line 76, ../scss/modules/_users.scss */
+.page-node .node-organization.node .field-name-field-organization-relationship .field-items .field-item {
+  display: block;
+}
+/* line 78, ../scss/modules/_users.scss */
+.page-node .node-organization.node .field-name-field-organization-relationship .field-items .field-item a {
+  background-color: #e3ab03;
+}
+/* line 85, ../scss/modules/_users.scss */
 .page-node .node-organization.node .field-name-field-user > .field-items > .field-item {
   margin: 0 1.5em 1.5em 0;
   padding: .5em;
@@ -2013,12 +2033,12 @@ ul.menu > li li a.active-trail {
   -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 79, ../scss/modules/_users.scss */
+/* line 94, ../scss/modules/_users.scss */
 .page-node .node-organization.node .field-name-field-user > .field-items > .field-item div {
   display: inline-block;
 }
 
-/* line 87, ../scss/modules/_users.scss */
+/* line 102, ../scss/modules/_users.scss */
 .node-organization.node-teaser {
   text-align: center;
   height: 220px;
@@ -2026,34 +2046,34 @@ ul.menu > li li a.active-trail {
   margin: 1em;
   position: relative;
 }
-/* line 94, ../scss/modules/_users.scss */
+/* line 109, ../scss/modules/_users.scss */
 .node-organization.node-teaser .content {
   position: absolute;
   width: 100%;
   bottom: 0;
 }
-/* line 99, ../scss/modules/_users.scss */
+/* line 114, ../scss/modules/_users.scss */
 .node-organization.node-teaser .field-type-image {
   /* max-height: 175px; */
   overflow: hidden;
 }
-/* line 103, ../scss/modules/_users.scss */
+/* line 118, ../scss/modules/_users.scss */
 .node-organization.node-teaser h2 {
   margin-bottom: 1em;
   font-size: 2em;
   font-weight: bold;
 }
-/* line 109, ../scss/modules/_users.scss */
+/* line 124, ../scss/modules/_users.scss */
 .node-organization.node-teaser span {
   font-style: italic;
   font-size: .8em;
   padding-top: .2em;
 }
-/* line 114, ../scss/modules/_users.scss */
+/* line 129, ../scss/modules/_users.scss */
 .node-organization.node-teaser a {
   color: #666666;
 }
-/* line 117, ../scss/modules/_users.scss */
+/* line 132, ../scss/modules/_users.scss */
 .node-organization.node-teaser:after {
   height: 1px;
   width: 100%;

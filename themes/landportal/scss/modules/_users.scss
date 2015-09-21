@@ -50,6 +50,8 @@
             background-repeat: no-repeat;
             padding-left: 1em;
             margin-left: 500px;
+            clear: both;
+            position: relative;
             .field-name-body {
                 padding: 1em 0;
             }
@@ -65,7 +67,20 @@
                 content: ": ";
             }
         }
-
+        .field-name-field-organization-relationship {
+            position: absolute;
+            right: 0;
+            top: 0;
+            .field-items {
+                text-align: right;
+                .field-item {
+                    display: block;
+                    a {
+                        background-color: $yellow;
+                    }
+                }
+            }
+        }
         .field-name-field-user > .field-items {
             &>.field-item {
                 margin: 0 1.5em 1.5em 0;
