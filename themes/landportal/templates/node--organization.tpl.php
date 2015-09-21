@@ -11,7 +11,7 @@
  * @ingroup themeable
  */
 
-dpm($content);
+//dpm($content);
 hide($content['field_related_topics']);
 hide($content['field_geographical_focus']);
 hide($content['locations']);
