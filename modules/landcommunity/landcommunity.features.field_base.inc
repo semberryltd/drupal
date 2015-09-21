@@ -10,6 +10,24 @@
 function landcommunity_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_email'
+  $field_bases['field_email'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_email',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'email',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'email',
+  );
+
   // Exported field_base: 'field_firstname'
   $field_bases['field_firstname'] = array(
     'active' => 1,
@@ -92,6 +110,35 @@ function landcommunity_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_organization_relationship'
+  $field_bases['field_organization_relationship'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_organization_relationship',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'organization_relation',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_organization_type'
