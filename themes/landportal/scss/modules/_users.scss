@@ -31,12 +31,13 @@
 
 
 
-.page-node .node-organization {
+.page-node {
     #content {
+        
             clear: both;
             position: relative;
     }
-    &.node {
+    .node-organization {
         min-height: 500px;
         .side {
             text-align: center;
