@@ -33,6 +33,11 @@ Variables & function for SASS files
 Common Elements to the website such as:
 buttons, forms, menus...
 */
+
+@import "compass/css3/border-radius";
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+
 // Override bootstrap
 @import "modules/bootstrap";
 
@@ -42,6 +47,7 @@ buttons, forms, menus...
 @import "modules/flags";
 @import "modules/forms";
 @import "modules/menus";
+@import "modules/users";
 
 // Landportal modules
 @import "modules/debate";

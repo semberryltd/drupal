@@ -14,36 +14,14 @@
 ?>
 
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="content-info"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['field_image']);
-      hide($content['field_date']);
-      hide($content['links']);
-      hide($content['comments']);
-      print render($content['field_image']);
-if (isset($content['field_status'])) {
-      hide($content['field_status']);
-      print render($content['field_status']);
-}
-      print render($content['field_date']);
-
-if ($teaser) {
-      hide($content['locations']);
-      print render($content['locations']);
-}
-if (isset($content['field_facilitators'])) {
-      hide($content['field_facilitators']);
-      print render($content['field_facilitators']);
-}
-    ?>
-  </div>
-
   <div class="content"<?php print $content_attributes; ?>>
+<?php print render($content['field_image']); ?>
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+<?php print render($title_prefix); ?>
+<?php if (!$page && ($teaser && !isset($content['field_image'][0]) )): ?>
+<h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+<?php elseif ($teaser && isset($content['field_image'][0])): ?>
+<span<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></span>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -55,13 +33,10 @@ if (isset($content['field_facilitators'])) {
 
     <?php
       // We hide the comments and links now so that we can render them later.
-  print render($content);
-
+      hide($content['links']);
+      hide($content['comments']);
+      print render($content);
     ?>
   </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
 
 </div>

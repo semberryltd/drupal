@@ -9,6 +9,8 @@ images_dir = "../images"
 environment = :development
 relative_assets = true
 sourcemap = true
+#additional_import_paths = [ "../libs/compass" ]
+
 
 # 3. You can select your preferred output style here (can be overridden via the command line):
 output_style = :expanded
