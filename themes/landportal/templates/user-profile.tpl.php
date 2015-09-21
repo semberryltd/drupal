@@ -20,7 +20,7 @@
 /* /\* print '<div class="view-profile"><a href="/user/'. $account->uid .'">'. t('View profile') .'</a></div>'; *\/ */
 
 //dpm($user_profile);
-if (array_key_exists($user_profile['profile_main'])) {
+if (array_key_exists('profile_main', $user_profile)) {
     hide($user_profile['field_title']);
     hide($user_profile['field_firstname']);
     hide($user_profile['field_lastname']);
