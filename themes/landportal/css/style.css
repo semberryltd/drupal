@@ -1954,7 +1954,7 @@ ul.menu > li li a.active-trail {
 }
 
 /* line 35, ../scss/modules/_users.scss */
-.page-node .node-organization .content {
+.page-node .node-organization #content {
   clear: both;
   position: relative;
 }
