@@ -19,7 +19,7 @@
 /* print render($user_profile); */
 /* /\* print '<div class="view-profile"><a href="/user/'. $account->uid .'">'. t('View profile') .'</a></div>'; *\/ */
 
-dpm($user_profile);
+//dpm($user_profile);
 if ($user_profile['profile_main']) {
     hide($user_profile['field_title']);
     hide($user_profile['field_firstname']);
