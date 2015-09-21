@@ -48,7 +48,7 @@
                 display: inline;
             }
         }
-        .content {
+        &>.content {
             @include background-image(linear-gradient(#dddddd, $grey-light 50%, #dddddd));
             background-size: 1px 90%;
             background-position: 0 90%;
@@ -85,9 +85,10 @@
             }
         }
         .field-name-field-user > .field-items {
+            .entity-profile2 h2,
+            .profile h3 { display: none; }
             .profile {
                 margin: 0;
-                h3 { display: none; }
             }
             &>.field-item {
                 margin: 0 1.5em 1.5em 0;
