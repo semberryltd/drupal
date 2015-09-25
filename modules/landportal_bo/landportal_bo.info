@@ -1,7 +1,7 @@
 name = Landportal Backoffice
 description = The landdebate section of the landportal
 core = 7.x
-package = Landportal
+package = ELandportal
 version = 7.x-1.1
 project = landportal_bo
 dependencies[] = features

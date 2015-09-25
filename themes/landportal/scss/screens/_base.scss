@@ -381,6 +381,7 @@ body.overlay {
             visibility: hidden;
         }
     }
+    
     .view-news {
         text-align: center;
         width: 90%;
@@ -389,11 +390,12 @@ body.overlay {
         .view-header {
             color: $grey-light;
             font-size: 1.7em;
+            font-style: italic;
         }
         .views-field-title {
             font-style: italic;
-            font-size: 1.5em;
-            font-weight: bold;
+            //font-size: 1.5em;
+            //font-weight: bold;
             
         }
     }

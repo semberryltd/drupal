@@ -25,6 +25,9 @@ if (array_key_exists('profile_main', $user_profile)) {
     hide($user_profile['field_firstname']);
     hide($user_profile['field_lastname']);
 }
+
+hide($user_profile['profile_main']);
+hide($user_profile['profile_work-profile']);
 ?>
 <div class="profile"<?php print $attributes; ?>>
   <?php print render($user_profile); ?>
