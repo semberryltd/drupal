@@ -31,6 +31,7 @@ dependencies[] = feeds_import
 dependencies[] = feeds_jsonpath_parser
 dependencies[] = feeds_news
 dependencies[] = feeds_tamper
+dependencies[] = feeds_tamper_conditional
 dependencies[] = feeds_tamper_string2id
 dependencies[] = feeds_tamper_ui
 dependencies[] = feeds_xpathparser
