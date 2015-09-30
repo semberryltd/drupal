@@ -22,3 +22,17 @@ function landcommunity_help($path, $arg) {
     break;
   }
 }
+function landcommunity_entity_info_alter(&$entity_info) {
+    dpm($entity_info['user']['view modes']);
+    dpm($entity_info);
+    foreach (array ('user', 'profile2') as $entity) {
+        $entity_info[$entity]['view modes']['teaser'] = array(
+            'label' => t('Teaser'),
+            'custom settings' => TRUE,
+        );
+    }
+    $entity_info['profile2']['view modes']['full'] = array(
+            'label' => t('User account (Full)'),
+            'custom settings' => TRUE,
+    );
+}
