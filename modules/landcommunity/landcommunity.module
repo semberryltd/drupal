@@ -23,8 +23,8 @@ function landcommunity_help($path, $arg) {
   }
 }
 function landcommunity_entity_info_alter(&$entity_info) {
-    dpm($entity_info['user']['view modes']);
-    dpm($entity_info);
+    /* dpm($entity_info['user']['view modes']); */
+    /* dpm($entity_info); */
     foreach (array ('user', 'profile2') as $entity) {
         $entity_info[$entity]['view modes']['teaser'] = array(
             'label' => t('Teaser'),
