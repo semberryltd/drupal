@@ -15,6 +15,20 @@ function landportal_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * TMP Hack
+ * Until users & profile field have been cleaned up / sync'ed
+ */
+function landportal_user_view_alter(&$build) {
+    foreach (profile2_get_types() as $type => $profile_type) {
+        if (array_key_exists('profile_'.$type, $build)) {
+            unset($build['profile_'.$type]['#prefix']);
+            $build['profile_'.$type]['#profile_type'] = $profile_type->type;
+        }
+    }
+    //dpm($build);
+}
+
+/**
  * The right place to add common css & js for all pages
  */
 function landportal_preprocess_html(&$variables) {

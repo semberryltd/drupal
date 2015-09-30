@@ -4,6 +4,7 @@
     border-radius: .25em;
     background-color: $blue-light;
     color: white;
+    white-space: nowrap;
     &.active {
         background-color: $blue-dark;
     }

@@ -1,7 +1,8 @@
 <?php
+
 /**
- * @file node.tpl.php
- * Almost a default theme implementation to display a node.
+ * @file
+ * Default theme implementation to display a node.
  *
  * @see node.tpl.php
  * @see template_preprocess()
@@ -10,35 +11,10 @@
  *
  * @ingroup themeable
  */
-
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="content-info"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['field_image']);
-      hide($content['field_date']);
-      hide($content['links']);
-      hide($content['comments']);
-      print render($content['field_image']);
-if (isset($content['field_status'])) {
-      hide($content['field_status']);
-      print render($content['field_status']);
-}
-      print render($content['field_date']);
 
-if ($teaser) {
-      hide($content['locations']);
-      print render($content['locations']);
-}
-if (isset($content['field_facilitators'])) {
-      hide($content['field_facilitators']);
-      print render($content['field_facilitators']);
-}
-    ?>
-  </div>
-
-  <div class="content"<?php print $content_attributes; ?>>
+  <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
@@ -46,18 +22,26 @@ if (isset($content['field_facilitators'])) {
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
+  <section class="information">
+    <?php print render($content['field_image']); ?>
+    <?php print render($content['field_date']); ?>
+    <?php print render($content['field_geographical_focus']); ?>
+    <?php print render($content['field_related_topics']); ?>
+  </section>
+
+  <section class="content"<?php print $content_attributes; ?>>
   <?php if ($display_submitted): ?>
     <div class="submitted">
       <?php print $submitted; ?>
     </div>
   <?php endif; ?>
-
     <?php
       // We hide the comments and links now so that we can render them later.
-  print render($content);
-
+      hide($content['comments']);
+      hide($content['links']);
+      print render($content);
     ?>
-  </div>
+  </section>
 
   <?php print render($content['links']); ?>
 
