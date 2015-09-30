@@ -54,6 +54,47 @@ function landcommunity_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-organization-field_contact'
+  $field_instances['node-organization-field_contact'] = array(
+    'bundle' => 'organization',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_contact',
+    'label' => 'Organisation contact',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-organization-field_email'
   $field_instances['node-organization-field_email'] = array(
     'bundle' => 'organization',
@@ -1593,6 +1634,7 @@ function landcommunity_field_default_field_instances() {
   t('Last name');
   t('Location');
   t('Logo');
+  t('Organisation contact');
   t('Organization relationship');
   t('Organization type');
   t('People');

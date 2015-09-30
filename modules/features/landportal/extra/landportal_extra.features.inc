@@ -22,27 +22,3 @@ function landportal_extra_ctools_plugin_api($module = NULL, $api = NULL) {
 function landportal_extra_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
-
-/**
- * Implements hook_image_default_styles().
- */
-function landportal_extra_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: small_square.
-  $styles['small_square'] = array(
-    'label' => 'Small square',
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 32,
-          'height' => 32,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  return $styles;
-}

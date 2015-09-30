@@ -91,13 +91,6 @@ function landcommunity_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete terms in organization_types'.
-  $permissions['delete terms in organization_types'] = array(
-    'name' => 'delete terms in organization_types',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit any organization content'.
   $permissions['edit any organization content'] = array(
     'name' => 'edit any organization content',
@@ -110,13 +103,6 @@ function landcommunity_user_default_permissions() {
     'name' => 'edit own organization content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit terms in organization_types'.
-  $permissions['edit terms in organization_types'] = array(
-    'name' => 'edit terms in organization_types',
-    'roles' => array(),
-    'module' => 'taxonomy',
   );
 
   // Exported permission: 'select account cancellation method'.

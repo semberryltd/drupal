@@ -868,6 +868,14 @@ function landlibrary_strongarm() {
       0 => 'mailchimp_signup',
       1 => 'mcs_id',
     ),
+    'profile2' => array(
+      0 => 'profile',
+      1 => 'pid',
+    ),
+    'profile2_type' => array(
+      0 => 'profile_type',
+      1 => 'id',
+    ),
     'search_api_server' => array(
       0 => 'search_api_server',
       1 => 'id',
@@ -972,11 +980,15 @@ function landlibrary_strongarm() {
       'dependencies' => 'f334ac27b969221f20f7aa53080cd124',
     ),
     'landportal_taxonomy' => array(
-      'taxonomy' => '7f76feafd3ff816e141559cbc83909e0',
-      'dependencies' => '683d888f3f0f8338f92e29e3e1b4c53a',
+      'taxonomy' => 'b3d7639d70cab2cdb25f30c667f820cf',
+      'dependencies' => '18c28e243c47a5fa7775762180743736',
+      'rdf_mappings' => 'cb54fd27c5f06e13565c2e6027d56d16',
+      'user_permission' => '2bb00009b575b334308e774016bb0cdc',
+      'variable' => 'd8e8b3afefca8899c91df83d6d786564',
+      'field_instance' => 'c24edf086697f9ba3e3d85d00e93f123',
     ),
     'landportal_field_base' => array(
-      'field_base' => '6daecc19a6d6f0ded94579e552762158',
+      'field_base' => 'cb4390945da9b4957d0dd0ba3cfd41bb',
       'dependencies' => '58b3ff5dd64e62abfed19285ed58a2a7',
     ),
     'landportal_content_types' => array(
@@ -984,25 +996,25 @@ function landlibrary_strongarm() {
       'field_instance' => '9feb3458de7dacb8a92272e14031d088',
       'dependencies' => '6bd056770e70fd06f5fedce9229a7717',
       'node' => '2a7b6cadec295465bd93f8c7bbe52f39',
-      'field_group' => '89ea551f04010454fdf9d3c1c85b9507',
+      'field_group' => 'c297d9f8cd36001c6fc46ceca888bb9e',
     ),
     'landportal_extra' => array(
-      'variable' => '76796a993c83693984aaaf160481f776',
+      'variable' => 'a6e7b310ce3659b267c590142239fd9d',
       'field_instance' => '7579ee0d7ec61497ece0dac9893af4b7',
-      'menu_custom' => 'bf4b56f344c02777e147383525f6c738',
-      'menu_links' => '186ee67d72c47a70bde4c011a31533d8',
+      'menu_custom' => '87224ed644689441ee2a8c0497238204',
+      'menu_links' => '6bdccb813da972a5cc1f79bce099d8d1',
       'user_role' => 'c634618fb938b2f6bb599bf3eeb1b4cc',
-      'dependencies' => 'aca0ebe8ea15830aff62e781321f5dfd',
+      'dependencies' => '1ed72978d7dfd1ccc22babcd76cdd5ff',
       'field_group' => 'b37b7cdfe2dbde8831a8fd37163cff92',
-      'image' => 'fd605d450803018d7936924e4dbe72a7',
-      'views_view' => 'af3b08a62997d0b7bfd39c8592471217',
+      'image' => 'b80f3d7cd0957c3efbef94a2e29502a0',
+      'views_view' => '6860917b2228c4bb7cdabe24b27d0dae',
     ),
     'landdebate' => array(
-      'dependencies' => '8d187f7e6d53ce2ae3a68bceccaf2662',
+      'dependencies' => '815603a423603ecf44591b5a03fcd253',
       'context' => 'c8561c69c0b9374372dd693c21c9eb71',
-      'views_view' => '3a9b706a7e0d996fd3e3d2b2e24fb055',
+      'views_view' => '0bed2b062d528c7b693b42abcf0d45db',
       'field_base' => 'cb93f938718b0bc5ab785f353f682abb',
-      'field_instance' => '4de1a055ca0b5ea84eca5e1103f32555',
+      'field_instance' => 'de9fd92be8bfe9c81ee8f78ddd5aaf23',
       'menu_custom' => 'e44c9514f2fe403ff4fcfcdb7e1f0d16',
       'rdf_mappings' => 'b80c2476e9e548d19d86603c8abde5df',
       'user_permission' => '738b13d872f64103bb0c3712a487e7c0',
@@ -1022,9 +1034,9 @@ function landlibrary_strongarm() {
       'views_view' => 'c06d5a7da66f926ca124d569fa479d1c',
     ),
     'landlibrary' => array(
-      'dependencies' => '41cf3b8815736a9e890ab0fb8c9d5155',
-      'field_base' => '72880d55123c9a23d819aeb1123041a9',
-      'field_instance' => '10e5fb9bca0335bb85eb382f3fba2ab6',
+      'dependencies' => '6646bef07ddad415e9b41666446875da',
+      'field_base' => 'f046dc5ad2a0b6c7812c0a2eccd8d0a0',
+      'field_instance' => 'feb9aa07be33960fa33b64184857ee87',
       'language' => '49dd66f2128657e4384f0118ccc306e9',
       'menu_custom' => '9b73a9442ad775793f93bb136a44c045',
       'taxonomy' => '4b2389dd5635284c0c577586a6f42b27',
@@ -1037,15 +1049,29 @@ function landlibrary_strongarm() {
       'elysia_cron' => '26ff706e48cac5288a5f46d2c7d7dcd4',
       'field_group' => 'adf2cb56dca00b8cae1475bb34cf50a2',
       'ds_layout_settings' => '43b3c39173c46127721e388a6a69570a',
-      'views_view' => 'bbceb4932d1d113d9882b11cf17fff8b',
+      'views_view' => 'e4f33e8eb66d5a3bb7fc40161b48b390',
     ),
     'landportal_base' => array(
-      'node' => '024b5c19caa61d73e52989c519837bc4',
-      'variable' => '14b2d247266c2e103070d541a055a769',
-      'field_base' => '2b93ea01e54c14ec4c1f1b4055678585',
+      'field_base' => 'b35f1327904d599a4eaffeea7d7edca2',
       'field_instance' => 'e407c1fc5a6f9ddc19ddff50afa1df5b',
-      'user_permission' => 'f1dcd7b52261754acd3832f2115d85cc',
+      'variable' => '6dc0d4b3b688d52d25bd14732e017a76',
       'dependencies' => 'd6af4d6ea993f8171f15542605725aca',
+      'user_permission' => 'f1dcd7b52261754acd3832f2115d85cc',
+      'node' => '024b5c19caa61d73e52989c519837bc4',
+    ),
+    'landcommunity' => array(
+      'node' => '25a449b3407f8dc5b56fadd183b78c48',
+      'variable' => '533fba5ea607cef6398cf9f69ba9db1b',
+      'field_base' => '157461dfd7fea4254972e533f54057a7',
+      'field_instance' => 'df31705d539441ee960d43c839882532',
+      'user_permission' => '96ec91502c59430c95bc25894b4429b7',
+      'dependencies' => '8b17956abb0c37789ba1157b09cb6960',
+      'views_view' => '69cb176ba07dbeaab38fa74d8fcf9a01',
+      'rdf_mappings' => '883307e03bfa74d6780d397fd099be8c',
+      'ds_view_modes' => 'a0bc5635bd16438edf4ad4506db29549',
+      'profile2_type' => 'de6a2081c1cd57b9fb036cdbf8880201',
+      'menu_custom' => '13e3d07b05a032b3003554db7da54d2d',
+      'menu_links' => 'c5300f240adf079a1171b82441937403',
     ),
   );
   $export['features_codecache'] = $strongarm;
@@ -2302,7 +2328,7 @@ function landlibrary_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_solr_last_optimize';
-  $strongarm->value = 1441942932;
+  $strongarm->value = 1443621210;
   $export['search_api_solr_last_optimize'] = $strongarm;
 
   return $export;

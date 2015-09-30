@@ -10,12 +10,12 @@
 function landportal_taxonomy_taxonomy_default_vocabularies() {
   return array(
     'continents' => array(
-      'name' => 'Continents',
+      'name' => 'Continents_retired',
       'machine_name' => 'continents',
-      'description' => 'Continents',
+      'description' => '(retired)',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => 2,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -40,9 +40,9 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Countries',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -10,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -65,7 +65,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Status of a debate',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -9,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -90,9 +90,9 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Topics for the LandPortal',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => 1,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -115,7 +115,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -140,7 +140,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Specific types for organizations (needs rework)',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -3,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -165,7 +165,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Regions',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -2,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
