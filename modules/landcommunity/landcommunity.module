@@ -30,9 +30,9 @@ function landcommunity_entity_info_alter(&$entity_info) {
             'label' => t('Teaser'),
             'custom settings' => TRUE,
         );
-    }
-    $entity_info['profile2']['view modes']['full'] = array(
+        $entity_info[$entity]['view modes']['full'] = array(
             'label' => t('User account (Full)'),
             'custom settings' => TRUE,
-    );
+        );
+    }
 }
