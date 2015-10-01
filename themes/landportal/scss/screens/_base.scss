@@ -467,3 +467,33 @@ body.overlay {
         display: none;
     }
 }
+
+.field-label {
+    /* font-size: .8em; */
+    font-style: italic;
+    min-width: 50px;
+    color: $grey-light;
+    display: inline-block;
+    padding-right: .5em;
+}
+
+/**
+ * Display Suite column layout
+ */
+.ds-3col {
+    .group-middle {
+        padding: 0 2em;
+        p {
+            text-align: justify;
+        }
+    }
+    .group-left {
+        text-align: center;
+    }
+    .field-label {
+        min-width: 100px;
+    }
+    .field-type-image {
+        margin-bottom: 1em;
+    }
+}

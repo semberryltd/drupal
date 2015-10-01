@@ -121,10 +121,6 @@ a {
 	padding-bottom:50px;
 }
 
-.views-field-field-doc-provider {
-	text-align:center;
-}
-
 #block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+1) {
   background-color: rgba(219, 51, 1, 0.3);
 }
@@ -138,12 +134,6 @@ a {
 }
 
 
-/* Useless, this is BAD coding
-.page-node-6 #section-header,
-.page-node-227 #section-header,
-.page-node-23 #section-header,
-.page-node-228 #section-header,
-*/
 .node-type-landlibrary-resource #section-header,
 .page-library #section-header,
 .page-library-search #section-header,
@@ -153,14 +143,6 @@ a {
   background-image: url(../images/header/rocky-land-medium.png);
 }
 
-
-/* Useless, this is BAD coding
-.page-node-6   #section-header #block-search-form,
-.page-node-227 #section-header #block-search-form,
-.page-node-228 #section-header #block-search-form,
-.page-node-23  #section-header #block-search-form,
-.page-node-6   #section-header #block-search-form,
-*/
 .page-library #section-header #block-search-form,
 .page-library-search #section-header #block-search-form,
 .page-library-sources #section-header #block-search-form {
