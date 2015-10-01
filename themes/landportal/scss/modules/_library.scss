@@ -273,4 +273,10 @@ margin-top:20px;
         content: " ";
         visibility: hidden;
     }
+    .field-name-field-doc-publisher,
+    .field-name-field-doc-data-provider,
+    .field-name-field-doc-provider {
+        display: inline-block;
+        margin-right: 1em;
+    }
 }

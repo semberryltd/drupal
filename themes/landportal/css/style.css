@@ -2523,6 +2523,13 @@ a {
   content: " ";
   visibility: hidden;
 }
+/* line 276, ../scss/modules/_library.scss */
+.page-library .field-name-field-doc-publisher,
+.page-library .field-name-field-doc-data-provider,
+.page-library .field-name-field-doc-provider {
+  display: inline-block;
+  margin-right: 1em;
+}
 
 /* line 1, ../scss/modules/_users.scss */
 .profile {
