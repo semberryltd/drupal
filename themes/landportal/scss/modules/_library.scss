@@ -113,7 +113,7 @@ margin-bottom:10px;
 }
 
 a {
-  color: #2a6496;
+    color: $blue-dark;
 }
 
 .grid-row {
@@ -278,5 +278,13 @@ margin-top:20px;
     .field-name-field-doc-provider {
         display: inline-block;
         margin-right: 1em;
+    }
+    .field-name-field-doc-type {
+        margin-bottom: 1em;
+        a {
+            padding: .5em;
+            font-size: 1.2em;
+            background-color: $red;
+        }
     }
 }

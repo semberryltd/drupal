@@ -2530,6 +2530,16 @@ a {
   display: inline-block;
   margin-right: 1em;
 }
+/* line 282, ../scss/modules/_library.scss */
+.page-library .field-name-field-doc-type {
+  margin-bottom: 1em;
+}
+/* line 284, ../scss/modules/_library.scss */
+.page-library .field-name-field-doc-type a {
+  padding: .5em;
+  font-size: 1.2em;
+  background-color: #91594d;
+}
 
 /* line 1, ../scss/modules/_users.scss */
 .profile {
