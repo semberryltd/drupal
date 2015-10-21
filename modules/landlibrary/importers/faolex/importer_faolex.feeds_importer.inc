@@ -199,7 +199,7 @@ function importer_faolex_feeds_importer_default() {
                     ),
                     16 => array(
                         'source' => 'xpathparser:15',
-                        'target' => 'field_doc_is_shown_by:uri',
+                        'target' => 'field_doc_is_shown_by',
                         'unique' => FALSE,
                     ),
                     17 => array(

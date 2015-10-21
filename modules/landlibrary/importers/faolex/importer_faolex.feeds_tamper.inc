@@ -46,25 +46,6 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'faolex_importer-blank_source_2-efq_finder';
-    $feeds_tamper->importer = 'faolex_importer';
-    $feeds_tamper->source = 'Blank source 2';
-    $feeds_tamper->plugin_id = 'efq_finder';
-    $feeds_tamper->settings = array(
-        'update' => 'Update',
-        'entity_type' => 'node',
-        'bundle' => 'organization',
-        'field' => 'title',
-        'property' => TRUE,
-    );
-    $feeds_tamper->weight = 2;
-    $feeds_tamper->description = 'Entity Field Query finder';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-    $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'faolex_importer-blank_source_3-default_value';
     $feeds_tamper->importer = 'faolex_importer';
     $feeds_tamper->source = 'Blank source 3';
@@ -98,21 +79,28 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'faolex_importer-xpathparser_6-find_replace';
+    $feeds_tamper->id = 'faolex_importer-xpathparser_6-find_replace_lang';
     $feeds_tamper->importer = 'faolex_importer';
     $feeds_tamper->source = 'xpathparser:6';
-    $feeds_tamper->plugin_id = 'find_replace';
+    $feeds_tamper->plugin_id = 'find_replace_multiple';
     $feeds_tamper->settings = array(
-        'find' => 'E',
-        'replace' => 'English',
-        'case_sensitive' => 0,
-        'word_boundaries' => 0,
-        'whole' => 0,
-        'regex' => FALSE,
-        'func' => 'str_ireplace',
+        'pairs' => array(
+            0 => array(
+                'source' => 'E',
+                'target' => 'en',
+            ),
+            1 => array(
+                'source' => 'F',
+                'target' => 'fr',
+            ),
+            2 => array(
+                'source' => 'S',
+                'target' => 'es',
+            ),
+        ),
     );
     $feeds_tamper->weight = 2;
-    $feeds_tamper->description = 'Find replace';
+    $feeds_tamper->description = 'Replace FAO Lang code by Lang';
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
