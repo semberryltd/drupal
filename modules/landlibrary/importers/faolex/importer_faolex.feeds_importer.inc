@@ -41,17 +41,16 @@ function importer_faolex_feeds_importer_default() {
                     'xpathparser:5' => 'tr[td[1]/node()=\'Country:\']/td[2]/text()',
                     'xpathparser:17' => 'tr[td[1]/node()=\'Country:\']/td[2]/text()',
                     'xpathparser:6' => 'tr[td[1]/node()=\'Language of the FAOLEX Record:\']/td[2]/text()',
-
                     'xpathparser:6' => 'tr[td[1]/node()=\'Language of the FAOLEX Record:\']/td[2]/text()',
                     'xpathparser:7' => 'tr[td[1]/node()=\'Language of Received Document:\']/td[2]/text()',
                     'xpathparser:0' => 'tr[td[1]/node()=\'Title of Text:\']/td[2]/text()',
                     'xpathparser:1' => 'tr[td[1]/node()=\'Title of Text:\']/td[2]/text()',
+                    'xpathparser:13' => 'tr[td[1]/node()=\'Title of Text:\']/td[2]/text()',
                     'xpathparser:3' => 'tr[td[1]/node()=\'Type of Text:\']/td[2]/text()',
                     'xpathparser:8' => 'tr[td[1]/node()=\'Descriptors (LA):\']/td[2]/text()',
                     'xpathparser:9' => 'tr[td[1]/node()=\'Date of Text:\']/td[2]/text()',
                     'xpathparser:10' => 'tr[td[1]/node()=\'Date of Entry:\']/td[2]/text()',
                     'xpathparser:12' => 'tr[td[1]/node()=\'Abstract:\']/td[2]/text()',
-                    'xpathparser:13' => 'tr[td[1]/node()=\'Title of Text:\']/td[2]/text()',
                     'xpathparser:11' => 'tr[td[1]/node()=\'Related Files:\']/td[2]/a/@href',
                     'xpathparser:14' => 'tr[td[1]/node()=\'Related Files:\']/td[2]/a/text()',
                     'xpathparser:15' => 'tr[td[1]/node()=\'Related Web Site:\']/td[2]/text()',
@@ -114,7 +113,7 @@ function importer_faolex_feeds_importer_default() {
                     0 => array(
                         'source' => 'xpathparser:2',
                         'target' => 'field_doc_identifier',
-                        'unique' => FALSE,
+                        'unique' => TRUE,
                     ),
                     1 => array(
                         'source' => 'xpathparser:5',
@@ -199,7 +198,7 @@ function importer_faolex_feeds_importer_default() {
                     ),
                     16 => array(
                         'source' => 'xpathparser:15',
-                        'target' => 'field_doc_is_shown_by',
+                        'target' => 'field_doc_is_shown_by:url',
                         'unique' => FALSE,
                     ),
                     17 => array(
