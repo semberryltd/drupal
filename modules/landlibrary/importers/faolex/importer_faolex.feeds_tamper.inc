@@ -15,6 +15,26 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-xpathparser_5-efq_finder';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'xpathparser:5';
+    $feeds_tamper->plugin_id = 'efq_finder';
+    $feeds_tamper->settings = array(
+        'update' => 'Update',
+        'entity_type' => 'taxonomy_term',
+        'bundle' => 'countries',
+        'field' => 'field_iso3',
+        'column' => 'value',
+        'property' => FALSE,
+    );
+    $feeds_tamper->weight = 0;
+    $feeds_tamper->description = 'Entity Field Query finder';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'faolex_importer-blank_source_1-rewrite';
     $feeds_tamper->importer = 'faolex_importer';
     $feeds_tamper->source = 'Blank source 1';
