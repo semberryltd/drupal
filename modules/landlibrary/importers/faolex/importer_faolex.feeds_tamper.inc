@@ -40,7 +40,7 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper->source = 'Blank source 1';
     $feeds_tamper->plugin_id = 'rewrite';
     $feeds_tamper->settings = array(
-        'text' => 'http://faolex.fao.org/cgi-bin/faolex.exe?database=faolex&table=result&search_type=query&lang=eng&format_name=@ERALL&query=ID:[xpathparser:2]',
+        'text' => 'http://faolex.fao.org/cgi-bin/faolex.exe?database=faolex&table=result&search_type=query&lang=eng&format_name=@ERALL&query=ID:[xpathparser:0]',
     );
     $feeds_tamper->weight = 0;
     $feeds_tamper->description = 'Rewrite';
@@ -78,23 +78,6 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper->description = 'Set value or default value';
 
     $export[$feeds_tamper->id] = $feeds_tamper;
-
-    /* $feeds_tamper = new stdClass(); */
-    /* $feeds_tamper->disabled = FALSE; /\* Edit this to true to make a default feeds_tamper disabled initially *\/ */
-    /* $feeds_tamper->api_version = 2; */
-    /* $feeds_tamper->id = 'faolex_importer-xpathparser_5-explode'; */
-    /* $feeds_tamper->importer = 'faolex_importer'; */
-    /* $feeds_tamper->source = 'xpathparser:5'; */
-    /* $feeds_tamper->plugin_id = 'explode'; */
-    /* $feeds_tamper->settings = array( */
-    /*     'separator' => ';', */
-    /*     'limit' => '', */
-    /*     'real_separator' => ';', */
-    /* ); */
-    /* $feeds_tamper->weight = 0; */
-    /* $feeds_tamper->description = 'Explode'; */
-
-    /* $export[$feeds_tamper->id] = $feeds_tamper; */
 
     $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */

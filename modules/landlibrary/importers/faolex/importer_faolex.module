@@ -33,6 +33,17 @@ function importer_faolex_form_alter(&$form, &$form_state, $form_id) {
     }
 }
 
+/* function importer_faolex_feeds_before_import(FeedsSource $source) { */
+/*     // See feeds_rules module's implementation for an example. */
+/*     dpm($source); */
+/* } */
+/* // hook FeedsCrawlerPatterm */
+/* function importer_faolex_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) { */
+/*     dpm($source); */
+/*     dpm($result); */
+/*   // For example, set title of imported content: */
+/*     //$result->title = 'Import number ' . my_module_import_id(); */
+/* } */
 
 /**
  * Implements hook_feeds_plugins().
