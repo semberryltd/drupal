@@ -4,7 +4,7 @@
  */
 
 function landportal_bo_views_default_views_alter(&$views) {
-    $views_override = array('admin_views_node');
+    $views_override = array('admin_views_node', 'admin_views_taxonomy_term');
 
     foreach ($views_override as $view_name) {
         if (array_key_exists($view_name, $views)) {
