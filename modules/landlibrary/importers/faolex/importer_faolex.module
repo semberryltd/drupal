@@ -1,0 +1,42 @@
+<?php
+/**
+ * FAOLEX importer feeds
+ *
+ * Author: Jules Clement <jules@ker.bz>
+ * Date: Oct. 2015
+ */
+
+include_once('importer_faolex.feeds_importer.inc');
+include_once('importer_faolex.feeds_tamper.inc');
+
+function importer_faolex_ctools_plugin_api($module = '', $api = '') {
+    if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
+        return array("version" => "2");
+    }
+    if ($module == "feeds" && $api == "feeds_importer_default") {
+        return array("version" => "1");
+    }
+}
+
+/* /\** */
+/*  * Implements hook_feeds_plugings(). */
+/*  *\/ */
+/* function importer_faolex_feeds_plugins() { */
+/*     $path = drupal_get_path('module', 'importer_faolex'); */
+/*     $info = array(); */
+/*     $info['FeedsCrawlerPatternCleaner'] = array( */
+/*         'name' => 'Cleaner Pattern fetcher', */
+/*         'description' => 'Provides paging using a URL pattern AND clean return.', */
+        
+/*         'handler' => array( */
+/*             /\* 'class' => 'FeedsCrawlerPattern', *\/ */
+/*             /\* 'parent' => 'FeedsCrawlerBase', *\/ */
+/*             'parent' => 'FeedsCrawlerPattern', */
+/*             'class' => 'FeedsCrawlerPatternCleaner', */
+/*             'file' => 'FeedsCrawlerPatternCleaner.php', */
+/*             'path' => $path, */
+/*         ), */
+/*     ); */
+
+/*     return $info; */
+/* } */

@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install/enable/update hooks for feeds_crawler.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function importer_faolex_crawler_enable() {
+    cache_clear_all('plugins:feeds:plugins', 'cache');
+}
