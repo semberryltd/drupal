@@ -39,6 +39,7 @@ function importer_faolex_feeds_importer_default() {
 
                     'xpathparser:2' => 'tr[1]/td[2]/text()',
                     'xpathparser:5' => 'tr[td[1]/node()=\'Country:\']/td[2]/text()',
+                    'xpathparser:17' => 'tr[td[1]/node()=\'Country:\']/td[2]/text()',
                     'xpathparser:6' => 'tr[td[1]/node()=\'Language of the FAOLEX Record:\']/td[2]/text()',
 
                     'xpathparser:6' => 'tr[td[1]/node()=\'Language of the FAOLEX Record:\']/td[2]/text()',
@@ -97,6 +98,7 @@ function importer_faolex_feeds_importer_default() {
                         'xpathparser:14' => 0,
                         'xpathparser:15' => 0,
                         'xpathparser:16' => 0,
+                        'xpathparser:17' => 0,
                     ),
                 ),
                 'allow_override' => 0,
@@ -116,7 +118,7 @@ function importer_faolex_feeds_importer_default() {
                     ),
                     1 => array(
                         'source' => 'xpathparser:5',
-                        'target' => 'rules_autotag_field_doc_country',
+                        'target' => 'field_doc_country',
                         'unique' => FALSE,
                     ),
                     2 => array(
@@ -205,8 +207,13 @@ function importer_faolex_feeds_importer_default() {
                         'target' => 'field_doc_alt_title',
                         'unique' => FALSE,
                     ),
+                    18 => array(
+                        'source' => 'xpathparser:17',
+                        'target' => 'field_doc_geographic_region',
+                        'unique' => FALSE,
+                    ),
                 ),
-                'update_existing' => '1',
+                'update_existing' => '2',
                 'update_non_existent' => 'skip',
                 'input_format' => 'filtered_html',
                 'skip_hash_check' => 0,
