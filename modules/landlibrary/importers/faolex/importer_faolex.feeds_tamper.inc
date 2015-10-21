@@ -35,7 +35,7 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper->source = 'Blank source 2';
     $feeds_tamper->plugin_id = 'default_value';
     $feeds_tamper->settings = array(
-        'default_value' => 'FAOLEX',
+        'default_value' => 'FAO Legal Office',//FAOLEX',
         'only_if_empty' => 0,
     );
     $feeds_tamper->weight = 1;
@@ -113,6 +113,132 @@ function importer_faolex_feeds_tamper_default() {
     );
     $feeds_tamper->weight = 2;
     $feeds_tamper->description = 'Find replace';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-xpathparser_3-find_replace';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'xpathparser:3';
+    $feeds_tamper->plugin_id = 'find_replace';
+    $feeds_tamper->settings = array(
+        'find' => 'C',
+        'replace' => 'Constitution',
+        'case_sensitive' => 0,
+        'word_boundaries' => 0,
+        'whole' => 0,
+        'regex' => FALSE,
+        'func' => 'str_ireplace',
+    );
+    $feeds_tamper->weight = 0;
+    $feeds_tamper->description = 'C';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-xpathparser_3-find_replace_a';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'xpathparser:3';
+    $feeds_tamper->plugin_id = 'find_replace';
+    $feeds_tamper->settings = array(
+        'find' => 'A',
+        'replace' => 'Agreement',
+        'case_sensitive' => 0,
+        'word_boundaries' => 0,
+        'whole' => 0,
+        'regex' => FALSE,
+        'func' => 'str_ireplace',
+    );
+    $feeds_tamper->weight = 2;
+    $feeds_tamper->description = 'A';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-xpathparser_3-find_replace_l';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'xpathparser:3';
+    $feeds_tamper->plugin_id = 'find_replace';
+    $feeds_tamper->settings = array(
+        'find' => 'L',
+        'replace' => 'Legislation',
+        'case_sensitive' => 0,
+        'word_boundaries' => 0,
+        'whole' => 0,
+        'regex' => FALSE,
+        'func' => 'str_ireplace',
+    );
+    $feeds_tamper->weight = 1;
+    $feeds_tamper->description = 'L';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-xpathparser_3-find_replace_m';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'xpathparser:3';
+    $feeds_tamper->plugin_id = 'find_replace';
+    $feeds_tamper->settings = array(
+        'find' => 'M',
+        'replace' => 'Publication',
+        'case_sensitive' => 0,
+        'word_boundaries' => 0,
+        'whole' => 0,
+        'regex' => FALSE,
+        'func' => 'str_ireplace',
+    );
+    $feeds_tamper->weight = 1;
+    $feeds_tamper->description = 'M (to Publication)';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-xpathparser_3-find_replace_r';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'xpathparser:3';
+    $feeds_tamper->plugin_id = 'find_replace';
+    $feeds_tamper->settings = array(
+        'find' => 'R',
+        'replace' => 'Regulation',
+        'case_sensitive' => 0,
+        'word_boundaries' => 0,
+        'whole' => 0,
+        'regex' => FALSE,
+        'func' => 'str_ireplace',
+    );
+    $feeds_tamper->weight = 1;
+    $feeds_tamper->description = 'R';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-xpathparser_3-find_replace_p';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'xpathparser:3';
+    $feeds_tamper->plugin_id = 'find_replace';
+    $feeds_tamper->settings = array(
+        'find' => 'P',
+        'replace' => 'Policy document',
+        'case_sensitive' => 0,
+        'word_boundaries' => 0,
+        'whole' => 0,
+        'regex' => FALSE,
+        'func' => 'str_ireplace',
+    );
+    $feeds_tamper->weight = 1;
+    $feeds_tamper->description = 'R';
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
