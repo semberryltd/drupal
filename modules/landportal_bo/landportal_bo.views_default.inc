@@ -4,19 +4,25 @@
  */
 
 function landportal_bo_views_default_views_alter(&$views) {
-    $views_override = array('admin_views_node', 'admin_views_taxonomy_term');
+    $path = drupal_get_path('module', 'landportal_bo') . '/views';
+
+    $views_override = array(
+        'admin_views_node',
+        'admin_views_taxonomy_term'
+    );
 
     foreach ($views_override as $view_name) {
+        // Only replace existing views
         if (array_key_exists($view_name, $views)) {
-            /* $view = new view; */
-            /* $view->name = $view_name; */
-
             /**
-             * View module export code, this file MUST decalre a '$view' object
+             * View module export code, this file MUST declare a '$view' object
              * (as per Drupal default 'view > export' functionality)
              */
             include drupal_get_path('module', 'landportal_bo').'/views/'.$view_name . '.inc';
+            //dsm('Override: '.$view_name);
             $views[$view_name] = $view;
         }
     }
+
+    include_once $path .'/tax.inc';
 }
