@@ -18,9 +18,25 @@ function importer_faolex_ctools_plugin_api($module = '', $api = '') {
     }
 }
 
-/* /\** */
-/*  * Implements hook_feeds_plugings(). */
-/*  *\/ */
+/**
+ * Override FeedsCrawlerPattern form
+ * Change 'pattern' field to textarea (allowing longer uri params)
+ *
+ * TODO: check if there is a improv. req/bug in plugin issue list on drupal
+ * create + submit a patch (no reason to limit query string to 128 char.
+ *    -this is very limitating-)
+ */
+function importer_faolex_form_alter(&$form, &$form_state, $form_id) {
+    if (isset($form['feeds']) && isset($form['feeds']['FeedsCrawlerPattern'])) {
+        //dpm($form['feeds']['FeedsCrawlerPattern'], 'Pattern detected');
+        $form['feeds']['FeedsCrawlerPattern']['pattern']['#type'] = 'textarea';
+    }
+}
+
+
+/**
+ * Implements hook_feeds_plugins().
+ */
 /* function importer_faolex_feeds_plugins() { */
 /*     $path = drupal_get_path('module', 'importer_faolex'); */
 /*     $info = array(); */
