@@ -8,5 +8,5 @@ dependencies[] = feeds
 dependencies[] = feeds_tamper
 dependencies[] = feeds_xpathparser
 dependencies[] = landlibrary
-files[] = landlibrary_importers_agris.feeds_import.inc
+files[] = landlibrary_importers_agris.feeds_importer.inc
 files[] = landlibrary_importers_agris.feeds_tamper.inc
