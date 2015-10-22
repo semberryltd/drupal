@@ -158,6 +158,7 @@ features[variable][] = user_picture_path
 features[variable][] = user_register
 features[variable][] = user_signatures
 features[views_view][] = organizations_overview
+features[views_view][] = people
 features_exclude[field_base][body] = body
 features_exclude[field_base][field_image] = field_image
 features_exclude[field_base][field_language] = field_language
