@@ -13,7 +13,7 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     $export = array();
 
     $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->disabled = FALSE;
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'agris_filter-parent_taxonomy_languages-copy';
     $feeds_tamper->importer = 'agris_filter';
@@ -29,7 +29,7 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     $export[$feeds_tamper->id] = $feeds_tamper;
 
     $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->disabled = FALSE;
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'agris_filter-xpathparser_0-find_replace';
     $feeds_tamper->importer = 'agris_filter';
@@ -71,24 +71,6 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     $export[$feeds_tamper->id] = $feeds_tamper;
 
     $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = TRUE;
-    $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'agris_filter-xpathparser_0-find_replace_regex';
-    $feeds_tamper->importer = 'agris_filter';
-    $feeds_tamper->source = 'xpathparser:0';
-    $feeds_tamper->plugin_id = 'find_replace_regex';
-    $feeds_tamper->settings = array(
-        'find' => '/^\\s*\\/\\/<!\\[CDATA\\[([\\s\\S]*)\\/\\/\\]\\]>\\s*\\z/',
-        'replace' => '\\s',
-        'limit' => '',
-        'real_limit' => -1,
-    );
-    $feeds_tamper->weight = 12;
-    $feeds_tamper->description = 'Find replace REGEX';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'agris_filter-xpathparser_0-find_replace_regex1';
@@ -103,19 +85,6 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     );
     $feeds_tamper->weight = 5;
     $feeds_tamper->description = 'Find replace new line /\\n/ with space';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = TRUE;
-    $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'agris_filter-xpathparser_0-html_entity_decode';
-    $feeds_tamper->importer = 'agris_filter';
-    $feeds_tamper->source = 'xpathparser:0';
-    $feeds_tamper->plugin_id = 'html_entity_decode';
-    $feeds_tamper->settings = array();
-    $feeds_tamper->weight = 11;
-    $feeds_tamper->description = 'HTML entity decode';
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
@@ -147,21 +116,6 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     );
     $feeds_tamper->weight = 13;
     $feeds_tamper->description = 'Required field';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = TRUE;
-    $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'agris_filter-xpathparser_0-strip_tags';
-    $feeds_tamper->importer = 'agris_filter';
-    $feeds_tamper->source = 'xpathparser:0';
-    $feeds_tamper->plugin_id = 'strip_tags';
-    $feeds_tamper->settings = array(
-        'allowed_tags' => '',
-    );
-    $feeds_tamper->weight = 10;
-    $feeds_tamper->description = 'Strip tags';
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
@@ -244,19 +198,6 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'agris_filter-xpathparser_1-html_entity_decode';
-    $feeds_tamper->importer = 'agris_filter';
-    $feeds_tamper->source = 'xpathparser:1';
-    $feeds_tamper->plugin_id = 'html_entity_decode';
-    $feeds_tamper->settings = array();
-    $feeds_tamper->weight = 6;
-    $feeds_tamper->description = 'HTML entity decode';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-    $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'agris_filter-xpathparser_1-reduce_to_single_element';
     $feeds_tamper->importer = 'agris_filter';
     $feeds_tamper->source = 'xpathparser:1';
@@ -282,21 +223,6 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     );
     $feeds_tamper->weight = 9;
     $feeds_tamper->description = 'Required field';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = TRUE;
-    $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'agris_filter-xpathparser_1-strip_tags';
-    $feeds_tamper->importer = 'agris_filter';
-    $feeds_tamper->source = 'xpathparser:1';
-    $feeds_tamper->plugin_id = 'strip_tags';
-    $feeds_tamper->settings = array(
-        'allowed_tags' => '',
-    );
-    $feeds_tamper->weight = 5;
-    $feeds_tamper->description = 'Strip tags';
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
@@ -841,24 +767,6 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     $export[$feeds_tamper->id] = $feeds_tamper;
 
     $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = TRUE;
-    $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'agris_filter-xpathparser_2-find_replace_regex';
-    $feeds_tamper->importer = 'agris_filter';
-    $feeds_tamper->source = 'xpathparser:2';
-    $feeds_tamper->plugin_id = 'find_replace_regex';
-    $feeds_tamper->settings = array(
-        'find' => '/^\\s*\\/\\/<!\\[CDATA\\[([\\s\\S]*)\\/\\/\\]\\]>\\s*\\z/',
-        'replace' => '\\s',
-        'limit' => '',
-        'real_limit' => -1,
-    );
-    $feeds_tamper->weight = 11;
-    $feeds_tamper->description = 'Find replace REGEX';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'agris_filter-xpathparser_2-html_entity_decode';
@@ -868,21 +776,6 @@ function landlibrary_importers_agris_feeds_tamper_default() {
     $feeds_tamper->settings = array();
     $feeds_tamper->weight = 10;
     $feeds_tamper->description = 'HTML entity decode';
-
-    $export[$feeds_tamper->id] = $feeds_tamper;
-
-    $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = TRUE;
-    $feeds_tamper->api_version = 2;
-    $feeds_tamper->id = 'agris_filter-xpathparser_2-strip_tags';
-    $feeds_tamper->importer = 'agris_filter';
-    $feeds_tamper->source = 'xpathparser:2';
-    $feeds_tamper->plugin_id = 'strip_tags';
-    $feeds_tamper->settings = array(
-        'allowed_tags' => '',
-    );
-    $feeds_tamper->weight = 12;
-    $feeds_tamper->description = 'Strip tags';
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
