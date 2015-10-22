@@ -12,6 +12,7 @@
 function importer_faolex_feeds_tamper_default() {
     $export = array();
 
+    /* Country mapping */
     $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
@@ -32,12 +33,15 @@ function importer_faolex_feeds_tamper_default() {
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
+    /**
+     * FAOLEX generated values
+     */
     $feeds_tamper = new stdClass();
     $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'faolex_importer-blank_source_1-rewrite';
     $feeds_tamper->importer = 'faolex_importer';
-    $feeds_tamper->source = 'Blank source 1';
+    $feeds_tamper->source = 'FAOLEXuri';
     $feeds_tamper->plugin_id = 'rewrite';
     $feeds_tamper->settings = array(
         'text' => 'http://faolex.fao.org/cgi-bin/faolex.exe?database=faolex&table=result&search_type=query&lang=eng&format_name=@ERALL&query=ID:[xpathparser:0]',
@@ -48,11 +52,26 @@ function importer_faolex_feeds_tamper_default() {
     $export[$feeds_tamper->id] = $feeds_tamper;
 
     $feeds_tamper = new stdClass();
-    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->disabled = FALSE;
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-docId-rewrite';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'FAOLEXdocId';
+    $feeds_tamper->plugin_id = 'rewrite';
+    $feeds_tamper->settings = array(
+        'text' => '[xpathparser:0]',
+    );
+    $feeds_tamper->weight = 1;
+    $feeds_tamper->description = 'FAOLEX rec ID';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE;
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'faolex_importer-blank_source_2-default_value';
     $feeds_tamper->importer = 'faolex_importer';
-    $feeds_tamper->source = 'Blank source 2';
+    $feeds_tamper->source = 'FAOLEXorg';
     $feeds_tamper->plugin_id = 'default_value';
     $feeds_tamper->settings = array(
         'default_value' => 'FAO Legal Office',//FAOLEX',
@@ -68,7 +87,7 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'faolex_importer-blank_source_3-default_value';
     $feeds_tamper->importer = 'faolex_importer';
-    $feeds_tamper->source = 'Blank source 3';
+    $feeds_tamper->source = 'FAOLEXowner';
     $feeds_tamper->plugin_id = 'default_value';
     $feeds_tamper->settings = array(
         'default_value' => '1',
@@ -112,7 +131,7 @@ function importer_faolex_feeds_tamper_default() {
     $feeds_tamper->api_version = 2;
     $feeds_tamper->id = 'faolex_importer-xpathparser_3-find_replace_faolextype';
     $feeds_tamper->importer = 'faolex_importer';
-    $feeds_tamper->source = 'xpathparser:3';
+    $feeds_tamper->source = 'xpathparser:4';
     $feeds_tamper->plugin_id = 'find_replace_multiple';
     $feeds_tamper->settings = array(
         'pairs' => array(

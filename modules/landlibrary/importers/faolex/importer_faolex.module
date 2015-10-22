@@ -26,17 +26,20 @@ function importer_faolex_ctools_plugin_api($module = '', $api = '') {
  * create + submit a patch (no reason to limit query string to 128 char.
  *    -this is very limitating-)
  */
-function importer_faolex_form_alter(&$form, &$form_state, $form_id) {
-    if (isset($form['feeds']) && isset($form['feeds']['FeedsCrawlerPattern'])) {
-        //dpm($form['feeds']['FeedsCrawlerPattern'], 'Pattern detected');
-        $form['feeds']['FeedsCrawlerPattern']['pattern']['#type'] = 'textarea';
-    }
-}
+/* function importer_faolex_form_alter(&$form, &$form_state, $form_id) { */
+/*     if (isset($form['feeds']) && isset($form['feeds']['FeedsCrawlerPattern'])) { */
+/*         //dpm($form['feeds']['FeedsCrawlerPattern'], 'Pattern detected'); */
+/*         $form['feeds']['FeedsCrawlerPattern']['pattern']['#type'] = 'textarea'; */
+/*     } */
+/* } */
 
 /* function importer_faolex_feeds_before_import(FeedsSource $source) { */
 /*     // See feeds_rules module's implementation for an example. */
 /*     dpm($source); */
+/*     $source_config = $source->getConfigFor(); */
+/*     dpm($source_config, 'SConfig'); */
 /* } */
+
 /* // hook FeedsCrawlerPatterm */
 /* function importer_faolex_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) { */
 /*     dpm($source); */
@@ -48,22 +51,20 @@ function importer_faolex_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Implements hook_feeds_plugins().
  */
-/* function importer_faolex_feeds_plugins() { */
-/*     $path = drupal_get_path('module', 'importer_faolex'); */
-/*     $info = array(); */
-/*     $info['FeedsCrawlerPatternCleaner'] = array( */
-/*         'name' => 'Cleaner Pattern fetcher', */
-/*         'description' => 'Provides paging using a URL pattern AND clean return.', */
-        
-/*         'handler' => array( */
-/*             /\* 'class' => 'FeedsCrawlerPattern', *\/ */
-/*             /\* 'parent' => 'FeedsCrawlerBase', *\/ */
-/*             'parent' => 'FeedsCrawlerPattern', */
-/*             'class' => 'FeedsCrawlerPatternCleaner', */
-/*             'file' => 'FeedsCrawlerPatternCleaner.php', */
-/*             'path' => $path, */
-/*         ), */
-/*     ); */
-
-/*     return $info; */
-/* } */
+function importer_faolex_feeds_plugins() {
+    $path = drupal_get_path('module', 'importer_faolex');
+    $info = array();
+    $info['FeedsCrawlerPatternCleaner'] = array(
+        'name' => 'Cleaner Pattern fetcher',
+        'description' => 'Provides paging using a URL pattern AND clean return.',        
+        'handler' => array(
+            /* 'class' => 'FeedsCrawlerPattern', */
+            /* 'parent' => 'FeedsCrawlerBase', */
+            'parent' => 'FeedsCrawlerPattern',
+            'class' => 'FeedsCrawlerPatternCleaner',
+            'file' => 'FeedsCrawlerPatternCleaner.php',
+            'path' => $path,
+        ),
+    );
+    return $info;
+}
