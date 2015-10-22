@@ -25,7 +25,6 @@ class FeedsCrawlerPatternCleaner extends FeedsCrawlerPattern {
 
     protected function beginFetch(FeedsSource $source, FeedsState $state) {
         /* dpm($state, 'beginFetch'); */
-
         // Force (first) index to take initial_index
         // (otherwise 'pattern' won't get applied to the first getNextUrl call, go figure!)
         $source_config = $source->getConfigFor($this);
@@ -37,10 +36,6 @@ class FeedsCrawlerPatternCleaner extends FeedsCrawlerPattern {
         watchdog('feeds', 'Importing '.$state->next_url);
         parent::beginFetch($source, $state);
     }
-    /* protected function getNextUrl(FeedsSource $source, $current_url) { */
-    /*     //$source_config = $source->getConfigFor($this); */
-    /*     return parent::getNextUrl($source, $current_url); */
-    /* } */
 
     /**
      * {@inheritdoc}
@@ -60,17 +55,16 @@ class FeedsCrawlerPatternCleaner extends FeedsCrawlerPattern {
         return $raw;
     }
 
-    protected function getFetcherResult($url) {
-        dsm('getFetcherResult: '.$url);
-
-        $result = new FeedsHTTPFetcherResult($url);
-        //$result = new CleanerHTTPFetcherResult($url);
-        // When request_timeout is empty, the global value is used.
-        $result->setTimeout($this->config['request_timeout']);
-        $result->setAcceptInvalidCert($this->config['accept_invalid_cert']);
-        //dpm(array('getFetcherResult' => $result));
-        return $result;
-    }    
+    /* protected function getFetcherResult($url) { */
+    /*     dsm('getFetcherResult: '.$url); */
+    /*     $result = new FeedsHTTPFetcherResult($url); */
+    /*     //$result = new CleanerHTTPFetcherResult($url); */
+    /*     // When request_timeout is empty, the global value is used. */
+    /*     $result->setTimeout($this->config['request_timeout']); */
+    /*     $result->setAcceptInvalidCert($this->config['accept_invalid_cert']); */
+    /*     //dpm(array('getFetcherResult' => $result)); */
+    /*     return $result; */
+    /* }     */
     
     /**
      * Override FeedsCrawlerPattern form
