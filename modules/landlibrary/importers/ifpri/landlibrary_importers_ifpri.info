@@ -9,5 +9,5 @@ dependencies[] = feeds_fetcher_directory
 dependencies[] = feeds_tamper
 dependencies[] = feeds_xpathparser
 dependencies[] = landlibrary
-; features[ctools][] = feeds:feeds_importer_default:1
-; features[ctools][] = feeds_tamper:feeds_tamper_default:2
+files[] = landlibrary_importers_ifpri.feeds_importer.inc
+files[] = landlibrary_importers_ifpri.feeds_tamper.inc

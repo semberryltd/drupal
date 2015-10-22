@@ -1,7 +1,9 @@
 <?php
 /**
- * @file
- * landlibrary_importers_agris.feeds_tamper_default.inc
+ * AGRIS importer
+ *
+ * Author: Jules Clement <jules@ker.bz>
+ * Date: Oct. 2015
  */
 
 /**

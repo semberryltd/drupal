@@ -1,7 +1,9 @@
 <?php
 /**
- * @file
- * Code for the Landlibrary IFPRI Importer feature.
+ * IFPRI importer
+ *
+ * Author: Jules Clement <jules@ker.bz>
+ * Date: Oct. 2015
  */
 
 include_once 'landlibrary_importers_ifpri.feeds_importer.inc';

@@ -1,7 +1,9 @@
 <?php
 /**
- * @file
- * landlibrary_importers_ifpri.feeds_tamper_default.inc
+ * IFPRI importer
+ *
+ * Author: Jules Clement <jules@ker.bz>
+ * Date: Oct. 2015
  */
 
 /**

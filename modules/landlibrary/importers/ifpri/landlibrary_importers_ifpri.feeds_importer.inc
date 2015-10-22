@@ -1,13 +1,12 @@
 <?php
 /**
- * FAOLEX importer feeds
+ * IFPRI importer feeds
  *
  * Author: Jules Clement <jules@ker.bz>
  * Date: Oct. 2015
  */
 
-// http://landportal.ker/admin/structure/feeds/faolex/export
-function landlibrary_importers_feeds_importer_default() {
+function landlibrary_importers_ifpri_feeds_importer_default() {
     $export = array();
 
     $feeds_importer = new stdClass();
@@ -15,8 +14,8 @@ function landlibrary_importers_feeds_importer_default() {
     $feeds_importer->api_version = 1;
     $feeds_importer->id = 'ifpri_importer_creator';
     $feeds_importer->config = array(
-        'name' => 'IFPRI creator preimporter',
-        'description' => 'IFPRI importer creator',
+        'name' => 'IFPRI (pre)importer - creator',
+        'description' => 'Import resource (ex. documents) authors BEFORE importing content.',
         'fetcher' => array(
             'plugin_key' => 'feeds_fetcher_directory_fetcher',
             'config' => array(
@@ -81,11 +80,10 @@ function landlibrary_importers_feeds_importer_default() {
         'import_on_create' => 1,
         'process_in_background' => 0,
     );
-
     $export[$feeds_importer->id] = $feeds_importer;
 
     $feeds_importer = new stdClass();
-    $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+    $feeds_importer->disabled = FALSE;
     $feeds_importer->api_version = 1;
     $feeds_importer->id = 'ifpri_importer';
     $feeds_importer->config = array(
