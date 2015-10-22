@@ -232,6 +232,6 @@ Territorial Subdivision:
         'process_in_background' => 0,
     );
 
-    $export['faolex-importer'] = $feeds_importer; 
+    $export[$feeds_importer->id] = $feeds_importer; 
     return $export;
 }

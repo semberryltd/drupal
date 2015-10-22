@@ -252,5 +252,6 @@ function landlibrary_importers_agris_feeds_importer_default() {
         'process_in_background' => 0,
     );
 
-  return $export;
+    $export[$feeds_importer->id] = $feeds_importer; 
+    return $export;
 }
