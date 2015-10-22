@@ -20,8 +20,8 @@ function importer_faolex_feeds_importer_default() {
         'fetcher' => array(
             'plugin_key' => 'FeedsCrawlerPatternCleaner',
             'config' => array(
-                'num_pages' => 3,//50,
-                'first_run' => 1,
+                'num_pages' => 50,
+                'first_run' => 0,
                 'delay' => 5,
                 'auto_detect_feeds' => 0,
                 'use_pubsubhubbub' => 0,
