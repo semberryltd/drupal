@@ -3,6 +3,7 @@ description = USAID RSS Importer
 core = 7.x
 package = CLandlibrary
 version = 7.x-1.0
+project = landlibrary_importers_usaid
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_crawler
