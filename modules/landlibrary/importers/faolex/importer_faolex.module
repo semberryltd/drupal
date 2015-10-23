@@ -6,6 +6,7 @@
  * Date: Oct. 2015
  */
 
+include_once('FeedsCrawlerPatternCleaner.php');
 include_once('importer_faolex.feeds_importer.inc');
 include_once('importer_faolex.feeds_tamper.inc');
 
@@ -16,6 +17,27 @@ function importer_faolex_ctools_plugin_api($module = '', $api = '') {
     if ($module == "feeds" && $api == "feeds_importer_default") {
         return array("version" => "1");
     }
+}
+
+/**
+ * Implements hook_feeds_plugins().
+ */
+function importer_faolex_feeds_plugins() {
+    $path = drupal_get_path('module', 'importer_faolex');
+    $info = array();
+    $info['FeedsCrawlerPatternCleaner'] = array(
+        'name' => 'Cleaner Pattern fetcher',
+        'description' => 'Provides paging using a URL pattern AND clean return.',        
+        'handler' => array(
+            /* 'class' => 'FeedsCrawlerPattern', */
+            /* 'parent' => 'FeedsCrawlerBase', */
+            'parent' => 'FeedsCrawlerPattern',
+            'class' => 'FeedsCrawlerPatternCleaner',
+            'file' => 'FeedsCrawlerPatternCleaner.php',
+            'path' => $path,
+        ),
+    );
+    return $info;
 }
 
 /**
@@ -47,24 +69,3 @@ function importer_faolex_ctools_plugin_api($module = '', $api = '') {
 /*   // For example, set title of imported content: */
 /*     //$result->title = 'Import number ' . my_module_import_id(); */
 /* } */
-
-/**
- * Implements hook_feeds_plugins().
- */
-function importer_faolex_feeds_plugins() {
-    $path = drupal_get_path('module', 'importer_faolex');
-    $info = array();
-    $info['FeedsCrawlerPatternCleaner'] = array(
-        'name' => 'Cleaner Pattern fetcher',
-        'description' => 'Provides paging using a URL pattern AND clean return.',        
-        'handler' => array(
-            /* 'class' => 'FeedsCrawlerPattern', */
-            /* 'parent' => 'FeedsCrawlerBase', */
-            'parent' => 'FeedsCrawlerPattern',
-            'class' => 'FeedsCrawlerPatternCleaner',
-            'file' => 'FeedsCrawlerPatternCleaner.php',
-            'path' => $path,
-        ),
-    );
-    return $info;
-}

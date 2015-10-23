@@ -1,0 +1,15 @@
+name = FAO importer
+description = From search API
+core = 7.x
+package = CLandportal
+version = 7.x-1.0
+project = importer_fao
+files[] = importer_fao.feeds_importer.inc
+files[] = importer_fao.feeds_tamper.inc
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_crawler
+dependencies[] = feeds_import
+dependencies[] = feeds_tamper
+dependencies[] = feeds_xpathparser
+dependencies[] = landlibrary

@@ -351,7 +351,6 @@ function landportal_taxonomy_user_default_permissions() {
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
     ),
-    'module' => 'taxonomy_csv',
   );
 
   // Exported permission: 'import taxonomy by csv'.
@@ -361,7 +360,6 @@ function landportal_taxonomy_user_default_permissions() {
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
     ),
-    'module' => 'taxonomy_csv',
   );
 
   return $permissions;

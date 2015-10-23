@@ -1,7 +1,9 @@
 <?php
 /**
- * @file
- * landlibrary_importers_agris.feeds_importer_default.inc
+ * AGRIS importer
+ *
+ * Author: Jules Clement <jules@ker.bz>
+ * Date: Oct. 2015
  */
 
 /**
@@ -78,6 +80,8 @@ function landlibrary_importers_agris_feeds_importer_default() {
                 'context' => '/ags:resources/ags:resource',
                 'exp' => array(
                     'errors' => 1,
+                    'tidy' => 1,
+                    'tidy_encoding' => 'UTF8',
                     'debug' => array(
                         'context' => 0,
                         'xpathparser:0' => 0,
@@ -116,12 +120,12 @@ function landlibrary_importers_agris_feeds_importer_default() {
                     0 => array(
                         'source' => 'xpathparser:0',
                         'target' => 'field_doc_title',
-                        'unique' => FALSE,
+                        'unique' => TRUE,
                     ),
                     1 => array(
                         'source' => 'xpathparser:1',
                         'target' => 'title',
-                        'unique' => 1,
+                        'unique' => FALSE,
                     ),
                     2 => array(
                         'source' => 'xpathparser:2',
@@ -244,13 +248,14 @@ function landlibrary_importers_agris_feeds_importer_default() {
                 'update_non_existent' => 'skip',
             ),
         ),
-        'content_type' => 'landlibrary_importer',
-        'update' => 0,
+        'content_type' => '',
+        'update' => 2,
         'import_period' => '-1',
         'expire_period' => 3600,
-        'import_on_create' => 0,
+        'import_on_create' => 1,
         'process_in_background' => 0,
     );
 
-  return $export;
+    $export[$feeds_importer->id] = $feeds_importer; 
+    return $export;
 }

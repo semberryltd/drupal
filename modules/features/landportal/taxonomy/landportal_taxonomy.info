@@ -12,7 +12,6 @@ dependencies[] = rdfx
 dependencies[] = restws
 dependencies[] = strongarm
 dependencies[] = taxonomy
-dependencies[] = taxonomy_csv
 dependencies[] = text
 dependencies[] = uuid
 dependencies[] = uuid_features

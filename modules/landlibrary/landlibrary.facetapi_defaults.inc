@@ -119,9 +119,6 @@ function landlibrary_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(
-        'agris_publisher_file' => 0,
-        'agris_publisher_file_feeds' => 0,
-        'agris_file_upload_feed' => 0,
         'article' => 0,
         'page' => 0,
         'blog_post' => 0,
@@ -129,17 +126,12 @@ function landlibrary_facetapi_default_facet_settings() {
         'event' => 0,
         'feed' => 0,
         'feed_item' => 0,
-        'ifpri_ingestion' => 0,
         'landlibrary_resource' => 0,
         'news' => 0,
         'organization' => 0,
         'person' => 0,
         'subject_browse' => 0,
-        'agris_conference_' => 0,
-        'agris_clone2' => 0,
         'general_feed' => 0,
-        'ifpri_batch_file' => 0,
-        'ifpri_file_upload' => 0,
       ),
       'roles' => array(
         1 => 0,
