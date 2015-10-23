@@ -6,6 +6,7 @@
  * Date: Oct. 2015
  */
 
+include_once('FeedsCrawlerPatternCleaner.php');
 include_once('importer_faolex.feeds_importer.inc');
 include_once('importer_faolex.feeds_tamper.inc');
 
