@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * landlibrary_importers_usaid.feeds_tamper_default.inc
+ * importer_usaid.feeds_tamper_default.inc
  */
 
 /**
  * Implements hook_feeds_tamper_default().
  */
-function landlibrary_importers_usaid_feeds_tamper_default() {
+function importer_usaid_feeds_tamper_default() {
     $export = array();
 
     $feeds_tamper = new stdClass();

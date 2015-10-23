@@ -1,9 +1,11 @@
-name = Landlibrary LandCoalition Importer
+name = LandCoalition Importer
 description = Land Coalition importer for the Land Library
 core = 7.x
-package = CLandlibrary
-version = 7.x-1.0
-project = landlibrary_importers_landcoalition
+package = CLandportal
+version = 7.x-1.0-beta
+project = importer_landcoalition
+files[] = importer_landcoalition.feeds_importer.inc
+files[] = importer_landcoalition.feeds_tamper.inc
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_crawler

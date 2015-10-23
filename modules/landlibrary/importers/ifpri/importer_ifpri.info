@@ -1,11 +1,11 @@
-name = Landlibrary IFPRI Importer
+name = IFPRI Importer
 description = IFPRI importer for the Landlibrary
 core = 7.x
-package = CLandlibrary
+package = CLandportal
 version = 7.x-2.0-beta
-project = landlibrary_importers_ifpri
-files[] = landlibrary_importers_ifpri.feeds_importer.inc
-files[] = landlibrary_importers_ifpri.feeds_tamper.inc
+project = importer_ifpri
+files[] = importer_ifpri.feeds_importer.inc
+files[] = importer_ifpri.feeds_tamper.inc
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_crawler

@@ -1,7 +1,19 @@
 <?php
 /**
- * @file
- * Code for the Landlibrary OAI PMH Importer feature.
+ * FAO importer feeds
+ *
+ * Author: Jules Clement <jules@ker.bz>
+ * Date: Oct. 2015
  */
 
-include_once 'landlibrary_importers_oai_pmh.features.inc';
+include_once('importer_oai_pmh.feeds_importer.inc');
+include_once('importer_oai_pmh.feeds_tamper.inc');
+
+function importer_oai_pmh_ctools_plugin_api($module = '', $api = '') {
+    if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
+        return array("version" => "2");
+    }
+    if ($module == "feeds" && $api == "feeds_importer_default") {
+        return array("version" => "1");
+    }
+}

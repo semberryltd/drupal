@@ -9,7 +9,7 @@
 /**
  * Implements hook_feeds_tamper_default().
  */
-function landlibrary_importers_ifpri_feeds_tamper_default() {
+function importer_ifpri_feeds_tamper_default() {
     $export = array();
 
     $feeds_tamper = new stdClass();
