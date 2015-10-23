@@ -1,0 +1,111 @@
+<?php
+/**
+ * @file
+ * Provides a fiware HTTP client implemented in Guzzle.
+ *
+ * @copyright Copyright(c) 2012 Previous Next Pty Ltd
+ * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ * @author Chris Skene chris at previousnext dot com dot au
+ */
+
+ 
+function oai_harvester_menu() {
+  $items = array();
+  
+
+$items['start-ifpri-harvester'] = array( //this creates a URL that will call this form at "examples/form-example"
+    'title' => 'Start IFPRI harvester FROM date UNTIL date', //page title
+    'description' => 'A form to mess around with.',
+    'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+    'page arguments' => array('oai_harvester_form'), //put the name of the form here
+    'access callback' => TRUE
+  );
+  return 
+
+$items;
+}
+
+function oai_harvester_form($form, &$form_state) {
+  
+ $form['from_date'] = array(
+    '#type' => 'textfield', //you can find a list of available types in the form api
+    '#title' => 'From date',
+    '#size' => 20,
+    '#description' => 'the date from which you want to harvest',
+    '#maxlength' => 40,
+    '#required' => TRUE, //make this field required 
+  );
+  
+  $form['until_date'] = array(
+    '#type' => 'textfield', //you can find a list of available types in the form api
+    '#title' => 'Until date',
+    '#description' => 'the date until  you want to harvest',
+    '#size' => 20,
+    '#maxlength' => 40,
+    '#required' => TRUE, //make this field required 
+  );
+
+$form['start_tracking'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable'),
+    '#default_value' => isset($settings['start_tracking']) ? $settings['start_tracking'] : FALSE,
+    '#description' => t('Harvest from IFPRIs OAI-PMH publications'),
+  );
+
+
+  
+
+$form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit!'),    
+  );
+  
+  return $form;
+}
+
+
+ 
+function oai_harvester_form_submit($form, &$form_state) {
+
+  global $user;
+  if ($user->uid ) {
+  
+     //$form_state['values']['url'],
+    if(!empty($form_state['values']['until_date']) && !empty($form_state['values']['from_date']) )
+    {
+     start_ifpri_harvesting($user, $form_state['values']['from_date'], $form_state['values']['until_date']);
+    }else {
+     print "please set dates";  
+    }
+    
+  }else {
+  // Not logged in
+    print "Please go to login page";
+  //  die("please login");
+  }
+
+}
+ 
+ 
+
+//https://api.drupal.org/api/drupal/modules%21user%21user.module/7
+//http://www.apaddedcell.com/an-introduction-user-stats-module-drupal
+function start_ifpri_harvesting(&$user, &$from ,&$until){ //&$url,
+//    $from='2014-9-10';
+//    $until='2014-12-21';
+//    $script="/var/www/htdocs/IFPRI_dates";
+	
+	
+      //	Check if user is loggedin
+ 		// $users = entity_load('user');// $arrayuids = array_keys($users);
+     if($user->uid){
+      $uid=$user->uid;
+	 // shell_exec('/root/IFPRI_harvester/IFPRI_dates $from $until' );
+       exec('cd /var/www/htdocs/; /root/IFPRI_harvester/IFPRI_dates $from $until' );
+  
+        print "Ifpri harvesting done";
+     }//end if
+
+ return;
+ 
+} 

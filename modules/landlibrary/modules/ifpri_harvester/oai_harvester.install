@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Install file for fiware client.
+ *
+ * @copyright Copyright(c) 2012 Previous Next Pty Ltd
+ * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ * @author Chris Skene chris at previousnext dot com dot au
+ */
+
+
+/**
+ * Implements hook_requirements().
+ */
+function oai_harvester_requirements($phase) {
+/*  $requirements = array();
+  // Ensure translations don't break during installation.
+  $t = get_t();
+
+  // Report cron status.
+  if ($phase == 'runtime') {
+
+
+  }
+
+  return $requirements;*/
+}
