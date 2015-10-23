@@ -6,8 +6,8 @@
  * Date: Oct. 2015
  */
 
-include_once 'landlibrary_importers_landcoalition.feeds_importer.inc';
-include_once 'landlibrary_importers_landcoalition.feeds_tamper.inc';
+include_once('landlibrary_importers_landcoalition.feeds_importer.inc');
+include_once('landlibrary_importers_landcoalition.feeds_tamper.inc');
 
 function landlibrary_importers_landcoalition_ctools_plugin_api($module = '', $api = '') {
     if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
