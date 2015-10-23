@@ -216,7 +216,7 @@ function landlibrary_importers_usaid_feeds_importer_default() {
               'update_non_existent' => 'skip',
           ),
       ),
-      'content_type' => 'rss_issue_briefs_feed',
+      'content_type' => '',
       'update' => 2,
       'import_period' => '-1',
       'expire_period' => 3600,
