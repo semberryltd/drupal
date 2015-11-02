@@ -17,14 +17,17 @@ projects:
   - module_filter
   - calendar
   - ctools
+  - context
   - ckeditor
   - date
   - ds
   - entityconnect
   - features
+  - uuid_features
   - computed_field
   - email
   - entityreference
+  - entityreference_feeds
   - field_group
   - field_tools
   - link
@@ -37,6 +40,7 @@ projects:
   - language_switcher
   - entity_translation
   - i18n
+  - job_scheduler
   - oauth
   - elysia_cron
   - entity
@@ -81,4 +85,3 @@ projects:
   - rules_autotag
 includes:
   - "landportal-custom.make"
-#  - "landportal-codebase.make"
