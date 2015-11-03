@@ -15,8 +15,20 @@ projects:
     version: "2.12"
   mailchimp_user_lists:
     version: "1.0"
+  # For Media and CKEditor patches, see: https://www.drupal.org/node/2455391
+  media:
+    patch:
+      # This patch doesn't work anymore...
+      #- "https://www.drupal.org/files/issues/remove-js-attach-functions-2454933-1.patch"
+      # Try this one, from
+      - "https://www.drupal.org/files/issues/Issue_2454933.patch"
+      # https://www.drupal.org/node/2121253
+      #- "https://www.drupal.org/files/attach-media-browser-javascript-settings-2121253-1.patch"
   ckeditor:
-    version: "1.16"
+    version: ~
+    patch:
+      - "https://www.drupal.org/files/issues/media_browser_js-2455391-13.patch"
+      #- "https://www.drupal.org/files/issues/Issue_2454933_0.patch"
   profile2:
     patch:
       - "https://www.drupal.org/files/issues/profile2--inherit-view_mode.patch"
@@ -51,3 +63,7 @@ libraries:
     download:
       type: "git"
       url: "https://github.com/hybridauth/hybridauth"
+  ckeditor:
+    download:
+      type: "file"
+      url: "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.4/ckeditor_4.5.4_full.zip"
