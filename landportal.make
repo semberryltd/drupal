@@ -78,6 +78,7 @@ projects:
   - feeds_xpathparser
   - feeds_jsonpath_parser
   - rdfx
+  - shs
   - sparql
   - rules
   - rules_autotag
