@@ -15,21 +15,18 @@ projects:
     version: "2.12"
   mailchimp_user_lists:
     version: "1.0"
-  # For Media and CKEditor patches, see: https://www.drupal.org/node/2455391
   media:
-    patch:
-      # This patch doesn't work anymore...
-      #- "https://www.drupal.org/files/issues/remove-js-attach-functions-2454933-1.patch"
-      # Try this one, from
-      - "https://www.drupal.org/files/issues/Issue_2454933.patch"
-      # https://www.drupal.org/node/2121253
-      #- "https://www.drupal.org/files/attach-media-browser-javascript-settings-2121253-1.patch"
-  ckeditor:
     version: ~
-    patch:
-      - "https://www.drupal.org/files/issues/media_browser_js-2455391-13.patch"
-      #- "https://www.drupal.org/files/issues/Issue_2454933_0.patch"
+  ckeditor:
+    version: "1.x-dev"
+    # patch:
+    #   # The working one: https://www.drupal.org/node/2454933
+    #   - "https://www.drupal.org/files/issues/Issue_2454933.patch"
+    #   #- "https://www.drupal.org/files/issues/media_browser_js-2455391-13.patch"
+    #   # Issue: https://www.drupal.org/node/2455391
+    #   #- "https://www.drupal.org/files/issues/Issue_2454933_0.patch"
   profile2:
+    version: ~
     patch:
       - "https://www.drupal.org/files/issues/profile2--inherit-view_mode.patch"
   feeds:
@@ -39,6 +36,7 @@ projects:
   feeds_fetcher_directory:
     version: "2.0-beta5"
   feeds_tamper:
+    version: ~
     patch:
       - "https://www.drupal.org/files/issues/multiple_replace-1525540-7.patch"
 libraries:

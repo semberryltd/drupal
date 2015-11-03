@@ -18,7 +18,6 @@ projects:
   - calendar
   - ctools
   - context
-  - ckeditor
   - date
   - ds
   - entityconnect
@@ -36,7 +35,6 @@ projects:
   - hybridauth
   - location
   - file_entity
-  - media
   - language_switcher
   - entity_translation
   - i18n
