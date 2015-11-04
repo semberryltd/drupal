@@ -45,7 +45,7 @@ function importer_ifpri_feeds_importer_default() {
                         'xpathparser:1' => 0,
                     ),
                 ),
-                'allow_override' => 1,
+                'allow_override' => 0,
             ),
         ),
         'processor' => array(
@@ -110,24 +110,23 @@ function importer_ifpri_feeds_importer_default() {
                     'xpathparser:6' => 'dc:description[1]/text()',
                     'xpathparser:7' => 'dc:language/text()',
                     'xpathparser:8' => 'concat(/oai_dc:dc/dc:identifier[1]/text(),";",/oai_dc:dc/dc:identifier[2]/text(),";",/oai_dc:dc/dc:identifier[3]/text(),";",/oai_dc:dc/dc:identifier[4]/text())',
-                    'xpathparser:9' => '',
+                    //'xpathparser:9' => '',
                     'xpathparser:10' => 'dc:date[1]/text()',
                     'xpathparser:11' => '',
                     'xpathparser:12' => 'dc:publisher[1]/text()',
                     'xpathparser:13' => 'concat(/oai_dc:dc/dc:identifier[1]/text(),";",/oai_dc:dc/dc:identifier[2]/text(),";",/oai_dc:dc/dc:identifier[3]/text(),";",/oai_dc:dc/dc:identifier[4]/text())',
                     'xpathparser:14' => 'concat(/oai_dc:dc/dc:identifier[1]/text(),";",/oai_dc:dc/dc:identifier[2]/text(),";",/oai_dc:dc/dc:identifier[3]/text(),";",/oai_dc:dc/dc:identifier[4]/text())',
                     'xpathparser:15' => '',
-                    'xpathparser:16' => '',
+                    //'xpathparser:16' => '',
                     'xpathparser:17' => 'dc:date[1]/text()',
-                    'xpathparser:18' => '',
+                    //'xpathparser:18' => '',
                     'xpathparser:19' => 'concat(/oai_dc:dc/dc:subject[1]/text()  , /oai_dc:dc/dc:subject[2]/text())',
                     'xpathparser:20' => 'dc:creator[1]/text()',
                     'xpathparser:21' => 'dc:language/text()',
                     'xpathparser:22' => 'concat(/oai_dc:dc/dc:subject[1]/text()  , /oai_dc:dc/dc:subject[2]/text(), /oai_dc:dc/dc:subject[3]/text())',
                     'xpathparser:23' => 'dc:identifier[2]/text()',
                     'xpathparser:24' => 'dc:title[1]/text()',
-                    'xpathparser:25' => '',
-                    'xpathparser:26' => '',
+                    'xpathparser:25' => 'dc:title[1]/text()',
                 ),
                 'rawXML' => array(
                     'xpathparser:0' => 0,
@@ -138,16 +137,16 @@ function importer_ifpri_feeds_importer_default() {
                     'xpathparser:6' => 0,
                     'xpathparser:7' => 0,
                     'xpathparser:8' => 0,
-                    'xpathparser:9' => 0,
+                    //'xpathparser:9' => 0,
                     'xpathparser:10' => 0,
                     'xpathparser:11' => 0,
                     'xpathparser:12' => 0,
                     'xpathparser:13' => 0,
                     'xpathparser:14' => 0,
                     'xpathparser:15' => 0,
-                    'xpathparser:16' => 0,
+                    //'xpathparser:16' => 0,
                     'xpathparser:17' => 0,
-                    'xpathparser:18' => 0,
+                    //'xpathparser:18' => 0,
                     'xpathparser:19' => 0,
                     'xpathparser:20' => 0,
                     'xpathparser:21' => 0,
@@ -170,16 +169,16 @@ function importer_ifpri_feeds_importer_default() {
                         'xpathparser:6' => 0,
                         'xpathparser:7' => 0,
                         'xpathparser:8' => 0,
-                        'xpathparser:9' => 0,
+                        //'xpathparser:9' => 0,
                         'xpathparser:10' => 0,
                         'xpathparser:11' => 0,
                         'xpathparser:12' => 0,
                         'xpathparser:13' => 0,
                         'xpathparser:14' => 0,
                         'xpathparser:15' => 0,
-                        'xpathparser:16' => 0,
+                        //'xpathparser:16' => 0,
                         'xpathparser:17' => 0,
-                        'xpathparser:18' => 0,
+                        //'xpathparser:18' => 0,
                         'xpathparser:19' => 0,
                         'xpathparser:20' => 0,
                         'xpathparser:21' => 0,
@@ -243,11 +242,11 @@ function importer_ifpri_feeds_importer_default() {
                         'target' => 'field_doc_identifier',
                         'unique' => TRUE,
                     ),
-                    8 => array(
-                        'source' => 'xpathparser:9',
-                        'target' => 'field_date_of_submission:end',
-                        'unique' => FALSE,
-                    ),
+                    /* 8 => array( */
+                    /*     'source' => 'xpathparser:9', */
+                    /*     'target' => 'field_date_of_submission:end', */
+                    /*     'unique' => FALSE, */
+                    /* ), */
                     9 => array(
                         'source' => 'xpathparser:10',
                         'target' => 'field_doc_creation_date:end',
@@ -278,21 +277,21 @@ function importer_ifpri_feeds_importer_default() {
                         'target' => 'field_doc_provider:label',
                         'unique' => FALSE,
                     ),
-                    15 => array(
-                        'source' => 'xpathparser:16',
-                        'target' => 'field_doc_datepub:end',
-                        'unique' => FALSE,
-                    ),
+                    /* 15 => array( */
+                    /*     'source' => 'xpathparser:16', */
+                    /*     'target' => 'field_doc_datepub:end', */
+                    /*     'unique' => FALSE, */
+                    /* ), */
                     16 => array(
                         'source' => 'xpathparser:17',
                         'target' => 'field_doc_creation_date:start',
                         'unique' => FALSE,
                     ),
-                    17 => array(
-                        'source' => 'xpathparser:18',
-                        'target' => 'field_doc_creation_date:end',
-                        'unique' => FALSE,
-                    ),
+                    /* 17 => array( */
+                    /*     'source' => 'xpathparser:18', */
+                    /*     'target' => 'field_doc_creation_date:end', */
+                    /*     'unique' => FALSE, */
+                    /* ), */
                     18 => array(
                         'source' => 'xpathparser:19',
                         'target' => 'field_doc_subject',
@@ -325,12 +324,7 @@ function importer_ifpri_feeds_importer_default() {
                     ),
                     24 => array(
                         'source' => 'xpathparser:25',
-                        'target' => 'title_field:et:en',
-                        'unique' => FALSE,
-                    ),
-                    25 => array(
-                        'source' => 'xpathparser:26',
-                        'target' => 'title',
+                        'target' => 'title_field',
                         'unique' => FALSE,
                     ),
                 ),
