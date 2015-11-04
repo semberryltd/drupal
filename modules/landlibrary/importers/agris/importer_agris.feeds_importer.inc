@@ -15,7 +15,7 @@ function importer_agris_feeds_importer_default() {
     $feeds_importer = new stdClass();
     $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
     $feeds_importer->api_version = 1;
-    $feeds_importer->id = 'agris_filter';
+    $feeds_importer->id = 'agris_importer';
     $feeds_importer->config = array(
         'name' => 'AGRIS XML importer',
         'description' => '',
@@ -107,7 +107,7 @@ function importer_agris_feeds_importer_default() {
                         'xpathparser:24' => 0,
                     ),
                 ),
-                'allow_override' => 1,
+                'allow_override' => 0,
             ),
         ),
         'processor' => array(
