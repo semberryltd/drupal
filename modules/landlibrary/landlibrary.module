@@ -5,7 +5,6 @@
  */
 
 include_once 'landlibrary.features.inc';
-include_once 'views/search.php';
 
 /* LandLibrary breadcrumbs */
 function landlibrary_node_view_alter(&$build) {
@@ -15,7 +14,22 @@ function landlibrary_node_view_alter(&$build) {
     }
     $breadcrumb[] = l(t(drupal_get_title()), $_GET['q']);
     drupal_set_breadcrumb($breadcrumb);
-
 }
 
+/**
+ * Add a tab directly in admin/content
+ * to browse Library resources (next to nodes, comments and files
+ */
+function landlibrary_menu() {
+    $items['admin/content/library'] = array(
+        'title' => 'Library',
+        'type' => MENU_LOCAL_TASK,
+        'weight' => 12,
+        //'page callback' => 'landlibrary_admin_view_library',
+    );
+    return $items;
+}
 
+function landlibrary_admin_view_library() {
+    return 'hallo<p>This should be replaced by admin_view_library system view</p>';
+}

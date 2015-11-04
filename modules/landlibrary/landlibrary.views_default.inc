@@ -10,8 +10,10 @@
 function landlibrary_views_default_views() {
   $export = array();
 
-  /* View: Search / file: MODULE/views/VIEWNAME.php */
-  $view = landlibrary_views_search();
+  /* View file in: MODULE/views/VIEWNAME.inc */
+  include_once 'views/search.inc';
+  $export[$view->name] = $view;
+  include_once 'views/admin.inc';
   $export[$view->name] = $view;
 
   $view = new view();
