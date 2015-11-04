@@ -6,7 +6,6 @@
  * View URL: http://landportal.info/admin/structure/views/view/library_search/
  * View BO: http://landportal.ker/admin/structure/views/view/administration_library/export
  */
-
 $view = new view();
 $view->name = 'admin_view_library';
 $view->description = '';
@@ -219,6 +218,12 @@ $handler->display->display_options['fields']['field_doc_title']['field'] = 'fiel
 $handler->display->display_options['fields']['field_doc_title']['alter']['make_link'] = TRUE;
 $handler->display->display_options['fields']['field_doc_title']['alter']['path'] = '[path]';
 $handler->display->display_options['fields']['field_doc_title']['delta_offset'] = '0';
+/* Field: Content: Resource type */
+$handler->display->display_options['fields']['field_doc_type']['id'] = 'field_doc_type';
+$handler->display->display_options['fields']['field_doc_type']['table'] = 'field_data_field_doc_type';
+$handler->display->display_options['fields']['field_doc_type']['field'] = 'field_doc_type';
+$handler->display->display_options['fields']['field_doc_type']['type'] = 'taxonomy_term_reference_plain';
+$handler->display->display_options['fields']['field_doc_type']['delta_offset'] = '0';
 /* Field: Content: Provider */
 $handler->display->display_options['fields']['field_doc_provider']['id'] = 'field_doc_provider';
 $handler->display->display_options['fields']['field_doc_provider']['table'] = 'field_data_field_doc_provider';
@@ -231,6 +236,7 @@ $handler->display->display_options['fields']['field_doc_provider']['settings'] =
 $handler->display->display_options['fields']['field_doc_data_provider']['id'] = 'field_doc_data_provider';
 $handler->display->display_options['fields']['field_doc_data_provider']['table'] = 'field_data_field_doc_data_provider';
 $handler->display->display_options['fields']['field_doc_data_provider']['field'] = 'field_doc_data_provider';
+$handler->display->display_options['fields']['field_doc_data_provider']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_doc_data_provider']['settings'] = array(
   'link' => 1,
 );
@@ -242,6 +248,7 @@ $handler->display->display_options['fields']['language']['field'] = 'language';
 $handler->display->display_options['fields']['field_doc_language']['id'] = 'field_doc_language';
 $handler->display->display_options['fields']['field_doc_language']['table'] = 'field_data_field_doc_language';
 $handler->display->display_options['fields']['field_doc_language']['field'] = 'field_doc_language';
+$handler->display->display_options['fields']['field_doc_language']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_doc_language']['delta_offset'] = '0';
 /* Field: Content: Post date */
 $handler->display->display_options['fields']['created']['id'] = 'created';
@@ -283,11 +290,6 @@ $handler->display->display_options['fields']['field_doc_keyword']['id'] = 'field
 $handler->display->display_options['fields']['field_doc_keyword']['table'] = 'field_data_field_doc_keyword';
 $handler->display->display_options['fields']['field_doc_keyword']['field'] = 'field_doc_keyword';
 $handler->display->display_options['fields']['field_doc_keyword']['delta_offset'] = '0';
-/* Field: Content: Resource type */
-$handler->display->display_options['fields']['field_doc_type']['id'] = 'field_doc_type';
-$handler->display->display_options['fields']['field_doc_type']['table'] = 'field_data_field_doc_type';
-$handler->display->display_options['fields']['field_doc_type']['field'] = 'field_doc_type';
-$handler->display->display_options['fields']['field_doc_type']['delta_offset'] = '0';
 /* Field: Content: Subject */
 $handler->display->display_options['fields']['field_doc_subject']['id'] = 'field_doc_subject';
 $handler->display->display_options['fields']['field_doc_subject']['table'] = 'field_data_field_doc_subject';
@@ -381,12 +383,7 @@ $handler->display->display_options['filters']['type']['value'] = array(
 );
 $handler->display->display_options['filters']['type']['group'] = 2;
 
-/* /\* Display: Page *\/ */
-/* $handler = $view->new_display('page', 'Page', 'page'); */
-/* $handler->display->display_options['exposed_block'] = TRUE; */
-/* $handler->display->display_options['path'] = 'admin/content/library'; */
-
-/* /\* Display: System *\/ */
+/* Display: System */
 $handler = $view->new_display('system', 'System', 'system_1');
 $handler->display->display_options['defaults']['access'] = FALSE;
 $handler->display->display_options['path'] = 'admin/content/library';
@@ -413,6 +410,7 @@ $translatables['admin_view_library'] = array(
   t('Edit link'),
   t('Path'),
   t('Title'),
+  t('Resource type'),
   t('Provider'),
   t('Data Provider'),
   t('Language'),
@@ -422,10 +420,8 @@ $translatables['admin_view_library'] = array(
   t('Format'),
   t('Geographic Region'),
   t('Keyword'),
-  t('Resource type'),
   t('Subject'),
   t('Title (title_field)'),
   t('Published'),
-  t('Page'),
   t('System'),
 );
