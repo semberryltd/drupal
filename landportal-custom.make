@@ -1,7 +1,10 @@
 #
 # Landportal drush make file
 #
-# Tihs file contains specific LP Drupal modules, versions etc...
+# This file contains contrib modules required by the Landportal
+#  at specific versions, with patches etc...
+#
+# Also pull libraries
 #
 # Author: Jules Clement <jules.clement@landportal.info>
 #
@@ -13,18 +16,12 @@ api: 2
 projects:
   mailchimp:
     version: "2.12"
-  mailchimp_user_lists:
-    version: "1.0"
-  media:
-    version: ~
   ckeditor:
+    # Dev version otherwise there is a bug with Media modules, see:
+    # https://www.drupal.org/node/2121253
+    # https://www.drupal.org/node/2455391
+    # https://www.drupal.org/node/2454933
     version: "1.x-dev"
-    # patch:
-    #   # The working one: https://www.drupal.org/node/2454933
-    #   - "https://www.drupal.org/files/issues/Issue_2454933.patch"
-    #   #- "https://www.drupal.org/files/issues/media_browser_js-2455391-13.patch"
-    #   # Issue: https://www.drupal.org/node/2455391
-    #   #- "https://www.drupal.org/files/issues/Issue_2454933_0.patch"
   profile2:
     version: ~
     patch:
@@ -39,6 +36,7 @@ projects:
     version: ~
     patch:
       - "https://www.drupal.org/files/issues/multiple_replace-1525540-7.patch"
+
 libraries:
   jsonpath:
     download:
@@ -49,6 +47,8 @@ libraries:
     download:
       type: "git"
       url: "https://github.com/semsol/arc2.git"
+    # patch:
+    #   - "XXXXX"
   mailchimp:
     download:
       # V1 API

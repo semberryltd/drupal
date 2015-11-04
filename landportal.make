@@ -11,76 +11,78 @@ api: 2
 #   projects:
 #     subdir: "sites/all/modules"
 projects:
-  - drupal
   - admin_menu
   - admin_views
-  - module_filter
-  - calendar
-  - ctools
-  - context
-  - date
-  - ds
-  - entityconnect
-  - features
-  - uuid_features
-  - computed_field
-  - email
-  - entityreference
-  - entityreference_feeds
-  - field_group
-  - field_tools
-  - link
-  - references
-  - title
-  - hybridauth
-  - location
-  - file_entity
-  - language_switcher
-  - entity_translation
-  - i18n
-  - job_scheduler
-  - oauth
-  - elysia_cron
-  - entity
-  - libraries
-  - logintoboggan
-  - masquerade
-  - pathauto
-  - restws
-  - session_cache
-  - strongarm
-  - token
-  - search_api
-  - search_api_solr
-  - term_search
   - apachesolr
   - apachesolr_views
+  - calendar
+  - captcha
+  - computed_field
+  - context
+  - ctools
+  - date
+  - drupal
+  - ds
+  - elysia_cron
+  - email
+  - entity
+  - entity_translation
+  - entityconnect
+  - entityreference
+  - entityreference_feeds
   - facetapi
   - facetapi_collapsible
-  - services
-  - captcha
-  - honeypot
-  - recaptcha
+  - features
+  - feeds_jsonpath_parser
+  - feeds_tamper_conditional
+  - feeds_tamper_string2id
+  - feeds_xpathparser
+  - field_group
+  - field_tools
+  - file_entity
+  - global_filter
   - google_analytics
+  - honeypot
+  - hybridauth
+  - i18n
+  - job_scheduler
+  - jquery_update
+  - language_switcher
+  - libraries
+  - link
+  - location
+  - logintoboggan
+  - mailchimp_user_lists
+  - masquerade
+  - media
+  - module_filter
+  - oauth
+  - pathauto
+  - rdfx
+  - recaptcha
+  - references
+  - restws
+  - rules
+  - rules_autotag
+  - search_api
+  - search_api_solr
+  - services
+  - session_cache
+  - shs
+  - sparql
+  - strongarm
   - synonyms
   - term_merge
-  - jquery_update
+  - term_search
+  - title
+  - token
   - uuid
+  - uuid_features
   - variable
   - views
   - views_bulk_operations
   - views_distinct
-  - global_filter
   - views_php
   - views_tree
-  - feeds_tamper_conditional
-  - feeds_tamper_string2id
-  - feeds_xpathparser
-  - feeds_jsonpath_parser
-  - rdfx
-  - shs
-  - sparql
-  - rules
-  - rules_autotag
 includes:
   - "landportal-custom.make"
