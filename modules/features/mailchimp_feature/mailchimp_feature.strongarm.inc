@@ -21,7 +21,7 @@ function mailchimp_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cache_flush_cache_mailchimp_user';
-  $strongarm->value = 1446541201;
+  $strongarm->value = 0;
   $export['cache_flush_cache_mailchimp_user'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -37,6 +37,13 @@ function mailchimp_feature_strongarm() {
   $strongarm->name = 'mailchimp_batch_limit';
   $strongarm->value = '100';
   $export['mailchimp_batch_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mailchimp_use_secure';
+  $strongarm->value = 1;
+  $export['mailchimp_use_secure'] = $strongarm;
 
   return $export;
 }

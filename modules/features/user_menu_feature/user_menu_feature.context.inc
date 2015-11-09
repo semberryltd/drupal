@@ -14,9 +14,14 @@ function user_menu_feature_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'editor-menu-context';
-  $context->description = 'region assignment for user and editor menu blocks';
-  $context->tag = '';
+  $context->description = 'region assignment for editor menu block on right sidebar';
+  $context->tag = 'menus';
   $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '~node/add/*' => '~node/add/*',
+      ),
+    ),
     'user' => array(
       'values' => array(
         'access API' => 'access API',
@@ -29,12 +34,6 @@ function user_menu_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'nice_menus-1' => array(
-          'module' => 'nice_menus',
-          'delta' => '1',
-          'region' => 'header',
-          'weight' => '-10',
-        ),
         'system-navigation' => array(
           'module' => 'system',
           'delta' => 'navigation',
@@ -54,8 +53,71 @@ function user_menu_feature_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('region assignment for user and editor menu blocks');
+  t('menus');
+  t('region assignment for editor menu block on right sidebar');
   $export['editor-menu-context'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'main-menu-context';
+  $context->description = 'main menu block region definition';
+  $context->tag = 'menus';
+  $context->conditions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'system-main-menu' => array(
+          'module' => 'system',
+          'delta' => 'main-menu',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('main menu block region definition');
+  t('menus');
+  $export['main-menu-context'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'user-menu-context';
+  $context->description = 'Defines the top right user menu';
+  $context->tag = 'menus';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '~user/login' => '~user/login',
+        '~user/password' => '~user/password',
+        '~user/register' => '~user/register',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'nice_menus-1' => array(
+          'module' => 'nice_menus',
+          'delta' => '1',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Defines the top right user menu');
+  t('menus');
+  $export['user-menu-context'] = $context;
 
   return $export;
 }

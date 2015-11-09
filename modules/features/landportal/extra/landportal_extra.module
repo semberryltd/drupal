@@ -26,12 +26,7 @@ function landportal_extra_block_info_alter(&$blocks, $theme, $code_blocks) {
   $region = 'header';
   if ($theme == 'landportal') {
     $region = 'section_header';
-    foreach (array('main-menu', 'user-menu') as $m) {
-      $blocks['system'][$m]['status'] = TRUE;
-      $blocks['system'][$m]['region'] = 'header';
-      $blocks['system'][$m]['visibility'] = BLOCK_VISIBILITY_NOTLISTED;
-      $blocks['system'][$m]['pages'] = "user\nuser/login\nuser/register\nuser/password";
-    }
+
     $blocks['locale']['language']['status'] = TRUE;
     $blocks['locale']['language']['region'] = 'header';
     $blocks['locale']['language']['weight'] = 3;
