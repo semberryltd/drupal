@@ -97,10 +97,10 @@ function landcommunity_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'full' => array(
+      'teaser' => array(
         'custom_settings' => TRUE,
       ),
-      'teaser' => array(
+      'full' => array(
         'custom_settings' => TRUE,
       ),
     ),
@@ -335,6 +335,13 @@ function landcommunity_strongarm() {
   $strongarm->name = 'pathauto_node_organization_pattern';
   $strongarm->value = 'organization/[node:title]';
   $export['pathauto_node_organization_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_organization_relation_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_organization_relation_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

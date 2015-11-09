@@ -10,7 +10,7 @@
 function landcommunity_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_affiliation'
+  // Exported field_base: 'field_affiliation'.
   $field_bases['field_affiliation'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -46,7 +46,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_description'
+  // Exported field_base: 'field_description'.
   $field_bases['field_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -65,13 +65,13 @@ function landcommunity_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'profile2_private' => FALSE,
+      'profile2_private' => 0,
     ),
     'translatable' => 0,
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_email'
+  // Exported field_base: 'field_email'.
   $field_bases['field_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -89,7 +89,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_firstname'
+  // Exported field_base: 'field_firstname'.
   $field_bases['field_firstname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -106,12 +106,13 @@ function landcommunity_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_geographical_focus'
+  // Exported field_base: 'field_geographical_focus'.
   $field_bases['field_geographical_focus'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -143,7 +144,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_lastname'
+  // Exported field_base: 'field_lastname'.
   $field_bases['field_lastname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -160,13 +161,13 @@ function landcommunity_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
-      'profile2_private' => 0,
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_location'
+  // Exported field_base: 'field_location'.
   $field_bases['field_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -252,7 +253,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'location',
   );
 
-  // Exported field_base: 'field_organization'
+  // Exported field_base: 'field_organization'.
   $field_bases['field_organization'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -291,7 +292,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_organization_relationship'
+  // Exported field_base: 'field_organization_relationship'.
   $field_bases['field_organization_relationship'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -320,7 +321,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_organization_type'
+  // Exported field_base: 'field_organization_type'.
   $field_bases['field_organization_type'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -351,7 +352,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_position'
+  // Exported field_base: 'field_position'.
   $field_bases['field_position'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -374,7 +375,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_related_topics'
+  // Exported field_base: 'field_related_topics'.
   $field_bases['field_related_topics'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -406,7 +407,7 @@ function landcommunity_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_title'
+  // Exported field_base: 'field_title'.
   $field_bases['field_title'] = array(
     'active' => 1,
     'cardinality' => 1,
