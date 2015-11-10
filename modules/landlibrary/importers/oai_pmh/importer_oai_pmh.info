@@ -9,7 +9,6 @@ project = importer_oai_pmh
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_crawler
-dependencies[] = feeds_import
 dependencies[] = feeds_oai_pmh
 dependencies[] = feeds_tamper
 dependencies[] = feeds_xpathparser

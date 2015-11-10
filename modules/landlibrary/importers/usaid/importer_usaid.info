@@ -9,7 +9,6 @@ files[] = importer_usaid.feeds_tamper.inc
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_crawler
-dependencies[] = feeds_import
 dependencies[] = feeds_tamper
 dependencies[] = feeds_xpathparser
 dependencies[] = landlibrary
