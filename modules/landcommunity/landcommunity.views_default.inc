@@ -14,5 +14,8 @@ function landcommunity_views_default_views() {
   include 'views/organizations.inc';
   $export[$view->name] = $view;
 
+  include 'views/users.inc';
+  $export[$view->name] = $view;
+
   return $export;
 }
