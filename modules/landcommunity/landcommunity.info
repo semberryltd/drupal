@@ -29,7 +29,6 @@ dependencies[] = rdfx
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
-dependencies[] = title
 dependencies[] = user
 dependencies[] = views
 configure = admin/config/landportal/settings/community
