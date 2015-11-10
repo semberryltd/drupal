@@ -19,7 +19,7 @@ function user_menu_feature_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        '~node/add/*' => '~node/add/*',
+        'docs/*' => 'docs/*',
       ),
     ),
     'user' => array(
@@ -37,13 +37,13 @@ function user_menu_feature_context_default_contexts() {
         'system-navigation' => array(
           'module' => 'system',
           'delta' => 'navigation',
-          'region' => 'sidebar_second',
+          'region' => 'sidebar_first',
           'weight' => '-10',
         ),
         'masquerade-masquerade' => array(
           'module' => 'masquerade',
           'delta' => 'masquerade',
-          'region' => 'sidebar_second',
+          'region' => 'sidebar_first',
           'weight' => '-9',
         ),
       ),
@@ -111,7 +111,7 @@ function user_menu_feature_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
