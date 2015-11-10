@@ -47,7 +47,6 @@ projects:
   - hybridauth
   - i18n
   - job_scheduler
-  - jquery_update
   - language_switcher
   - libraries
   - link
@@ -57,6 +56,7 @@ projects:
   - masquerade
   - media
   - module_filter
+  - nice_menus
   - oauth
   - pathauto
   - rdfx
