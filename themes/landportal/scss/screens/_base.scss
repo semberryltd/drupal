@@ -102,31 +102,24 @@ a:not([href]) {
     margin: 0 2em 0 0;
 }
 
-#header {
-    .block-menu {
-        h2 {
-            display: none;
-        }
-
+#header .block {
+    float: right;
+    &:first-of-type {
         float: left;
-        &:after {
-            position: relative;
-            clear: both;
-            display: table;
-            content: " ";
-            visibility: hidden;
-        }
     }
-    .block-menu, .block-locale {
-        .contextual-links-wrapper {
-            margin-right: -32px;
-        }
-
+    &:after {
+        position: relative;
+        clear: both;
+        display: table;
+        content: " ";
+        visibility: hidden;
+    }
+    h2 {
+        display: none;
     }
 
-    #block-locale-language,
-    #block-system-user-menu {
-        float: right;
+    .contextual-links-wrapper {
+        margin-right: -32px;
     }
 }
 
