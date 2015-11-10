@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * landportal_extra.features.user_role.inc
+ * landcommunity.features.user_role.inc
  */
 
 /**
  * Implements hook_user_default_roles().
  */
-function landportal_extra_user_default_roles() {
+function landcommunity_user_default_roles() {
   $roles = array();
 
   // Exported role: landportal admin.
