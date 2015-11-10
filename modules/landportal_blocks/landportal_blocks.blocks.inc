@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Landportal extra blocks
+ * Landportal blocks
  *
  * Provide customizable blocks for the landportal
  * - footer
@@ -10,7 +10,7 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
-function landportal_extra_block_info() {
+function landportal_blocks_block_info() {
   $blocks = array(
     'landportal_footer' => array(
       'info' => t('Landportal Footer'),
@@ -48,7 +48,7 @@ function landportal_extra_block_info() {
   return $blocks;
 }
 
-function landportal_extra_block_default_body($name) {
+function landportal_blocks_block_default_body($name) {
   $default = array(
     'lp_facebook'       => '<iframe src="//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/landportal&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;bordercolor&amp;stream=true&amp;header=true&amp;height=880&amp;show_border=false&amp;force_wall=true" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 340px; height: 880px;" allowtransparency="true" title="Like us on Facebook"></iframe>',
     'lp_twitter'        => '<a class="twitter-timeline" href="https://twitter.com/search?q=%23landportal" data-widget-id="515155865456766978" data-chrome="nofooter transparent noscrollbar" data-tweet-limit="5">Landportal on Twitter</a>
@@ -62,7 +62,7 @@ Contact&nbsp;<a href="mailto:hello@landportal.info">hello@landportal.info</a>&nb
   return variable_get($name, $default[$name]);
 }
 
-function landportal_extra_block_configure($delta='') {
+function landportal_blocks_block_configure($delta='') {
    $form = array();
   
    switch($delta) {
@@ -70,28 +70,28 @@ function landportal_extra_block_configure($delta='') {
      $form['text_body'] = array(
        '#type' => 'text_format',
        '#title' => t('Landportal footer text'),
-       '#default_value' => landportal_extra_block_default_body('landportal_footer'),
+       '#default_value' => landportal_blocks_block_default_body('landportal_footer'),
      );
      break;
    case 'lp_twitter' :
      $form['text_body'] = array(
        '#type' => 'textarea',
        '#title' => t('Twitter widget (follow landportal)'),
-       '#default_value' => landportal_extra_block_default_body('lp_twitter'),
+       '#default_value' => landportal_blocks_block_default_body('lp_twitter'),
      );
      break;
    case 'lp_facebook' :
      $form['text_body'] = array(
        '#type' => 'textarea',
        '#title' => t('Facebook iframe (HTML)'),
-       '#default_value' => landportal_extra_block_default_body('lp_facebook'),
+       '#default_value' => landportal_blocks_block_default_body('lp_facebook'),
      );
      break;
    case 'lp_footer_social' :
      $form['text_body'] = array(
        '#type' => 'text_format',
        '#title' => t('Footer Social Networks (check if icon exists at: http://fortawesome.github.io/Font-Awesome/icons/#brand)'),
-       '#default_value' => landportal_extra_block_default_body('lp_footer_social'),
+       '#default_value' => landportal_blocks_block_default_body('lp_footer_social'),
      );
      break;
    case 'lp_shareit' :
@@ -105,7 +105,7 @@ function landportal_extra_block_configure($delta='') {
    return $form;
  }
 
-function landportal_extra_block_save($delta = '', $edit = array()) {
+function landportal_blocks_block_save($delta = '', $edit = array()) {
   switch($delta) {
   case 'landportal_footer' :
     variable_set('landportal_footer', $edit['text_body']['value']);
@@ -125,23 +125,23 @@ function landportal_extra_block_save($delta = '', $edit = array()) {
   }
 }
 
-function landportal_extra_block_view($delta = '') {
+function landportal_blocks_block_view($delta = '') {
   $block = array();
   switch ($delta) {
   case 'landportal_footer':
-    $text = landportal_extra_block_default_body('landportal_footer');
+    $text = landportal_blocks_block_default_body('landportal_footer');
     $block['content'] = $text;
     break;
   case 'lp_footer_social':
-    $esi = landportal_extra_block_default_body('lp_footer_social');
+    $esi = landportal_blocks_block_default_body('lp_footer_social');
     $str = preg_replace('/(<a[^>]+>)([^<]*)/', '\1<i class="fa fa-\2"></i>', $esi);
     $block['content'] = array('#type' => 'markup', '#markup' => $str);
     break;
   case 'lp_twitter':
-    $block['content'] = landportal_extra_block_default_body('lp_twitter');
+    $block['content'] = landportal_blocks_block_default_body('lp_twitter');
     break;
   case 'lp_facebook':
-    $block['content'] = landportal_extra_block_default_body('lp_facebook');
+    $block['content'] = landportal_blocks_block_default_body('lp_facebook');
     break;
   case 'lp_shareit':
     $block['title'] = 'Share it';

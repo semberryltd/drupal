@@ -1,0 +1,5 @@
+<?php
+/**
+ * @file
+ */
+include 'landportal_blocks.blocks.inc';

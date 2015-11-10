@@ -1,0 +1,6 @@
+name = Landportal Blocks
+description = LP custom blocks (Twitter, FB widgets...)
+core = 7.x
+;project = Landportal Blocks
+version = 7.x-2.2-alpha
+dependencies[] = blocks
