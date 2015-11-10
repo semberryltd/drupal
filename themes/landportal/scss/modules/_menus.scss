@@ -9,7 +9,6 @@ ul.menu {
             list-style-image: none;
             margin: 0;
             a.active-trail { font-weight: bold; }
-
             li {
                // TMP remove ?
                a.active-trail { font-weight: normal; }
@@ -18,17 +17,41 @@ ul.menu {
             }
         }
 }
+
+.block-nice-menus {
+    line-height: inherit;
+}
 #header {
-    font-family: FontAwesome;
     ul.language-switcher-locale-url,
+    ul.nice-menu,
     ul.menu {
-        li {
+        top: initial;
+        & > li {
+            background-color: inherit;
             margin: 0 0 0 .5em;
             padding: 0;
-            float: left;
             list-style-type: none;
             list-style-image: none;
+            border: 0px;
+            float: left;
+            & > a {
+                padding-top: 0;
+                &:before {
+                    font-family: FontAwesome;
+                    padding-right: 3px;
+                }
+                &[href="/user"]:before {
+                    content: "\f007"; // the dude
+                }
+                &[href="/user/logout"]:before {
+                    content: "\f08b"; // logout
+                }
+                &[href="/node/add"]:before {
+                    content: "\f016"; // page
+                }
+            }
             a {
+                display: inline-block;
                 text-decoration: none;
                 text-transform: lowercase;
             }
@@ -37,6 +60,18 @@ ul.menu {
             }
             &:first-of-type:before {
                 content: "";
+            }
+        }
+        /* For the so called 'nice-menu' */
+        li li {
+            border-left: 0;
+            border-right: 0;
+            background-color: rgba(250, 250, 250, .95);
+            a:first-letter {
+                    text-transform: uppercase;
+            }
+            &:hover {
+                background-color: white;
             }
         }
     }
@@ -54,6 +89,7 @@ ul.menu {
         }
     }
 }
+
 .not-logged-in #header #block-system-user-menu ul.menu li.first a:before {
     font-family: FontAwesome;
     content: "\f007";
