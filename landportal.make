@@ -30,6 +30,7 @@ projects:
   - entityconnect
   - entityreference
   - entityreference_feeds
+  - entityreference_filter
   - facetapi
   - facetapi_collapsible
   - features
@@ -84,5 +85,6 @@ projects:
   - views_distinct
   - views_php
   - views_tree
+  - webform
 includes:
   - "landportal-custom.make"
