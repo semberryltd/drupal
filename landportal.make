@@ -15,8 +15,11 @@ projects:
   - admin_views
   - apachesolr
   - apachesolr_views
+  - better_formats
+  - block_class
   - calendar
   - captcha
+  - chosen
   - computed_field
   - context
   - ctools
@@ -34,6 +37,7 @@ projects:
   - facetapi
   - facetapi_collapsible
   - features
+  - features_extra
   - feeds_jsonpath_parser
   - feeds_tamper_conditional
   - feeds_tamper_string2id
@@ -57,6 +61,7 @@ projects:
   - media
   - module_filter
   - nice_menus
+  - node_edit_protection
   - oauth
   - pathauto
   - rdfx
@@ -65,6 +70,7 @@ projects:
   - restws
   - rules
   - rules_autotag
+  - save_draft
   - search_api
   - search_api_solr
   - services
@@ -80,11 +86,14 @@ projects:
   - uuid
   - uuid_features
   - variable
+  - vertical_tabs_responsive
   - views
   - views_bulk_operations
   - views_distinct
   - views_php
   - views_tree
   - webform
+  - disable_messages
+  
 includes:
   - "landportal-custom.make"
