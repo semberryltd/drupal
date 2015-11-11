@@ -174,6 +174,26 @@ function user_menu_feature_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: navigation_masquerade-as-testuser:masquerade/switch/7448.
+  $menu_links['navigation_masquerade-as-testuser:masquerade/switch/7448'] = array(
+    'menu_name' => 'navigation',
+    'link_path' => 'masquerade/switch/7448',
+    'router_path' => 'masquerade/switch/7448',
+    'link_title' => 'Masquerade as @testuser',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'navigation_masquerade-as-testuser:masquerade/switch/7448',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -42,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: navigation_newsletter-subscription:mailchimp/subscribe.
   $menu_links['navigation_newsletter-subscription:mailchimp/subscribe'] = array(
     'menu_name' => 'navigation',
@@ -590,6 +610,7 @@ function user_menu_feature_menu_default_menu_links() {
   t('Landlibrary');
   t('Log out');
   t('Mailing Lists');
+  t('Masquerade as @testuser');
   t('My Account');
   t('Newsletter Subscription');
   t('Search');
