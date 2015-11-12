@@ -23,6 +23,5 @@ function landlibrary_menu_default_menu_custom() {
   t('Consult the Library');
   t('The Land Library will be the authoritative virtual repository of land-related information, including peer-reviewed publications, policies, maps, and multimedia content.');
 
-
   return $menus;
 }
