@@ -36,10 +36,6 @@ function landlibrary_apachesolr_environments() {
       'news' => '0',
       'organization' => '0',
       'person' => '0',
-      'subject_browse' => '0',
-      'type_browse' => '0',
-      'general_feed' => '0',
-      'legacy_feed_' => '0',
     ),
     'apachesolr_soft_commit' => 0,
     'field_bias' => array(
@@ -120,7 +116,7 @@ function landlibrary_apachesolr_environments() {
   $environment->index_bundles = array(
     'node' => array(
       0 => 'landlibrary_resource',
-      1 => 'worldbank_feed',
+      1 => 'webform',
     ),
   );
   $export['index_landportal_v2'] = $environment;
