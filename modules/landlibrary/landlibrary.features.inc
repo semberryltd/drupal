@@ -8,27 +8,18 @@
  * Implements hook_ctools_plugin_api().
  */
 function landlibrary_ctools_plugin_api($module = NULL, $api = NULL) {
-  /* if ($module == "apachesolr" && $api == "apachesolr_environments") { */
-  /*   return array("version" => "1"); */
-  /* } */
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
-  /* if ($module == "elysia_cron" && $api == "default_elysia_cron_rules") { */
-  /*   return array("version" => "1"); */
-  /* } */
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
-  /* if ($module == "feeds" && $api == "feeds_importer_default") { */
-  /*   return array("version" => "1"); */
-  /* } */
-  /* if ($module == "feeds_tamper" && $api == "feeds_tamper_default") { */
-  /*   return array("version" => "2"); */
-  /* } */
+  if ($module == "feeds" && $api == "feeds_importer_default") {
+    return array("version" => "1");
+  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }

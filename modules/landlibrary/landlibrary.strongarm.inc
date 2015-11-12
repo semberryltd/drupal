@@ -13,13 +13,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'apachesolr_default_environment';
-  $strongarm->value = 'solr';
-  $export['apachesolr_default_environment'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'apachesolr_search_mlt_blocks';
   $strongarm->value = array(
     'mlt-001' => array(

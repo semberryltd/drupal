@@ -526,7 +526,7 @@ print \'<span>\'.$row->title.\'</span></a>\';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Is shown at */
+  /* Field: Content: Published at */
   $handler->display->display_options['fields']['field_doc_is_shown_at']['id'] = 'field_doc_is_shown_at';
   $handler->display->display_options['fields']['field_doc_is_shown_at']['table'] = 'field_data_field_doc_is_shown_at';
   $handler->display->display_options['fields']['field_doc_is_shown_at']['field'] = 'field_doc_is_shown_at';
@@ -538,7 +538,7 @@ print \'<span>\'.$row->title.\'</span></a>\';
   $handler->display->display_options['fields']['field_doc_is_shown_at']['alter']['link_class'] = 'btn data-button';
   $handler->display->display_options['fields']['field_doc_is_shown_at']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_doc_is_shown_at']['click_sort_column'] = 'url';
-  /* Field: Content: Is shown by */
+  /* Field: Content: Resource URL */
   $handler->display->display_options['fields']['field_doc_is_shown_by']['id'] = 'field_doc_is_shown_by';
   $handler->display->display_options['fields']['field_doc_is_shown_by']['table'] = 'field_data_field_doc_is_shown_by';
   $handler->display->display_options['fields']['field_doc_is_shown_by']['field'] = 'field_doc_is_shown_by';
