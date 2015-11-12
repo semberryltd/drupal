@@ -10,204 +10,7 @@
 function landlibrary_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-article-body'
-  $field_instances['node-article-body'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => -4,
-    ),
-  );
-
-  // Exported field_instance: 'node-article-field_image'
-  $field_instances['node-article-field_image'] = array(
-    'bundle' => 'article',
-    'deleted' => 0,
-    'description' => 'Upload an image to go with this article.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'conditions' => array(),
-          'image_link' => '',
-          'image_style' => 'large',
-        ),
-        'type' => 'image',
-        'weight' => -1,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'conditions' => array(),
-          'image_link' => 'content',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => -1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Image',
-    'required' => FALSE,
-    'settings' => array(
-      'alt_field' => TRUE,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
-      'file_directory' => 'field/image',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => -1,
-    ),
-  );
-
-  // Exported field_instance: 'node-article-field_tags'
-  $field_instances['node-article-field_tags'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Enter a comma-separated list of words to describe your content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags',
-    'label' => 'Tags',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => -4,
-    ),
-  );
-
-  // Exported field_instance: 'node-general_feed-body'
-  $field_instances['node-general_feed-body'] = array(
-    'bundle' => 'general_feed',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_alt_title'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_alt_title'.
   $field_instances['node-landlibrary_resource-field_doc_alt_title'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -215,11 +18,11 @@ function landlibrary_field_default_field_instances() {
     'description' => 'An alternative title for the resource.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -253,11 +56,11 @@ function landlibrary_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 33,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_citation'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_citation'.
   $field_instances['node-landlibrary_resource-field_doc_citation'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -270,7 +73,7 @@ associated with its ISSN.',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 14,
       ),
       'full' => array(
         'label' => 'above',
@@ -309,7 +112,7 @@ associated with its ISSN.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_citation_chronology'
+  // 'node-landlibrary_resource-field_doc_citation_chronology'.
   $field_instances['node-landlibrary_resource-field_doc_citation_chronology'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -329,7 +132,7 @@ associated with its ISSN.',
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 10,
+        'weight' => 17,
       ),
       'full' => array(
         'label' => 'above',
@@ -383,7 +186,7 @@ associated with its ISSN.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_citation_identifier'
+  // 'node-landlibrary_resource-field_doc_citation_identifier'.
   $field_instances['node-landlibrary_resource-field_doc_citation_identifier'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -395,7 +198,7 @@ associated with its ISSN.',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 8,
+        'weight' => 15,
       ),
       'full' => array(
         'label' => 'above',
@@ -451,7 +254,7 @@ associated with its ISSN.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_citation_number'
+  // 'node-landlibrary_resource-field_doc_citation_number'.
   $field_instances['node-landlibrary_resource-field_doc_citation_number'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -465,7 +268,7 @@ cases this indicates a part of a journal volume.
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 16,
       ),
       'full' => array(
         'label' => 'above',
@@ -525,7 +328,7 @@ cases this indicates a part of a journal volume.
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_conference'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_conference'.
   $field_instances['node-landlibrary_resource-field_doc_conference'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -541,7 +344,7 @@ constitute its legislative or governing body.',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 27,
+        'weight' => 21,
       ),
       'full' => array(
         'label' => 'above',
@@ -575,11 +378,11 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 58,
+      'weight' => 10,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_contributor'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_contributor'.
   $field_instances['node-landlibrary_resource-field_doc_contributor'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -591,10 +394,10 @@ constitute its legislative or governing body.',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
-          'view_mode' => 'default',
+          'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 13,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -633,12 +436,12 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 57,
+      'weight' => 8,
     ),
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_copyrights_statement'
+  // 'node-landlibrary_resource-field_doc_copyrights_statement'.
   $field_instances['node-landlibrary_resource-field_doc_copyrights_statement'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -650,7 +453,7 @@ constitute its legislative or governing body.',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 18,
       ),
       'full' => array(
         'label' => 'above',
@@ -688,7 +491,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_country'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_country'.
   $field_instances['node-landlibrary_resource-field_doc_country'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -696,11 +499,11 @@ constitute its legislative or governing body.',
     'description' => 'Country to which this resource applies.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'above',
@@ -729,33 +532,35 @@ constitute its legislative or governing body.',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 107,
     ),
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_creation_date'
+  // 'node-landlibrary_resource-field_doc_creation_date'.
   $field_instances['node-landlibrary_resource-field_doc_creation_date'] = array(
     'bundle' => 'landlibrary_resource',
     'deleted' => 0,
     'description' => 'A point or period of time associated with an event in the lifecycle of the resource.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'month_and_year',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
+          'show_remaining_days' => 0,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 3,
+        'weight' => 26,
       ),
       'full' => array(
         'label' => 'above',
@@ -782,7 +587,7 @@ constitute its legislative or governing body.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_doc_creation_date',
-    'label' => 'Date',
+    'label' => 'Publication date',
     'required' => 0,
     'settings' => array(
       'default_value' => 'blank',
@@ -790,11 +595,6 @@ constitute its legislative or governing body.',
       'default_value_code' => '',
       'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
-      'fc' => array(
-        'fc_allow_empty' => FALSE,
-        'fc_check_zero' => 0,
-        'fc_include' => 0,
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -805,6 +605,7 @@ constitute its legislative or governing body.',
         'input_format' => 'custom',
         'input_format_custom' => 'Y-m-d',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'repeat_collapsed' => 0,
         'text_parts' => array(
           0 => 'year',
@@ -812,11 +613,11 @@ constitute its legislative or governing body.',
         'year_range' => '-5000:+10',
       ),
       'type' => 'date_text',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_creator'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_creator'.
   $field_instances['node-landlibrary_resource-field_doc_creator'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -829,10 +630,10 @@ constitute its legislative or governing body.',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
-          'view_mode' => 'resource',
+          'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 17,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',
@@ -884,12 +685,12 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 89,
+      'weight' => 7,
     ),
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_data_provider'
+  // 'node-landlibrary_resource-field_doc_data_provider'.
   $field_instances['node-landlibrary_resource-field_doc_data_provider'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -898,9 +699,13 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 62,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'above',
@@ -939,11 +744,11 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 60,
+      'weight' => 12,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_description'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_description'.
   $field_instances['node-landlibrary_resource-field_doc_description'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -951,11 +756,11 @@ constitute its legislative or governing body.',
     'description' => 'A textual description of the content of the resource.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
@@ -993,11 +798,11 @@ constitute its legislative or governing body.',
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_edition'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_edition'.
   $field_instances['node-landlibrary_resource-field_doc_edition'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1009,7 +814,7 @@ constitute its legislative or governing body.',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 22,
+        'weight' => 20,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1080,13 +885,13 @@ constitute its legislative or governing body.',
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 9,
     ),
     'widget_type' => 'text_textfield',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_geographic_region'
+  // 'node-landlibrary_resource-field_doc_geographic_region'.
   $field_instances['node-landlibrary_resource-field_doc_geographic_region'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1094,11 +899,11 @@ constitute its legislative or governing body.',
     'description' => 'Region to which this resource applies.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 21,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
@@ -1127,13 +932,15 @@ constitute its legislative or governing body.',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 108,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_has_part'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_has_part'.
   $field_instances['node-landlibrary_resource-field_doc_has_part'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1144,7 +951,7 @@ constitute its legislative or governing body.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 51,
       ),
       'full' => array(
         'label' => 'above',
@@ -1200,7 +1007,7 @@ constitute its legislative or governing body.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_has_translation'
+  // 'node-landlibrary_resource-field_doc_has_translation'.
   $field_instances['node-landlibrary_resource-field_doc_has_translation'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1211,7 +1018,7 @@ constitute its legislative or governing body.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 54,
       ),
       'full' => array(
         'label' => 'above',
@@ -1266,7 +1073,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_has_version'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_has_version'.
   $field_instances['node-landlibrary_resource-field_doc_has_version'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1277,7 +1084,7 @@ constitute its legislative or governing body.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 52,
       ),
       'full' => array(
         'label' => 'above',
@@ -1332,7 +1139,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_identifier'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_identifier'.
   $field_instances['node-landlibrary_resource-field_doc_identifier'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1340,11 +1147,11 @@ constitute its legislative or governing body.',
     'description' => 'Unique label that identifies the resource.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 23,
+        'weight' => 25,
       ),
       'full' => array(
         'label' => 'above',
@@ -1364,7 +1171,7 @@ constitute its legislative or governing body.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_doc_identifier',
-    'label' => 'Identifier',
+    'label' => 'Document Id',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1378,11 +1185,11 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_is_part_of'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_is_part_of'.
   $field_instances['node-landlibrary_resource-field_doc_is_part_of'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1391,9 +1198,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
+        'type' => 'link_default',
+        'weight' => 34,
       ),
       'full' => array(
         'label' => 'above',
@@ -1449,7 +1257,7 @@ constitute its legislative or governing body.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_is_referenced_by'
+  // 'node-landlibrary_resource-field_doc_is_referenced_by'.
   $field_instances['node-landlibrary_resource-field_doc_is_referenced_by'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1458,9 +1266,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 46,
+        'type' => 'link_default',
+        'weight' => 36,
       ),
       'full' => array(
         'label' => 'above',
@@ -1516,7 +1325,7 @@ constitute its legislative or governing body.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_is_replaced_by'
+  // 'node-landlibrary_resource-field_doc_is_replaced_by'.
   $field_instances['node-landlibrary_resource-field_doc_is_replaced_by'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1525,9 +1334,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 48,
+        'type' => 'link_default',
+        'weight' => 38,
       ),
       'full' => array(
         'label' => 'above',
@@ -1583,7 +1393,7 @@ constitute its legislative or governing body.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_is_required_by'
+  // 'node-landlibrary_resource-field_doc_is_required_by'.
   $field_instances['node-landlibrary_resource-field_doc_is_required_by'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1592,9 +1402,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 49,
+        'type' => 'link_default',
+        'weight' => 39,
       ),
       'full' => array(
         'label' => 'above',
@@ -1649,7 +1460,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_is_shown_at'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_is_shown_at'.
   $field_instances['node-landlibrary_resource-field_doc_is_shown_at'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1658,9 +1469,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
+        'type' => 'link_default',
+        'weight' => 28,
       ),
       'full' => array(
         'label' => 'above',
@@ -1677,7 +1489,7 @@ constitute its legislative or governing body.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_doc_is_shown_at',
-    'label' => 'Is shown at',
+    'label' => 'Published at',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -1708,11 +1520,11 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_is_shown_by'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_is_shown_by'.
   $field_instances['node-landlibrary_resource-field_doc_is_shown_by'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1721,9 +1533,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 50,
+        'type' => 'link_default',
+        'weight' => 29,
       ),
       'full' => array(
         'label' => 'above',
@@ -1740,7 +1553,7 @@ constitute its legislative or governing body.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_doc_is_shown_by',
-    'label' => 'Is shown by',
+    'label' => 'Resource URL',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -1771,12 +1584,12 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_is_shown_by_file'
+  // 'node-landlibrary_resource-field_doc_is_shown_by_file'.
   $field_instances['node-landlibrary_resource-field_doc_is_shown_by_file'] = array(
     'bundle' => 'landlibrary_resource',
     'deleted' => 0,
@@ -1787,7 +1600,7 @@ constitute its legislative or governing body.',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 4,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1803,14 +1616,9 @@ constitute its legislative or governing body.',
     'settings' => array(
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
-      'fc' => array(
-        'fc_allow_empty' => FALSE,
-        'fc_check_zero' => 0,
-        'fc_include' => 0,
-      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg zip rar pdf doc xls mp3 wav tif xlsx docx pps ppsx ppt pptx dat txt',
-      'max_filesize' => '',
+      'max_filesize' => '8 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1820,12 +1628,12 @@ constitute its legislative or governing body.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_is_translation_of'
+  // 'node-landlibrary_resource-field_doc_is_translation_of'.
   $field_instances['node-landlibrary_resource-field_doc_is_translation_of'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1836,7 +1644,7 @@ constitute its legislative or governing body.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 55,
       ),
       'full' => array(
         'label' => 'above',
@@ -1892,7 +1700,7 @@ constitute its legislative or governing body.',
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_is_version_of'
+  // 'node-landlibrary_resource-field_doc_is_version_of'.
   $field_instances['node-landlibrary_resource-field_doc_is_version_of'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1903,7 +1711,7 @@ constitute its legislative or governing body.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 53,
       ),
       'full' => array(
         'label' => 'above',
@@ -1958,7 +1766,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_keyword'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_keyword'.
   $field_instances['node-landlibrary_resource-field_doc_keyword'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -1966,14 +1774,11 @@ constitute its legislative or governing body.',
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'ds',
-        'settings' => array(
-          'taxonomy_term_link' => TRUE,
-          'taxonomy_term_separator' => ', ',
-        ),
-        'type' => 'ds_taxonomy_separator_localized',
-        'weight' => 2,
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
@@ -2024,7 +1829,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_language'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_language'.
   $field_instances['node-landlibrary_resource-field_doc_language'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2032,10 +1837,10 @@ constitute its legislative or governing body.',
     'description' => 'The language of the intellectual content of the resource.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 50,
       ),
       'full' => array(
         'label' => 'above',
@@ -2064,13 +1869,15 @@ constitute its legislative or governing body.',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_licencing'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_licencing'.
   $field_instances['node-landlibrary_resource-field_doc_licencing'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2082,7 +1889,7 @@ constitute its legislative or governing body.',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'above',
@@ -2111,13 +1918,15 @@ constitute its legislative or governing body.',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_pagination'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_pagination'.
   $field_instances['node-landlibrary_resource-field_doc_pagination'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2125,11 +1934,11 @@ constitute its legislative or governing body.',
     'description' => 'The size of the resource as free text (eg. number of pages).',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 19,
+        'type' => 'text_default',
+        'weight' => 27,
       ),
       'full' => array(
         'label' => 'inline',
@@ -2185,7 +1994,7 @@ constitute its legislative or governing body.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_doc_pagination',
-    'label' => 'Extent',
+    'label' => 'Pages / volumes',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -2200,12 +2009,12 @@ constitute its legislative or governing body.',
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 6,
     ),
     'widget_type' => 'text_textfield',
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_provider'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_provider'.
   $field_instances['node-landlibrary_resource-field_doc_provider'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2220,7 +2029,7 @@ constitute its legislative or governing body.',
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 14,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'above',
@@ -2264,11 +2073,11 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 59,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_publisher'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_publisher'.
   $field_instances['node-landlibrary_resource-field_doc_publisher'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2283,7 +2092,7 @@ constitute its legislative or governing body.',
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 15,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
@@ -2304,6 +2113,10 @@ constitute its legislative or governing body.',
       ),
     ),
     'entity_type' => 'node',
+    'entityconnect_show_add_icon' => 0,
+    'entityconnect_show_edit_icon' => 0,
+    'entityconnect_unload_add' => 1,
+    'entityconnect_unload_edit' => 1,
     'field_name' => 'field_doc_publisher',
     'label' => 'Publisher',
     'required' => 0,
@@ -2320,12 +2133,12 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 87,
+      'weight' => 9,
     ),
   );
 
   // Exported field_instance:
-  // 'node-landlibrary_resource-field_doc_publisher_place'
+  // 'node-landlibrary_resource-field_doc_publisher_place'.
   $field_instances['node-landlibrary_resource-field_doc_publisher_place'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2334,10 +2147,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 16,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 23,
       ),
       'full' => array(
         'label' => 'above',
@@ -2382,11 +2195,11 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 88,
+      'weight' => 10,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_references'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_references'.
   $field_instances['node-landlibrary_resource-field_doc_references'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2395,9 +2208,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 45,
+        'type' => 'link_default',
+        'weight' => 35,
       ),
       'full' => array(
         'label' => 'above',
@@ -2452,7 +2266,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_relation'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_relation'.
   $field_instances['node-landlibrary_resource-field_doc_relation'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2461,9 +2275,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
+        'type' => 'link_separate',
+        'weight' => 33,
       ),
       'full' => array(
         'label' => 'above',
@@ -2501,7 +2316,7 @@ constitute its legislative or governing body.',
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
-      'title' => 'none',
+      'title' => 'optional',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
@@ -2518,7 +2333,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_replaces'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_replaces'.
   $field_instances['node-landlibrary_resource-field_doc_replaces'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2527,9 +2342,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 47,
+        'type' => 'link_default',
+        'weight' => 37,
       ),
       'full' => array(
         'label' => 'above',
@@ -2584,7 +2400,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_requires'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_requires'.
   $field_instances['node-landlibrary_resource-field_doc_requires'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2593,9 +2409,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 51,
+        'type' => 'link_default',
+        'weight' => 40,
       ),
       'full' => array(
         'label' => 'above',
@@ -2650,7 +2467,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_subject'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_subject'.
   $field_instances['node-landlibrary_resource-field_doc_subject'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2658,14 +2475,11 @@ constitute its legislative or governing body.',
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'ds',
-        'settings' => array(
-          'taxonomy_term_link' => 1,
-          'taxonomy_term_separator' => ', ',
-        ),
-        'type' => 'ds_taxonomy_separator_localized',
-        'weight' => 1,
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2691,6 +2505,7 @@ constitute its legislative or governing body.',
       'active' => 0,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
@@ -2699,7 +2514,8 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_terms_of_use'
+  // Exported field_instance:
+  // 'node-landlibrary_resource-field_doc_terms_of_use'.
   $field_instances['node-landlibrary_resource-field_doc_terms_of_use'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2711,7 +2527,7 @@ constitute its legislative or governing body.',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 24,
+        'weight' => 19,
       ),
       'full' => array(
         'label' => 'above',
@@ -2740,23 +2556,28 @@ constitute its legislative or governing body.',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_thumb'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_thumb'.
   $field_instances['node-landlibrary_resource-field_doc_thumb'] = array(
     'bundle' => 'landlibrary_resource',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 63,
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 0,
       ),
       'full' => array(
         'label' => 'above',
@@ -2779,14 +2600,9 @@ constitute its legislative or governing body.',
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'fc' => array(
-        'fc_allow_empty' => FALSE,
-        'fc_check_zero' => 0,
-        'fc_include' => 0,
-      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg tiff',
-      'max_filesize' => '',
+      'max_filesize' => '2 MB',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
@@ -2800,11 +2616,11 @@ constitute its legislative or governing body.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_title'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_title'.
   $field_instances['node-landlibrary_resource-field_doc_title'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2815,7 +2631,7 @@ constitute its legislative or governing body.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 65,
+        'weight' => 56,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2840,11 +2656,11 @@ constitute its legislative or governing body.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_doc_type'
+  // Exported field_instance: 'node-landlibrary_resource-field_doc_type'.
   $field_instances['node-landlibrary_resource-field_doc_type'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2852,11 +2668,11 @@ constitute its legislative or governing body.',
     'description' => 'Select the most appropriate type for the resource.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 24,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -2922,14 +2738,16 @@ constitute its legislative or governing body.',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 4,
     ),
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_format'
+  // Exported field_instance: 'node-landlibrary_resource-field_format'.
   $field_instances['node-landlibrary_resource-field_format'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
@@ -2937,11 +2755,11 @@ constitute its legislative or governing body.',
     'description' => 'The physical or digital manifestation of the resource.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 20,
+        'weight' => 32,
       ),
       'full' => array(
         'label' => 'above',
@@ -2970,13 +2788,15 @@ constitute its legislative or governing body.',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-field_local_file_url'
+  // Exported field_instance: 'node-landlibrary_resource-field_local_file_url'.
   $field_instances['node-landlibrary_resource-field_local_file_url'] = array(
     'bundle' => 'landlibrary_resource',
     'deleted' => 0,
@@ -2984,9 +2804,10 @@ constitute its legislative or governing body.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'computed_field',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 64,
+        'type' => 'computed_field_markup',
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3013,22 +2834,26 @@ constitute its legislative or governing body.',
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
-  // Exported field_instance: 'node-landlibrary_resource-title_field'
-  $field_instances['node-landlibrary_resource-title_field'] = array(
+  // Exported field_instance: 'node-landlibrary_resource-field_user'.
+  $field_instances['node-landlibrary_resource-field_user'] = array(
     'bundle' => 'landlibrary_resource',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Who actually wrote or created this material',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 66,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3038,29 +2863,31 @@ constitute its legislative or governing body.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'title_field',
-    'label' => 'Title',
-    'required' => TRUE,
+    'entityconnect_show_add_icon' => 0,
+    'entityconnect_show_edit_icon' => 0,
+    'entityconnect_unload_add' => 1,
+    'entityconnect_unload_edit' => 1,
+    'field_name' => 'field_user',
+    'label' => 'Authors',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
-      ),
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'text',
+      'active' => 1,
+      'module' => 'entityreference',
       'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 1,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-person-field_person_affiliation'
+  // Exported field_instance: 'node-person-field_person_affiliation'.
   $field_instances['node-person-field_person_affiliation'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -3111,7 +2938,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-person-field_person_full_name'
+  // Exported field_instance: 'node-person-field_person_full_name'.
   $field_instances['node-person-field_person_full_name'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -3160,7 +2987,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-person-field_person_mbox'
+  // Exported field_instance: 'node-person-field_person_mbox'.
   $field_instances['node-person-field_person_mbox'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -3209,7 +3036,7 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-person-field_user'
+  // Exported field_instance: 'node-person-field_user'.
   $field_instances['node-person-field_user'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -3262,344 +3089,6 @@ constitute its legislative or governing body.',
     ),
   );
 
-  // Exported field_instance: 'node-rss_issue_briefs_feed-body'
-  $field_instances['node-rss_issue_briefs_feed-body'] = array(
-    'bundle' => 'rss_issue_briefs_feed',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-subject_browse-field_image'
-  $field_instances['node-subject_browse-field_image'] = array(
-    'bundle' => 'subject_browse',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'conditions' => array(),
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Image',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
-      'fc' => array(
-        'fc_allow_empty' => FALSE,
-        'fc_check_zero' => 0,
-        'fc_include' => 0,
-      ),
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg tiff',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 34,
-    ),
-  );
-
-  // Exported field_instance: 'node-subject_browse-field_sub_referenced_subject'
-  $field_instances['node-subject_browse-field_sub_referenced_subject'] = array(
-    'bundle' => 'subject_browse',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'entityconnect_unload_add' => 0,
-    'entityconnect_unload_edit' => 0,
-    'field_name' => 'field_sub_referenced_subject',
-    'label' => 'Referenced subject',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 32,
-    ),
-  );
-
-  // Exported field_instance: 'node-type_browse-field_browse_type_image'
-  $field_instances['node-type_browse-field_browse_type_image'] = array(
-    'bundle' => 'type_browse',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'conditions' => array(),
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_browse_type_image',
-    'label' => 'Image',
-    'required' => 1,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
-      'fc' => array(
-        'fc_allow_empty' => FALSE,
-        'fc_check_zero' => 0,
-        'fc_include' => 0,
-      ),
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'private' => 'private',
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 32,
-    ),
-  );
-
-  // Exported field_instance: 'node-type_browse-field_referenced_type'
-  $field_instances['node-type_browse-field_referenced_type'] = array(
-    'bundle' => 'type_browse',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'entityconnect_unload_add' => 0,
-    'entityconnect_unload_edit' => 0,
-    'field_name' => 'field_referenced_type',
-    'label' => 'Referenced type',
-    'required' => 1,
-    'settings' => array(
-      'behaviors' => array(
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'fc' => array(
-        'fc_allow_empty' => 0,
-        'fc_check_entities' => 0,
-        'fc_include' => 0,
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-worldbank_feed-body'
-  $field_instances['node-worldbank_feed-body'] = array(
-    'bundle' => 'worldbank_feed',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('A global standard identifier of a journal.');
@@ -3624,7 +3113,7 @@ constitute its legislative or governing body.');
   t('An entity with a contributing role to the creation of the intellectual content of the resource.');
   t('An unambiguous URL reference to the resource on the provider’s location in its full information context.');
   t('An unambiguous URL reference to the resource on the provider’s repository');
-  t('Body');
+  t('Authors');
   t('Citation Chronology');
   t('Citation Identifier');
   t('Citation Number');
@@ -3636,12 +3125,10 @@ constitute its legislative or governing body.');
   t('Country to which this resource applies.');
   t('Creator');
   t('Data Provider');
-  t('Date');
   t('Description');
+  t('Document Id');
   t('Edition');
-  t('Enter a comma-separated list of words to describe your content.');
   t('Enter the information identifying the edition or version to which the resource belongs. Use only when the resource is a second or subsequent edition.');
-  t('Extent');
   t('File');
   t('Format');
   t('Full Name');
@@ -3649,8 +3136,6 @@ constitute its legislative or governing body.');
   t('Has Translation');
   t('Has Version');
   t('Has part');
-  t('Identifier');
-  t('Image');
   t('Information about the accessibility of the resource.');
   t('Is Replaced by');
   t('Is Required by');
@@ -3658,28 +3143,27 @@ constitute its legislative or governing body.');
   t('Is Version of');
   t('Is part of');
   t('Is referenced by');
-  t('Is shown at');
-  t('Is shown by');
   t('Keyword');
   t('Language');
   t('Licencing');
   t('Local file URL');
   t('Mbox');
+  t('Pages / volumes');
   t('Provide info about the license used.');
   t('Provider');
+  t('Publication date');
+  t('Published at');
   t('Publisher');
   t('Publisher Place');
-  t('Referenced subject');
-  t('Referenced type');
   t('References');
   t('Region to which this resource applies.');
   t('Relation');
   t('Replaces');
   t('Requires');
+  t('Resource URL');
   t('Resource type');
   t('Select the most appropriate type for the resource.');
   t('Subject');
-  t('Tags');
   t('Terms of Use');
   t('The described resource has a translation, namely, the referenced resource.');
   t('The described resource is required by the referenced resource, either physically or logically.');
@@ -3703,9 +3187,9 @@ associated with its ISSN.');
   t('Title');
   t('Title of the resource i.e. the name by which the resource is formally known.');
   t('Unique label that identifies the resource.');
-  t('Upload an image to go with this article.');
   t('Upload the file for the Land Portal resource');
   t('User');
+  t('Who actually wrote or created this material');
 
   return $field_instances;
 }
