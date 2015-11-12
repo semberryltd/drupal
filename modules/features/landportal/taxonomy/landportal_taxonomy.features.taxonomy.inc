@@ -135,7 +135,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       ),
     ),
     'organization_types' => array(
-      'name' => 'Organization Types',
+      'name' => 'Organization types',
       'machine_name' => 'organization_types',
       'description' => 'Specific types for organizations (needs rework)',
       'hierarchy' => 0,
