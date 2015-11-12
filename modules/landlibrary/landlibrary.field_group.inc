@@ -13,6 +13,37 @@ function landlibrary_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_deprecated|node|landlibrary_resource|form';
+  $field_group->group_name = 'group_deprecated';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'landlibrary_resource';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Deprecated',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_doc_conference',
+      1 => 'group_doc_citation',
+      2 => 'group_doc_creator',
+      3 => 'group_doc_publisher',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Deprecated',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-deprecated field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_deprecated|node|landlibrary_resource|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_doc_citation|node|landlibrary_resource|default';
   $field_group->group_name = 'group_doc_citation';
   $field_group->entity_type = 'node';
@@ -44,10 +75,10 @@ function landlibrary_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'landlibrary_resource';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_deprecated';
   $field_group->data = array(
     'label' => 'Citation',
-    'weight' => '11',
+    'weight' => '9',
     'children' => array(
       0 => 'field_doc_citation',
       1 => 'field_doc_citation_chronology',
@@ -156,13 +187,11 @@ function landlibrary_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'landlibrary_resource';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_doc_responsible_body';
+  $field_group->parent_name = 'group_deprecated';
   $field_group->data = array(
     'label' => 'Creator',
-    'weight' => '55',
-    'children' => array(
-      0 => 'field_doc_creator',
-    ),
+    'weight' => '12',
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Creator',
@@ -323,17 +352,21 @@ function landlibrary_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'landlibrary_resource';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_resource';
   $field_group->data = array(
     'label' => 'Physical Characteristics',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_doc_creation_date',
       1 => 'field_doc_edition',
-      2 => 'field_doc_identifier',
-      3 => 'field_doc_language',
-      4 => 'field_doc_pagination',
-      5 => 'field_format',
+      2 => 'field_doc_is_shown_at',
+      3 => 'field_doc_is_shown_by',
+      4 => 'field_doc_language',
+      5 => 'field_doc_pagination',
+      6 => 'field_doc_type',
+      7 => 'field_format',
+      8 => 'field_doc_is_shown_by_file',
+      9 => 'field_local_file_url',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -382,14 +415,11 @@ function landlibrary_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'landlibrary_resource';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_doc_responsible_body';
+  $field_group->parent_name = 'group_deprecated';
   $field_group->data = array(
     'label' => 'Publisher',
-    'weight' => '56',
-    'children' => array(
-      0 => 'field_doc_publisher',
-      1 => 'field_doc_publisher_place',
-    ),
+    'weight' => '11',
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Publisher',
@@ -436,10 +466,10 @@ function landlibrary_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'landlibrary_resource';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_resource';
   $field_group->data = array(
     'label' => 'Relations',
-    'weight' => '10',
+    'weight' => '8',
     'children' => array(
       0 => 'field_doc_has_part',
       1 => 'field_doc_has_translation',
@@ -463,7 +493,7 @@ function landlibrary_field_group_info() {
         'classes' => 'group-doc-relations field-group-fieldset',
         'description' => '',
       ),
-      'formatter' => 'collapsible',
+      'formatter' => 'collapsed',
     ),
   );
   $export['group_doc_relations|node|landlibrary_resource|form'] = $field_group;
@@ -502,17 +532,18 @@ function landlibrary_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'landlibrary_resource';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_resource';
   $field_group->data = array(
     'label' => 'Responsible body',
-    'weight' => '12',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_doc_conference',
-      1 => 'field_doc_contributor',
+      0 => 'field_doc_contributor',
+      1 => 'field_doc_creator',
       2 => 'field_doc_data_provider',
       3 => 'field_doc_provider',
-      4 => 'group_doc_creator',
-      5 => 'group_doc_publisher',
+      4 => 'field_doc_publisher',
+      5 => 'field_doc_publisher_place',
+      6 => 'field_user',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -561,10 +592,10 @@ function landlibrary_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'landlibrary_resource';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_resource';
   $field_group->data = array(
     'label' => 'Rights',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_doc_copyrights_statement',
       1 => 'field_doc_licencing',
@@ -578,7 +609,7 @@ function landlibrary_field_group_info() {
         'classes' => 'group-doc-rights field-group-fieldset',
         'description' => '',
       ),
-      'formatter' => 'collapsible',
+      'formatter' => 'collapsed',
     ),
   );
   $export['group_doc_rights|node|landlibrary_resource|form'] = $field_group;
@@ -689,6 +720,70 @@ function landlibrary_field_group_info() {
     ),
   );
   $export['group_doc_title_info|node|landlibrary_resource|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_lptags|node|landlibrary_resource|form';
+  $field_group->group_name = 'group_lptags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'landlibrary_resource';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'LPTags',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_doc_country',
+      1 => 'field_doc_geographic_region',
+      2 => 'field_doc_keyword',
+      3 => 'field_doc_subject',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-lptags field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_lptags|node|landlibrary_resource|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_resource|node|landlibrary_resource|form';
+  $field_group->group_name = 'group_resource';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'landlibrary_resource';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Resource',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_doc_alt_title',
+      1 => 'field_doc_identifier',
+      2 => 'field_doc_thumb',
+      3 => 'field_doc_title',
+      4 => 'group_doc_physical_chars',
+      5 => 'group_doc_relations',
+      6 => 'group_doc_responsible_body',
+      7 => 'group_doc_rights',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-resource field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_resource|node|landlibrary_resource|form'] = $field_group;
 
   return $export;
 }
