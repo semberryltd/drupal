@@ -156,7 +156,7 @@ function user_menu_feature_menu_default_menu_links() {
   $menu_links['navigation_mailing-lists:admin/mailchimp/user_lists'] = array(
     'menu_name' => 'navigation',
     'link_path' => 'admin/mailchimp/user_lists',
-    'router_path' => 'admin/mailchimp/user_lists',
+    'router_path' => 'admin',
     'link_title' => 'Mailing Lists',
     'options' => array(
       'attributes' => array(
@@ -178,7 +178,7 @@ function user_menu_feature_menu_default_menu_links() {
   $menu_links['navigation_masquerade-as-testuser:masquerade/switch/7448'] = array(
     'menu_name' => 'navigation',
     'link_path' => 'masquerade/switch/7448',
-    'router_path' => 'masquerade/switch/7448',
+    'router_path' => 'masquerade/switch/%',
     'link_title' => 'Masquerade as @testuser',
     'options' => array(
       'alter' => TRUE,
@@ -190,28 +190,6 @@ function user_menu_feature_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -42,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: navigation_newsletter-subscription:mailchimp/subscribe.
-  $menu_links['navigation_newsletter-subscription:mailchimp/subscribe'] = array(
-    'menu_name' => 'navigation',
-    'link_path' => 'mailchimp/subscribe',
-    'router_path' => 'mailchimp/subscribe',
-    'link_title' => 'Newsletter Subscription',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Present all available free form newsletter subscriptions.',
-      ),
-      'identifier' => 'navigation_newsletter-subscription:mailchimp/subscribe',
-    ),
-    'module' => 'system',
-    'hidden' => 1,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -522,7 +500,7 @@ function user_menu_feature_menu_default_menu_links() {
   $menu_links['user-menu_mailing-lists:admin/mailchimp/user_lists'] = array(
     'menu_name' => 'user-menu',
     'link_path' => 'admin/mailchimp/user_lists',
-    'router_path' => 'admin/mailchimp/user_lists',
+    'router_path' => 'admin',
     'link_title' => 'Mailing Lists',
     'options' => array(
       'attributes' => array(
@@ -541,29 +519,6 @@ function user_menu_feature_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'user-menu_contribute:node/add',
-  );
-  // Exported menu link: user-menu_my-account:user.
-  $menu_links['user-menu_my-account:user'] = array(
-    'menu_name' => 'user-menu',
-    'link_path' => 'user',
-    'router_path' => 'user',
-    'link_title' => 'My Account',
-    'options' => array(
-      'alter' => TRUE,
-      'identifier' => 'user-menu_my-account:user',
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => -48,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
   );
   // Exported menu link: user-menu_sign-in:user/login.
   $menu_links['user-menu_sign-in:user/login'] = array(
@@ -611,8 +566,6 @@ function user_menu_feature_menu_default_menu_links() {
   t('Log out');
   t('Mailing Lists');
   t('Masquerade as @testuser');
-  t('My Account');
-  t('Newsletter Subscription');
   t('Search');
   t('Sign in');
   t('Sitemap');

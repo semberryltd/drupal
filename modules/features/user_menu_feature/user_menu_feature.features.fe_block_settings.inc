@@ -14,7 +14,6 @@ function user_menu_feature_default_fe_block_settings() {
 
   $export['nice_menus-1'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 1,
     'i18n_block_language' => array(),
@@ -49,7 +48,6 @@ function user_menu_feature_default_fe_block_settings() {
 
   $export['system-main-menu'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'main-menu',
     'i18n_block_language' => array(),
@@ -84,7 +82,6 @@ function user_menu_feature_default_fe_block_settings() {
 
   $export['system-navigation'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'navigation',
     'i18n_block_language' => array(),
@@ -125,7 +122,6 @@ people',
 
   $export['system-user-menu'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'user-menu',
     'i18n_block_language' => array(),
