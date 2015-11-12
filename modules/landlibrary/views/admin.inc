@@ -7,7 +7,6 @@
  * View BO: http://landportal.ker/admin/structure/views/view/administration_library/export
  */
 
-
 $view = new view();
 $view->name = 'admin_view_library';
 $view->description = '';
@@ -39,7 +38,6 @@ $handler->display->display_options['style_options']['columns'] = array(
   'edit_node' => 'edit_node',
   'path' => 'path',
   'title' => 'title',
-  'title_field' => 'title_field',
   'field_doc_title' => 'field_doc_title',
   'field_doc_type' => 'field_doc_type',
   'delta' => 'delta',
@@ -48,12 +46,14 @@ $handler->display->display_options['style_options']['columns'] = array(
   'field_doc_data_provider' => 'field_doc_data_provider',
   'language' => 'language',
   'field_doc_language' => 'field_doc_language',
+  'changed' => 'changed',
   'created' => 'created',
   'field_doc_creation_date' => 'field_doc_creation_date',
   'field_format' => 'field_format',
   'field_doc_geographic_region' => 'field_doc_geographic_region',
   'field_doc_keyword' => 'field_doc_keyword',
   'field_doc_subject' => 'field_doc_subject',
+  'field_doc_country' => 'field_doc_country',
 );
 $handler->display->display_options['style_options']['default'] = 'nid';
 $handler->display->display_options['style_options']['info'] = array(
@@ -64,7 +64,7 @@ $handler->display->display_options['style_options']['info'] = array(
   ),
   'nid' => array(
     'sortable' => 1,
-    'default_sort_order' => 'asc',
+    'default_sort_order' => 'desc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
@@ -80,13 +80,6 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
   'title' => array(
-    'sortable' => 1,
-    'default_sort_order' => 'asc',
-    'align' => '',
-    'separator' => '',
-    'empty_column' => 0,
-  ),
-  'title_field' => array(
     'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
@@ -139,6 +132,13 @@ $handler->display->display_options['style_options']['info'] = array(
     'separator' => '',
     'empty_column' => 0,
   ),
+  'changed' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
   'created' => array(
     'sortable' => 1,
     'default_sort_order' => 'asc',
@@ -177,6 +177,11 @@ $handler->display->display_options['style_options']['info'] = array(
     'separator' => '',
     'empty_column' => 0,
   ),
+  'field_doc_country' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
 );
 /* Header: Global: Result summary */
 $handler->display->display_options['header']['result']['id'] = 'result';
@@ -193,6 +198,13 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo_setti
 $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
 $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
 $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+  'action::views_bulk_operations_delete_item' => array(
+    'selected' => 1,
+    'postpone_processing' => 0,
+    'skip_confirmation' => 1,
+    'override_label' => 0,
+    'label' => '',
+  ),
   'action::views_bulk_operations_modify_action' => array(
     'selected' => 1,
     'postpone_processing' => 0,
@@ -307,11 +319,19 @@ $handler->display->display_options['fields']['field_doc_language']['table'] = 'f
 $handler->display->display_options['fields']['field_doc_language']['field'] = 'field_doc_language';
 $handler->display->display_options['fields']['field_doc_language']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_doc_language']['delta_offset'] = '0';
+/* Field: Content: Updated date */
+$handler->display->display_options['fields']['changed']['id'] = 'changed';
+$handler->display->display_options['fields']['changed']['table'] = 'node';
+$handler->display->display_options['fields']['changed']['field'] = 'changed';
+$handler->display->display_options['fields']['changed']['date_format'] = 'custom';
+$handler->display->display_options['fields']['changed']['custom_date_format'] = 'd/m/Y';
+$handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
 /* Field: Content: Post date */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'node';
 $handler->display->display_options['fields']['created']['field'] = 'created';
-$handler->display->display_options['fields']['created']['date_format'] = 'month_and_year';
+$handler->display->display_options['fields']['created']['date_format'] = 'custom';
+$handler->display->display_options['fields']['created']['custom_date_format'] = 'd/m/Y';
 $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
 /* Field: Content: Publication date */
 $handler->display->display_options['fields']['field_doc_creation_date']['id'] = 'field_doc_creation_date';
@@ -350,14 +370,30 @@ $handler->display->display_options['fields']['field_doc_country']['id'] = 'field
 $handler->display->display_options['fields']['field_doc_country']['table'] = 'field_data_field_doc_country';
 $handler->display->display_options['fields']['field_doc_country']['field'] = 'field_doc_country';
 $handler->display->display_options['fields']['field_doc_country']['delta_offset'] = '0';
-/* Sort criterion: Content: Post date */
-$handler->display->display_options['sorts']['created']['id'] = 'created';
-$handler->display->display_options['sorts']['created']['table'] = 'node';
-$handler->display->display_options['sorts']['created']['field'] = 'created';
-$handler->display->display_options['sorts']['created']['order'] = 'DESC';
 $handler->display->display_options['filter_groups']['groups'] = array(
   1 => 'AND',
   2 => 'AND',
+);
+/* Filter criterion: Content: Title */
+$handler->display->display_options['filters']['title']['id'] = 'title';
+$handler->display->display_options['filters']['title']['table'] = 'node';
+$handler->display->display_options['filters']['title']['field'] = 'title';
+$handler->display->display_options['filters']['title']['operator'] = 'contains';
+$handler->display->display_options['filters']['title']['group'] = 1;
+$handler->display->display_options['filters']['title']['exposed'] = TRUE;
+$handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+$handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+$handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  111731461 => 0,
+  111903911 => 0,
+  25521343 => 0,
+  111903912 => 0,
+  111903910 => 0,
+  30037204 => 0,
 );
 /* Filter criterion: Content: Language */
 $handler->display->display_options['filters']['language']['id'] = 'language';
@@ -384,11 +420,12 @@ $handler->display->display_options['filters']['language']['expose']['remember_ro
   111903910 => 0,
   30037204 => 0,
 );
+$handler->display->display_options['filters']['language']['expose']['reduce'] = TRUE;
 /* Filter criterion: Content: Published */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
 $handler->display->display_options['filters']['status']['field'] = 'status';
-$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['value'] = 'All';
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['exposed'] = TRUE;
 $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
@@ -405,14 +442,6 @@ $handler->display->display_options['filters']['status']['expose']['remember_role
   111903910 => 0,
   30037204 => 0,
 );
-/* Filter criterion: Content: Type */
-$handler->display->display_options['filters']['type']['id'] = 'type';
-$handler->display->display_options['filters']['type']['table'] = 'node';
-$handler->display->display_options['filters']['type']['field'] = 'type';
-$handler->display->display_options['filters']['type']['value'] = array(
-  'landlibrary_resource' => 'landlibrary_resource',
-);
-$handler->display->display_options['filters']['type']['group'] = 2;
 /* Filter criterion: Content: Publisher (field_doc_publisher) (reference filter) */
 $handler->display->display_options['filters']['field_doc_publisher_target_id_entityreference_filter']['id'] = 'field_doc_publisher_target_id_entityreference_filter';
 $handler->display->display_options['filters']['field_doc_publisher_target_id_entityreference_filter']['table'] = 'field_data_field_doc_publisher';
@@ -455,6 +484,14 @@ $handler->display->display_options['filters']['field_doc_provider_target_id_enti
   30037204 => 0,
 );
 $handler->display->display_options['filters']['field_doc_provider_target_id_entityreference_filter']['reference_display'] = 'organizations_overview:entityreference_1';
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'landlibrary_resource' => 'landlibrary_resource',
+);
+$handler->display->display_options['filters']['type']['group'] = 2;
 
 /* Display: System */
 $handler = $view->new_display('system', 'System', 'system_1');
@@ -491,6 +528,7 @@ $translatables['admin_view_library'] = array(
   t('Provider'),
   t('Data Provider'),
   t('Language'),
+  t('Updated date'),
   t('Post date'),
   t('Publication date'),
   t('Format'),
