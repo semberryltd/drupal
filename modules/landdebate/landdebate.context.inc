@@ -72,7 +72,7 @@ function landdebate_context_default_contexts() {
     'block' => array(
       'blocks' => array(
         'menu-landdebate-menu' => array(
-          'module' => 'landportal_extra',
+          'module' => 'landportal_block',
           'delta' => 'lp_twitter',
           'region' => 'sidebar_second',
           'weight' => '10',
