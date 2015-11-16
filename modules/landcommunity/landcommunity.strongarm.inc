@@ -62,6 +62,13 @@ function landcommunity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_webform';
+  $strongarm->value = '0';
+  $export['comment_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_profile2__main';
   $strongarm->value = array(
     'view_modes' => array(
@@ -339,9 +346,9 @@ function landcommunity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_organization_relation_pattern';
+  $strongarm->name = 'pathauto_node_webform_pattern';
   $strongarm->value = '';
-  $export['pathauto_taxonomy_term_organization_relation_pattern'] = $strongarm;
+  $export['pathauto_node_webform_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

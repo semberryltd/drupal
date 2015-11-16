@@ -436,7 +436,7 @@ function landcommunity_field_default_field_bases() {
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
-      'profile2_private' => 0,
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_text',
