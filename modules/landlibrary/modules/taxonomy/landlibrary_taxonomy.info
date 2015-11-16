@@ -1,9 +1,9 @@
-name = Land Library Taxonomy
+name = Landlibrary Taxonomy
 description = Taxonomies for the LL
 core = 7.x
 project = landlibrary_taxonomy
-package = B Landlibrary
-version = 7.x-2.2-beta
+package = B Landportal
+version = 7.x-2.2-rc1
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = field_group
