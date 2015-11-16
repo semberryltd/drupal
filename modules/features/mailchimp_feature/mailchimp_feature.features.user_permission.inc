@@ -13,14 +13,26 @@ function mailchimp_feature_user_default_permissions() {
   // Exported permission: 'access resource mailchimp_campaign'.
   $permissions['access resource mailchimp_campaign'] = array(
     'name' => 'access resource mailchimp_campaign',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'restws',
   );
 
   // Exported permission: 'access resource mailchimp_list'.
   $permissions['access resource mailchimp_list'] = array(
     'name' => 'access resource mailchimp_list',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'restws',
   );
 
@@ -29,6 +41,7 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'administer mailchimp',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'mailchimp',
   );
@@ -38,6 +51,8 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'administer mailchimp campaigns',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'mailchimp_campaign',
   );
@@ -47,6 +62,9 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'administer mailchimp user lists',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'mailchimp_user_list',
   );
@@ -56,6 +74,7 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'use text format mailchimp_campaign',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),

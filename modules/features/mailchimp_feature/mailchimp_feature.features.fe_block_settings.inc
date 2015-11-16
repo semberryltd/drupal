@@ -14,7 +14,6 @@ function mailchimp_feature_default_fe_block_settings() {
 
   $export['mailchimp_lists-legend_bulletin'] = array(
     'cache' => 2,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'legend_bulletin',
     'i18n_block_language' => array(),
