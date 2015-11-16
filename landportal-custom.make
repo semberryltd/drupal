@@ -32,6 +32,8 @@ projects:
     version: "2.x-dev"
   feeds_fetcher_directory:
     version: "2.0-beta5"
+    patch:
+      - "https://www.drupal.org/files/issues/Feeds_directory_fetcher-Fixed2_changing_file_mask_for_fetcher-2002244.patch"
   feeds_tamper:
     version: ~
     patch:
