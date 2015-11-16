@@ -45,7 +45,7 @@ function landlibrary_node_info() {
       'base' => 'node_content',
       'description' => t('The main LandLibrary resource which can be a country report, a peer-reviewed publication, a policy document, an analytical study, a map, a high quality blog post, a video or other multimedia content.'),
       'has_title' => '1',
-      'title_label' => t('Node Title'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'person' => array(

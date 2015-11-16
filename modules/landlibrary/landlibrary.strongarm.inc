@@ -527,7 +527,7 @@ function landlibrary_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_landlibrary_resource_pattern';
-  $strongarm->value = 'library/[current-date:custom:Y]/[current-date:custom:m]/[node:title]';
+  $strongarm->value = 'library/resources/[node:field_doc_identifier]/[node:title]';
   $export['pathauto_node_landlibrary_resource_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
