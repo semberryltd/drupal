@@ -571,7 +571,7 @@ $feeds_tamper->importer = 'ifpri_importer';
 $feeds_tamper->source = 'xpathparser:7';
 $feeds_tamper->plugin_id = 'default_value';
 $feeds_tamper->settings = array(
-  'default_value' => 'English',
+  'default_value' => 'en',
   'only_if_empty' => 1,
 );
 $feeds_tamper->weight = 0;
@@ -603,6 +603,14 @@ $feeds_tamper->settings = array(
     3 => array(
       'source' => 'Spanish',
       'target' => 'es',
+    ),
+    3 => array(
+      'source' => 'Portuguese',
+      'target' => 'pt',
+    ),
+    3 => array(
+      'source' => 'Italian',
+      'target' => 'it',
     ),
   ),
 );
