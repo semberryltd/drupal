@@ -344,5 +344,12 @@ function landportal_taxonomy_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'merge organization_relation terms'.
+  $permissions['merge organization_relation terms'] = array(
+    'name' => 'merge organization_relation terms',
+    'roles' => array(),
+    'module' => 'term_merge',
+  );
+
   return $permissions;
 }
