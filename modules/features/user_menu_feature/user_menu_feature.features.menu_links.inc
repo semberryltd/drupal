@@ -491,7 +491,7 @@ function user_menu_feature_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => 1,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
