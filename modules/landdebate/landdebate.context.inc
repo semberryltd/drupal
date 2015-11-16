@@ -71,11 +71,11 @@ function landdebate_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu-landdebate-menu' => array(
-          'module' => 'landportal_block',
+        'landportal_blocks-lp_twitter' => array(
+          'module' => 'landportal_blocks',
           'delta' => 'lp_twitter',
           'region' => 'sidebar_second',
-          'weight' => '10',
+          'weight' => '-10',
         ),
       ),
     ),

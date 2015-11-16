@@ -23,6 +23,5 @@ function landdebate_menu_default_menu_custom() {
   t('Debate with others');
   t('Land debate serves to stimulate debate with others in the land community through sharing news and events, blog posts and online discussions.');
 
-
   return $menus;
 }

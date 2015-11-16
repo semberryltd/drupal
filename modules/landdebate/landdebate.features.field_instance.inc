@@ -10,7 +10,7 @@
 function landdebate_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_blog_post-comment_body'
+  // Exported field_instance: 'comment-comment_node_blog_post-comment_body'.
   $field_instances['comment-comment_node_blog_post-comment_body'] = array(
     'bundle' => 'comment_node_blog_post',
     'default_value' => NULL,
@@ -44,7 +44,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-body'
+  // Exported field_instance: 'node-blog_post-body'.
   $field_instances['node-blog_post-body'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -90,7 +90,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_geographical_focus'
+  // Exported field_instance: 'node-blog_post-field_geographical_focus'.
   $field_instances['node-blog_post-field_geographical_focus'] = array(
     'bundle' => 'blog_post',
     'default_value' => array(
@@ -133,7 +133,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_image'
+  // Exported field_instance: 'node-blog_post-field_image'.
   $field_instances['node-blog_post-field_image'] = array(
     'bundle' => 'blog_post',
     'deleted' => 0,
@@ -197,7 +197,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_related_topics'
+  // Exported field_instance: 'node-blog_post-field_related_topics'.
   $field_instances['node-blog_post-field_related_topics'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -239,7 +239,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-body'
+  // Exported field_instance: 'node-debate-body'.
   $field_instances['node-debate-body'] = array(
     'bundle' => 'debate',
     'default_value' => NULL,
@@ -285,7 +285,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_date'
+  // Exported field_instance: 'node-debate-field_date'.
   $field_instances['node-debate-field_date'] = array(
     'bundle' => 'debate',
     'deleted' => 0,
@@ -351,7 +351,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_facilitators'
+  // Exported field_instance: 'node-debate-field_facilitators'.
   $field_instances['node-debate-field_facilitators'] = array(
     'bundle' => 'debate',
     'default_value' => NULL,
@@ -400,7 +400,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_file'
+  // Exported field_instance: 'node-debate-field_file'.
   $field_instances['node-debate-field_file'] = array(
     'bundle' => 'debate',
     'deleted' => 0,
@@ -454,7 +454,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_geographical_focus'
+  // Exported field_instance: 'node-debate-field_geographical_focus'.
   $field_instances['node-debate-field_geographical_focus'] = array(
     'bundle' => 'debate',
     'default_value' => array(
@@ -497,7 +497,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_image'
+  // Exported field_instance: 'node-debate-field_image'.
   $field_instances['node-debate-field_image'] = array(
     'bundle' => 'debate',
     'deleted' => 0,
@@ -560,7 +560,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_related_topics'
+  // Exported field_instance: 'node-debate-field_related_topics'.
   $field_instances['node-debate-field_related_topics'] = array(
     'bundle' => 'debate',
     'default_value' => NULL,
@@ -602,7 +602,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-debate-field_status'
+  // Exported field_instance: 'node-debate-field_status'.
   $field_instances['node-debate-field_status'] = array(
     'bundle' => 'debate',
     'default_value' => array(
@@ -645,7 +645,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-body'
+  // Exported field_instance: 'node-event-body'.
   $field_instances['node-event-body'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -691,7 +691,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_contact'
+  // Exported field_instance: 'node-event-field_contact'.
   $field_instances['node-event-field_contact'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -734,7 +734,7 @@ function landdebate_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date'
+  // Exported field_instance: 'node-event-field_date'.
   $field_instances['node-event-field_date'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -801,7 +801,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-event-field_file'
+  // Exported field_instance: 'node-event-field_file'.
   $field_instances['node-event-field_file'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -855,7 +855,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-event-field_geographical_focus'
+  // Exported field_instance: 'node-event-field_geographical_focus'.
   $field_instances['node-event-field_geographical_focus'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -898,7 +898,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-event-field_image'
+  // Exported field_instance: 'node-event-field_image'.
   $field_instances['node-event-field_image'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -961,7 +961,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-event-field_link'
+  // Exported field_instance: 'node-event-field_link'.
   $field_instances['node-event-field_link'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1019,7 +1019,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-event-field_related_topics'
+  // Exported field_instance: 'node-event-field_related_topics'.
   $field_instances['node-event-field_related_topics'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1061,7 +1061,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-event-field_website'
+  // Exported field_instance: 'node-event-field_website'.
   $field_instances['node-event-field_website'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1121,7 +1121,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-news-body'
+  // Exported field_instance: 'node-news-body'.
   $field_instances['node-news-body'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -1167,14 +1167,14 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-news-field_file'
+  // Exported field_instance: 'node-news-field_file'.
   $field_instances['node-news-field_file'] = array(
     'bundle' => 'news',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
@@ -1221,7 +1221,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-news-field_geographical_focus'
+  // Exported field_instance: 'node-news-field_geographical_focus'.
   $field_instances['node-news-field_geographical_focus'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -1253,14 +1253,20 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'synonyms',
+      'settings' => array(
+        'auto_creation' => 1,
+        'autocomplete_path' => 'synonyms/autocomplete',
+        'size' => 60,
+        'suggest_only_unique' => FALSE,
+        'suggestion_size' => 10,
+      ),
+      'type' => 'synonyms_autocomplete',
       'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-news-field_image'
+  // Exported field_instance: 'node-news-field_image'.
   $field_instances['node-news-field_image'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -1325,7 +1331,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-news-field_language'
+  // Exported field_instance: 'node-news-field_language'.
   $field_instances['node-news-field_language'] = array(
     'bundle' => 'news',
     'default_value' => array(
@@ -1366,7 +1372,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-news-field_link'
+  // Exported field_instance: 'node-news-field_link'.
   $field_instances['node-news-field_link'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -1424,7 +1430,7 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
   );
 
-  // Exported field_instance: 'node-news-field_related_topics'
+  // Exported field_instance: 'node-news-field_related_topics'.
   $field_instances['node-news-field_related_topics'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -1456,9 +1462,15 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'synonyms',
+      'settings' => array(
+        'auto_creation' => 1,
+        'autocomplete_path' => 'synonyms/autocomplete',
+        'size' => 60,
+        'suggest_only_unique' => FALSE,
+        'suggestion_size' => 10,
+      ),
+      'type' => 'synonyms_autocomplete',
       'weight' => 5,
     ),
   );
