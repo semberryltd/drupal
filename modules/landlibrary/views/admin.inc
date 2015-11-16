@@ -9,8 +9,8 @@
 
 $view = new view();
 $view->name = 'admin_view_library';
-$view->description = '';
-$view->tag = 'default';
+$view->description = 'Find and manage Land Library resources';
+$view->tag = 'admin';
 $view->base_table = 'node';
 $view->human_name = 'Administration: Library';
 $view->core = 7;
@@ -266,13 +266,6 @@ $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-/* Field: Content: Title */
-$handler->display->display_options['fields']['field_doc_title']['id'] = 'field_doc_title';
-$handler->display->display_options['fields']['field_doc_title']['table'] = 'field_data_field_doc_title';
-$handler->display->display_options['fields']['field_doc_title']['field'] = 'field_doc_title';
-$handler->display->display_options['fields']['field_doc_title']['alter']['make_link'] = TRUE;
-$handler->display->display_options['fields']['field_doc_title']['alter']['path'] = '[path]';
-$handler->display->display_options['fields']['field_doc_title']['delta_offset'] = '0';
 /* Field: Content: Resource type */
 $handler->display->display_options['fields']['field_doc_type']['id'] = 'field_doc_type';
 $handler->display->display_options['fields']['field_doc_type']['table'] = 'field_data_field_doc_type';
@@ -355,6 +348,11 @@ $handler->display->display_options['fields']['field_format']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_doc_geographic_region']['id'] = 'field_doc_geographic_region';
 $handler->display->display_options['fields']['field_doc_geographic_region']['table'] = 'field_data_field_doc_geographic_region';
 $handler->display->display_options['fields']['field_doc_geographic_region']['field'] = 'field_doc_geographic_region';
+/* Field: Content: Country */
+$handler->display->display_options['fields']['field_doc_country']['id'] = 'field_doc_country';
+$handler->display->display_options['fields']['field_doc_country']['table'] = 'field_data_field_doc_country';
+$handler->display->display_options['fields']['field_doc_country']['field'] = 'field_doc_country';
+$handler->display->display_options['fields']['field_doc_country']['delta_offset'] = '0';
 /* Field: Content: Keyword */
 $handler->display->display_options['fields']['field_doc_keyword']['id'] = 'field_doc_keyword';
 $handler->display->display_options['fields']['field_doc_keyword']['table'] = 'field_data_field_doc_keyword';
@@ -365,11 +363,6 @@ $handler->display->display_options['fields']['field_doc_subject']['id'] = 'field
 $handler->display->display_options['fields']['field_doc_subject']['table'] = 'field_data_field_doc_subject';
 $handler->display->display_options['fields']['field_doc_subject']['field'] = 'field_doc_subject';
 $handler->display->display_options['fields']['field_doc_subject']['delta_offset'] = '0';
-/* Field: Content: Country */
-$handler->display->display_options['fields']['field_doc_country']['id'] = 'field_doc_country';
-$handler->display->display_options['fields']['field_doc_country']['table'] = 'field_data_field_doc_country';
-$handler->display->display_options['fields']['field_doc_country']['field'] = 'field_doc_country';
-$handler->display->display_options['fields']['field_doc_country']['delta_offset'] = '0';
 $handler->display->display_options['filter_groups']['groups'] = array(
   1 => 'AND',
   2 => 'AND',
@@ -492,6 +485,27 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'landlibrary_resource' => 'landlibrary_resource',
 );
 $handler->display->display_options['filters']['type']['group'] = 2;
+/* Filter criterion: Content: Resource type (field_doc_type) */
+$handler->display->display_options['filters']['field_doc_type_tid']['id'] = 'field_doc_type_tid';
+$handler->display->display_options['filters']['field_doc_type_tid']['table'] = 'field_data_field_doc_type';
+$handler->display->display_options['filters']['field_doc_type_tid']['field'] = 'field_doc_type_tid';
+$handler->display->display_options['filters']['field_doc_type_tid']['value'] = '';
+$handler->display->display_options['filters']['field_doc_type_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_doc_type_tid']['expose']['operator_id'] = 'field_doc_type_tid_op';
+$handler->display->display_options['filters']['field_doc_type_tid']['expose']['label'] = 'Resource type (field_doc_type)';
+$handler->display->display_options['filters']['field_doc_type_tid']['expose']['operator'] = 'field_doc_type_tid_op';
+$handler->display->display_options['filters']['field_doc_type_tid']['expose']['identifier'] = 'field_doc_type_tid';
+$handler->display->display_options['filters']['field_doc_type_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  111731461 => 0,
+  111903911 => 0,
+  25521343 => 0,
+  111903912 => 0,
+  111903910 => 0,
+  30037204 => 0,
+);
+$handler->display->display_options['filters']['field_doc_type_tid']['vocabulary'] = 'landlibrary_resource_type';
 
 /* Display: System */
 $handler = $view->new_display('system', 'System', 'system_1');
@@ -533,11 +547,12 @@ $translatables['admin_view_library'] = array(
   t('Publication date'),
   t('Format'),
   t('Geographic Region'),
+  t('Country'),
   t('Keyword'),
   t('Subject'),
-  t('Country'),
   t('Published'),
   t('Publisher (field_doc_publisher) (reference filter)'),
   t('Provider (field_doc_provider) (reference filter)'),
+  t('Resource type (field_doc_type)'),
   t('System'),
 );
