@@ -249,6 +249,29 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'restws',
   );
 
+  // Exported permission: 'access resource taxonomy_term'.
+  $permissions['access resource taxonomy_term'] = array(
+    'name' => 'access resource taxonomy_term',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'restws',
+  );
+
+  // Exported permission: 'access resource taxonomy_vocabulary'.
+  $permissions['access resource taxonomy_vocabulary'] = array(
+    'name' => 'access resource taxonomy_vocabulary',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'restws',
+  );
+
   // Exported permission: 'access resource user'.
   $permissions['access resource user'] = array(
     'name' => 'access resource user',
@@ -779,6 +802,17 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'administer taxonomy'.
+  $permissions['administer taxonomy'] = array(
+    'name' => 'administer taxonomy',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'administer themes'.
   $permissions['administer themes'] = array(
     'name' => 'administer themes',
@@ -936,6 +970,17 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'context_ui',
   );
 
+  // Exported permission: 'create blog_post content'.
+  $permissions['create blog_post content'] = array(
+    'name' => 'create blog_post content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create debate content'.
   $permissions['create debate content'] = array(
     'name' => 'create debate content',
@@ -995,6 +1040,16 @@ function landportal_permissions_user_default_permissions() {
   $permissions['create organization content'] = array(
     'name' => 'create organization content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create page content'.
+  $permissions['create page content'] = array(
+    'name' => 'create page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'node',
   );
 
@@ -1072,6 +1127,16 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'delete any blog_post content'.
+  $permissions['delete any blog_post content'] = array(
+    'name' => 'delete any blog_post content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any debate content'.
   $permissions['delete any debate content'] = array(
     'name' => 'delete any debate content',
@@ -1140,6 +1205,15 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any page content'.
+  $permissions['delete any page content'] = array(
+    'name' => 'delete any page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any video files'.
   $permissions['delete any video files'] = array(
     'name' => 'delete any video files',
@@ -1168,6 +1242,16 @@ function landportal_permissions_user_default_permissions() {
       'landportal admin' => 'landportal admin',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete own blog_post content'.
+  $permissions['delete own blog_post content'] = array(
+    'name' => 'delete own blog_post content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'delete own debate content'.
@@ -1238,6 +1322,15 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own page content'.
+  $permissions['delete own page content'] = array(
+    'name' => 'delete own page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own video files'.
   $permissions['delete own video files'] = array(
     'name' => 'delete own video files',
@@ -1282,10 +1375,154 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in continents'.
+  $permissions['delete terms in continents'] = array(
+    'name' => 'delete terms in continents',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in countries'.
+  $permissions['delete terms in countries'] = array(
+    'name' => 'delete terms in countries',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in debate_status'.
+  $permissions['delete terms in debate_status'] = array(
+    'name' => 'delete terms in debate_status',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in format'.
+  $permissions['delete terms in format'] = array(
+    'name' => 'delete terms in format',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in interests'.
+  $permissions['delete terms in interests'] = array(
+    'name' => 'delete terms in interests',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in keywords'.
+  $permissions['delete terms in keywords'] = array(
+    'name' => 'delete terms in keywords',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in landlibrary_resource_type'.
+  $permissions['delete terms in landlibrary_resource_type'] = array(
+    'name' => 'delete terms in landlibrary_resource_type',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in landportal_topics'.
+  $permissions['delete terms in landportal_topics'] = array(
+    'name' => 'delete terms in landportal_topics',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in landvoc'.
   $permissions['delete terms in landvoc'] = array(
     'name' => 'delete terms in landvoc',
     'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in languages'.
+  $permissions['delete terms in languages'] = array(
+    'name' => 'delete terms in languages',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in licences'.
+  $permissions['delete terms in licences'] = array(
+    'name' => 'delete terms in licences',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in organization_relation'.
+  $permissions['delete terms in organization_relation'] = array(
+    'name' => 'delete terms in organization_relation',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in organization_types'.
+  $permissions['delete terms in organization_types'] = array(
+    'name' => 'delete terms in organization_types',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in regions'.
+  $permissions['delete terms in regions'] = array(
+    'name' => 'delete terms in regions',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in tags'.
+  $permissions['delete terms in tags'] = array(
+    'name' => 'delete terms in tags',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in terms_of_use'.
+  $permissions['delete terms in terms_of_use'] = array(
+    'name' => 'delete terms in terms_of_use',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -1400,6 +1637,16 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'edit any blog_post content'.
+  $permissions['edit any blog_post content'] = array(
+    'name' => 'edit any blog_post content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any debate content'.
   $permissions['edit any debate content'] = array(
     'name' => 'edit any debate content',
@@ -1480,6 +1727,15 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any page content'.
+  $permissions['edit any page content'] = array(
+    'name' => 'edit any page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any video files'.
   $permissions['edit any video files'] = array(
     'name' => 'edit any video files',
@@ -1519,6 +1775,17 @@ function landportal_permissions_user_default_permissions() {
       'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit own blog_post content'.
+  $permissions['edit own blog_post content'] = array(
+    'name' => 'edit own blog_post content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'edit own comments'.
@@ -1613,6 +1880,16 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own page content'.
+  $permissions['edit own page content'] = array(
+    'name' => 'edit own page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit own video files'.
   $permissions['edit own video files'] = array(
     'name' => 'edit own video files',
@@ -1658,10 +1935,166 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'edit terms in continents'.
+  $permissions['edit terms in continents'] = array(
+    'name' => 'edit terms in continents',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in countries'.
+  $permissions['edit terms in countries'] = array(
+    'name' => 'edit terms in countries',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in debate_status'.
+  $permissions['edit terms in debate_status'] = array(
+    'name' => 'edit terms in debate_status',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in format'.
+  $permissions['edit terms in format'] = array(
+    'name' => 'edit terms in format',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in interests'.
+  $permissions['edit terms in interests'] = array(
+    'name' => 'edit terms in interests',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in keywords'.
+  $permissions['edit terms in keywords'] = array(
+    'name' => 'edit terms in keywords',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in landlibrary_resource_type'.
+  $permissions['edit terms in landlibrary_resource_type'] = array(
+    'name' => 'edit terms in landlibrary_resource_type',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in landportal_topics'.
+  $permissions['edit terms in landportal_topics'] = array(
+    'name' => 'edit terms in landportal_topics',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in landvoc'.
   $permissions['edit terms in landvoc'] = array(
     'name' => 'edit terms in landvoc',
     'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in languages'.
+  $permissions['edit terms in languages'] = array(
+    'name' => 'edit terms in languages',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in licences'.
+  $permissions['edit terms in licences'] = array(
+    'name' => 'edit terms in licences',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in organization_relation'.
+  $permissions['edit terms in organization_relation'] = array(
+    'name' => 'edit terms in organization_relation',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in organization_types'.
+  $permissions['edit terms in organization_types'] = array(
+    'name' => 'edit terms in organization_types',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in regions'.
+  $permissions['edit terms in regions'] = array(
+    'name' => 'edit terms in regions',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in tags'.
+  $permissions['edit terms in tags'] = array(
+    'name' => 'edit terms in tags',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in terms_of_use'.
+  $permissions['edit terms in terms_of_use'] = array(
+    'name' => 'edit terms in terms_of_use',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'taxonomy',
   );
 
