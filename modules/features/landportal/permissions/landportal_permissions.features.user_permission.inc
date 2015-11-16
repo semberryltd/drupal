@@ -418,8 +418,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer comments',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'comment',
   );
@@ -1793,6 +1793,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own comments',
     'roles' => array(
       'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
