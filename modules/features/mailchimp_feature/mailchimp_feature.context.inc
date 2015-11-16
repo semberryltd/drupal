@@ -19,7 +19,7 @@ function mailchimp_feature_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'project/legend' => 'project/legend',
+        'partners/legend' => 'partners/legend',
       ),
     ),
   );
