@@ -111,6 +111,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'access media browser',
     'roles' => array(
       'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1008,6 +1010,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create files',
     'roles' => array(
       'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2239,6 +2243,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'masquerade as any user',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'masquerade',
   );
@@ -2248,6 +2253,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'masquerade as user',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'masquerade',
   );
@@ -2833,7 +2839,10 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'use media wysiwyg',
     'roles' => array(
       'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'media_wysiwyg',
   );
