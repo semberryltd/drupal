@@ -18,7 +18,7 @@ function importer_faolex_feeds_importer_default() {
         'name' => 'FAOLEX importer',
         'description' => 'Import FAOLEX records from an Isis filter, exported as a list of tables',
         'fetcher' => array(
-            'plugin_key' => 'FeedsCrawlerPatternCleaner',
+            'plugin_key' => 'FeedsCrawlerPattern',
             'config' => array(
                 'num_pages' => 50,
                 'first_run' => 0,
@@ -81,7 +81,7 @@ Territorial Subdivision:
                     /* 'xpathparser:15' => 0, */
                     /* 'xpathparser:16' => 0, */
                 ),
-                'context' => '//table[position()>2 and not(position()=last())]',
+                'context' => '//table[position()>2 and not(position()=last())]/tbody',
                 'exp' => array(
                     'errors' => 1,
                     'tidy' => 1,
@@ -120,16 +120,16 @@ Territorial Subdivision:
                     0 => array(
                         'source' => 'xpathparser:0',
                         'target' => 'field_doc_identifier',
-                        'unique' => TRUE,
+                        'unique' => FALSE,
                     ),
                     1 => array(
                         'source' => 'xpathparser:1',
                         'target' => 'field_doc_title',
-                        'unique' => TRUE,
+                        'unique' => FALSE,
                     ),
                     2 => array(
                         'source' => 'xpathparser:2',
-                        'target' => 'field_resource_title',
+                        'target' => 'field_doc_alt_title',
                         'unique' => FALSE,
                     ),
                     3 => array(
@@ -144,7 +144,7 @@ Territorial Subdivision:
                     ),
                     5 => array(
                         'source' => 'xpathparser:5',
-                        'target' => 'field_doc_country',
+                        'target' => 'rules_autotag_field_doc_country',
                         'unique' => FALSE,
                     ),
                     6 => array(
@@ -206,15 +206,15 @@ Territorial Subdivision:
                     /*     'target' => 'field_doc_geographic_region', */
                     /*     'unique' => FALSE, */
                     /* ), */
-                    16 => array(
-                        'source' => 'FAOLEXdocId', //FAOLEXdocId',
-                        'target' => 'title_field:et:und',
-                        'unique' => FALSE,
-                    ),
+                    /* 16 => array( */
+                    /*     'source' => 'FAOLEXdocId', //FAOLEXdocId', */
+                    /*     'target' => 'title_field:et:und', */
+                    /*     'unique' => FALSE, */
+                    /* ), */
                     17 => array(
                         'source' => 'FAOLEXdocId', //FAOLEXdocId',
                         'target' => 'title',
-                        'unique' => FALSE,
+                        'unique' => TRUE,
                     ),
                 ),
                 'update_existing' => '2',
