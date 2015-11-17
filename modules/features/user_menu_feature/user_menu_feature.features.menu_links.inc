@@ -18,6 +18,10 @@ function user_menu_feature_menu_default_menu_links() {
     'link_title' => 'Home',
     'options' => array(
       'identifier' => 'main-menu_home:<front>',
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -25,31 +29,8 @@ function user_menu_feature_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 0,
-    'customized' => 0,
-    'language' => 'und',
-    'menu_links_customized' => 0,
-  );
-  // Exported menu link: main-menu_landlibrary:node/10158.
-  $menu_links['main-menu_landlibrary:node/10158'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/10158',
-    'router_path' => 'node/%',
-    'link_title' => 'Landlibrary',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_landlibrary:node/10158',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
     'customized' => 1,
-    'language' => 'und',
+    'language' => 'en',
     'menu_links_customized' => 1,
   );
   // Exported menu link: main-menu_sitemap:node/10068.
@@ -62,6 +43,9 @@ function user_menu_feature_menu_default_menu_links() {
       'node_type' => 'page',
       'identifier' => 'main-menu_sitemap:node/10068',
       'alter' => TRUE,
+      'attributes' => array(
+        'title' => '',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -476,6 +460,30 @@ function user_menu_feature_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'user-menu_contribute:node/add',
   );
+  // Exported menu link: user-menu_forms-management:admin/content/webform.
+  $menu_links['user-menu_forms-management:admin/content/webform'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'admin/content/webform',
+    'router_path' => 'admin/content/webform',
+    'link_title' => 'Forms management',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'user-menu_forms-management:admin/content/webform',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'user-menu_contribute:node/add',
+  );
   // Exported menu link: user-menu_log-out:user/logout.
   $menu_links['user-menu_log-out:user/logout'] = array(
     'menu_name' => 'user-menu',
@@ -500,7 +508,7 @@ function user_menu_feature_menu_default_menu_links() {
   $menu_links['user-menu_mailing-lists:admin/mailchimp/user_lists'] = array(
     'menu_name' => 'user-menu',
     'link_path' => 'admin/mailchimp/user_lists',
-    'router_path' => 'admin',
+    'router_path' => 'admin/mailchimp/user_lists',
     'link_title' => 'Mailing Lists',
     'options' => array(
       'attributes' => array(
@@ -560,9 +568,9 @@ function user_menu_feature_menu_default_menu_links() {
   t('Compose tips');
   t('Contribute');
   t('Docs');
+  t('Forms management');
   t('Home');
   t('Import');
-  t('Landlibrary');
   t('Log out');
   t('Mailing Lists');
   t('Masquerade as @testuser');
