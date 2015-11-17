@@ -177,69 +177,9 @@ margin-top:20px;
 margin-top:20px;
 }
 
-.view-landlibrary-promoted {
-  margin: 0;
-  /* padding: 0 -15px; */
-  width: 100%;
-}
-
-.view-landlibrary-promoted .views-row {
-  position: relative;
-}
-
-.view-landlibrary-promoted .views-row a {
-  text-decoration: none;
-  color: white;
-}
-
-.view-landlibrary-promoted .views-row .views-field-doc-thumb {
-  height: 200px;
-  overflow: hidden;
-  position:relative;
-}
-
-.view-landlibrary-promoted .views-row img {
-  width: 100%;
-  height: auto;
-}
-
-@media (min-width:768px) {
-.view-landlibrary-promoted .views-row {
-    position: relative;
-    float: left;
-    width: 25%;
-  }
-}
 
 
-.view-landlibrary-promoted .views-row .views-field-title {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  padding: 0.5em 1em;
-  bottom: 0;
-}
 
-.view-landlibrary-promoted {
-        margin-bottom:50px;
-}
-
-.view-landlibrary-promoted .views-field-field-image {
-        width:100%;
-        padding: 5px 5px 5px 5px;
-        background-color: rgba(0, 0, 0, 0.4);
-        position:absolute;
-}
-
-.view-landlibrary-promoted .views-field-field-image img {
-        max-height:30px;
-        max-width:80px;
-        float:right;
-}
-
-.view-landlibrary-promoted .views-row {
-        position:relative;
-}
 
 .view-library-search .field-content a {
         font-size:1.2em;
@@ -255,15 +195,25 @@ margin-top:20px;
         float:left;
 }
 
-/* #block-views-browse-resource-type-block { */
-/*         margin-top:50px; */
-/* } */
-
-
-
-/* SCSS - reviewed by Jules */
+/**
+ * SCSS - reviewed by Jules
+ *
+ * Note: 17/11/2015... In fact the whole LL should have been wiped and
+ *  redone from scratch, even CSS is not understood by AK dev... #gobacktoschool
+ */
 
 .page-library {
+
+    .field-name-field-doc-title {
+        //font-weight: bold;
+        font-size: 1.4em;
+    }
+
+    .field-name-field-doc-alt-title {
+        font-size: 1.3em;
+        font-style: italic;
+    }
+
     /* Force outer block height when inner elements "float" */
     .region .block-views .content:after,
     .view-landlibrary-promoted:after {
@@ -288,4 +238,57 @@ margin-top:20px;
             font-weight: bold;
         }
     }
+}
+
+.view-landlibrary-promoted {
+    margin: 0;
+    margin-bottom:50px;
+    width: 100%;
+
+    .views-row {
+        position:relative;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .views-field-title {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            padding: 0.5em 1em;
+            bottom: 0;
+        }
+
+        .views-field-doc-thumb {
+            height: 200px;
+            overflow: hidden;
+            position:relative;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .views-field-field-image {
+        width:100%;
+        padding: 5px 5px 5px 5px;
+        background-color: rgba(0, 0, 0, 0.4);
+        position:absolute;
+
+        img {
+            max-height:30px;
+            max-width:80px;
+            float:right;
+        }
+    }
+}
+
+@media (min-width:768px) {
+.view-landlibrary-promoted .views-row {
+    position: relative;
+    float: left;
+    width: 25%;
+  }
 }

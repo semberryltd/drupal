@@ -30,17 +30,18 @@
   </section>
 
   <section class="content"<?php print $content_attributes; ?>>
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
       print render($content);
     ?>
+
+  <?php if ($display_submitted): ?>
+  <div class="submitted">
+      <?php print $submitted; ?>
+    </div>
+  <?php endif; ?>
   </section>
 
   <?php print render($content['links']); ?>
