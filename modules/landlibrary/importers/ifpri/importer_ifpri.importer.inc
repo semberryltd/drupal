@@ -187,11 +187,11 @@ $feeds_importer->config = array(
           'target' => 'field_doc_copyrights_statement',
           'unique' => FALSE,
         ),
-        21 => array(
-          'source' => 'Blank source 2',
-          'target' => 'path_alias',
-          'unique' => FALSE,
-        ),
+        /* 21 => array( */
+        /*   'source' => 'Blank source 2', */
+        /*   'target' => 'path_alias', */
+        /*   'unique' => FALSE, */
+        /* ), */
         22 => array(
           'source' => 'Blank source 3',
           'target' => 'field_doc_provider:label',
