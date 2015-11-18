@@ -216,6 +216,11 @@ Territorial Subdivision:
                         'target' => 'field_doc_title',
                         'unique' => TRUE,
                     ),
+                    18 => array(
+                        'source' => 'FAOLEXcopy',
+                        'target' => 'field_doc_copyrights_statement',
+                        'unique' => FALSE,
+                    ),
                 ),
                 'update_existing' => '2',
                 'update_non_existent' => 'skip',

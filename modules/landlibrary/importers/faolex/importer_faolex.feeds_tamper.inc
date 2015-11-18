@@ -183,5 +183,21 @@ $export[$feeds_tamper->id] = $feeds_tamper;
 
     $export[$feeds_tamper->id] = $feeds_tamper;
 
+    $feeds_tamper = new stdClass();
+    $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+    $feeds_tamper->api_version = 2;
+    $feeds_tamper->id = 'faolex_importer-FAOLEXcopy-default_value';
+    $feeds_tamper->importer = 'faolex_importer';
+    $feeds_tamper->source = 'FAOLEXcopy';
+    $feeds_tamper->plugin_id = 'default_value';
+    $feeds_tamper->settings = array(
+        'default_value' => 'The content of the record or set of records may be used, reproduced, downloaded and printed in an unaltered form solely for personal study and non-commercial purposes, provided that FAO copyright is properly ackowledged. Any other use is strictly prohibited without the prior written permission of the FAO Legal Office. Any requests for permission should be directed to the FAO Legal Office at: www.fao.org.',
+        'only_if_empty' => 0,
+    );
+    $feeds_tamper->weight = 0;
+    $feeds_tamper->description = 'FAOLEX Copyright';
+
+    $export[$feeds_tamper->id] = $feeds_tamper;
+
     return $export;
 }
