@@ -144,7 +144,7 @@ Territorial Subdivision:
                     ),
                     5 => array(
                         'source' => 'xpathparser:5',
-                        'target' => 'rules_autotag_field_doc_country',
+                        'target' => 'field_doc_country',
                         'unique' => FALSE,
                     ),
                     6 => array(

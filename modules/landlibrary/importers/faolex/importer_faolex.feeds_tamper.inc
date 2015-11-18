@@ -29,26 +29,37 @@ $feeds_tamper->description = 'Truncate';
 
 $export[$feeds_tamper->id] = $feeds_tamper;
 
-    /* /\* Country mapping *\/ */
-    /* $feeds_tamper = new stdClass(); */
-    /* $feeds_tamper->disabled = FALSE; /\* Edit this to true to make a default feeds_tamper disabled initially *\/ */
-    /* $feeds_tamper->api_version = 2; */
-    /* $feeds_tamper->id = 'faolex_importer-xpathparser_5-efq_finder'; */
-    /* $feeds_tamper->importer = 'faolex_importer'; */
-    /* $feeds_tamper->source = 'xpathparser:5'; */
-    /* $feeds_tamper->plugin_id = 'efq_finder'; */
-    /* $feeds_tamper->settings = array( */
-    /*     'update' => 'Update', */
-    /*     'entity_type' => 'taxonomy_term', */
-    /*     'bundle' => 'countries', */
-    /*     'field' => 'field_iso3', */
-    /*     'column' => 'value', */
-    /*     'property' => FALSE, */
-    /* ); */
-    /* $feeds_tamper->weight = 0; */
-    /* $feeds_tamper->description = 'Entity Field Query finder'; */
+    /* Country mapping from ISO3 */
+$feeds_tamper = new stdClass();
+$feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+$feeds_tamper->api_version = 2;
+$feeds_tamper->id = 'faolex_importer-xpathparser_5-php';
+$feeds_tamper->importer = 'faolex_importer';
+$feeds_tamper->source = 'xpathparser:5';
+$feeds_tamper->plugin_id = 'php';
+$feeds_tamper->settings = array(
+  'php' => '//dsm(\'find me : \'.strtoupper($field));
+$vocabulary_name=\'countries\';
+$vocab = taxonomy_vocabulary_machine_name_load($vocabulary_name);
+$query = new EntityFieldQuery();
+//dpm($query);
+$query->entityCondition(\'entity_type\', \'taxonomy_term\')->entityCondition(\'bundle\', $vocabulary_name)->propertyCondition(\'vid\', $vocab->vid)->fieldCondition(\'field_iso3\', \'value\', strtoupper($field), \'=\');
+$results = $query->execute();
+//dpm($results);
+$doc_countries = \'\';
+if (!empty($results[\'taxonomy_term\'])) {
+  foreach($results[\'taxonomy_term\'] as $tid) {
+    $term = taxonomy_term_load($tid->tid);
+    $doc_countries .= ($doc_countries? \';\':\'\').$term->name;
+    dsm($doc_countries);
+  }
+}
+return $doc_countries;',
+);
+$feeds_tamper->weight = 2;
+$feeds_tamper->description = 'Execute php code';
 
-    /* $export[$feeds_tamper->id] = $feeds_tamper; */
+$export[$feeds_tamper->id] = $feeds_tamper;
 
     /**
      * FAOLEX generated values
