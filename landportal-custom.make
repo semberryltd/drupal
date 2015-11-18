@@ -70,6 +70,6 @@ libraries:
       type: "file"
       url: "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.4/ckeditor_4.5.4_full.zip"
   chosen:
-	download:
-	  type: "file"
-	  url: "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip"
+    download:
+      type: "file"
+      url: "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip"
