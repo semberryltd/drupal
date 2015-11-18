@@ -38,20 +38,16 @@ $feeds_tamper->importer = 'faolex_importer';
 $feeds_tamper->source = 'xpathparser:5';
 $feeds_tamper->plugin_id = 'php';
 $feeds_tamper->settings = array(
-  'php' => '//dsm(\'find me : \'.strtoupper($field));
-$vocabulary_name=\'countries\';
+  'php' => '$vocabulary_name=\'countries\';
 $vocab = taxonomy_vocabulary_machine_name_load($vocabulary_name);
 $query = new EntityFieldQuery();
-//dpm($query);
 $query->entityCondition(\'entity_type\', \'taxonomy_term\')->entityCondition(\'bundle\', $vocabulary_name)->propertyCondition(\'vid\', $vocab->vid)->fieldCondition(\'field_iso3\', \'value\', strtoupper($field), \'=\');
 $results = $query->execute();
-//dpm($results);
 $doc_countries = \'\';
 if (!empty($results[\'taxonomy_term\'])) {
   foreach($results[\'taxonomy_term\'] as $tid) {
     $term = taxonomy_term_load($tid->tid);
     $doc_countries .= ($doc_countries? \';\':\'\').$term->name;
-    dsm($doc_countries);
   }
 }
 return $doc_countries;',
