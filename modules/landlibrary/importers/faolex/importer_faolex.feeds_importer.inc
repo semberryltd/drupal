@@ -124,7 +124,7 @@ Territorial Subdivision:
                     ),
                     1 => array(
                         'source' => 'xpathparser:1',
-                        'target' => 'field_doc_title',
+                        'target' => 'title',
                         'unique' => FALSE,
                     ),
                     2 => array(
@@ -213,7 +213,7 @@ Territorial Subdivision:
                     /* ), */
                     17 => array(
                         'source' => 'FAOLEXdocId', //FAOLEXdocId',
-                        'target' => 'title',
+                        'target' => 'field_doc_title',
                         'unique' => TRUE,
                     ),
                 ),
