@@ -39,7 +39,7 @@ projects:
     patch:
       - "https://www.drupal.org/files/issues/multiple_replace-1525540-7.patch"
   jquery_update:
-    version: "7.x-3.0-alpha3"
+    version: "3.0-alpha3"
 
 libraries:
   jsonpath:
