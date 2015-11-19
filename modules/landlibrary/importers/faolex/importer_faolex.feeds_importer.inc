@@ -26,7 +26,7 @@ function importer_faolex_feeds_importer_default() {
                 'auto_detect_feeds' => 0,
                 'use_pubsubhubbub' => 0,
                 'designated_hub' => '',
-                'request_timeout' => 30,
+                'request_timeout' => 120,
                 'auto_scheme' => 'http',
                 'accept_invalid_cert' => 0,
             ),
@@ -81,7 +81,7 @@ Territorial Subdivision:
                     /* 'xpathparser:15' => 0, */
                     /* 'xpathparser:16' => 0, */
                 ),
-                'context' => '//table[position()>2 and not(position()=last())]/tbody',
+                'context' => '//table[position()>2 and not(position()=last())]',
                 'exp' => array(
                     'errors' => 1,
                     'tidy' => 1,
