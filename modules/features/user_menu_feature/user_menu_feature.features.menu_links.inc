@@ -508,7 +508,7 @@ function user_menu_feature_menu_default_menu_links() {
   $menu_links['user-menu_mailing-lists:admin/mailchimp/user_lists'] = array(
     'menu_name' => 'user-menu',
     'link_path' => 'admin/mailchimp/user_lists',
-    'router_path' => 'admin/mailchimp/user_lists',
+    'router_path' => 'admin',
     'link_title' => 'Mailing Lists',
     'options' => array(
       'attributes' => array(
