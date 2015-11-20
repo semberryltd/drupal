@@ -15,6 +15,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'admin_menu',
   );
@@ -24,7 +26,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'system',
   );
@@ -34,6 +38,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'access all views',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'views',
   );
@@ -57,6 +62,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -70,6 +76,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -82,6 +89,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -92,6 +100,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'contextual',
   );
@@ -102,6 +111,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'dashboard',
   );
@@ -125,6 +135,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'oauth_common',
   );
@@ -135,6 +146,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'oauth_common',
   );
@@ -169,7 +181,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'access resource comment',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
     ),
     'module' => 'restws',
@@ -181,6 +195,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
     ),
     'module' => 'restws',
@@ -191,7 +206,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'access resource i18n_translation',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'restws',
   );
@@ -203,6 +220,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'restws',
   );
@@ -210,14 +228,25 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'access resource profile2'.
   $permissions['access resource profile2'] = array(
     'name' => 'access resource profile2',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'restws',
   );
 
   // Exported permission: 'access resource profile2_type'.
   $permissions['access resource profile2_type'] = array(
     'name' => 'access resource profile2_type',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'restws',
   );
 
@@ -227,6 +256,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'restws',
   );
@@ -237,6 +267,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'restws',
   );
@@ -247,6 +278,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'restws',
   );
@@ -258,6 +290,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'restws',
   );
@@ -269,6 +302,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
     ),
     'module' => 'restws',
@@ -280,6 +314,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
     ),
     'module' => 'restws',
@@ -322,6 +357,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -381,7 +417,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer RDF field mappings',
     'roles' => array(
       'administrator' => 'administrator',
-      'landportal admin' => 'landportal admin',
     ),
     'module' => 'rdfui',
   );
@@ -442,6 +477,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'i18n_node',
   );
@@ -518,7 +554,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer feeds_tamper',
     'roles' => array(
       'administrator' => 'administrator',
-      'landportal admin' => 'landportal admin',
     ),
     'module' => 'feeds_tamper',
   );
@@ -536,7 +571,10 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'administer file types'.
   $permissions['administer file types'] = array(
     'name' => 'administer file types',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
     'module' => 'file_entity',
   );
 
@@ -583,6 +621,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer image styles',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'image',
   );
@@ -592,6 +633,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer language_switcher',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'language_switcher',
   );
@@ -630,6 +672,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer media wysiwyg view mode',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'media_wysiwyg_view_mode',
   );
@@ -706,6 +749,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer profile types',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'profile2',
   );
@@ -716,6 +760,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'profile2',
   );
@@ -840,6 +885,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'path',
   );
@@ -850,6 +896,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'location_user',
   );
@@ -878,6 +925,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'administer views',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'views',
   );
@@ -887,6 +935,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'block IP addresses',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'system',
   );
@@ -895,6 +944,7 @@ function landportal_permissions_user_default_permissions() {
   $permissions['bypass file access'] = array(
     'name' => 'bypass file access',
     'roles' => array(
+      'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
     ),
     'module' => 'file_entity',
@@ -905,7 +955,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'bypass honeypot protection',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'honeypot',
   );
@@ -916,6 +968,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -951,14 +1004,18 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'clear countries_taxonomy_iso_and_external_uris_importer feeds'.
   $permissions['clear countries_taxonomy_iso_and_external_uris_importer feeds'] = array(
     'name' => 'clear countries_taxonomy_iso_and_external_uris_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: 'clear topic_taxonomy_land_terms_importer feeds'.
   $permissions['clear topic_taxonomy_land_terms_importer feeds'] = array(
     'name' => 'clear topic_taxonomy_land_terms_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -977,6 +1034,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create blog_post content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -988,6 +1046,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create debate content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -999,6 +1058,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create event content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1023,6 +1083,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create landlibrary_resource content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1034,6 +1095,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create news content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1043,7 +1105,12 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'create organization content'.
   $permissions['create organization content'] = array(
     'name' => 'create organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'node',
   );
 
@@ -1052,6 +1119,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
@@ -1062,6 +1131,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create person content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1187,7 +1257,6 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
-      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1205,7 +1274,10 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'delete any organization content'.
   $permissions['delete any organization content'] = array(
     'name' => 'delete any organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
     'module' => 'node',
   );
 
@@ -1214,6 +1286,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1243,7 +1317,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1253,7 +1329,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own blog_post content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1263,7 +1341,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own debate content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1273,7 +1353,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1283,7 +1365,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own event content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1293,7 +1377,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1303,6 +1389,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own landlibrary_resource content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1314,7 +1401,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own news content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1322,7 +1411,11 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'delete own organization content'.
   $permissions['delete own organization content'] = array(
     'name' => 'delete own organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'node',
   );
 
@@ -1331,6 +1424,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1340,7 +1436,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1350,7 +1448,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete own webform content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1375,6 +1472,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'node',
   );
@@ -1384,7 +1482,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'delete terms in continents',
     'roles' => array(
       'administrator' => 'administrator',
-      'landportal admin' => 'landportal admin',
     ),
     'module' => 'taxonomy',
   );
@@ -1462,7 +1559,9 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'delete terms in landvoc'.
   $permissions['delete terms in landvoc'] = array(
     'name' => 'delete terms in landvoc',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -1489,14 +1588,20 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'delete terms in organization_relation'.
   $permissions['delete terms in organization_relation'] = array(
     'name' => 'delete terms in organization_relation',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in organization_types'.
   $permissions['delete terms in organization_types'] = array(
     'name' => 'delete terms in organization_types',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -1535,6 +1640,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'display drupal links',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'admin_menu',
   );
@@ -1545,6 +1651,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1555,6 +1662,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1565,6 +1673,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1575,6 +1684,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1584,7 +1694,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'download own audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1594,7 +1706,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'download own document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1604,7 +1718,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'download own image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1614,7 +1730,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'download own video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1647,6 +1765,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1657,6 +1776,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1667,6 +1787,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1688,6 +1809,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1709,6 +1831,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'profile2',
   );
@@ -1727,7 +1850,11 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'edit any organization content'.
   $permissions['edit any organization content'] = array(
     'name' => 'edit any organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'node',
   );
 
@@ -1736,6 +1863,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
   );
@@ -1746,6 +1875,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1765,7 +1895,9 @@ function landportal_permissions_user_default_permissions() {
   $permissions['edit any work_profile profile'] = array(
     'name' => 'edit any work_profile profile',
     'roles' => array(
+      'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'profile2',
   );
@@ -1775,6 +1907,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1786,6 +1919,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own blog_post content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1809,6 +1943,8 @@ function landportal_permissions_user_default_permissions() {
   $permissions['edit own debate content'] = array(
     'name' => 'edit own debate content',
     'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1820,7 +1956,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1831,6 +1969,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1842,7 +1981,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1852,6 +1993,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own landlibrary_resource content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1864,6 +2006,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
@@ -1873,6 +2016,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own news content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -1882,7 +2026,12 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'edit own organization content'.
   $permissions['edit own organization content'] = array(
     'name' => 'edit own organization content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'node',
   );
 
@@ -1891,6 +2040,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
     'module' => 'node',
@@ -1901,7 +2052,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -1937,6 +2090,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own work_profile profile',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
@@ -1946,7 +2100,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit terms in continents',
     'roles' => array(
       'administrator' => 'administrator',
-      'landportal admin' => 'landportal admin',
     ),
     'module' => 'taxonomy',
   );
@@ -2031,7 +2184,9 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'edit terms in landvoc'.
   $permissions['edit terms in landvoc'] = array(
     'name' => 'edit terms in landvoc',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -2060,14 +2215,22 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'edit terms in organization_relation'.
   $permissions['edit terms in organization_relation'] = array(
     'name' => 'edit terms in organization_relation',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in organization_types'.
   $permissions['edit terms in organization_types'] = array(
     'name' => 'edit terms in organization_types',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -2143,7 +2306,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'export taxonomy by csv',
     'roles' => array(
       'administrator' => 'administrator',
-      'landportal admin' => 'landportal admin',
     ),
     'module' => 'taxonomy_csv',
   );
@@ -2153,6 +2315,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'flush caches',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'admin_menu',
   );
@@ -2199,7 +2362,9 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'import countries_taxonomy_iso_and_external_uris_importer feeds'.
   $permissions['import countries_taxonomy_iso_and_external_uris_importer feeds'] = array(
     'name' => 'import countries_taxonomy_iso_and_external_uris_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -2208,7 +2373,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'import taxonomy by csv',
     'roles' => array(
       'administrator' => 'administrator',
-      'landportal admin' => 'landportal admin',
     ),
     'module' => 'taxonomy_csv',
   );
@@ -2216,7 +2380,9 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'import topic_taxonomy_land_terms_importer feeds'.
   $permissions['import topic_taxonomy_land_terms_importer feeds'] = array(
     'name' => 'import topic_taxonomy_land_terms_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -2244,6 +2410,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'masquerade',
   );
@@ -2254,6 +2421,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'masquerade',
   );
@@ -2263,7 +2431,6 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'merge continents terms',
     'roles' => array(
       'administrator' => 'administrator',
-      'landportal admin' => 'landportal admin',
     ),
     'module' => 'term_merge',
   );
@@ -2274,6 +2441,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2294,6 +2462,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2304,6 +2473,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2314,6 +2484,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2334,6 +2505,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2341,7 +2513,9 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'merge landvoc terms'.
   $permissions['merge landvoc terms'] = array(
     'name' => 'merge landvoc terms',
-    'roles' => array(),
+    'roles' => array(
+      'landportal editor' => 'landportal editor',
+    ),
     'module' => 'term_merge',
   );
 
@@ -2388,6 +2562,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2398,6 +2573,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2408,6 +2584,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
   );
@@ -2467,6 +2644,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'perform unlimited index queries',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'services',
   );
@@ -2477,6 +2655,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2508,6 +2687,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'save file information',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'services',
   );
@@ -2519,6 +2699,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2539,6 +2720,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'set a system variable',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
     ),
     'module' => 'services',
   );
@@ -2548,6 +2730,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'set own user location',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2577,6 +2760,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'show format selection for node',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'better_formats',
   );
@@ -2586,6 +2772,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'show format selection for profile2',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'better_formats',
   );
@@ -2622,6 +2811,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'show format tips',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'better_formats',
   );
@@ -2631,6 +2823,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'show more format tips link',
     'roles' => array(
       'administrator' => 'administrator',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'better_formats',
   );
@@ -2640,6 +2834,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'skip CAPTCHA',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2652,6 +2847,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2663,7 +2859,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'submit latitude/longitude',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'location',
   );
@@ -2681,14 +2879,18 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'tamper countries_taxonomy_iso_and_external_uris_importer'.
   $permissions['tamper countries_taxonomy_iso_and_external_uris_importer'] = array(
     'name' => 'tamper countries_taxonomy_iso_and_external_uris_importer',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds_tamper',
   );
 
   // Exported permission: 'tamper topic_taxonomy_land_terms_importer'.
   $permissions['tamper topic_taxonomy_land_terms_importer'] = array(
     'name' => 'tamper topic_taxonomy_land_terms_importer',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds_tamper',
   );
 
@@ -2718,6 +2920,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'entity_translation',
   );
@@ -2727,6 +2930,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'translate content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2749,6 +2953,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'entity_translation',
   );
@@ -2757,7 +2962,9 @@ function landportal_permissions_user_default_permissions() {
   $permissions['translate taxonomy_term entities'] = array(
     'name' => 'translate taxonomy_term entities',
     'roles' => array(
+      'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'entity_translation',
   );
@@ -2775,14 +2982,18 @@ function landportal_permissions_user_default_permissions() {
   // Exported permission: 'unlock countries_taxonomy_iso_and_external_uris_importer feeds'.
   $permissions['unlock countries_taxonomy_iso_and_external_uris_importer feeds'] = array(
     'name' => 'unlock countries_taxonomy_iso_and_external_uris_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: 'unlock topic_taxonomy_land_terms_importer feeds'.
   $permissions['unlock topic_taxonomy_land_terms_importer feeds'] = array(
     'name' => 'unlock topic_taxonomy_land_terms_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -2800,6 +3011,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'use advanced search',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2828,6 +3040,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2851,7 +3064,11 @@ function landportal_permissions_user_default_permissions() {
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
     'module' => 'filter',
@@ -2862,7 +3079,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'use text format full_html',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'filter',
   );
@@ -2872,6 +3091,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view all user locations',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2883,8 +3103,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view any main profile',
     'roles' => array(
       'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
@@ -2893,8 +3113,8 @@ function landportal_permissions_user_default_permissions() {
   $permissions['view any work_profile profile'] = array(
     'name' => 'view any work_profile profile',
     'roles' => array(
-      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
@@ -2905,6 +3125,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'date_repeat_field',
   );
@@ -2917,6 +3138,7 @@ function landportal_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2928,7 +3150,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view location directory',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'location',
   );
@@ -2938,7 +3162,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view node location table',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'location',
   );
@@ -2948,6 +3174,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view own files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2959,8 +3186,8 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view own main profile',
     'roles' => array(
       'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
@@ -2970,6 +3197,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view own private files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2982,6 +3210,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -2993,6 +3222,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view own user location',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
@@ -3003,8 +3233,8 @@ function landportal_permissions_user_default_permissions() {
   $permissions['view own work_profile profile'] = array(
     'name' => 'view own work_profile profile',
     'roles' => array(
-      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
@@ -3014,7 +3244,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view private files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'file_entity',
   );
@@ -3037,6 +3269,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'system',
   );
@@ -3046,7 +3279,9 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view user location table',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'location',
   );
