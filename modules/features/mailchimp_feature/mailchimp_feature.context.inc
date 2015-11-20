@@ -15,7 +15,7 @@ function mailchimp_feature_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'mailchimp-block-legend-context';
   $context->description = 'adds a subscription block';
-  $context->tag = 'mailchimp';
+  $context->tag = 'partners';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -40,7 +40,7 @@ function mailchimp_feature_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('adds a subscription block');
-  t('mailchimp');
+  t('partners');
   $export['mailchimp-block-legend-context'] = $context;
 
   return $export;

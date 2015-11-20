@@ -20,7 +20,7 @@ function mailchimp_feature_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'mailchimp_lists',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'partners/legend',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -30,10 +30,10 @@ function mailchimp_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
       'landportal' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => 1,
         'theme' => 'landportal',
-        'weight' => -26,
+        'weight' => -23,
       ),
       'seven' => array(
         'region' => '',
@@ -43,7 +43,7 @@ function mailchimp_feature_default_fe_block_settings() {
       ),
     ),
     'title' => '<none>',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   return $export;

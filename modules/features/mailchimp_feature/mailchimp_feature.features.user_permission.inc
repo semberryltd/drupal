@@ -15,7 +15,6 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'access resource mailchimp_campaign',
     'roles' => array(
       'administrator' => 'administrator',
-      'contributor' => 'contributor',
       'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
@@ -28,7 +27,6 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'access resource mailchimp_list',
     'roles' => array(
       'administrator' => 'administrator',
-      'contributor' => 'contributor',
       'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
@@ -41,7 +39,9 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'administer mailchimp',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'mailchimp',
   );
@@ -51,6 +51,7 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'administer mailchimp campaigns',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
     ),
