@@ -40,6 +40,7 @@ projects:
   - features_extra
   - feeds_jsonpath_parser
   - feeds_tamper_conditional
+  - feeds_tamper_php
   - feeds_tamper_string2id
   - feeds_xpathparser
   - field_group
