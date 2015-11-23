@@ -3018,15 +3018,6 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'search',
   );
 
-  // Exported permission: 'use ccl'.
-  $permissions['use ccl'] = array(
-    'name' => 'use ccl',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'ccl',
-  );
-
   // Exported permission: 'use ctools import'.
   $permissions['use ctools import'] = array(
     'name' => 'use ctools import',
