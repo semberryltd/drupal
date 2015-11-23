@@ -6,40 +6,26 @@ For: Landportal Drupal theme
 Author: Jules Clement <jules@ker.bz>
 Original design by: WESO (http://weso.es/)
 
+In order to build the CSS, you must use a 'SASS compiler' such as Compass
+(Debian package: ruby-compass). You can tweak SCSS configuration
+To rebuild automatically (on changes) the CSS, use something like:
+~/[...]/themes/landportal/scss$ compass watch
+
 *****************************************/
 
-// In order to build the CSS, you must use a 'SASS compiler' such as Compass
-// (Debian package: ruby-compass). You can tweak SCSS configuration
-// To rebuild automatically (on changes) the CSS, use something like:
-//  ~/[...]/themes/landportal/scss$ compass watch
-
-
-
-/******************** IMPORT: Partials
-Variables & function for SASS files
-*/
-
-// Variables
+/* IMPORT: Partials */
 @import "partials/variables";
-
-// SASS Functions
 //@import "partials/functions";
-
-// Normalize
 @import "partials/normalize";
 
 
-/******************** IMPORT: Modules
-Common Elements to the website such as:
-buttons, forms, menus...
-*/
-
+/* IMPORT: Modules */
+// Vendors
 @import "compass/css3/border-radius";
 @import "compass/css3/images";
 @import "compass/css3/box-shadow";
-
-// Override bootstrap
-@import "modules/bootstrap";
+@import "bootstrap-compass";
+@import "bootstrap";
 
 // Common elements
 @import "modules/buttons";
@@ -52,14 +38,8 @@ buttons, forms, menus...
 // Landportal modules
 @import "modules/debate";
 @import "modules/library";
-
-//
 @import "modules/users";
 
 
-/******************** IMPORT: Screens
-Base and specialized sizes for devices
-*/
-
-// Base
+/* IMPORT: Screens */
 @import "screens/base";

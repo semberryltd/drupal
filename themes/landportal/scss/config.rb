@@ -1,3 +1,12 @@
+#
+# Landportal SCSS compiler configuration
+#
+# Author: Jules <jules@ker.bz>
+#
+
+require 'bootstrap-sass'
+require 'compass/import-once/activate'
+
 # 1. Set this to the root of your project when deployed:
 http_path = "/"
 
