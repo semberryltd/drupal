@@ -47,7 +47,7 @@ function landlibrary_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-landlibrary-menu',
           'region' => 'section_header',
-          'weight' => '-10',
+          'weight' => '1',
         ),
       ),
     ),
