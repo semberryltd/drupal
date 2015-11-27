@@ -30,7 +30,7 @@ h1 {
 	padding-bottom: 0.2em;
 }
 h2 {
-	font-size: 1.2em;
+	font-size: 2em;
 	font-weight: normal;
 }
 img {
@@ -40,44 +40,6 @@ img {
 a {
     color: $blue;
 }
-ul.tabs li a {
-    @extend .lp-button;
-    &.active {
-        border:  0;
-    }
-    border: 0;
-}
-ul.primary.tabs,
-ul.secondary.tabs {
-    a.active {
-        border-bottom: 0; /*3px solid $blue-dark;*/
-    }
-    float: right;
-    border-bottom: 0;
-    padding: 1em 0;
-    margin: 0;
-}
-li a.active,
-a.active {
-    color: $blue-dark;
-}
-a:not([href]) {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* .view-content { */
-/*     clear: both; */
-/* } */
-/* .no-margin { */
-/* 	margin: 0 !important; */
-/* } */
-
-/* Sizing */
-/* @screen-xs-min 480px */
-/* @screen-sm-min 768px */
-/* @screen-md-min 992px */
-/* @screen-lg-min 1200px */
 
 @media(min-width:768px){
     #breadcrumb,
@@ -451,17 +413,6 @@ body.overlay {
         }
     }
 
-}
-/* Book */
-.content .content.container {
-    padding: 0;
-    width: 100%;
-}
-// TMP HACK REMOVE ONCE landbook page title are cleanup (eg: on country page)
-.page-book-countries {
-    #page-title {
-        display: none;
-    }
 }
 
 .field-label {

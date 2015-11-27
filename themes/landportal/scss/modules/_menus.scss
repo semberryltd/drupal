@@ -180,11 +180,24 @@ ul.menu {
     }
 
 }
-.page-user #section-header,
-.page-book #section-header {
+
+
+#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+1) {
+  background-color: rgba(219, 51, 1, 0.3);
+}
+
+#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+2) {
+  background-color: rgba(157, 85, 63, 0.3);
+}
+
+#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+3) {
+  background-color: rgba(218, 66, 20, 0.3);
+}
+
+
+.page-user #section-header {
     border-top: 0;
-    background-color: $green-dark;
-    background-image: url(../images/header/grass-medium.png);
+    @extend .landbook-header-bg;
 }
 
 .node-type-organization,
@@ -208,6 +221,7 @@ ul.menu {
         }
     }
 
+    #block-menu-menu-landlibrary-menu,
     #block-menu-landdebate-menu {
         li {
             width: 16.65%;
@@ -217,4 +231,33 @@ ul.menu {
     #block-menu-user-signin {
         li { width: 50%; }
     }
+}
+
+
+
+
+ul.tabs li a {
+    @extend .landportal-button;
+    &.active {
+        border:  0;
+    }
+    border: 0;
+}
+ul.primary.tabs,
+ul.secondary.tabs {
+    a.active {
+        border-bottom: 0; /*3px solid $blue-dark;*/
+    }
+    float: right;
+    border-bottom: 0;
+    padding: 1em 0;
+    margin: 0;
+}
+li a.active,
+a.active {
+    color: $blue-dark;
+}
+a:not([href]) {
+    color: inherit;
+    text-decoration: none;
 }

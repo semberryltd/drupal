@@ -1,0 +1,28 @@
+/**
+ * Landbook SCSS
+ *
+ * Author: Jules <jules@ker.bz>
+ */
+.landbook-header-bg {
+    background-color: $green-dark;
+    background-image: url(../images/header/grass-medium.png);
+}
+
+.content .content.container {
+    padding: 0;
+    width: 100%;
+}
+// TMP HACK REMOVE ONCE landbook page title are cleanup (eg: on country page)
+.page-book-countries {
+    #page-title {
+        display: none;
+    }
+}
+
+.node-type-landbook-country,
+.page-book {
+    #section-header {
+        border-top: 0;
+        @extend .landbook-header-bg;
+    }
+}

@@ -1,12 +1,12 @@
 /****** Agro-Know ********/
 
-#views-exposed-form-library-search-page {
-    margin: 1em 0;
-}
+/* #views-exposed-form-library-search-page { */
+/*     margin: 1em 0; */
+/* } */
 
-#edit-keyword-wrapper {
-        width:60%;
-}
+/* #edit-keyword-wrapper { */
+/*         width:60%; */
+/* } */
 
 #edit-keyword {
     border-top-right-radius: 0;
@@ -108,30 +108,19 @@ margin-bottom:10px;
  cursor:pointer;
 }
 
-.page-library-search .view-content {
-  margin-top:20px;
-}
+/* .page-library-search .view-content { */
+/*   margin-top:20px; */
+/* } */
 
-a {
-    color: $blue-dark;
-}
+/* a { */
+/*     color: $blue-dark; */
+/* } */
 
 .grid-row {
 	text-align:center;
 	padding-bottom:50px;
 }
 
-#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+1) {
-  background-color: rgba(219, 51, 1, 0.3);
-}
-
-#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+2) {
-  background-color: rgba(157, 85, 63, 0.3);
-}
-
-#block-menu-menu-landlibrary-menu ul.menu li:nth-child(3n+3) {
-  background-color: rgba(218, 66, 20, 0.3);
-}
 
 
 .node-type-landlibrary-resource #section-header,
@@ -143,39 +132,39 @@ a {
   background-image: url(../images/header/rocky-land-medium.png);
 }
 
-.page-library #section-header #block-search-form,
-.page-library-search #section-header #block-search-form,
-.page-library-sources #section-header #block-search-form {
-  display: none;
-}
+/* .page-library #section-header #block-search-form, */
+/* .page-library-search #section-header #block-search-form, */
+/* .page-library-sources #section-header #block-search-form { */
+/*   display: none; */
+/* } */
 
+/* #section-header #block-menu-menu-landlibrary-menu li { */
+/*   width: 16.65%; */
+/* } */
 
-#section-header #block-menu-menu-landlibrary-menu li {
-  width: 16.65%;
-}
-.views-field-field-doc-is-shown-by a {
-width: 100%;
-margin-top: 1em;
-background-color: #01A9DB;
-color: #fff;
-border-color: #2a7085;
-}
+/* .views-field-field-doc-is-shown-by a { */
+/* width: 100%; */
+/* margin-top: 1em; */
+/* background-color: #01A9DB; */
+/* color: #fff; */
+/* border-color: #2a7085; */
+/* } */
 
-.views-field-field-doc-is-shown-at a {
-width: 100%;
-margin-top: 1em;
-background-color: #01A9DB;
-color: #fff;
-border-color: #2a7085;
-}
+/* .views-field-field-doc-is-shown-at a { */
+/* width: 100%; */
+/* margin-top: 1em; */
+/* background-color: #01A9DB; */
+/* color: #fff; */
+/* border-color: #2a7085; */
+/* } */
 
-.node-type-landlibrary-resource .field-label-above {
-margin-top:20px;
-}
+/* .node-type-landlibrary-resource .field-label-above { */
+/* margin-top:20px; */
+/* } */
 
-.node-type-landlibrary-resource .field-group-fieldset {
-margin-top:20px;
-}
+/* .node-type-landlibrary-resource .field-group-fieldset { */
+/* margin-top:20px; */
+/* } */
 
 
 
@@ -230,13 +219,7 @@ margin-top:20px;
         margin-right: 1em;
     }
     .field-name-field-doc-type {
-        margin-bottom: 1em;
-        a {
-            padding: .5em;
-            font-size: 1.2em;
-            background-color: $red;
-            font-weight: bold;
-        }
+        @extend .landportal-button-red;
     }
 }
 

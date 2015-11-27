@@ -1,5 +1,5 @@
 
-.lp-button {
+.landportal-button {
     padding: 0.2em 0.5em;
     border-radius: .25em;
     background-color: $blue-light;
@@ -10,7 +10,8 @@
     }
 }
 
-.field-type-taxonomy-term-reference {
+.field-type-taxonomy-term-reference { //.field-label-hidden {
+    display: inline;
     .field-items {
         display: inline;
     }
@@ -18,10 +19,21 @@
         display: inline-block;
         margin: .2em;
         a {
-            @extend .lp-button;
+            @extend .landportal-button;
         }
     }
 }
+
+.landportal-button-red {
+    //margin-bottom: 1em;
+    .field-item a {
+        padding: .5em;
+        font-size: 1.2em;
+        background-color: $red;
+        font-weight: bold;
+    }
+}
+
 
 /* .field-name-field-related-topics, */
 /* .field-name-field-geographical-focus, */
