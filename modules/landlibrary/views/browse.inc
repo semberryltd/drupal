@@ -12,6 +12,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['use_more'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['cache']['type'] = 'none';
@@ -22,6 +23,10 @@ $handler->display->display_options['pager']['options']['items_per_page'] = '10';
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['row_plugin'] = 'node';
 $handler->display->display_options['row_options']['links'] = FALSE;
+/* Header: Global: Result summary */
+$handler->display->display_options['header']['result']['id'] = 'result';
+$handler->display->display_options['header']['result']['table'] = 'views';
+$handler->display->display_options['header']['result']['field'] = 'result';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -65,6 +70,52 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'node';
 $handler->display->display_options['row_options']['links'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+/* Display: Page by country */
+$handler = $view->new_display('page', 'Page by country', 'page_1');
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Content: Country (field_doc_country) */
+$handler->display->display_options['relationships']['field_doc_country_tid']['id'] = 'field_doc_country_tid';
+$handler->display->display_options['relationships']['field_doc_country_tid']['table'] = 'field_data_field_doc_country';
+$handler->display->display_options['relationships']['field_doc_country_tid']['field'] = 'field_doc_country_tid';
+$handler->display->display_options['relationships']['field_doc_country_tid']['required'] = TRUE;
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: Taxonomy term: Name */
+$handler->display->display_options['arguments']['name']['id'] = 'name';
+$handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['arguments']['name']['field'] = 'name';
+$handler->display->display_options['arguments']['name']['relationship'] = 'field_doc_country_tid';
+$handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
+$handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['name']['limit'] = '0';
+$handler->display->display_options['path'] = 'library/browse/by-country';
+
+/* Display: Block */
+$handler = $view->new_display('block', 'Block', 'block_1');
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Content: Country (field_doc_country) */
+$handler->display->display_options['relationships']['field_doc_country_tid']['id'] = 'field_doc_country_tid';
+$handler->display->display_options['relationships']['field_doc_country_tid']['table'] = 'field_data_field_doc_country';
+$handler->display->display_options['relationships']['field_doc_country_tid']['field'] = 'field_doc_country_tid';
+$handler->display->display_options['relationships']['field_doc_country_tid']['required'] = TRUE;
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: Taxonomy term: Name */
+$handler->display->display_options['arguments']['name']['id'] = 'name';
+$handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['arguments']['name']['field'] = 'name';
+$handler->display->display_options['arguments']['name']['relationship'] = 'field_doc_country_tid';
+$handler->display->display_options['arguments']['name']['default_action'] = 'default';
+$handler->display->display_options['arguments']['name']['default_argument_type'] = 'raw';
+$handler->display->display_options['arguments']['name']['default_argument_options']['index'] = '2';
+$handler->display->display_options['arguments']['name']['default_argument_options']['use_alias'] = TRUE;
+$handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['name']['limit'] = '0';
+$handler->display->display_options['arguments']['name']['case'] = 'ucfirst';
+$handler->display->display_options['block_description'] = 'LLbyC';
 $translatables['library'] = array(
   t('Master'),
   t('more'),
@@ -80,6 +131,11 @@ $translatables['library'] = array(
   t('‹ previous'),
   t('next ›'),
   t('last »'),
+  t('Displaying @start - @end of @total'),
   t('Page'),
   t('Block'),
+  t('Page by country'),
+  t('term from field_doc_country'),
+  t('All'),
+  t('LLbyC'),
 );

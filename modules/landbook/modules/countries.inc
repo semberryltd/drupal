@@ -193,8 +193,6 @@ class Country {
 			$safe_iso3 = $database->escape($iso3);
 			$datasources = $database->query("datasources_by_country", array($lang, $safe_iso3));
 			$info = $database->query("country", array($lang, $safe_iso3));
-
-                        // TODO: This is probably wrong way to do it... --Jules, Dec '14
 			if (!$info && function_exists("drupal_goto")) {
 				drupal_goto("e404");
 			}
