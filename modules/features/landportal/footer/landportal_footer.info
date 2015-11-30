@@ -1,0 +1,17 @@
+name = Landportal Footer
+core = 7.x
+package = F Landportal
+version = 7.x-1.0-beta
+dependencies[] = ctools
+dependencies[] = fe_block
+dependencies[] = features
+dependencies[] = landportal_blocks
+dependencies[] = menu
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[fe_block_settings][] = landportal_blocks-landportal_footer
+features[fe_block_settings][] = landportal_blocks-lp_footer_social
+features[fe_block_settings][] = menu-menu-footer-menu
+features[features_api][] = api:2
+features[menu_custom][] = menu-footer-menu
+features[variable][] = landportal_footer

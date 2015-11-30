@@ -393,8 +393,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../scss/fonts/bootstrap/glyphicons-halflings-regular.eot?1448302932);
-  src: url(../scss/fonts/bootstrap/glyphicons-halflings-regular.eot?&1448302932#iefix) format("embedded-opentype"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.woff2?1448302932) format("woff2"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.woff?1448302932) format("woff"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.ttf?1448302932) format("truetype"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.svg?1448302932#glyphicons_halflingsregular) format("svg");
+  src: url(../scss/fonts/bootstrap/glyphicons-halflings-regular.eot?1448613967);
+  src: url(../scss/fonts/bootstrap/glyphicons-halflings-regular.eot?&1448613967#iefix) format("embedded-opentype"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.woff2?1448613967) format("woff2"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.woff?1448613967) format("woff"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.ttf?1448613967) format("truetype"), url(../scss/fonts/bootstrap/glyphicons-halflings-regular.svg?1448613967#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
@@ -2166,7 +2166,7 @@ ol ol {
 }
 
 /* line 167, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_type.scss */
-.list-unstyled {
+.list-unstyled, .view-resource-type .view-content > .item-list > ul > li {
   padding-left: 0;
   list-style: none;
 }
@@ -2408,39 +2408,39 @@ pre code {
 }
 
 /* line 30, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
-.container-fluid {
+.container-fluid, #footer {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container-fluid:before, .container-fluid:after {
+.container-fluid:before, #footer:before, .container-fluid:after, #footer:after {
   content: " ";
   display: table;
 }
 /* line 19, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container-fluid:after {
+.container-fluid:after, #footer:after {
   clear: both;
 }
 
 /* line 39, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
-.row {
+.row, #footer .block-menu .content {
   margin-left: -15px;
   margin-right: -15px;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.row:before, .row:after {
+.row:before, #footer .block-menu .content:before, .row:after, #footer .block-menu .content:after {
   content: " ";
   display: table;
 }
 /* line 19, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.row:after {
+.row:after, #footer .block-menu .content:after {
   clear: both;
 }
 
 /* line 11, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .webform-client-form .webform-component-number label, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .webform-client-form .webform-component-number label, #footer .block-menu .content > ul > li, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2709,7 +2709,7 @@ pre code {
 
 @media (min-width: 768px) {
   /* line 27, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .webform-client-form .webform-component-number label, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .webform-client-form .webform-component-number label, #footer .block-menu .content > ul > li, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
 
@@ -2724,7 +2724,7 @@ pre code {
   }
 
   /* line 35, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-3, .webform-client-form .webform-component-number label {
+  .col-sm-3, .webform-client-form .webform-component-number label, #footer .block-menu .content > ul > li {
     width: 25%;
   }
 
@@ -4722,7 +4722,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
   border-color: #ccc;
 }
 /* line 56, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default .badge {
+.btn-default .badge, .btn-default .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-default span {
   color: #fff;
   background-color: #333;
 }
@@ -4767,7 +4767,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
   border-color: #2e6da4;
 }
 /* line 56, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-primary .badge, .webform-client-form .form-actions input[type=submit] .badge {
+.btn-primary .badge, .webform-client-form .form-actions input[type=submit] .badge, .btn-primary .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-primary span, .webform-client-form .form-actions input[type=submit] .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .webform-client-form .form-actions input[type=submit] span {
   color: #337ab7;
   background-color: #fff;
 }
@@ -4812,7 +4812,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
   border-color: #4cae4c;
 }
 /* line 56, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-success .badge {
+.btn-success .badge, .btn-success .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-success span {
   color: #5cb85c;
   background-color: #fff;
 }
@@ -4857,7 +4857,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
   border-color: #46b8da;
 }
 /* line 56, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-info .badge {
+.btn-info .badge, .btn-info .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-info span {
   color: #5bc0de;
   background-color: #fff;
 }
@@ -4902,7 +4902,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
   border-color: #eea236;
 }
 /* line 56, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-warning .badge {
+.btn-warning .badge, .btn-warning .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-warning span {
   color: #f0ad4e;
   background-color: #fff;
 }
@@ -4947,7 +4947,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
   border-color: #d43f3a;
 }
 /* line 56, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-danger .badge {
+.btn-danger .badge, .btn-danger .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-danger span {
   color: #d9534f;
   background-color: #fff;
 }
@@ -5978,7 +5978,9 @@ tbody.collapse.in {
 .container > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-header,
-.container-fluid > .navbar-collapse {
+#footer > .navbar-header,
+.container-fluid > .navbar-collapse,
+#footer > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -5987,7 +5989,9 @@ tbody.collapse.in {
   .container > .navbar-header,
   .container > .navbar-collapse,
   .container-fluid > .navbar-header,
-  .container-fluid > .navbar-collapse {
+  #footer > .navbar-header,
+  .container-fluid > .navbar-collapse,
+  #footer > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
   }
@@ -6052,7 +6056,7 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 180, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand, .navbar > #footer .navbar-brand {
     margin-left: -15px;
   }
 }
@@ -6802,7 +6806,7 @@ a.label:hover, a.label:focus {
 }
 
 /* line 7, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.badge {
+.badge, .view-resource-type .view-content > .item-list > ul > li .field-content span {
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
@@ -6817,34 +6821,34 @@ a.label:hover, a.label:focus {
   border-radius: 10px;
 }
 /* line 22, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.badge:empty {
+.badge:empty, .view-resource-type .view-content > .item-list > ul > li .field-content span:empty {
   display: none;
 }
 /* line 27, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.btn .badge, .webform-client-form .form-actions input[type=submit] .badge {
+.btn .badge, .webform-client-form .form-actions input[type=submit] .badge, .btn .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn span, .webform-client-form .form-actions input[type=submit] .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .webform-client-form .form-actions input[type=submit] span {
   position: relative;
   top: -1px;
 }
 /* line 32, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.btn-xs .badge, .btn-group-xs > .btn .badge, .webform-client-form .form-actions .btn-group-xs > input[type=submit] .badge, .btn-group-xs > .btn .badge, .webform-client-form .form-actions .btn-group-xs > input[type=submit] .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, .webform-client-form .form-actions .btn-group-xs > input[type=submit] .badge, .btn-xs .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-xs span, .btn-group-xs > .btn .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-group-xs > .btn span, .webform-client-form .form-actions .btn-group-xs > input[type=submit] .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .webform-client-form .form-actions .btn-group-xs > input[type=submit] span, .btn-group-xs > .btn .badge, .webform-client-form .form-actions .btn-group-xs > input[type=submit] .badge, .btn-group-xs > .btn .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .btn-group-xs > .btn span, .webform-client-form .form-actions .btn-group-xs > input[type=submit] .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .webform-client-form .form-actions .btn-group-xs > input[type=submit] span {
   top: 0;
   padding: 1px 5px;
 }
 /* line 41, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
+.list-group-item.active > .badge, .view-resource-type .view-content > .item-list > ul > li ul li.active > .badge, .view-resource-type .view-content > .item-list > ul > li .field-content .list-group-item.active > span, .view-resource-type .view-content > .item-list > ul > li ul .field-content li.active > span, .view-resource-type .view-content > .item-list > ul > li .field-content ul li.active > span, .nav-pills > .active > a > .badge, .view-resource-type .view-content > .item-list > ul > li .field-content .nav-pills > .active > a > span {
   color: #337ab7;
   background-color: #fff;
 }
 /* line 47, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.list-group-item > .badge {
+.list-group-item > .badge, .view-resource-type .view-content > .item-list > ul > li ul li > .badge, .view-resource-type .view-content > .item-list > ul > li .field-content .list-group-item > span, .view-resource-type .view-content > .item-list > ul > li ul .field-content li > span, .view-resource-type .view-content > .item-list > ul > li .field-content ul li > span {
   float: right;
 }
 /* line 51, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.list-group-item > .badge + .badge {
+.list-group-item > .badge + .badge, .view-resource-type .view-content > .item-list > ul > li ul li > .badge + .badge, .view-resource-type .view-content > .item-list > ul > li .field-content .list-group-item > span + .badge, .view-resource-type .view-content > .item-list > ul > li ul .field-content li > span + .badge, .view-resource-type .view-content > .item-list > ul > li .field-content ul li > span + .badge, .view-resource-type .view-content > .item-list > ul > li .field-content .list-group-item > .badge + span, .view-resource-type .view-content > .item-list > ul > li ul .field-content li > .badge + span, .view-resource-type .view-content > .item-list > ul > li .field-content ul li > .badge + span, .view-resource-type .view-content > .item-list > ul > li .field-content .list-group-item > span + span, .view-resource-type .view-content > .item-list > ul > li ul .field-content li > span + span, .view-resource-type .view-content > .item-list > ul > li .field-content ul li > span + span {
   margin-right: 5px;
 }
 /* line 55, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-.nav-pills > li > a > .badge {
+.nav-pills > li > a > .badge, .view-resource-type .view-content > .item-list > ul > li .field-content .nav-pills > li > a > span {
   margin-left: 3px;
 }
 
@@ -6879,7 +6883,7 @@ a.badge:hover, a.badge:focus {
   border-top-color: #d5d5d5;
 }
 /* line 28, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_jumbotron.scss */
-.container .jumbotron, .container-fluid .jumbotron {
+.container .jumbotron, .container-fluid .jumbotron, #footer .jumbotron {
   border-radius: 6px;
 }
 /* line 33, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_jumbotron.scss */
@@ -6893,7 +6897,7 @@ a.badge:hover, a.badge:focus {
     padding-bottom: 48px;
   }
   /* line 41, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_jumbotron.scss */
-  .container .jumbotron, .container-fluid .jumbotron {
+  .container .jumbotron, .container-fluid .jumbotron, #footer .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -7217,13 +7221,13 @@ a.thumbnail.active {
 }
 
 /* line 10, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group {
+.list-group, .view-resource-type .view-content > .item-list > ul > li ul {
   margin-bottom: 20px;
   padding-left: 0;
 }
 
 /* line 21, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item {
+.list-group-item, .view-resource-type .view-content > .item-list > ul > li ul li {
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -7232,12 +7236,12 @@ a.thumbnail.active {
   border: 1px solid #ddd;
 }
 /* line 31, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item:first-child {
+.list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li ul li:first-child {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
 /* line 34, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item:last-child {
+.list-group-item:last-child, .view-resource-type .view-content > .item-list > ul > li ul li:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -7269,38 +7273,44 @@ button.list-group-item {
 }
 
 /* line 70, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus {
+.list-group-item.disabled, .view-resource-type .view-content > .item-list > ul > li ul li.disabled, .list-group-item.disabled:hover, .view-resource-type .view-content > .item-list > ul > li ul li.disabled:hover, .list-group-item.disabled:focus, .view-resource-type .view-content > .item-list > ul > li ul li.disabled:focus {
   background-color: #eeeeee;
   color: #777777;
   cursor: not-allowed;
 }
 /* line 78, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading {
+.list-group-item.disabled .list-group-item-heading, .view-resource-type .view-content > .item-list > ul > li ul li.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .view-resource-type .view-content > .item-list > ul > li ul li.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading, .view-resource-type .view-content > .item-list > ul > li ul li.disabled:focus .list-group-item-heading {
   color: inherit;
 }
 /* line 81, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text {
+.list-group-item.disabled .list-group-item-text, .view-resource-type .view-content > .item-list > ul > li ul li.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .view-resource-type .view-content > .item-list > ul > li ul li.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text, .view-resource-type .view-content > .item-list > ul > li ul li.disabled:focus .list-group-item-text {
   color: #777777;
 }
 /* line 87, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+.list-group-item.active, .view-resource-type .view-content > .item-list > ul > li ul li.active, .list-group-item.active:hover, .view-resource-type .view-content > .item-list > ul > li ul li.active:hover, .list-group-item.active:focus, .view-resource-type .view-content > .item-list > ul > li ul li.active:focus {
   z-index: 2;
   color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
 }
 /* line 96, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.active .list-group-item-heading,
+.list-group-item.active .list-group-item-heading, .view-resource-type .view-content > .item-list > ul > li ul li.active .list-group-item-heading,
 .list-group-item.active .list-group-item-heading > small,
-.list-group-item.active .list-group-item-heading > .small, .list-group-item.active:hover .list-group-item-heading,
+.view-resource-type .view-content > .item-list > ul > li ul li.active .list-group-item-heading > small,
+.list-group-item.active .list-group-item-heading > .small,
+.view-resource-type .view-content > .item-list > ul > li ul li.active .list-group-item-heading > .small, .list-group-item.active:hover .list-group-item-heading, .view-resource-type .view-content > .item-list > ul > li ul li.active:hover .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading > small,
-.list-group-item.active:hover .list-group-item-heading > .small, .list-group-item.active:focus .list-group-item-heading,
+.view-resource-type .view-content > .item-list > ul > li ul li.active:hover .list-group-item-heading > small,
+.list-group-item.active:hover .list-group-item-heading > .small,
+.view-resource-type .view-content > .item-list > ul > li ul li.active:hover .list-group-item-heading > .small, .list-group-item.active:focus .list-group-item-heading, .view-resource-type .view-content > .item-list > ul > li ul li.active:focus .list-group-item-heading,
 .list-group-item.active:focus .list-group-item-heading > small,
-.list-group-item.active:focus .list-group-item-heading > .small {
+.view-resource-type .view-content > .item-list > ul > li ul li.active:focus .list-group-item-heading > small,
+.list-group-item.active:focus .list-group-item-heading > .small,
+.view-resource-type .view-content > .item-list > ul > li ul li.active:focus .list-group-item-heading > .small {
   color: inherit;
 }
 /* line 101, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
+.list-group-item.active .list-group-item-text, .view-resource-type .view-content > .item-list > ul > li ul li.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .view-resource-type .view-content > .item-list > ul > li ul li.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text, .view-resource-type .view-content > .item-list > ul > li ul li.active:focus .list-group-item-text {
   color: #c7ddef;
 }
 
@@ -7449,7 +7459,7 @@ button.list-group-item-danger.active:focus {
 }
 
 /* line 7, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel {
+.panel, .view-resource-type .view-content > .item-list > ul > li {
   margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid transparent;
@@ -7473,14 +7483,14 @@ button.list-group-item-danger.active:focus {
 }
 
 /* line 22, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading {
+.panel-heading, .view-resource-type .view-content > .item-list > ul > li > .views-field {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 /* line 27, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading > .dropdown .dropdown-toggle {
+.panel-heading > .dropdown .dropdown-toggle, .view-resource-type .view-content > .item-list > ul > li > .views-field > .dropdown .dropdown-toggle {
   color: inherit;
 }
 
@@ -7510,202 +7520,310 @@ button.list-group-item-danger.active:focus {
 }
 
 /* line 63, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group,
-.panel > .panel-collapse > .list-group {
+.panel > .list-group, .view-resource-type .view-content > .item-list > ul > li > .list-group, .view-resource-type .view-content > .item-list > ul > li .panel > ul, .view-resource-type .view-content > .item-list > ul > li > ul,
+.panel > .panel-collapse > .list-group,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .list-group,
+.view-resource-type .view-content > .item-list > ul > li .panel > .panel-collapse > ul,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > ul {
   margin-bottom: 0;
 }
 /* line 67, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group .list-group-item,
-.panel > .panel-collapse > .list-group .list-group-item {
+.panel > .list-group .list-group-item, .view-resource-type .view-content > .item-list > ul > li > .list-group .list-group-item, .view-resource-type .view-content > .item-list > ul > li .panel > ul .list-group-item, .view-resource-type .view-content > .item-list > ul > li > ul .list-group-item, .panel > .list-group .view-resource-type .view-content > .item-list > ul > li ul li, .view-resource-type .view-content > .item-list > ul > li ul .panel > .list-group li, .view-resource-type .view-content > .item-list > ul > li > .list-group ul li, .view-resource-type .view-content > .item-list > ul > li .panel > ul li, .view-resource-type .view-content > .item-list > ul > li > ul ul li,
+.panel > .panel-collapse > .list-group .list-group-item,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .list-group .list-group-item,
+.view-resource-type .view-content > .item-list > ul > li .panel > .panel-collapse > ul .list-group-item,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > ul .list-group-item,
+.panel > .panel-collapse > .list-group .view-resource-type .view-content > .item-list > ul > li ul li,
+.view-resource-type .view-content > .item-list > ul > li ul .panel > .panel-collapse > .list-group li,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .list-group ul li,
+.view-resource-type .view-content > .item-list > ul > li .panel > .panel-collapse > ul li,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > ul ul li {
   border-width: 1px 0;
   border-radius: 0;
 }
 /* line 74, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group:first-child .list-group-item:first-child,
-.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+.panel > .list-group:first-child .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > .list-group:first-child .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li .panel > ul:first-child .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > ul:first-child .list-group-item:first-child, .panel > .list-group:first-child .view-resource-type .view-content > .item-list > ul > li ul li:first-child, .view-resource-type .view-content > .item-list > ul > li ul .panel > .list-group:first-child li:first-child, .view-resource-type .view-content > .item-list > ul > li > .list-group:first-child ul li:first-child, .view-resource-type .view-content > .item-list > ul > li .panel > ul:first-child li:first-child, .view-resource-type .view-content > .item-list > ul > li > ul:first-child ul li:first-child,
+.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .list-group:first-child .list-group-item:first-child,
+.view-resource-type .view-content > .item-list > ul > li .panel > .panel-collapse > ul:first-child .list-group-item:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > ul:first-child .list-group-item:first-child,
+.panel > .panel-collapse > .list-group:first-child .view-resource-type .view-content > .item-list > ul > li ul li:first-child,
+.view-resource-type .view-content > .item-list > ul > li ul .panel > .panel-collapse > .list-group:first-child li:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .list-group:first-child ul li:first-child,
+.view-resource-type .view-content > .item-list > ul > li .panel > .panel-collapse > ul:first-child li:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > ul:first-child ul li:first-child {
   border-top: 0;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 /* line 82, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group:last-child .list-group-item:last-child,
-.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+.panel > .list-group:last-child .list-group-item:last-child, .view-resource-type .view-content > .item-list > ul > li > .list-group:last-child .list-group-item:last-child, .view-resource-type .view-content > .item-list > ul > li .panel > ul:last-child .list-group-item:last-child, .view-resource-type .view-content > .item-list > ul > li > ul:last-child .list-group-item:last-child, .panel > .list-group:last-child .view-resource-type .view-content > .item-list > ul > li ul li:last-child, .view-resource-type .view-content > .item-list > ul > li ul .panel > .list-group:last-child li:last-child, .view-resource-type .view-content > .item-list > ul > li > .list-group:last-child ul li:last-child, .view-resource-type .view-content > .item-list > ul > li .panel > ul:last-child li:last-child, .view-resource-type .view-content > .item-list > ul > li > ul:last-child ul li:last-child,
+.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .list-group:last-child .list-group-item:last-child,
+.view-resource-type .view-content > .item-list > ul > li .panel > .panel-collapse > ul:last-child .list-group-item:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > ul:last-child .list-group-item:last-child,
+.panel > .panel-collapse > .list-group:last-child .view-resource-type .view-content > .item-list > ul > li ul li:last-child,
+.view-resource-type .view-content > .item-list > ul > li ul .panel > .panel-collapse > .list-group:last-child li:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .list-group:last-child ul li:last-child,
+.view-resource-type .view-content > .item-list > ul > li .panel > .panel-collapse > ul:last-child li:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > ul:last-child ul li:last-child {
   border-bottom: 0;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 /* line 89, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > .list-group .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li .panel > .panel-heading + .panel-collapse > ul .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > .panel-heading + .panel-collapse > ul .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > ul .list-group-item:first-child, .panel > .panel-heading + .panel-collapse > .list-group .view-resource-type .view-content > .item-list > ul > li ul li:first-child, .view-resource-type .view-content > .item-list > ul > li ul .panel > .panel-heading + .panel-collapse > .list-group li:first-child, .view-resource-type .view-content > .item-list > ul > li > .panel-heading + .panel-collapse > .list-group ul li:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > .list-group ul li:first-child, .view-resource-type .view-content > .item-list > ul > li .panel > .panel-heading + .panel-collapse > ul li:first-child, .view-resource-type .view-content > .item-list > ul > li > .panel-heading + .panel-collapse > ul ul li:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > ul ul li:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 /* line 96, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading + .list-group .list-group-item:first-child {
+.panel-heading + .list-group .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + .list-group .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li .panel-heading + ul .list-group-item:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + ul .list-group-item:first-child, .panel-heading + .list-group .view-resource-type .view-content > .item-list > ul > li ul li:first-child, .view-resource-type .view-content > .item-list > ul > li ul .panel-heading + .list-group li:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + .list-group ul li:first-child, .view-resource-type .view-content > .item-list > ul > li .panel-heading + ul li:first-child, .view-resource-type .view-content > .item-list > ul > li > .views-field + ul ul li:first-child {
   border-top-width: 0;
 }
 
 /* line 100, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.list-group + .panel-footer {
+.list-group + .panel-footer, .view-resource-type .view-content > .item-list > ul > li ul + .panel-footer {
   border-top-width: 0;
 }
 
 /* line 110, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table,
+.panel > .table, .view-resource-type .view-content > .item-list > ul > li > .table,
 .panel > .table-responsive > .table,
-.panel > .panel-collapse > .table {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table,
+.panel > .panel-collapse > .table,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .table {
   margin-bottom: 0;
 }
 /* line 115, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table caption,
+.panel > .table caption, .view-resource-type .view-content > .item-list > ul > li > .table caption,
 .panel > .table-responsive > .table caption,
-.panel > .panel-collapse > .table caption {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table caption,
+.panel > .panel-collapse > .table caption,
+.view-resource-type .view-content > .item-list > ul > li > .panel-collapse > .table caption {
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 121, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child,
-.panel > .table-responsive:first-child > .table:first-child {
+.panel > .table:first-child, .view-resource-type .view-content > .item-list > ul > li > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 /* line 127, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child, .view-resource-type .view-content > .item-list > ul > li > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:first-child > tbody:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 /* line 131, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .view-resource-type .view-content > .item-list > ul > li > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:first-child > tbody:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
   border-top-left-radius: 3px;
 }
 /* line 135, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .view-resource-type .view-content > .item-list > ul > li > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:first-child > tbody:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
   border-top-right-radius: 3px;
 }
 /* line 143, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child,
-.panel > .table-responsive:last-child > .table:last-child {
+.panel > .table:last-child, .view-resource-type .view-content > .item-list > ul > li > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 /* line 149, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child, .view-resource-type .view-content > .item-list > ul > li > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:last-child > tfoot:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
 /* line 153, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .view-resource-type .view-content > .item-list > ul > li > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
   border-bottom-left-radius: 3px;
 }
 /* line 157, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .view-resource-type .view-content > .item-list > ul > li > .table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
   border-bottom-right-radius: 3px;
 }
 /* line 164, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .panel-body + .table,
+.panel > .panel-body + .table, .view-resource-type .view-content > .item-list > ul > li > .panel-body + .table,
 .panel > .panel-body + .table-responsive,
+.view-resource-type .view-content > .item-list > ul > li > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
-.panel > .table-responsive + .panel-body {
+.view-resource-type .view-content > .item-list > ul > li > .table + .panel-body,
+.panel > .table-responsive + .panel-body,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive + .panel-body {
   border-top: 1px solid #ddd;
 }
 /* line 170, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table > tbody:first-child > tr:first-child th,
-.panel > .table > tbody:first-child > tr:first-child td {
+.panel > .table > tbody:first-child > tr:first-child th, .view-resource-type .view-content > .item-list > ul > li > .table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td,
+.view-resource-type .view-content > .item-list > ul > li > .table > tbody:first-child > tr:first-child td {
   border-top: 0;
 }
 /* line 174, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table-bordered,
-.panel > .table-responsive > .table-bordered {
+.panel > .table-bordered, .view-resource-type .view-content > .item-list > ul > li > .table-bordered,
+.panel > .table-responsive > .table-bordered,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered {
   border: 0;
 }
 /* line 181, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table-bordered > thead > tr > th:first-child,
+.panel > .table-bordered > thead > tr > th:first-child, .view-resource-type .view-content > .item-list > ul > li > .table-bordered > thead > tr > th:first-child,
 .panel > .table-bordered > thead > tr > td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > thead > tr > td:first-child,
 .panel > .table-bordered > tbody > tr > th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr > th:first-child,
 .panel > .table-bordered > tbody > tr > td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr > td:first-child,
 .panel > .table-bordered > tfoot > tr > th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tfoot > tr > th:first-child,
 .panel > .table-bordered > tfoot > tr > td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tfoot > tr > td:first-child,
 .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > thead > tr > th:first-child,
 .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > thead > tr > td:first-child,
 .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr > th:first-child,
 .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr > td:first-child,
 .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
   border-left: 0;
 }
 /* line 185, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table-bordered > thead > tr > th:last-child,
+.panel > .table-bordered > thead > tr > th:last-child, .view-resource-type .view-content > .item-list > ul > li > .table-bordered > thead > tr > th:last-child,
 .panel > .table-bordered > thead > tr > td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > thead > tr > td:last-child,
 .panel > .table-bordered > tbody > tr > th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr > th:last-child,
 .panel > .table-bordered > tbody > tr > td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr > td:last-child,
 .panel > .table-bordered > tfoot > tr > th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tfoot > tr > th:last-child,
 .panel > .table-bordered > tfoot > tr > td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tfoot > tr > td:last-child,
 .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > thead > tr > th:last-child,
 .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > thead > tr > td:last-child,
 .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr > th:last-child,
 .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr > td:last-child,
 .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
   border-right: 0;
 }
 /* line 194, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table-bordered > thead > tr:first-child > td,
+.panel > .table-bordered > thead > tr:first-child > td, .view-resource-type .view-content > .item-list > ul > li > .table-bordered > thead > tr:first-child > td,
 .panel > .table-bordered > thead > tr:first-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > thead > tr:first-child > th,
 .panel > .table-bordered > tbody > tr:first-child > td,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr:first-child > td,
 .panel > .table-bordered > tbody > tr:first-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr:first-child > th,
 .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > thead > tr:first-child > td,
 .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > thead > tr:first-child > th,
 .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
-.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr:first-child > th {
   border-bottom: 0;
 }
 /* line 203, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-bordered > tbody > tr:last-child > td, .view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr:last-child > td,
 .panel > .table-bordered > tbody > tr:last-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tbody > tr:last-child > th,
 .panel > .table-bordered > tfoot > tr:last-child > td,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tfoot > tr:last-child > td,
 .panel > .table-bordered > tfoot > tr:last-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-bordered > tfoot > tr:last-child > th,
 .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr:last-child > td,
 .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tbody > tr:last-child > th,
 .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
-.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+.view-resource-type .view-content > .item-list > ul > li > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
   border-bottom: 0;
 }
 /* line 210, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table-responsive {
+.panel > .table-responsive, .view-resource-type .view-content > .item-list > ul > li > .table-responsive {
   border: 0;
   margin-bottom: 0;
 }
@@ -7715,21 +7833,27 @@ button.list-group-item-danger.active:focus {
   margin-bottom: 20px;
 }
 /* line 226, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-group .panel {
+.panel-group .panel, .panel-group .view-resource-type .view-content > .item-list > ul > li, .view-resource-type .panel-group .view-content > .item-list > ul > li {
   margin-bottom: 0;
   border-radius: 4px;
 }
 /* line 230, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-group .panel + .panel {
+.panel-group .panel + .panel, .panel-group .view-resource-type .view-content > .item-list > ul > li + .panel, .view-resource-type .panel-group .view-content > .item-list > ul > li + .panel, .panel-group .view-resource-type .view-content > .item-list > ul > .panel + li, .view-resource-type .panel-group .view-content > .item-list > ul > .panel + li, .panel-group .view-resource-type .view-content > .item-list > ul > li + li, .view-resource-type .panel-group .view-content > .item-list > ul > li + li {
   margin-top: 5px;
 }
 /* line 235, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-group .panel-heading {
+.panel-group .panel-heading, .panel-group .view-resource-type .view-content > .item-list > ul > li > .views-field, .view-resource-type .panel-group .view-content > .item-list > ul > li > .views-field {
   border-bottom: 0;
 }
 /* line 238, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-group .panel-heading + .panel-collapse > .panel-body,
-.panel-group .panel-heading + .panel-collapse > .list-group {
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > .panel-body, .view-resource-type .panel-group .view-content > .item-list > ul > li > .views-field + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group,
+.panel-group .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > .list-group,
+.view-resource-type .panel-group .view-content > .item-list > ul > li > .views-field + .panel-collapse > .list-group,
+.panel-group .view-resource-type .view-content > .item-list > ul > li .panel-heading + .panel-collapse > ul,
+.view-resource-type .view-content > .item-list > ul > li .panel-group .panel-heading + .panel-collapse > ul,
+.panel-group .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > ul,
+.view-resource-type .panel-group .view-content > .item-list > ul > li > .views-field + .panel-collapse > ul {
   border-top: 1px solid #ddd;
 }
 /* line 244, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
@@ -7742,26 +7866,26 @@ button.list-group-item-danger.active:focus {
 }
 
 /* line 254, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_panels.scss */
-.panel-default {
+.panel-default, .view-resource-type .view-content > .item-list > ul > li {
   border-color: #ddd;
 }
 /* line 6, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-heading {
+.panel-default > .panel-heading, .view-resource-type .view-content > .item-list > ul > li > .panel-heading, .view-resource-type .view-content > .item-list > ul > li > .views-field {
   color: #333333;
   background-color: #f5f5f5;
   border-color: #ddd;
 }
 /* line 11, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-heading + .panel-collapse > .panel-body {
+.panel-default > .panel-heading + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li > .panel-heading + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li > .views-field + .panel-collapse > .panel-body {
   border-top-color: #ddd;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-heading .badge {
+.panel-default > .panel-heading .badge, .view-resource-type .view-content > .item-list > ul > li > .panel-heading .badge, .view-resource-type .view-content > .item-list > ul > li > .views-field .badge, .panel-default > .panel-heading .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .panel-default > .panel-heading span, .view-resource-type .view-content > .item-list > ul > li > .panel-heading .field-content span, .view-resource-type .view-content > .item-list > ul > li > .views-field .field-content span {
   color: #f5f5f5;
   background-color: #333333;
 }
 /* line 20, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-footer + .panel-collapse > .panel-body {
+.panel-default > .panel-footer + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ddd;
 }
 
@@ -7770,17 +7894,17 @@ button.list-group-item-danger.active:focus {
   border-color: #337ab7;
 }
 /* line 6, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-heading {
+.panel-primary > .panel-heading, .view-resource-type .view-content > .item-list > ul > li.panel-primary > .views-field {
   color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
 }
 /* line 11, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+.panel-primary > .panel-heading + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li.panel-primary > .views-field + .panel-collapse > .panel-body {
   border-top-color: #337ab7;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-heading .badge {
+.panel-primary > .panel-heading .badge, .view-resource-type .view-content > .item-list > ul > li.panel-primary > .views-field .badge, .panel-primary > .panel-heading .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .panel-primary > .panel-heading span, .view-resource-type .view-content > .item-list > ul > li.panel-primary > .views-field .field-content span {
   color: #337ab7;
   background-color: #fff;
 }
@@ -7794,17 +7918,17 @@ button.list-group-item-danger.active:focus {
   border-color: #d6e9c6;
 }
 /* line 6, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-heading {
+.panel-success > .panel-heading, .view-resource-type .view-content > .item-list > ul > li.panel-success > .views-field {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
 /* line 11, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-heading + .panel-collapse > .panel-body {
+.panel-success > .panel-heading + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li.panel-success > .views-field + .panel-collapse > .panel-body {
   border-top-color: #d6e9c6;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-heading .badge {
+.panel-success > .panel-heading .badge, .view-resource-type .view-content > .item-list > ul > li.panel-success > .views-field .badge, .panel-success > .panel-heading .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .panel-success > .panel-heading span, .view-resource-type .view-content > .item-list > ul > li.panel-success > .views-field .field-content span {
   color: #dff0d8;
   background-color: #3c763d;
 }
@@ -7818,17 +7942,17 @@ button.list-group-item-danger.active:focus {
   border-color: #bce8f1;
 }
 /* line 6, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-heading {
+.panel-info > .panel-heading, .view-resource-type .view-content > .item-list > ul > li.panel-info > .views-field {
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
 /* line 11, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-heading + .panel-collapse > .panel-body {
+.panel-info > .panel-heading + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li.panel-info > .views-field + .panel-collapse > .panel-body {
   border-top-color: #bce8f1;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-heading .badge {
+.panel-info > .panel-heading .badge, .view-resource-type .view-content > .item-list > ul > li.panel-info > .views-field .badge, .panel-info > .panel-heading .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .panel-info > .panel-heading span, .view-resource-type .view-content > .item-list > ul > li.panel-info > .views-field .field-content span {
   color: #d9edf7;
   background-color: #31708f;
 }
@@ -7842,17 +7966,17 @@ button.list-group-item-danger.active:focus {
   border-color: #faebcc;
 }
 /* line 6, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-heading {
+.panel-warning > .panel-heading, .view-resource-type .view-content > .item-list > ul > li.panel-warning > .views-field {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
 /* line 11, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+.panel-warning > .panel-heading + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li.panel-warning > .views-field + .panel-collapse > .panel-body {
   border-top-color: #faebcc;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-heading .badge {
+.panel-warning > .panel-heading .badge, .view-resource-type .view-content > .item-list > ul > li.panel-warning > .views-field .badge, .panel-warning > .panel-heading .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .panel-warning > .panel-heading span, .view-resource-type .view-content > .item-list > ul > li.panel-warning > .views-field .field-content span {
   color: #fcf8e3;
   background-color: #8a6d3b;
 }
@@ -7866,17 +7990,17 @@ button.list-group-item-danger.active:focus {
   border-color: #ebccd1;
 }
 /* line 6, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-heading {
+.panel-danger > .panel-heading, .view-resource-type .view-content > .item-list > ul > li.panel-danger > .views-field {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
 }
 /* line 11, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+.panel-danger > .panel-heading + .panel-collapse > .panel-body, .view-resource-type .view-content > .item-list > ul > li.panel-danger > .views-field + .panel-collapse > .panel-body {
   border-top-color: #ebccd1;
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-heading .badge {
+.panel-danger > .panel-heading .badge, .view-resource-type .view-content > .item-list > ul > li.panel-danger > .views-field .badge, .panel-danger > .panel-heading .view-resource-type .view-content > .item-list > ul > li .field-content span, .view-resource-type .view-content > .item-list > ul > li .field-content .panel-danger > .panel-heading span, .view-resource-type .view-content > .item-list > ul > li.panel-danger > .views-field .field-content span {
   color: #f2dede;
   background-color: #a94442;
 }
@@ -8700,7 +8824,7 @@ button.close {
   }
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.clearfix:before, .clearfix:after {
+.clearfix:before, #footer .block-menu:before, .clearfix:after {
   content: " ";
   display: table;
 }
@@ -10760,6 +10884,30 @@ html.js fieldset.collapsed {
   text-align: right;
 }
 
+/* line 1, ../scss/modules/_lists.scss */
+.view-resource-type .view-content > .item-list > ul > li {
+  font-size: 1.2em;
+  margin-left: 0;
+}
+/* line 11, ../scss/modules/_lists.scss */
+.view-resource-type .view-content > .item-list > ul > li ul {
+  margin-bottom: 0;
+}
+/* line 14, ../scss/modules/_lists.scss */
+.view-resource-type .view-content > .item-list > ul > li ul li {
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-right: 0;
+  border-left: 0;
+  margin: 0 0 -1px 0;
+}
+/* line 25, ../scss/modules/_lists.scss */
+.view-resource-type .view-content > .item-list > ul > li .field-content span {
+  margin: 0 0 0 1em;
+}
+
 /* line 2, ../scss/modules/_debate.scss */
 .field-name-body h1,
 .field-name-body h2,
@@ -12131,37 +12279,73 @@ a {
 /* line 88, ../scss/screens/_base.scss */
 #footer {
   border-top: 1px solid #444444;
-  height: 100px;
   margin-top: 5px;
+  padding-top: 1em;
+  /* &:before { */
+  /*     position: relative; */
+  /*     clear: both; */
+  /*     display: table; */
+  /*     content: " "; */
+  /*     visibility: hidden; */
+  /* } */
+  /* .contextual-links-wrapper { */
+  /*     margin-right: -32px; */
+  /* } */
+  /* .block { */
+  /*     float: right; */
+  /*     &:first-of-type { */
+  /*         float: left; */
+  /*     } */
+  /* } */
 }
-/* line 93, ../scss/screens/_base.scss */
-#footer:before {
-  position: relative;
+/* line 110, ../scss/screens/_base.scss */
+#footer .block-menu {
+  float: none;
   clear: both;
-  display: table;
-  content: " ";
-  visibility: hidden;
 }
-/* line 100, ../scss/screens/_base.scss */
-#footer .contextual-links-wrapper {
-  margin-right: -32px;
+/* line 114, ../scss/screens/_base.scss */
+#footer .block-menu .content {
+  padding: 2em 2em 3em 1em;
+  font-size: 1.1em;
+  border-top: 5px solid #8fcd1f;
+  background-color: rgba(86, 131, 9, 0.8);
 }
-/* line 104, ../scss/screens/_base.scss */
-#footer .block {
-  float: right;
+/* line 120, ../scss/screens/_base.scss */
+#footer .block-menu .content a {
+  font-family: 'News Cycle', sans-serif;
+  color: #8fcd1f;
+  font-weight: bold;
 }
-/* line 106, ../scss/screens/_base.scss */
-#footer .block:first-of-type {
-  float: left;
+/* line 125, ../scss/screens/_base.scss */
+#footer .block-menu .content a:hover {
+  text-decoration: none;
+  color: white;
 }
-/* line 111, ../scss/screens/_base.scss */
-#footer ul {
+/* line 129, ../scss/screens/_base.scss */
+#footer .block-menu .content li {
+  list-style-type: none;
+  padding-left: 3em;
+}
+/* line 131, ../scss/screens/_base.scss */
+#footer .block-menu .content > ul > li {
+  text-align: center;
+}
+/* line 132, ../scss/screens/_base.scss */
+#footer .block-menu .content > ul > li > a {
+  color: white;
+  text-transform: 'uppercase';
+  font-size: 1.2em;
+}
+/* line 142, ../scss/screens/_base.scss */
+#footer #block-landportal-blocks-lp-footer-social
+ul {
   float: right;
   font-size: 1.8em;
   padding: 0;
 }
-/* line 115, ../scss/screens/_base.scss */
-#footer ul li {
+/* line 147, ../scss/screens/_base.scss */
+#footer #block-landportal-blocks-lp-footer-social
+ul li {
   height: 1.4em;
   width: 1.4em;
   border-radius: 0.7em;
@@ -12172,23 +12356,24 @@ a {
   padding: 0;
   margin: 0 0 0 .5em;
 }
-/* line 125, ../scss/screens/_base.scss */
-#footer ul li:first-of-type {
+/* line 157, ../scss/screens/_base.scss */
+#footer #block-landportal-blocks-lp-footer-social
+ul li:first-of-type {
   margin: 0;
 }
-/* line 128, ../scss/screens/_base.scss */
-#footer ul li a {
+/* line 160, ../scss/screens/_base.scss */
+#footer #block-landportal-blocks-lp-footer-social
+ul li a {
   color: #ffffff;
 }
 
-/* line 135, ../scss/screens/_base.scss */
-#header,
-#footer {
+/* line 167, ../scss/screens/_base.scss */
+#header {
   padding: 0.8em 5em 0.5em;
   /* height: 44px; */
 }
 
-/* line 141, ../scss/screens/_base.scss */
+/* line 172, ../scss/screens/_base.scss */
 #section-header {
   border-top: 0.36em solid #8fcd1f;
 }
@@ -12196,47 +12381,47 @@ a {
 /*****************************************
  * Main / Content areas
  */
-/* line 149, ../scss/screens/_base.scss */
+/* line 180, ../scss/screens/_base.scss */
 #breadcrumb,
 #main-wrapper {
   margin: 0 auto;
   padding: 0 15px;
 }
 
-/* line 155, ../scss/screens/_base.scss */
+/* line 186, ../scss/screens/_base.scss */
 #breadcrumb {
   clear: both;
 }
 
-/* line 159, ../scss/screens/_base.scss */
+/* line 190, ../scss/screens/_base.scss */
 .no-sidebars #content {
   width: 100%;
 }
 
-/* line 162, ../scss/screens/_base.scss */
+/* line 193, ../scss/screens/_base.scss */
 .sidebar-first #content,
 .sidebar-second #content {
   width: 73%;
 }
 
-/* line 166, ../scss/screens/_base.scss */
+/* line 197, ../scss/screens/_base.scss */
 .sidebar-first #content {
   float: right;
 }
 
-/* line 169, ../scss/screens/_base.scss */
+/* line 200, ../scss/screens/_base.scss */
 .sidebar-second #content {
   float: left;
 }
 
-/* line 172, ../scss/screens/_base.scss */
+/* line 203, ../scss/screens/_base.scss */
 .two-sidebars #content {
   width: 48%;
   margin-left: 26%;
   float: left;
 }
 
-/* line 177, ../scss/screens/_base.scss */
+/* line 208, ../scss/screens/_base.scss */
 .sidebar {
   width: 24%;
 }
@@ -12244,22 +12429,22 @@ a {
 /**
  * Sidebars
  */
-/* line 184, ../scss/screens/_base.scss */
+/* line 215, ../scss/screens/_base.scss */
 #main {
   position: relative;
 }
 
-/* line 185, ../scss/screens/_base.scss */
+/* line 216, ../scss/screens/_base.scss */
 .two-sidebars #sidebar-first {
   position: absolute;
   top: 2em;
 }
 
-/* line 189, ../scss/screens/_base.scss */
+/* line 220, ../scss/screens/_base.scss */
 .sidebar-first #sidebar-first {
   float: left;
 }
-/* line 192, ../scss/screens/_base.scss */
+/* line 223, ../scss/screens/_base.scss */
 .sidebar-first #sidebar-first:after {
   position: relative;
   clear: both;
@@ -12268,7 +12453,7 @@ a {
   visibility: hidden;
 }
 
-/* line 201, ../scss/screens/_base.scss */
+/* line 232, ../scss/screens/_base.scss */
 #sidebar-second {
   float: right;
 }
@@ -12276,21 +12461,21 @@ a {
 /*****************************************
  * Drupal specific
  */
-/* line 209, ../scss/screens/_base.scss */
+/* line 240, ../scss/screens/_base.scss */
 .view .pager {
   margin: 0;
 }
-/* line 211, ../scss/screens/_base.scss */
+/* line 242, ../scss/screens/_base.scss */
 .view .pager li {
   margin: 0 .5em;
   padding: 0;
 }
-/* line 214, ../scss/screens/_base.scss */
+/* line 245, ../scss/screens/_base.scss */
 .view .pager li a {
   margin: 0.5em 0;
 }
 
-/* line 221, ../scss/screens/_base.scss */
+/* line 252, ../scss/screens/_base.scss */
 .node .content:after {
   position: relative;
   clear: both;
@@ -12300,20 +12485,20 @@ a {
 }
 
 /* Administration */
-/* line 232, ../scss/screens/_base.scss */
+/* line 263, ../scss/screens/_base.scss */
 body.overlay #overlay {
   /* table { */
   /*     width: 100%; */
   /* } */
 }
-/* line 233, ../scss/screens/_base.scss */
+/* line 264, ../scss/screens/_base.scss */
 body.overlay #overlay #header,
 body.overlay #overlay #section-header,
 body.overlay #overlay #page-title,
 body.overlay #overlay #breadcrumb {
   display: none;
 }
-/* line 243, ../scss/screens/_base.scss */
+/* line 274, ../scss/screens/_base.scss */
 body.overlay html[dir=rtl] #admin-menu {
   margin: 0 -20px 0 0;
   padding: 0 20px 0 0;
@@ -12325,35 +12510,35 @@ body.overlay html[dir=rtl] #admin-menu {
 /* .page-node { */
 /*     .submitted { display: none; } */
 /* } */
-/* line 255, ../scss/screens/_base.scss */
+/* line 286, ../scss/screens/_base.scss */
 .submitted {
   font-style: italic;
   font-size: .8em;
   color: #888888;
 }
 
-/* line 264, ../scss/screens/_base.scss */
+/* line 295, ../scss/screens/_base.scss */
 .front .submitted,
 .front .views-label {
   display: none;
 }
-/* line 267, ../scss/screens/_base.scss */
+/* line 298, ../scss/screens/_base.scss */
 .front .library {
   color: #e3ab03;
 }
-/* line 268, ../scss/screens/_base.scss */
+/* line 299, ../scss/screens/_base.scss */
 .front .book {
   color: #8fcd1f;
 }
-/* line 269, ../scss/screens/_base.scss */
+/* line 300, ../scss/screens/_base.scss */
 .front .debate {
   color: #0165C3;
 }
-/* line 271, ../scss/screens/_base.scss */
+/* line 302, ../scss/screens/_base.scss */
 .front #header {
   border-bottom: 0.36em solid #8fcd1f;
 }
-/* line 274, ../scss/screens/_base.scss */
+/* line 305, ../scss/screens/_base.scss */
 .front #main {
   line-height: 1.4em;
   width: 100%;
@@ -12363,7 +12548,7 @@ body.overlay html[dir=rtl] #admin-menu {
   font-family: 'Source Sans Pro',sans-serif;
   font-weight: 300;
 }
-/* line 282, ../scss/screens/_base.scss */
+/* line 313, ../scss/screens/_base.scss */
 .front #main #page-title {
   line-height: 1.4em;
   font-family: 'Source Sans Pro',sans-serif;
@@ -12372,29 +12557,29 @@ body.overlay html[dir=rtl] #admin-menu {
   text-transform: uppercase;
   margin: 1.2em 0 0;
 }
-/* line 291, ../scss/screens/_base.scss */
+/* line 322, ../scss/screens/_base.scss */
 .front #main .region-content {
   margin: 0.5em 0 1em 0;
 }
-/* line 298, ../scss/screens/_base.scss */
+/* line 329, ../scss/screens/_base.scss */
 .front .view-front-page-promoted {
   margin: 0;
   /* padding: 0 -15px; */
   width: 100%;
 }
-/* line 303, ../scss/screens/_base.scss */
+/* line 334, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row {
   position: relative;
 }
 @media (min-width: 768px) {
-  /* line 308, ../scss/screens/_base.scss */
+  /* line 339, ../scss/screens/_base.scss */
   .front .view-front-page-promoted .views-row {
     position: relative;
     float: left;
     width: 25%;
   }
 }
-/* line 315, ../scss/screens/_base.scss */
+/* line 346, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row .views-field-title {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -12402,22 +12587,22 @@ body.overlay html[dir=rtl] #admin-menu {
   padding: 0.5em 1em;
   bottom: 0;
 }
-/* line 322, ../scss/screens/_base.scss */
+/* line 353, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row a {
   text-decoration: none;
   color: #ffffff;
 }
-/* line 326, ../scss/screens/_base.scss */
+/* line 357, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row .views-field-field-image {
   height: 200px;
   overflow: hidden;
 }
-/* line 330, ../scss/screens/_base.scss */
+/* line 361, ../scss/screens/_base.scss */
 .front .view-front-page-promoted .views-row img {
   width: 100%;
   height: auto;
 }
-/* line 335, ../scss/screens/_base.scss */
+/* line 366, ../scss/screens/_base.scss */
 .front .view-front-page-promoted:after {
   position: relative;
   clear: both;
@@ -12425,63 +12610,63 @@ body.overlay html[dir=rtl] #admin-menu {
   content: " ";
   visibility: hidden;
 }
-/* line 344, ../scss/screens/_base.scss */
+/* line 375, ../scss/screens/_base.scss */
 .front .view-news {
   text-align: center;
   width: 90%;
   margin: 1em auto;
 }
-/* line 348, ../scss/screens/_base.scss */
+/* line 379, ../scss/screens/_base.scss */
 .front .view-news td {
   width: 33%;
 }
-/* line 349, ../scss/screens/_base.scss */
+/* line 380, ../scss/screens/_base.scss */
 .front .view-news .view-header {
   color: #888888;
   font-size: 1.7em;
   font-style: italic;
 }
-/* line 354, ../scss/screens/_base.scss */
+/* line 385, ../scss/screens/_base.scss */
 .front .view-news .views-field-title {
   font-style: italic;
 }
-/* line 362, ../scss/screens/_base.scss */
+/* line 393, ../scss/screens/_base.scss */
 .front .view-front-page-teasers {
   padding: 1em 5em;
 }
-/* line 364, ../scss/screens/_base.scss */
+/* line 395, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row {
   text-align: center;
   padding: 0 1em;
 }
 @media (min-width: 768px) {
-  /* line 366, ../scss/screens/_base.scss */
+  /* line 397, ../scss/screens/_base.scss */
   .front .view-front-page-teasers .views-row {
     float: left;
     width: 33.3%;
   }
 }
-/* line 373, ../scss/screens/_base.scss */
+/* line 404, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title {
   text-transform: lowercase;
   font-size: 2.5em;
 }
-/* line 376, ../scss/screens/_base.scss */
+/* line 407, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row .views-field-title a {
   color: #444444;
 }
-/* line 380, ../scss/screens/_base.scss */
+/* line 411, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h2 {
   text-transform: uppercase;
   min-height: 2.5em;
   color: #888888;
 }
-/* line 381, ../scss/screens/_base.scss */
+/* line 412, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h2 a {
   text-decoration: none;
   color: #888888;
 }
-/* line 386, ../scss/screens/_base.scss */
+/* line 417, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   vertical-align: middle;
@@ -12493,18 +12678,18 @@ body.overlay html[dir=rtl] #admin-menu {
   padding: .45em 0 .4em 0;
   font-size: 1.3em;
 }
-/* line 392, ../scss/screens/_base.scss */
+/* line 423, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row h3 a {
   text-decoration: none;
   color: #444444;
   font-style: normal;
 }
-/* line 402, ../scss/screens/_base.scss */
+/* line 433, ../scss/screens/_base.scss */
 .front .view-front-page-teasers .views-row p {
   min-height: 150px;
   text-align: justify;
 }
-/* line 407, ../scss/screens/_base.scss */
+/* line 438, ../scss/screens/_base.scss */
 .front .view-front-page-teasers:after {
   position: relative;
   clear: both;
@@ -12513,7 +12698,7 @@ body.overlay html[dir=rtl] #admin-menu {
   visibility: hidden;
 }
 
-/* line 418, ../scss/screens/_base.scss */
+/* line 449, ../scss/screens/_base.scss */
 .field-label {
   /* font-size: .8em; */
   font-style: italic;
@@ -12526,23 +12711,23 @@ body.overlay html[dir=rtl] #admin-menu {
 /**
  * Display Suite column layout
  */
-/* line 431, ../scss/screens/_base.scss */
+/* line 462, ../scss/screens/_base.scss */
 .ds-3col .group-middle {
   padding: 0 2em;
 }
-/* line 433, ../scss/screens/_base.scss */
+/* line 464, ../scss/screens/_base.scss */
 .ds-3col .group-middle p {
   text-align: justify;
 }
-/* line 437, ../scss/screens/_base.scss */
+/* line 468, ../scss/screens/_base.scss */
 .ds-3col .group-left {
   text-align: center;
 }
-/* line 440, ../scss/screens/_base.scss */
+/* line 471, ../scss/screens/_base.scss */
 .ds-3col .field-label {
   min-width: 100px;
 }
-/* line 443, ../scss/screens/_base.scss */
+/* line 474, ../scss/screens/_base.scss */
 .ds-3col .field-type-image {
   margin-bottom: 1em;
 }

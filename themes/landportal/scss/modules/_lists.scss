@@ -1,0 +1,29 @@
+.view-resource-type .view-content>.item-list>ul>li {
+    @extend .panel;
+    @extend .panel-default;
+    @extend .list-unstyled;
+    font-size: 1.2em;
+    margin-left: 0;
+    &>.views-field {
+            @extend .panel-heading;
+        }
+
+    ul {
+        @extend .list-group;
+        margin-bottom: 0;
+        li {
+            @extend .list-group-item;
+            border-top-right-radius: 0 !important;
+            border-top-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            border-right: 0;
+            border-left: 0;
+            margin: 0 0 -1px 0;
+        }
+    }
+    .field-content span {
+        margin: 0 0 0 1em;
+        @extend .badge;
+    }
+}

@@ -86,28 +86,60 @@ a {
 }
 
 #footer {
+    @extend .container-fluid;
     border-top: 1px solid $grey;
-    height: 100px;
     margin-top: 5px;
+    padding-top: 1em;
 
-    &:before {
-        position: relative;
+    /* &:before { */
+    /*     position: relative; */
+    /*     clear: both; */
+    /*     display: table; */
+    /*     content: " "; */
+    /*     visibility: hidden; */
+    /* } */
+    /* .contextual-links-wrapper { */
+    /*     margin-right: -32px; */
+    /* } */
+    /* .block { */
+    /*     float: right; */
+    /*     &:first-of-type { */
+    /*         float: left; */
+    /*     } */
+    /* } */
+    .block-menu {
+        float: none;
         clear: both;
-        display: table;
-        content: " ";
-        visibility: hidden;
-    }
-    .contextual-links-wrapper {
-        margin-right: -32px;
-    }
-
-    .block {
-        float: right;
-        &:first-of-type {
-            float: left;
+        &:before { @extend .clearfix; }
+        .content {
+            @extend .row;
+            padding: 2em 2em 3em 1em;
+            font-size: 1.1em;
+            border-top: 5px solid $green;
+            background-color: $green-dark;
+            a {
+                font-family: 'News Cycle', sans-serif;
+                color: $green;
+                font-weight: bold;
+            }
+            a:hover {
+                text-decoration: none;
+                color: white;
+            }
+            li { list-style-type: none; padding-left: 3em; }
+        }
+        .content>ul>li {
+            &>a {
+                color: white;
+                //font-style: normal;
+                text-transform: 'uppercase';
+                font-size: 1.2em;
+            }
+            @extend .col-sm-3;
+            text-align: center;
         }
     }
-
+    #block-landportal-blocks-lp-footer-social
     ul {
         float: right;
         font-size: 1.8em;
@@ -120,7 +152,7 @@ a {
             list-style-type: none;
             text-align: center;
             float: left;
-            padding: 0; //.05em 0 0 0;
+            padding: 0;
             margin: 0 0 0 .5em;
             &:first-of-type {
                 margin: 0;
@@ -132,8 +164,7 @@ a {
     }
 }
 
-#header,
-#footer {
+#header {
     padding: 0.8em 5em 0.5em;
     /* height: 44px; */
 }
