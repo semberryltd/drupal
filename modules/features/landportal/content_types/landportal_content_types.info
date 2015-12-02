@@ -1,8 +1,8 @@
-name = Landportal Content types
+name = Landportal Content Types
 description = Landportal content types: event, debate, news, organizations and blog posts.
 core = 7.x
-package = Landportal
-version = 7.x-1.3
+package = B Landportal
+version = 7.x-2.2-rc1
 project = landportal_content_types
 dependencies[] = ctools
 dependencies[] = date
