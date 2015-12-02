@@ -10,7 +10,7 @@
 function landportal_base_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function landportal_base_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'comment_body'
+  // Exported field_base: 'comment_body'.
   $field_bases['comment_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -59,32 +59,7 @@ function landportal_base_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_api_token'
-  $field_bases['field_api_token'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_api_token',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_contact'
+  // Exported field_base: 'field_contact'.
   $field_bases['field_contact'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -109,7 +84,7 @@ function landportal_base_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_date'
+  // Exported field_base: 'field_date'.
   $field_bases['field_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -144,7 +119,7 @@ function landportal_base_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_file'
+  // Exported field_base: 'field_file'.
   $field_bases['field_file'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -173,7 +148,7 @@ function landportal_base_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -219,7 +194,7 @@ function landportal_base_field_default_field_bases() {
     ),
   );
 
-  // Exported field_base: 'field_link'
+  // Exported field_base: 'field_link'.
   $field_bases['field_link'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -250,7 +225,7 @@ function landportal_base_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_website'
+  // Exported field_base: 'field_website'.
   $field_bases['field_website'] = array(
     'active' => 1,
     'cardinality' => 1,
