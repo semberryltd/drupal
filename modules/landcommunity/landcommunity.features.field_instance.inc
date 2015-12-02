@@ -405,9 +405,7 @@ function landcommunity_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 7,
     ),
@@ -691,6 +689,7 @@ function landcommunity_field_default_field_instances() {
         'size' => 60,
         'suggest_only_unique' => 0,
         'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
       'type' => 'synonyms_autocomplete',
       'weight' => 4,
@@ -1036,11 +1035,12 @@ function landcommunity_field_default_field_instances() {
       'active' => 1,
       'module' => 'synonyms',
       'settings' => array(
-        'auto_creation' => 1,
+        'auto_creation' => 0,
         'autocomplete_path' => 'synonyms/autocomplete',
         'size' => 60,
         'suggest_only_unique' => 0,
         'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
       'type' => 'synonyms_autocomplete',
       'weight' => 5,
@@ -1094,9 +1094,7 @@ function landcommunity_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 0,
     ),
@@ -1257,58 +1255,6 @@ function landcommunity_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_api_token'.
-  $field_instances['user-user-field_api_token'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'This field stores the user\'s authentication token for the LandBook API.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'token' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_api_token',
-    'label' => 'api_token',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
     ),
   );
 
@@ -1511,7 +1457,7 @@ function landcommunity_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 0,
@@ -1623,14 +1569,12 @@ function landcommunity_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 9,
     ),
@@ -1662,11 +1606,9 @@ function landcommunity_field_default_field_instances() {
   t('Position');
   t('Related topics');
   t('Tell us where you are based.');
-  t('This field stores the user\'s authentication token for the LandBook API.');
   t('Title');
   t('Topics');
   t('Website');
-  t('api_token');
 
   return $field_instances;
 }
