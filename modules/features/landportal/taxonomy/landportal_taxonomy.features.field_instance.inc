@@ -10,7 +10,7 @@
 function landportal_taxonomy_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'taxonomy_term-countries-description_field'
+  // Exported field_instance: 'taxonomy_term-countries-description_field'.
   $field_instances['taxonomy_term-countries-description_field'] = array(
     'bundle' => 'countries',
     'default_value' => NULL,
@@ -55,7 +55,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-countries-field_iso3'
+  // Exported field_instance: 'taxonomy_term-countries-field_iso3'.
   $field_instances['taxonomy_term-countries-field_iso3'] = array(
     'bundle' => 'countries',
     'default_value' => NULL,
@@ -103,7 +103,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-countries-field_linked_uris'
+  // Exported field_instance: 'taxonomy_term-countries-field_linked_uris'.
   $field_instances['taxonomy_term-countries-field_linked_uris'] = array(
     'bundle' => 'countries',
     'default_value' => NULL,
@@ -169,7 +169,7 @@ function landportal_taxonomy_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-countries-field_old_geopolitical_ontology_'
+  // 'taxonomy_term-countries-field_old_geopolitical_ontology_'.
   $field_instances['taxonomy_term-countries-field_old_geopolitical_ontology_'] = array(
     'bundle' => 'countries',
     'default_value' => NULL,
@@ -234,7 +234,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-countries-name_field'
+  // Exported field_instance: 'taxonomy_term-countries-name_field'.
   $field_instances['taxonomy_term-countries-name_field'] = array(
     'bundle' => 'countries',
     'default_value' => NULL,
@@ -277,7 +277,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-countries-synonyms_synonyms'
+  // Exported field_instance: 'taxonomy_term-countries-synonyms_synonyms'.
   $field_instances['taxonomy_term-countries-synonyms_synonyms'] = array(
     'bundle' => 'countries',
     'default_value' => NULL,
@@ -320,7 +320,7 @@ function landportal_taxonomy_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-landportal_topics-description_field'
+  // 'taxonomy_term-landportal_topics-description_field'.
   $field_instances['taxonomy_term-landportal_topics-description_field'] = array(
     'bundle' => 'landportal_topics',
     'default_value' => NULL,
@@ -366,7 +366,7 @@ function landportal_taxonomy_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-landportal_topics-field_agrovoc_uri'
+  // 'taxonomy_term-landportal_topics-field_agrovoc_uri'.
   $field_instances['taxonomy_term-landportal_topics-field_agrovoc_uri'] = array(
     'bundle' => 'landportal_topics',
     'default_value' => NULL,
@@ -431,7 +431,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-landportal_topics-field_language'
+  // Exported field_instance: 'taxonomy_term-landportal_topics-field_language'.
   $field_instances['taxonomy_term-landportal_topics-field_language'] = array(
     'bundle' => 'landportal_topics',
     'default_value' => array(
@@ -475,7 +475,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-landportal_topics-name_field'
+  // Exported field_instance: 'taxonomy_term-landportal_topics-name_field'.
   $field_instances['taxonomy_term-landportal_topics-name_field'] = array(
     'bundle' => 'landportal_topics',
     'default_value' => NULL,
@@ -519,7 +519,7 @@ function landportal_taxonomy_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-landportal_topics-synonyms_synonyms'
+  // 'taxonomy_term-landportal_topics-synonyms_synonyms'.
   $field_instances['taxonomy_term-landportal_topics-synonyms_synonyms'] = array(
     'bundle' => 'landportal_topics',
     'default_value' => NULL,
@@ -561,7 +561,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-languages-field_machine_name'
+  // Exported field_instance: 'taxonomy_term-languages-field_machine_name'.
   $field_instances['taxonomy_term-languages-field_machine_name'] = array(
     'bundle' => 'languages',
     'default_value' => NULL,
@@ -604,7 +604,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-languages-field_machine_name_2'
+  // Exported field_instance: 'taxonomy_term-languages-field_machine_name_2'.
   $field_instances['taxonomy_term-languages-field_machine_name_2'] = array(
     'bundle' => 'languages',
     'default_value' => NULL,
@@ -647,7 +647,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-languages-name_field'
+  // Exported field_instance: 'taxonomy_term-languages-name_field'.
   $field_instances['taxonomy_term-languages-name_field'] = array(
     'bundle' => 'languages',
     'default_value' => NULL,
