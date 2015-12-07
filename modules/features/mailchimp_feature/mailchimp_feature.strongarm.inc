@@ -13,13 +13,6 @@ function mailchimp_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'mailchimp_api_key';
-  $strongarm->value = '9939111acbe7494aebc9bc196c4d3710-us2';
-  $export['mailchimp_api_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'mailchimp_batch_limit';
   $strongarm->value = '100';
   $export['mailchimp_batch_limit'] = $strongarm;
