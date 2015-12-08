@@ -1003,7 +1003,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 93,
+      'weight' => 92,
     ),
   );
 
@@ -1070,7 +1070,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 96,
+      'weight' => 95,
     ),
   );
 
@@ -1136,7 +1136,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 94,
+      'weight' => 93,
     ),
   );
 
@@ -1321,7 +1321,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 99,
+      'weight' => 98,
     ),
   );
 
@@ -1389,7 +1389,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 101,
+      'weight' => 100,
     ),
   );
 
@@ -1457,7 +1457,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 102,
+      'weight' => 101,
     ),
   );
 
@@ -1696,7 +1696,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 97,
+      'weight' => 96,
     ),
   );
 
@@ -1763,7 +1763,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 95,
+      'weight' => 94,
     ),
   );
 
@@ -2264,7 +2264,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 98,
+      'weight' => 97,
     ),
   );
 
@@ -2398,7 +2398,7 @@ constitute its legislative or governing body.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 100,
+      'weight' => 99,
     ),
   );
 

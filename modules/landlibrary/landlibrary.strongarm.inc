@@ -153,16 +153,19 @@ function landlibrary_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '7',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '6',
         ),
         'language' => array(
-          'weight' => '8',
+          'weight' => '4',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '7',
         ),
       ),
       'display' => array(),

@@ -21,12 +21,14 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Deprecated',
-    'weight' => '10',
+    'weight' => '8',
     'children' => array(
       0 => 'field_doc_conference',
       1 => 'group_doc_citation',
       2 => 'group_doc_creator',
-      3 => 'group_doc_publisher',
+      3 => 'group_doc_location',
+      4 => 'group_doc_publisher',
+      5 => 'group_doc_subject',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -762,7 +764,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resource',
-    'weight' => '6',
+    'weight' => '3',
     'children' => array(
       0 => 'field_doc_alt_title',
       1 => 'field_doc_identifier',
