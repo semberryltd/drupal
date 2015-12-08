@@ -15,7 +15,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -8,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -40,7 +40,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'User interests',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => 3,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -65,7 +65,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => 2,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -85,12 +85,12 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       ),
     ),
     'landlibrary_resource_type' => array(
-      'name' => 'LandLibrary Resource Type',
+      'name' => 'Resource Type',
       'machine_name' => 'landlibrary_resource_type',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -4,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -115,7 +115,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -7,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -140,7 +140,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -3,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
