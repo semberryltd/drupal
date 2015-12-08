@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Landbook Country feature.
+ */
+
+include_once 'landbook_country.features.inc';
