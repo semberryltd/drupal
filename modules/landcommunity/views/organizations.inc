@@ -106,6 +106,7 @@ $handler->display->display_options['style_options']['info'] = array(
 $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -258,6 +259,28 @@ $handler->display->display_options['fields']['nid']['group_type'] = 'count_disti
 $handler->display->display_options['fields']['nid']['label'] = 'Resources in Library';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 $handler->display->display_options['path'] = 'library/providers';
+
+/* Display: Block byC */
+$handler = $view->new_display('block', 'Block byC', 'block_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Organizations';
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Field: Geographical focus (field_geographical_focus) */
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['id'] = 'field_geographical_focus_tid';
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['table'] = 'field_data_field_geographical_focus';
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['field'] = 'field_geographical_focus_tid';
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['required'] = TRUE;
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: Taxonomy term: Name */
+$handler->display->display_options['arguments']['name']['id'] = 'name';
+$handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['arguments']['name']['field'] = 'name';
+$handler->display->display_options['arguments']['name']['relationship'] = 'field_geographical_focus_tid';
+$handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
+$handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['name']['limit'] = '0';
 $translatables['organizations_overview'] = array(
   t('Master'),
   t('Library data providers'),
@@ -290,4 +313,7 @@ $translatables['organizations_overview'] = array(
   t('Resources in Library'),
   t('Page providers'),
   t('Library field_doc_provider'),
+  t('Block byC'),
+  t('Organizations'),
+  t('term from field_geographical_focus'),
 );
