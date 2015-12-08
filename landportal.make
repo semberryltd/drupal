@@ -45,6 +45,7 @@ projects:
   - feeds_xpathparser
   - field_group
   - field_tools
+  - field_validation
   - file_entity
   - global_filter
   - google_analytics
@@ -77,6 +78,7 @@ projects:
   - services
   - session_cache
   - shs
+  - xmlsitemap
   - sparql
   - strongarm
   - synonyms
