@@ -1,4 +1,5 @@
 <?php
+
 $view = new view();
 $view->name = 'admin_views_node';
 $view->description = 'Find and manage content.';
@@ -301,14 +302,6 @@ $handler->display->display_options['filters']['vid']['expose']['operator_id'] = 
 $handler->display->display_options['filters']['vid']['expose']['label'] = 'Vocabulary';
 $handler->display->display_options['filters']['vid']['expose']['operator'] = 'vid_op';
 $handler->display->display_options['filters']['vid']['expose']['identifier'] = 'vid';
-$handler->display->display_options['filters']['vid']['group_info']['label'] = 'Vocabulary';
-$handler->display->display_options['filters']['vid']['group_info']['identifier'] = 'vid';
-$handler->display->display_options['filters']['vid']['group_info']['remember'] = FALSE;
-$handler->display->display_options['filters']['vid']['group_info']['group_items'] = array(
-  1 => array(),
-  2 => array(),
-  3 => array(),
-);
 
 /* Display: System */
 $handler = $view->new_display('system', 'System', 'system_1');
@@ -325,32 +318,32 @@ $handler->display->display_options['defaults']['filters'] = FALSE;
 $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
-$handler->display->display_options['filters']['type']['value'] = array(
-  'blog_post' => 'blog_post',
-  'debate' => 'debate',
-  'event' => 'event',
-  'landlibrary_resource' => 'landlibrary_resource',
-  'news' => 'news',
-  'organization' => 'organization',
-  'page' => 'page',
-  'person' => 'person',
-);
 $handler->display->display_options['filters']['type']['group'] = 1;
 $handler->display->display_options['filters']['type']['exposed'] = TRUE;
 $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
 $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
 $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
 $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-$handler->display->display_options['filters']['type']['expose']['remember'] = TRUE;
+$handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
 $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
   2 => '2',
+  111903910 => '111903910',
+  30037204 => '30037204',
   1 => 0,
   111731461 => 0,
+  111903911 => 0,
+  111903912 => 0,
   25521343 => 0,
-  111903910 => 0,
-  30037204 => 0,
 );
-$handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+$handler->display->display_options['filters']['type']['group_info']['label'] = 'Type';
+$handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
+$handler->display->display_options['filters']['type']['group_info']['widget'] = 'radios';
+$handler->display->display_options['filters']['type']['group_info']['multiple'] = TRUE;
+$handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
+  1 => array(),
+  2 => array(),
+  3 => array(),
+);
 /* Filter criterion: Content: Title */
 $handler->display->display_options['filters']['title']['id'] = 'title';
 $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -417,7 +410,7 @@ $handler->display->display_options['filters']['uid']['table'] = 'users';
 $handler->display->display_options['filters']['uid']['field'] = 'uid';
 $handler->display->display_options['filters']['uid']['relationship'] = 'uid';
 $handler->display->display_options['filters']['uid']['value'] = '';
-$handler->display->display_options['filters']['uid']['group'] = 2;
+$handler->display->display_options['filters']['uid']['group'] = 1;
 $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
 $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
 $handler->display->display_options['filters']['uid']['expose']['label'] = 'Author';
