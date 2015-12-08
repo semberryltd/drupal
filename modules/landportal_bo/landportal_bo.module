@@ -3,3 +3,16 @@
  * Provide facilities to manage the Land Portal
  */
 include_once 'landportal_bo.views_default.inc';
+/**
+ * Add a 'Manage' tab to Admin > structure > taxonomy page
+ */
+function landportal_bo_menu() {
+    $items['admin/structure/taxonomy/terms'] = array(
+        'title' => 'Manage terms',
+        'type' => MENU_LOCAL_TASK,
+        'access arguments' => array('administer taxonomy'),
+        'weight' => 12,
+        //'page callback' => 'landlibrary_admin_view_library',
+    );
+    return $items;
+}
