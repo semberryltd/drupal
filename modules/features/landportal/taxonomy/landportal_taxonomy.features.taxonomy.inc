@@ -10,14 +10,14 @@
 function landportal_taxonomy_taxonomy_default_vocabularies() {
   return array(
     'continents' => array(
-      'name' => 'Continents_retired',
+      'name' => 'Continents DEPREC',
       'machine_name' => 'continents',
-      'description' => '(retired)',
+      'description' => '(retired) Comes from landportal v1 (drupal6)?',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 2,
+      'weight' => 5,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -90,7 +90,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Topics for the LandPortal',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 1,
+      'weight' => -2,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -115,7 +115,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -5,
+      'weight' => -1,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -140,7 +140,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Relationship to the Landportal',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -6,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -165,7 +165,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Specific types for organizations (needs rework)',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -3,
+      'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -185,14 +185,14 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       ),
     ),
     'regions' => array(
-      'name' => 'Regions',
+      'name' => 'Regions DEPREC',
       'machine_name' => 'regions',
-      'description' => 'Regions',
+      'description' => 'Regions (DEPRECATED) - this taxonomy is wrong',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -2,
+      'weight' => 4,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

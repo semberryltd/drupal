@@ -10,51 +10,6 @@
 function landportal_taxonomy_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'taxonomy_term-countries-description_field'.
-  $field_instances['taxonomy_term-countries-description_field'] = array(
-    'bundle' => 'countries',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'description_field',
-    'label' => 'Description',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => 0,
-      'entity_translation_sync' => FALSE,
-      'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => -5,
-    ),
-  );
-
   // Exported field_instance: 'taxonomy_term-countries-field_iso3'.
   $field_instances['taxonomy_term-countries-field_iso3'] = array(
     'bundle' => 'countries',
@@ -128,7 +83,7 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_linked_uris',
-    'label' => 'FAO Country Profiles Geopolitical Ontology URI',
+    'label' => 'Linked URI',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -145,15 +100,10 @@ function landportal_taxonomy_field_default_field_instances() {
       ),
       'enable_tokens' => 0,
       'entity_translation_sync' => FALSE,
-      'fc' => array(
-        'fc_allow_empty' => FALSE,
-        'fc_check_zero' => 0,
-        'fc_include' => 0,
-      ),
       'rel_remove' => 'default',
       'title' => 'none',
       'title_label_use_field_label' => 0,
-      'title_maxlength' => 128,
+      'title_maxlength' => 255,
       'title_value' => '',
       'url' => 0,
       'user_register_form' => FALSE,
@@ -256,18 +206,41 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'name_field',
-    'label' => 'Name',
-    'required' => TRUE,
+    'label' => 'Label',
+    'required' => 1,
     'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => -9,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
       ),
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -316,52 +289,6 @@ function landportal_taxonomy_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'taxonomy_term-landportal_topics-description_field'.
-  $field_instances['taxonomy_term-landportal_topics-description_field'] = array(
-    'bundle' => 'landportal_topics',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'description_field',
-    'label' => 'Description',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => 0,
-      'entity_translation_sync' => FALSE,
-      'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 0,
     ),
   );
 
@@ -693,10 +620,10 @@ function landportal_taxonomy_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('AGROVOC URI');
-  t('Description');
-  t('FAO Country Profiles Geopolitical Ontology URI');
   t('ISO3');
+  t('Label');
   t('Language');
+  t('Linked URI');
   t('Machine name (ISO 639-1)');
   t('Machine name (ISO 639-2)');
   t('Name');
