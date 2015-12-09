@@ -14,5 +14,12 @@ function landportal_bo_menu() {
         'weight' => 12,
         //'page callback' => 'landlibrary_admin_view_library',
     );
+    $items['admin/people/moderate'] = array(
+        'title' => 'Pending account',
+        'type' => MENU_LOCAL_TASK,
+        'access arguments' => array('administer users'),
+        'weight' => 12,
+        //'page callback' => 'landlibrary_admin_view_library',
+    );
     return $items;
 }
