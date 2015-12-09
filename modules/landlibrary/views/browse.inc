@@ -97,11 +97,11 @@ $handler->display->display_options['arguments']['name']['summary_options']['item
 $handler->display->display_options['arguments']['name']['limit'] = '0';
 $handler->display->display_options['path'] = 'library/browse/by-country';
 
-/* Display: Block */
-$handler = $view->new_display('block', 'Block', 'block_1');
+/* Display: Res byC */
+$handler = $view->new_display('block', 'Res byC', 'block_1');
 $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+$handler->display->display_options['pager']['options']['items_per_page'] = '5';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 /* Relationship: Content: Country (field_doc_country) */
@@ -118,6 +118,7 @@ $handler->display->display_options['arguments']['name']['relationship'] = 'field
 $handler->display->display_options['arguments']['name']['default_action'] = 'default';
 $handler->display->display_options['arguments']['name']['title_enable'] = TRUE;
 $handler->display->display_options['arguments']['name']['title'] = 'Library resources about %1';
+$handler->display->display_options['arguments']['name']['breadcrumb_enable'] = TRUE;
 $handler->display->display_options['arguments']['name']['breadcrumb'] = '%1';
 $handler->display->display_options['arguments']['name']['default_argument_type'] = 'raw';
 $handler->display->display_options['arguments']['name']['default_argument_options']['index'] = '2';
@@ -127,7 +128,6 @@ $handler->display->display_options['arguments']['name']['summary']['format'] = '
 $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
 $handler->display->display_options['arguments']['name']['limit'] = '0';
 $handler->display->display_options['arguments']['name']['case'] = 'ucfirst';
-$handler->display->display_options['block_description'] = 'LLbyC';
 $translatables['library'] = array(
   t('Master'),
   t('Land Library resources'),
@@ -152,6 +152,6 @@ $translatables['library'] = array(
   t('term from field_doc_country'),
   t('All'),
   t('Library resources about %1'),
+  t('Res byC'),
   t('%1'),
-  t('LLbyC'),
 );

@@ -18,9 +18,8 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Library data providers';
+$handler->display->display_options['title'] = 'Organizations';
 $handler->display->display_options['use_more_always'] = FALSE;
-$handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
@@ -39,6 +38,11 @@ $handler->display->display_options['row_options']['view_mode'] = 'teaser';
 $handler->display->display_options['header']['result']['id'] = 'result';
 $handler->display->display_options['header']['result']['table'] = 'views';
 $handler->display->display_options['header']['result']['field'] = 'result';
+/* Relationship: Field: Geographical focus (field_geographical_focus) */
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['id'] = 'field_geographical_focus_tid';
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['table'] = 'field_data_field_geographical_focus';
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['field'] = 'field_geographical_focus_tid';
+$handler->display->display_options['relationships']['field_geographical_focus_tid']['required'] = TRUE;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -141,8 +145,10 @@ $handler->display->display_options['inherit_arguments'] = FALSE;
 /* Display: LLOrg publisher EntityRef */
 $handler = $view->new_display('entityreference', 'LLOrg publisher EntityRef', 'entityreference_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
-$handler->display->display_options['title'] = 'library source provider';
+$handler->display->display_options['title'] = 'library publishers';
 $handler->display->display_options['display_description'] = ' Organizations linked to a LLResource';
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -167,6 +173,8 @@ $handler = $view->new_display('entityreference', 'LLOrg provider EntityRef', 'en
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'library source provider';
 $handler->display->display_options['display_description'] = ' Organizations linked as provider to a LLResource';
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -188,6 +196,10 @@ $handler->display->display_options['defaults']['arguments'] = FALSE;
 
 /* Display: Page publishers */
 $handler = $view->new_display('page', 'Page publishers', 'page_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Library publishers';
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'grid';
 $handler->display->display_options['style_options']['uses_fields'] = TRUE;
@@ -213,7 +225,7 @@ $handler->display->display_options['fields']['rendered_entity']['link_to_entity'
 $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
 $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
 $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-/* Field: COUNT(DISTINCT Content: Nid) */
+/* Field: Content: Nid */
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -225,6 +237,10 @@ $handler->display->display_options['path'] = 'library/publishers';
 
 /* Display: Page providers */
 $handler = $view->new_display('page', 'Page providers', 'page_3');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Library sources providers';
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'grid';
 $handler->display->display_options['style_options']['uses_fields'] = TRUE;
@@ -250,7 +266,7 @@ $handler->display->display_options['fields']['rendered_entity']['link_to_entity'
 $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
 $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
 $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-/* Field: COUNT(DISTINCT Content: Nid) */
+/* Field: Content: Nid */
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -260,30 +276,32 @@ $handler->display->display_options['fields']['nid']['label'] = 'Resources in Lib
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 $handler->display->display_options['path'] = 'library/providers';
 
-/* Display: Block byC */
-$handler = $view->new_display('block', 'Block byC', 'block_1');
+/* Display: Org byC */
+$handler = $view->new_display('block', 'Org byC', 'block_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Organizations';
-$handler->display->display_options['defaults']['relationships'] = FALSE;
-/* Relationship: Field: Geographical focus (field_geographical_focus) */
-$handler->display->display_options['relationships']['field_geographical_focus_tid']['id'] = 'field_geographical_focus_tid';
-$handler->display->display_options['relationships']['field_geographical_focus_tid']['table'] = 'field_data_field_geographical_focus';
-$handler->display->display_options['relationships']['field_geographical_focus_tid']['field'] = 'field_geographical_focus_tid';
-$handler->display->display_options['relationships']['field_geographical_focus_tid']['required'] = TRUE;
+$handler->display->display_options['defaults']['group_by'] = FALSE;
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 /* Contextual filter: Taxonomy term: Name */
 $handler->display->display_options['arguments']['name']['id'] = 'name';
 $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
 $handler->display->display_options['arguments']['name']['field'] = 'name';
 $handler->display->display_options['arguments']['name']['relationship'] = 'field_geographical_focus_tid';
-$handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
+$handler->display->display_options['arguments']['name']['default_action'] = 'default';
+$handler->display->display_options['arguments']['name']['title_enable'] = TRUE;
+$handler->display->display_options['arguments']['name']['title'] = 'Organizations working in %1';
+$handler->display->display_options['arguments']['name']['breadcrumb'] = '%1';
+$handler->display->display_options['arguments']['name']['default_argument_type'] = 'raw';
+$handler->display->display_options['arguments']['name']['default_argument_options']['index'] = '2';
+$handler->display->display_options['arguments']['name']['default_argument_options']['use_alias'] = TRUE;
 $handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '0';
 $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
 $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
 $handler->display->display_options['arguments']['name']['limit'] = '0';
+$handler->display->display_options['arguments']['name']['case'] = 'ucfirst';
 $translatables['organizations_overview'] = array(
   t('Master'),
-  t('Library data providers'),
+  t('Organizations'),
   t('more'),
   t('Apply'),
   t('Reset'),
@@ -298,22 +316,26 @@ $translatables['organizations_overview'] = array(
   t('next ›'),
   t('last »'),
   t('Displaying @start - @end of @total'),
+  t('term from field_geographical_focus'),
   t('All'),
   t('Page'),
   t('Attachment'),
   t('LLOrg publisher EntityRef'),
-  t('library source provider'),
+  t('library publishers'),
   t(' Organizations linked to a LLResource'),
   t('Content referencing Content from field_doc_publisher'),
   t('LLOrg provider EntityRef'),
+  t('library source provider'),
   t(' Organizations linked as provider to a LLResource'),
   t('Content referencing Content from field_doc_provider'),
   t('Page publishers'),
+  t('Library publishers'),
   t('LL field_doc_publisher'),
   t('Resources in Library'),
   t('Page providers'),
+  t('Library sources providers'),
   t('Library field_doc_provider'),
-  t('Block byC'),
-  t('Organizations'),
-  t('term from field_geographical_focus'),
+  t('Org byC'),
+  t('Organizations working in %1'),
+  t('%1'),
 );
