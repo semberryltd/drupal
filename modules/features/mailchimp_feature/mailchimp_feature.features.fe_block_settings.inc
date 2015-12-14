@@ -12,6 +12,36 @@ function mailchimp_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['mailchimp_lists-land_portal_news_digest'] = array(
+    'cache' => 2,
+    'delta' => 'land_portal_news_digest',
+    'i18n_block_language' => array(),
+    'module' => 'mailchimp_lists',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'landportal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'landportal',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   $export['mailchimp_lists-legend_bulletin'] = array(
     'cache' => 2,
     'custom' => 0,
