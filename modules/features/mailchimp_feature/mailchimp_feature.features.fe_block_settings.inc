@@ -14,8 +14,10 @@ function mailchimp_feature_default_fe_block_settings() {
 
   $export['mailchimp_lists-land_portal_news_digest'] = array(
     'cache' => 2,
+    'custom' => 0,
     'delta' => 'land_portal_news_digest',
     'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'mailchimp_lists',
     'node_types' => array(),
     'pages' => '',
@@ -40,6 +42,8 @@ function mailchimp_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['mailchimp_lists-legend_bulletin'] = array(

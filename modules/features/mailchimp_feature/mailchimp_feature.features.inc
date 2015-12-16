@@ -82,7 +82,7 @@ function mailchimp_feature_default_mailchimp_list() {
         "MMERGE19" : 0
       },
       "doublein" : 1,
-      "show_register_form" : 0,
+      "show_register_form" : 1,
       "default_register_form_optin" : 0,
       "show_account_form" : 1,
       "form_label" : "Land Portal News Digest",
@@ -91,7 +91,7 @@ function mailchimp_feature_default_mailchimp_list() {
       "opt_in_interest_groups" : 0,
       "interest_groups_label" : "Interest Groups",
       "cron" : 0,
-      "webhooks" : 1,
+      "webhooks" : 0,
       "allow_anonymous" : 1,
       "required" : 0
     },
