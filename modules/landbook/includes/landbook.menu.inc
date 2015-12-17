@@ -9,12 +9,14 @@
  * Drupal refactoring: Jules <jules@ker.bz>
  */
 
+$GLOBALS['landbook_sections'] = array('regions', 'countries', 'catalog', 'indicators', 'sources', 'reuse', 'widgets');
+
 function landbook_menu_build(&$items) {
 
   // Landbook main-menu link
   $items['book/<front>'] = array(
     'title'		=> 'Home',
-    'menu_name'		=> $GLOBALS['landbook_menu'],
+    'menu_name'		=> 'landbook-menu',
     'type'              => MENU_NORMAL_ITEM,
     'access callback'	=> TRUE,
     'page callback'	=> 'drupal_goto',
@@ -25,7 +27,7 @@ function landbook_menu_build(&$items) {
   foreach ($GLOBALS['landbook_sections'] as $i=>$s) {
     $items['book/' . $s] = array(
       'title'           => ucfirst($s),
-      'menu_name'       => $GLOBALS['landbook_menu'],
+      'menu_name'       => 'landbook-menu',
       'access callback'	=> TRUE,
       'weight'          => $i,
       'type'            => MENU_NORMAL_ITEM,
