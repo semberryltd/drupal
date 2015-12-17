@@ -1,9 +1,9 @@
 name = Landbook Taxonomies
 description = Datasets and Indicators taxonomies for the Landbook
 core = 7.x
-project = landbook_taxonomy
 package = B Landportal
-version = 7.x-2.3-alpha1
+version = 7.x-2.3-alpha2
+project = landbook_taxonomy
 dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
