@@ -13,49 +13,6 @@ function landlibrary_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'apachesolr_search_mlt_blocks';
-  $strongarm->value = array(
-    'mlt-001' => array(
-      'name' => 'Read more content like this',
-      'mlt_env_id' => 'solr',
-      'num_results' => '5',
-      'mlt_fl' => array(
-        'label' => 'label',
-        'taxonomy_names' => 'taxonomy_names',
-        'tm_vid_3_names' => 'tm_vid_3_names',
-        'tm_vid_5_names' => 'tm_vid_5_names',
-        'tm_vid_7_names' => 'tm_vid_7_names',
-      ),
-      'mlt_mintf' => '1',
-      'mlt_mindf' => '1',
-      'mlt_minwl' => '3',
-      'mlt_maxwl' => '15',
-      'mlt_maxqt' => '20',
-      'mlt_type_filters' => array(
-        'landlibrary_resource' => 'landlibrary_resource',
-        'page' => 'page',
-        'blog_post' => 'blog_post',
-        'debate' => 'debate',
-        'event' => 'event',
-        'news' => 'news',
-        'organization' => 'organization',
-      ),
-      'mlt_custom_filters' => '',
-      'delta' => 'mlt-001',
-    ),
-  );
-  $export['apachesolr_search_mlt_blocks'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'apachesolr_site_hash';
-  $strongarm->value = 'fdaebq';
-  $export['apachesolr_site_hash'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_landlibrary_resource';
   $strongarm->value = 0;
   $export['comment_anonymous_landlibrary_resource'] = $strongarm;
@@ -101,20 +58,6 @@ function landlibrary_strongarm() {
   $strongarm->name = 'comment_subject_field_landlibrary_resource';
   $strongarm->value = 1;
   $export['comment_subject_field_landlibrary_resource'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'facetapi:block_cache:apachesolr@solr';
-  $strongarm->value = -1;
-  $export['facetapi:block_cache:apachesolr@solr'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'feeds_reschedule';
-  $strongarm->value = FALSE;
-  $export['feeds_reschedule'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -220,6 +163,27 @@ function landlibrary_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__person'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_landlibrary_resource';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_landlibrary_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_landlibrary_resource';
+  $strongarm->value = array();
+  $export['i18n_node_options_landlibrary_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_sync_node_type_landlibrary_resource';
+  $strongarm->value = array();
+  $export['i18n_sync_node_type_landlibrary_resource'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
