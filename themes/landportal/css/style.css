@@ -12102,42 +12102,47 @@ ul.menu > li li a.active-trail {
   border-top: 0;
 }
 
-/* line 209, ../scss/modules/_menus.scss */
+/* line 214, ../scss/modules/_menus.scss */
 .node-type-organization #section-header,
 .node-type-news #section-header,
 .node-type-debate #section-header,
 .node-type-blog-post #section-header,
 .node-type-event #section-header,
+.node-node-add-organization #section-header,
+.node-node-add-news #section-header,
+.node-node-add-debate #section-header,
+.node-node-add-blog-post #section-header,
+.node-node-add-event #section-header,
 .page-debate #section-header {
   border-top: 0;
   background-color: #0165C3;
   background-image: url(../images/header/pebbles-medium.png);
 }
 
-/* line 219, ../scss/modules/_menus.scss */
+/* line 224, ../scss/modules/_menus.scss */
 #section-header #block-menu-landbook-menu li {
   width: 12.49%;
 }
-/* line 226, ../scss/modules/_menus.scss */
+/* line 231, ../scss/modules/_menus.scss */
 #section-header #block-menu-menu-landlibrary-menu li,
 #section-header #block-menu-landdebate-menu li {
   width: 16.65%;
 }
-/* line 232, ../scss/modules/_menus.scss */
+/* line 237, ../scss/modules/_menus.scss */
 #section-header #block-menu-user-signin li {
   width: 50%;
 }
 
-/* line 239, ../scss/modules/_menus.scss */
+/* line 244, ../scss/modules/_menus.scss */
 ul.tabs li a {
   border: 0;
 }
-/* line 241, ../scss/modules/_menus.scss */
+/* line 246, ../scss/modules/_menus.scss */
 ul.tabs li a.active {
   border: 0;
 }
 
-/* line 246, ../scss/modules/_menus.scss */
+/* line 251, ../scss/modules/_menus.scss */
 ul.primary.tabs,
 ul.secondary.tabs {
   float: right;
@@ -12145,20 +12150,20 @@ ul.secondary.tabs {
   padding: 1em 0;
   margin: 0;
 }
-/* line 248, ../scss/modules/_menus.scss */
+/* line 253, ../scss/modules/_menus.scss */
 ul.primary.tabs a.active,
 ul.secondary.tabs a.active {
   border-bottom: 0;
   /*3px solid $blue-dark;*/
 }
 
-/* line 256, ../scss/modules/_menus.scss */
+/* line 261, ../scss/modules/_menus.scss */
 li a.active,
 a.active {
   color: #2a6496;
 }
 
-/* line 260, ../scss/modules/_menus.scss */
+/* line 265, ../scss/modules/_menus.scss */
 a:not([href]) {
   color: inherit;
   text-decoration: none;
