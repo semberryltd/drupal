@@ -7,6 +7,7 @@ function landportal_bo_views_default_views_alter(&$views) {
     $path = drupal_get_path('module', 'landportal_bo') . '/views';
 
     $views_override = array(
+        'admin_views_user',
         'admin_views_node',
         'admin_views_taxonomy_term'
     );
