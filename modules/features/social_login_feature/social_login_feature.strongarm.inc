@@ -422,14 +422,14 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Facebook_keys_id';
-  $strongarm->value = '610427542421736';
+  $strongarm->value = '1717003728529161';
   $export['hybridauth_provider_Facebook_keys_id'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Facebook_keys_secret';
-  $strongarm->value = '3c3fcee363f038d5602451ffa415e8ca';
+  $strongarm->value = '8054784a63e9f1cf370fee327b207795';
   $export['hybridauth_provider_Facebook_keys_secret'] = $strongarm;
 
   $strongarm = new stdClass();
