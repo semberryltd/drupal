@@ -22,7 +22,7 @@ function landbook_country_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -53,15 +53,15 @@ function landbook_country_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landbook_country-field_geographical_focus'.
-  $field_instances['node-landbook_country-field_geographical_focus'] = array(
+  // Exported field_instance: 'node-landbook_country-field_countries'.
+  $field_instances['node-landbook_country-field_countries'] = array(
     'bundle' => 'landbook_country',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Bind this narrative to the proper country.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
@@ -74,21 +74,18 @@ function landbook_country_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_geographical_focus',
-    'label' => 'Geographical focus',
-    'required' => 0,
+    'field_name' => 'field_countries',
+    'label' => 'Country',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 1,
     ),
   );
@@ -101,11 +98,11 @@ function landbook_country_field_default_field_instances() {
     'description' => 'Pre-selected indicators for this country',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -130,15 +127,16 @@ function landbook_country_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Bind this narrative to the proper country.');
   t('Body');
+  t('Country');
   t('Country narative');
-  t('Geographical focus');
   t('Indicators');
   t('Pre-selected indicators for this country');
 

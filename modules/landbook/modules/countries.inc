@@ -11,6 +11,7 @@
 
 function landbook_countries($args=NULL) {
   global $language;
+  error_log('[LB: old countries]');
   landbook_add_js_css();
   landbook_add_js_vars($args);
   if ($args) {
