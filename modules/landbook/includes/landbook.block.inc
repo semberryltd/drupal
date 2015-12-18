@@ -13,14 +13,14 @@ function landbook_block_info() {
     $blocks['country_indicators_table'] = array(
         'info' => t('LB Country Indicators table'),
         'region' => 'content',
-        'status' => TRUE
-        'node_types'  => array('landbook_country'),
+        'status' => TRUE,
+        'node_types'  => array('landbook_country')
     );
     $blocks['country_book'] = array(
         'info' => t('LB Country book data'),
         'region' => 'content',
-        'status' => TRUE
-        'node_types'  => array('landbook_country'),
+        'status' => TRUE,
+        'node_types'  => array('landbook_country')
     );
     $blocks['country_sidebar_first']['info'] = t('Country maps and graphs');
     $blocks['country_sidebar_second']['info'] = t('Country selectors');
