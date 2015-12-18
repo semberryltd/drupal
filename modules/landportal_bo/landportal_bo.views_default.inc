@@ -24,6 +24,6 @@ function landportal_bo_views_default_views_alter(&$views) {
         }
     }
     // Include views
-    include_once $path .'/admin_views_taxonomy_terms.inc';
+    include_once 'views/admin_views_taxonomy_terms.inc';
     $views[$view_name] = $view;
 }
