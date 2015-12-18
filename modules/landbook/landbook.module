@@ -32,6 +32,40 @@ function landbook_help($path, $arg) {
 }
 
 /**
+ * If we are looking at a CT landbook_country, load indicators data
+ * (re-use WESO Country object) but load it globally...
+ * This should also improve performances.
+ */
+function landbook_init() {
+    global $language, $databases, $conn;
+    if ($node = menu_get_object()) {
+        if ($node->type == 'landbook_country') {
+            error_log('[LB: '.$node->type.']');
+            $data = array();
+            // Get country ISO3 code (from field_countries)
+            $country_field = field_get_items('node', $node, 'field_countries');
+            $country_term = taxonomy_term_load($country_field[0]['tid']);
+            $iso = field_get_items('taxonomy_term', $country_term, 'field_iso3');
+            $data['iso3'] = $iso[0]['value'];
+            // Load Country data
+            $data['C'] = new Country();
+            $data['data'] = $data['C']->get($language, $data['iso3']);
+
+            /* $result = db_query("SELECT c.iso3, t.value year, o.id, o.dataset_id, o.indicator_id, v.value, o.indicator_group_id, o.computation_id, issued_id,slice_id FROM {landportal.observations} o LEFT JOIN {landportal.countries} c ON o.region_id=c.id LEFT JOIN {landportal.values} v ON o.value_id=v.id LEFT JOIN {landportal.intervals} t ON o.ref_time_id=t.id WHERE c.iso3='".$data['iso3']."' ORDER BY year;"); */
+            /* $data['mylb'] = $result->fetchAll(); */
+
+            unset($data['data']['starred']);
+            //unset($data['data']['charts']['trafficLights']);
+            unset($data['data']['charts']['gaugeIndicators']);
+            // Stuff it in the node->book
+            /* $path = current_path(); */
+            /* dpm($node, 'LBinit '.$path); */
+            $node->book = $data;                        
+        }
+    }
+}
+
+/**
  * Implement hook_menu
  *
  * Landbook menus consists of:
@@ -91,7 +125,10 @@ function landbook_page_build(&$page) {
     if ($node = menu_get_object('node', 1)) {
         // This node is a landbook_country
         if ($node->type === 'landbook_country') {
-            // ...
+            landbook_add_js_vars($node->book['iso3']);
+            landbook_add_css();
+            landbook_add_js();
+            landbook_add_js_country();
         }
     }
 
