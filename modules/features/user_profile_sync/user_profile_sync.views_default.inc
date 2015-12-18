@@ -365,48 +365,45 @@ function user_profile_sync_views_default_views() {
   $export['create_profile'] = $view;
 
   $view = new view();
-  $view->name = 'profilesync';
+  $view->name = 'user_profile';
   $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'profile';
-  $view->human_name = 'Profile Sync';
+  $view->base_table = 'users';
+  $view->human_name = 'User Accounts with Empty Profile';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Profile Sync';
+  $handler->display->display_options['title'] = 'User Accounts With Empty Profile';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    30037204 => '30037204',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'table';
-  /* Relationship: Profile: User uid */
-  $handler->display->display_options['relationships']['user']['id'] = 'user';
-  $handler->display->display_options['relationships']['user']['table'] = 'profile';
-  $handler->display->display_options['relationships']['user']['field'] = 'user';
-  /* Field: Profile: Profile ID */
-  $handler->display->display_options['fields']['pid']['id'] = 'pid';
-  $handler->display->display_options['fields']['pid']['table'] = 'profile';
-  $handler->display->display_options['fields']['pid']['field'] = 'pid';
-  /* Field: Field: First name */
-  $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
-  $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
-  $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
-  $handler->display->display_options['fields']['field_firstname']['label'] = 'First name (Account)';
-  /* Field: Field: First name */
-  $handler->display->display_options['fields']['field_firstname_1']['id'] = 'field_firstname_1';
-  $handler->display->display_options['fields']['field_firstname_1']['table'] = 'field_data_field_firstname';
-  $handler->display->display_options['fields']['field_firstname_1']['field'] = 'field_firstname';
-  $handler->display->display_options['fields']['field_firstname_1']['relationship'] = 'user';
-  $handler->display->display_options['fields']['field_firstname_1']['label'] = 'First name (Profile)';
-  /* Field: Bulk operations: Profile */
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
+    'main' => 'main',
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'profile';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
@@ -414,13 +411,6 @@ function user_profile_sync_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 1,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
     'action::views_bulk_operations_modify_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -435,49 +425,37 @@ function user_profile_sync_views_default_views() {
       ),
     ),
   );
-  /* Field: User: Uid */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['relationship'] = 'user';
-  /* Filter criterion: Profile: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'profile';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'main' => 'main',
-  );
-  /* Filter criterion: Field: First name (field_firstname) */
-  $handler->display->display_options['filters']['field_firstname_value']['id'] = 'field_firstname_value';
-  $handler->display->display_options['filters']['field_firstname_value']['table'] = 'field_data_field_firstname';
-  $handler->display->display_options['filters']['field_firstname_value']['field'] = 'field_firstname_value';
-  $handler->display->display_options['filters']['field_firstname_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_firstname_value']['expose']['operator_id'] = 'field_firstname_value_op';
-  $handler->display->display_options['filters']['field_firstname_value']['expose']['label'] = 'First name (field_firstname)';
-  $handler->display->display_options['filters']['field_firstname_value']['expose']['use_operator'] = TRUE;
-  $handler->display->display_options['filters']['field_firstname_value']['expose']['operator'] = 'field_firstname_value_op';
-  $handler->display->display_options['filters']['field_firstname_value']['expose']['identifier'] = 'field_firstname_value';
-  $handler->display->display_options['filters']['field_firstname_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    111903911 => 0,
-    111903912 => 0,
-    25521343 => 0,
-    111903910 => 0,
-    30037204 => 0,
-  );
-  /* Filter criterion: Field: First name (field_firstname) */
-  $handler->display->display_options['filters']['field_firstname_value_1']['id'] = 'field_firstname_value_1';
-  $handler->display->display_options['filters']['field_firstname_value_1']['table'] = 'field_data_field_firstname';
-  $handler->display->display_options['filters']['field_firstname_value_1']['field'] = 'field_firstname_value';
-  $handler->display->display_options['filters']['field_firstname_value_1']['relationship'] = 'user';
-  $handler->display->display_options['filters']['field_firstname_value_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_firstname_value_1']['expose']['operator_id'] = 'field_firstname_value_1_op';
-  $handler->display->display_options['filters']['field_firstname_value_1']['expose']['label'] = 'First name (field_firstname) Profile';
-  $handler->display->display_options['filters']['field_firstname_value_1']['expose']['use_operator'] = TRUE;
-  $handler->display->display_options['filters']['field_firstname_value_1']['expose']['operator'] = 'field_firstname_value_1_op';
-  $handler->display->display_options['filters']['field_firstname_value_1']['expose']['identifier'] = 'field_firstname_value_1';
-  $handler->display->display_options['filters']['field_firstname_value_1']['expose']['remember_roles'] = array(
+  /* Field: Profile: Profile ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['pid']['separator'] = '';
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Profile: Profile ID */
+  $handler->display->display_options['filters']['pid']['id'] = 'pid';
+  $handler->display->display_options['filters']['pid']['table'] = 'profile';
+  $handler->display->display_options['filters']['pid']['field'] = 'pid';
+  $handler->display->display_options['filters']['pid']['relationship'] = 'profile';
+  $handler->display->display_options['filters']['pid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['pid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['pid']['expose']['operator_id'] = 'pid_op';
+  $handler->display->display_options['filters']['pid']['expose']['label'] = 'Profile ID';
+  $handler->display->display_options['filters']['pid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['pid']['expose']['operator'] = 'pid_op';
+  $handler->display->display_options['filters']['pid']['expose']['identifier'] = 'pid';
+  $handler->display->display_options['filters']['pid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     111903911 => 0,
@@ -489,10 +467,10 @@ function user_profile_sync_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/structure/profile-sync';
-  $translatables['profilesync'] = array(
+  $handler->display->display_options['path'] = 'admin/structure/user-account-update';
+  $translatables['user_profile'] = array(
     t('Master'),
-    t('Profile Sync'),
+    t('User Accounts With Empty Profile'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -506,20 +484,15 @@ function user_profile_sync_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Profile'),
+    t('Name'),
     t('User'),
+    t('- Choose an operation -'),
     t('Profile ID'),
     t('.'),
-    t(','),
-    t('First name (Account)'),
-    t('First name (Profile)'),
-    t('Profile'),
-    t('- Choose an operation -'),
-    t('Uid'),
-    t('First name (field_firstname)'),
-    t('First name (field_firstname) Profile'),
     t('Page'),
   );
-  $export['profilesync'] = $view;
+  $export['user_profile'] = $view;
 
   return $export;
 }
