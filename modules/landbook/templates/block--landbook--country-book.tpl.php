@@ -15,11 +15,7 @@
 <input type="hidden" id="continent-name" value="<?php echo $content['data']['info']['region']['name']; ?>" />
 <input type="hidden" id="country-name" value="<?php echo $content['data']['info']['name']; ?>" />
 <input type="hidden" id="un-code" value="<?php echo $content['data']['info']['iso3']; ?>" />
-<input type="hidden" id="starred-indicators" value="<?php $si=''; foreach($content['data']['starred']['indicators'] as $indicators): $si .= ($si? ',':'').$indicators['id']; endforeach; echo $si; ?>" />
-
-
-
-
+<input type="hidden" id="starred-indicators" value=""/>
       
       <h2 class="section section-name"><span class="indicator-name"></span></h2>
 

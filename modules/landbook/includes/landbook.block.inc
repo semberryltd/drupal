@@ -10,8 +10,18 @@
  */
 
 function landbook_block_info() {
-    $blocks['country_indicators_table']['info'] = t('LB Country Indicators table');
-    $blocks['country_book']['info'] = t('LB Country book data');
+    $blocks['country_indicators_table'] = array(
+        'info' => t('LB Country Indicators table'),
+        'region' => 'content',
+        'status' => TRUE
+        'node_types'  => array('landbook_country'),
+    );
+    $blocks['country_book'] = array(
+        'info' => t('LB Country book data'),
+        'region' => 'content',
+        'status' => TRUE
+        'node_types'  => array('landbook_country'),
+    );
     $blocks['country_sidebar_first']['info'] = t('Country maps and graphs');
     $blocks['country_sidebar_second']['info'] = t('Country selectors');
     $blocks['indicator_sidebar_second']['info'] = t('Indicator selectors');
@@ -30,6 +40,7 @@ function landbook_block_view($delta = '') {
         case 'country_book':
             $block['content'] = landbook_country_book();
             break;
+        // Old LB blocks
         case 'regions_selectors':
             $block['content'] = landbook_regions_selectors();
             break;
@@ -52,27 +63,25 @@ function landbook_block_view($delta = '') {
 function landbook_country_book() {
   if ($node = menu_get_object()) {
       if ($node->type == 'landbook_country') {
+          error_log('[LB:Block Country Book]');
           return array('#type'=>'markup', '#markup'=>$node->book);
       }
   }
-  return '';// 'no spider';
+  return '';
 }
 function landbook_country_indicators_table() {
   global $language;
   if ($node = menu_get_object()) {
       if ($node->type == 'landbook_country') {
-          //error_log('[LB:Block Country Indicators Table]');
+          error_log('[LB:Block Country Indicators Table]');
           $data = $node->book;
           // Get Indicators for this country (from field_indicators)
           $indicators_field = field_get_items('node', $node, 'field_indicators');
           $data['indicators'] = $indicators_field;
-          return array(
-              '#type' => 'markup',
-              '#markup'=> $data
-          );
+          return array('#type' => 'markup', '#markup'=> $data);
       }
   }
-  return '';//nothing';
+  return '';
 }
 
 function landbook_regions_selectors($data=NULL) {
@@ -107,15 +116,16 @@ function landbook_block_info_alter(&$blocks, $theme, $code_blocks) {
         $blocks['menu']['landbook-menu']['visibility'] = BLOCK_VISIBILITY_LISTED;
         $blocks['menu']['landbook-menu']['pages'] = "book\nbook/*";
         
-        $blocks['landbook']['country_indicators_table']['status'] = TRUE;
-        $blocks['landbook']['country_indicators_table']['region'] = 'content';//sidebar_second';
-        $blocks['landbook']['country_indicators_table']['visibility'] = BLOCK_VISIBILITY_LISTED;
-        $blocks['landbook']['country_indicators_table']['pages'] = "book/countries/*";
+        /* $blocks['landbook']['country_indicators_table']['status'] = TRUE; */
+        /* $blocks['landbook']['country_indicators_table']['region'] = 'content';//sidebar_second'; */
+        /* /\* $blocks['landbook']['country_indicators_table']['visibility'] = BLOCK_VISIBILITY_LISTED; *\/ */
+        /* /\* $blocks['landbook']['country_indicators_table']['pages'] = "book/countries/\\*"; *\/ */
+        /* $blocks['landbook']['country_indicators_table']['types'] = array("landbook-country"); */
 
-        $blocks['landbook']['country_book']['status'] = TRUE;
-        $blocks['landbook']['country_book']['region'] = 'content';
-        $blocks['landbook']['country_book']['visibility'] = BLOCK_VISIBILITY_LISTED;
-        $blocks['landbook']['country_book']['pages'] = "book/countries/*";
+        /* $blocks['landbook']['country_book']['status'] = TRUE; */
+        /* $blocks['landbook']['country_book']['region'] = 'content'; */
+        /* $blocks['landbook']['country_book']['visibility'] = BLOCK_VISIBILITY_LISTED; */
+        /* $blocks['landbook']['country_book']['pages'] = "book/countries/\*"; */
 
         /* Old blocks */
         $blocks['landbook']['regions_selectors']['status'] = TRUE;
