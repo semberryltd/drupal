@@ -6,7 +6,7 @@
  * Author: Jules Clement <jules@ker.bz>
  */
 
-dpm($content);
+//dpm($content);
 ?>
 
 <input type="hidden" id="entity-id" value="<?php echo $content['iso3']; ?>" />

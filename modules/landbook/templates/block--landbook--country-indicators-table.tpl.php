@@ -1,7 +1,7 @@
 <?php
 //dpm($block, 'block');
 //dpm($content, 'block-content');
-dpm($content['indicators'], 'prefered indicators');
+//dpm($content['indicators'], 'prefered indicators');
 ?>
 <article class="indicators">
   <header>Country indicators table</header>
