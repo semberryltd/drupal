@@ -83,8 +83,7 @@ Indicator
 
 
    <!-- <div id="world-map" class="world-map"></div> -->
-   <h2 class="section"><span><?php echo t('Country map'); ?></span></h2>
-   <div id="country-map" class="country-map"></div>
+   <!-- <div id="country-map" class="country-map"></div> -->
 
    <div class="row">
    <article class="col-sm-6">
@@ -119,7 +118,7 @@ Indicator
 
    <!-- SPIDER -->
    <article class="col-sm-6">
-     <h2 class="section"><?php echo t('Main Index rankings'); ?></h2>
+     <h2 class="section"><span><?php echo t('Main Index rankings'); ?></span></h2>
      
      <div id="main-index-rankings" class="graph">
 <?php if ($content['data']['charts']['spider']): ?>

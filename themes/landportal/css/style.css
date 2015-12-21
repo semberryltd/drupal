@@ -11512,6 +11512,26 @@ html.js fieldset.collapsed {
   border-top: 0;
 }
 
+@media (min-width: 992px) {
+  /* line 34, ../scss/modules/_book.scss */
+  .page-node.node-type-landbook-country #breadcrumb,
+  .page-node.node-type-landbook-country #main-wrapper {
+    width: 95%;
+  }
+}
+/* line 38, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .node-news.node-teaser h2 {
+  font-size: 1.3em;
+}
+/* line 39, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .node-news.node-teaser .information, .page-node.node-type-landbook-country .node-news.node-teaser .submitted, .page-node.node-type-landbook-country .node-news.node-teaser .links {
+  display: none;
+}
+/* line 40, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .node-news.node-teaser .content {
+  font-size: .8em;
+}
+
 /* line 1, ../scss/modules/_users.scss */
 .profile {
   text-align: left;

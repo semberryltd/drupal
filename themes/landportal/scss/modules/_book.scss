@@ -26,3 +26,17 @@
         @extend .landbook-header-bg;
     }
 }
+
+
+.page-node.node-type-landbook-country {
+    //#content { float: none; }
+    @media(min-width:992px){
+        #breadcrumb,
+        #main-wrapper{ width: 95%; }
+    }
+    .node-news.node-teaser {
+        h2 { font-size: 1.3em; }
+        .information, .submitted, .links { display: none; }
+        .content { font-size: .8em; }
+    }
+}

@@ -129,6 +129,11 @@ function landbook_page_build(&$page) {
             landbook_add_css();
             landbook_add_js();
             landbook_add_js_country();
+
+            $breadcrumb[0] = l(t('Landbook'), 'book');
+            $breadcrumb[1] = l(t('Countries'), 'countries');
+            //$breadcrumb[2] = l(, 'book');
+            drupal_set_breadcrumb($breadcrumb);
         }
     }
 
