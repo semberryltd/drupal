@@ -293,6 +293,13 @@ function social_login_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_destination_error';
+  $strongarm->value = '';
+  $export['hybridauth_destination_error'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_disable_username_change';
   $strongarm->value = 1;
   $export['hybridauth_disable_username_change'] = $strongarm;
@@ -580,6 +587,13 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_proxy';
+  $strongarm->value = '';
+  $export['hybridauth_proxy'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_register';
   $strongarm->value = '0';
   $export['hybridauth_register'] = $strongarm;
@@ -679,6 +693,60 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->name = 'hybridauth_widget_weight';
   $strongarm->value = '100';
   $export['hybridauth_widget_weight'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_disabled_strings_en';
+  $strongarm->value = array();
+  $export['locale_custom_disabled_strings_en'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_disabled_strings_es';
+  $strongarm->value = array();
+  $export['locale_custom_disabled_strings_es'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_disabled_strings_fr';
+  $strongarm->value = array();
+  $export['locale_custom_disabled_strings_fr'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_strings_en';
+  $strongarm->value = array(
+    '' => array(
+      'HybridAuth' => 'Social Logins',
+    ),
+  );
+  $export['locale_custom_strings_en'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_strings_es';
+  $strongarm->value = array(
+    '' => array(
+      'HybridAuth' => 'Conexiones Sociales',
+    ),
+  );
+  $export['locale_custom_strings_es'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_strings_fr';
+  $strongarm->value = array(
+    '' => array(
+      'HybridAuth' => 'Connexions sociales',
+    ),
+  );
+  $export['locale_custom_strings_fr'] = $strongarm;
 
   return $export;
 }
