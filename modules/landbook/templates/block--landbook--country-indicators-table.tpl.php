@@ -3,9 +3,9 @@
 //dpm($content, 'block-content');
 //dpm($content['indicators'], 'prefered indicators');
 ?>
-<article class="indicators">
-  <header>Country indicators table</header>
-  <table>
+<article class="indicators-table">
+  <h2 class="section section-name"><span>Country level data</span></h2>
+  <table class="table table-striped table-hover">
     <thead>
       <tr>
         <th class="indicatorCode"><?php print t('Indicator code'); ?></th>
@@ -21,7 +21,7 @@
         <td class="indicatorName"><?php print $o['indicator']['name']; ?></td>
         <td class="value"><?php print $o['value']['value']; ?></td>
         <td class="time"><?php print $o['ref_time']['value']; ?></td>
-      <tr>
+      </tr>
 <?php } ?>
     </tbody>
   </table>
