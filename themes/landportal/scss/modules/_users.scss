@@ -156,23 +156,31 @@
 /******************************************
  *      Organizations style
  */
+
+.view table.views-view-grid {
+    width: 100%;
+    /* .node-organization.node-teaser { */
+    /* } */
+}
+.view-organizations-overview tr {
+    height: 250px;
+}
+
 .node-organization {
     &.node-teaser {
         text-align: center;
-        height: 220px;
-        width: 200px;
+        /* height: 220px; */
+        /* width: 200px; */
         position: relative;
         overflow: hidden;
-
         .content {
-            position: absolute;
             width: 100%;
-            bottom: 0;
+            /* position: absolute; */
+            /* bottom: 0; */
         }
         h2 {
             margin-bottom: 1em;
             font-size: 2em;
-            //padding: 2em 0;
             font-weight: bold;
         }
         span {
@@ -184,13 +192,8 @@
             color: $grey-light;
         }
         &:after {
-            height: 1px;
-            width: 100%;
             content: " ";
             visibility: visible;
-            @include background-image(linear-gradient(to right, #dddddd, $grey-light 50%, #dddddd));
-            position: absolute;
-            bottom: 0;
         }
     }
 }

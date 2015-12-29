@@ -8824,12 +8824,12 @@ button.close {
   }
 }
 /* line 14, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.clearfix:before, #footer .block-menu:before, .clearfix:after {
+.clearfix:before, .page-node.node-type-landbook-country div.map-medium:before, #footer .block-menu:before, .clearfix:after, .page-node.node-type-landbook-country div.map-medium:after {
   content: " ";
   display: table;
 }
 /* line 19, ../../../../../../../../var/lib/gems/2.1.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.clearfix:after {
+.clearfix:after, .page-node.node-type-landbook-country div.map-medium:after {
   clear: both;
 }
 
@@ -9185,7 +9185,12 @@ button.close {
     display: none !important;
   }
 }
-/* line 2, ../scss/modules/_buttons.scss */
+/* line 1, ../scss/modules/_buttons.scss */
+.btn, .webform-client-form .form-actions input[type=submit] {
+  margin: .2em 0;
+}
+
+/* line 6, ../scss/modules/_buttons.scss */
 .landportal-button, .field-type-taxonomy-term-reference .field-item a, ul.tabs li a {
   padding: 0.2em 0.5em;
   border-radius: .25em;
@@ -9193,26 +9198,26 @@ button.close {
   color: white;
   white-space: nowrap;
 }
-/* line 8, ../scss/modules/_buttons.scss */
+/* line 12, ../scss/modules/_buttons.scss */
 .landportal-button.active, .field-type-taxonomy-term-reference .field-item a.active, ul.tabs li a.active {
   background-color: #2a6496;
 }
 
-/* line 13, ../scss/modules/_buttons.scss */
+/* line 17, ../scss/modules/_buttons.scss */
 .field-type-taxonomy-term-reference {
   display: inline;
 }
-/* line 15, ../scss/modules/_buttons.scss */
+/* line 19, ../scss/modules/_buttons.scss */
 .field-type-taxonomy-term-reference .field-items {
   display: inline;
 }
-/* line 18, ../scss/modules/_buttons.scss */
+/* line 22, ../scss/modules/_buttons.scss */
 .field-type-taxonomy-term-reference .field-item {
   display: inline-block;
   margin: .2em;
 }
 
-/* line 29, ../scss/modules/_buttons.scss */
+/* line 33, ../scss/modules/_buttons.scss */
 .landportal-button-red .field-item a, .page-library .field-name-field-doc-type .field-item a {
   padding: .5em;
   font-size: 1.2em;
@@ -9224,18 +9229,18 @@ button.close {
 /* .field-name-field-geographical-focus, */
 /* .field-name-field-status { */
 /* } */
-/* line 42, ../scss/modules/_buttons.scss */
+/* line 46, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item {
   margin: 1.5em 0;
   padding: .5em;
 }
 
-/* line 46, ../scss/modules/_buttons.scss */
+/* line 50, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item {
   float: none;
   border: 1px solid #888888;
 }
-/* line 49, ../scss/modules/_buttons.scss */
+/* line 53, ../scss/modules/_buttons.scss */
 .field-name-field-status .field-item .field-item[content="Closed"] {
   background-color: #fe2e2e;
 }
@@ -11512,22 +11517,98 @@ html.js fieldset.collapsed {
   border-top: 0;
 }
 
-@media (min-width: 992px) {
-  /* line 34, ../scss/modules/_book.scss */
-  .page-node.node-type-landbook-country #breadcrumb,
-  .page-node.node-type-landbook-country #main-wrapper {
-    width: 95%;
-  }
+/* line 30, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country {
+  /* @media(min-width:992px){ */
+  /*     #breadcrumb, */
+  /*     #main-wrapper{ width: 95%; } */
+  /* } */
+  /* Narative (left) aside element */
+  /* Sidebar elements */
 }
-/* line 38, ../scss/modules/_book.scss */
-.page-node.node-type-landbook-country .node-news.node-teaser h2 {
-  font-size: 1.3em;
+/* line 35, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country article.indicators-table {
+  margin: 5em 0;
+}
+/* line 36, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country #indicators-display {
+  margin-top: 6em;
+}
+/* line 37, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country #comparison-form {
+  margin-bottom: 1.4em;
 }
 /* line 39, ../scss/modules/_book.scss */
-.page-node.node-type-landbook-country .node-news.node-teaser .information, .page-node.node-type-landbook-country .node-news.node-teaser .submitted, .page-node.node-type-landbook-country .node-news.node-teaser .links {
+.page-node.node-type-landbook-country #comparison-form .form-group, .page-node.node-type-landbook-country #comparison-form .webform-client-form .form-item, .webform-client-form .page-node.node-type-landbook-country #comparison-form .form-item {
+  max-width: 33%;
+}
+/* line 41, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country div.compare-legend {
+  margin: -3.6em 0 6em 11em;
+}
+/* line 44, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country table tbody {
+  border: 0px;
+}
+/* line 45, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country table .indicatorCode {
   display: none;
 }
-/* line 40, ../scss/modules/_book.scss */
+/* line 47, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country div.map-medium {
+  /* margin: 4em 0 5em 0; */
+  /* height: 26em; */
+}
+/* line 54, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country h1.title:before {
+  /* border: 1px solid $green; */
+  content: ' ';
+  background-color: #8fcd1f;
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: .9em;
+  z-index: -1;
+}
+/* line 65, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country h1.title span {
+  padding-right: .5em;
+  background-color: white;
+}
+/* line 66, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country h1.title img {
+  vertical-align: baseline;
+  margin-right: 10px;
+}
+/* line 71, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .block-views > h2 {
+  border-bottom: 1px solid #8fcd1f;
+}
+/* line 76, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .node-teaser > h2 {
+  font-size: 1.4em;
+}
+/* line 82, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country aside div.country-map {
+  height: 200px;
+  width: 100%;
+}
+/* line 89, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .field-type-taxonomy-term-reference {
+  display: none;
+}
+/* line 93, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .node-news.node-teaser img {
+  width: 35%;
+  margin: 0 5px 5px 0;
+  float: left;
+}
+/* line 98, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country .node-news.node-teaser .submitted, .page-node.node-type-landbook-country .node-news.node-teaser .links {
+  display: none;
+}
+/* line 99, ../scss/modules/_book.scss */
 .page-node.node-type-landbook-country .node-news.node-teaser .content {
   font-size: .8em;
 }
@@ -11735,72 +11816,74 @@ html.js fieldset.collapsed {
  *      Organizations style
  */
 /* line 160, ../scss/modules/_users.scss */
+.view table.views-view-grid {
+  width: 100%;
+  /* .node-organization.node-teaser { */
+  /* } */
+}
+
+/* line 165, ../scss/modules/_users.scss */
+.view-organizations-overview tr {
+  height: 250px;
+}
+
+/* line 170, ../scss/modules/_users.scss */
 .node-organization.node-teaser {
   text-align: center;
-  height: 220px;
-  width: 200px;
+  /* height: 220px; */
+  /* width: 200px; */
   position: relative;
   overflow: hidden;
 }
-/* line 167, ../scss/modules/_users.scss */
+/* line 176, ../scss/modules/_users.scss */
 .node-organization.node-teaser .content {
-  position: absolute;
   width: 100%;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0; */
 }
-/* line 172, ../scss/modules/_users.scss */
+/* line 181, ../scss/modules/_users.scss */
 .node-organization.node-teaser h2 {
   margin-bottom: 1em;
   font-size: 2em;
   font-weight: bold;
 }
-/* line 178, ../scss/modules/_users.scss */
+/* line 186, ../scss/modules/_users.scss */
 .node-organization.node-teaser span {
   font-style: italic;
   font-size: .8em;
   padding-top: .2em;
 }
-/* line 183, ../scss/modules/_users.scss */
+/* line 191, ../scss/modules/_users.scss */
 .node-organization.node-teaser a {
   color: #888888;
 }
-/* line 186, ../scss/modules/_users.scss */
+/* line 194, ../scss/modules/_users.scss */
 .node-organization.node-teaser:after {
-  height: 1px;
-  width: 100%;
   content: " ";
   visibility: visible;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjODg4ODg4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGRkZGRkIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #dddddd), color-stop(50%, #888888), color-stop(100%, #dddddd));
-  background-image: -moz-linear-gradient(left, #dddddd, #888888 50%, #dddddd);
-  background-image: -webkit-linear-gradient(left, #dddddd, #888888 50%, #dddddd);
-  background-image: linear-gradient(to right, #dddddd, #888888 50%, #dddddd);
-  position: absolute;
-  bottom: 0;
 }
 
-/* line 200, ../scss/modules/_users.scss */
+/* line 203, ../scss/modules/_users.scss */
 .page-node.node-type-organization #content {
   clear: both;
   position: relative;
 }
-/* line 204, ../scss/modules/_users.scss */
+/* line 207, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization {
   min-height: 500px;
 }
-/* line 206, ../scss/modules/_users.scss */
+/* line 209, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .side {
   text-align: center;
   position: absolute;
   left: 0;
   width: 25%;
 }
-/* line 211, ../scss/modules/_users.scss */
+/* line 214, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .side .field-type-taxonomy-term-reference {
   display: inline;
 }
-/* line 215, ../scss/modules/_users.scss */
+/* line 218, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization > .content {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjODg4ODg4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGRkZGRkIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
@@ -11814,11 +11897,11 @@ html.js fieldset.collapsed {
   padding-left: 1em;
   margin-left: 25%;
 }
-/* line 222, ../scss/modules/_users.scss */
+/* line 225, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization > .content .field-name-body {
   padding: 1em 0;
 }
-/* line 226, ../scss/modules/_users.scss */
+/* line 229, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .field-label {
   min-width: 70px;
   color: #888888;
@@ -11826,29 +11909,29 @@ html.js fieldset.collapsed {
   font-weight: normal;
   margin-right: .2em;
 }
-/* line 233, ../scss/modules/_users.scss */
+/* line 236, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .field-label:after {
   content: ": ";
 }
-/* line 237, ../scss/modules/_users.scss */
+/* line 240, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .field-name-field-organization-relationship {
   position: absolute;
   right: 0;
   top: 0;
 }
-/* line 241, ../scss/modules/_users.scss */
+/* line 244, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .field-name-field-organization-relationship .field-items {
   text-align: right;
 }
-/* line 243, ../scss/modules/_users.scss */
+/* line 246, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .field-name-field-organization-relationship .field-items .field-item {
   display: block;
 }
-/* line 245, ../scss/modules/_users.scss */
+/* line 248, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .field-name-field-organization-relationship .field-items .field-item a {
   background-color: #e3ab03;
 }
-/* line 252, ../scss/modules/_users.scss */
+/* line 255, ../scss/modules/_users.scss */
 .page-node.node-type-organization .node-organization .field-name-field-user > .field-items > .field-item {
   margin: 0 1em 0 0;
   float: left;
