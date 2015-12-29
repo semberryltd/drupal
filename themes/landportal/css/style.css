@@ -11590,25 +11590,29 @@ html.js fieldset.collapsed {
   font-size: 1.4em;
 }
 /* line 82, ../scss/modules/_book.scss */
+.page-node.node-type-landbook-country aside .btn, .page-node.node-type-landbook-country aside .webform-client-form .form-actions input[type=submit], .webform-client-form .form-actions .page-node.node-type-landbook-country aside input[type=submit] {
+  width: 100%;
+}
+/* line 83, ../scss/modules/_book.scss */
 .page-node.node-type-landbook-country aside div.country-map {
   height: 200px;
   width: 100%;
 }
-/* line 89, ../scss/modules/_book.scss */
+/* line 90, ../scss/modules/_book.scss */
 .page-node.node-type-landbook-country .field-type-taxonomy-term-reference {
   display: none;
 }
-/* line 93, ../scss/modules/_book.scss */
+/* line 94, ../scss/modules/_book.scss */
 .page-node.node-type-landbook-country .node-news.node-teaser img {
   width: 35%;
   margin: 0 5px 5px 0;
   float: left;
 }
-/* line 98, ../scss/modules/_book.scss */
+/* line 99, ../scss/modules/_book.scss */
 .page-node.node-type-landbook-country .node-news.node-teaser .submitted, .page-node.node-type-landbook-country .node-news.node-teaser .links {
   display: none;
 }
-/* line 99, ../scss/modules/_book.scss */
+/* line 100, ../scss/modules/_book.scss */
 .page-node.node-type-landbook-country .node-news.node-teaser .content {
   font-size: .8em;
 }
