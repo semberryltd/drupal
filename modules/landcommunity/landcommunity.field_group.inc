@@ -55,13 +55,12 @@ function landcommunity_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Settings',
-    'weight' => '9',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_api_token',
-      1 => 'ckeditor',
-      2 => 'googleanalytics',
-      3 => 'timezone',
-      4 => 'locale',
+      0 => 'ckeditor',
+      1 => 'googleanalytics',
+      2 => 'timezone',
+      3 => 'locale',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
