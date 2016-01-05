@@ -429,14 +429,14 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Facebook_keys_id';
-  $strongarm->value = '1717003728529161';
+  $strongarm->value = '610427542421736';
   $export['hybridauth_provider_Facebook_keys_id'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Facebook_keys_secret';
-  $strongarm->value = '8054784a63e9f1cf370fee327b207795';
+  $strongarm->value = '3c3fcee363f038d5602451ffa415e8ca';
   $export['hybridauth_provider_Facebook_keys_secret'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -747,6 +747,72 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
     ),
   );
   $export['locale_custom_strings_fr'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pcp_enabled_fields';
+  $strongarm->value = array(
+    'profile2:main:field_firstname' => 'profile2:main:field_firstname',
+    'profile2:main:field_lastname' => 'profile2:main:field_lastname',
+    'profile2:main:field_geographical_focus' => 'profile2:main:field_geographical_focus',
+    'profile2:main:field_related_topics' => 'profile2:main:field_related_topics',
+    'profile2:main:field_description' => 'profile2:main:field_description',
+    'profile2:main:field_interests' => 'profile2:main:field_interests',
+    'profile2:main:field_location' => 'profile2:main:field_location',
+    'profile2:main:field_image' => 'profile2:main:field_image',
+    'profile2:main:field_link' => 'profile2:main:field_link',
+  );
+  $export['pcp_enabled_fields'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pcp_enable_user_picture';
+  $strongarm->value = 0;
+  $export['pcp_enable_user_picture'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pcp_fields_open_option';
+  $strongarm->value = '_self';
+  $export['pcp_fields_open_option'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pcp_fields_order';
+  $strongarm->value = '1';
+  $export['pcp_fields_order'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pcp_hide_block_on_complete';
+  $strongarm->value = 0;
+  $export['pcp_hide_block_on_complete'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pcp_login_message';
+  $strongarm->value = 'Your Profile is not complete. Filling out remaining fields will make it 100%. Now you\'ve reached [pcp-user:pcp-user]%.';
+  $export['pcp_login_message'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pcp_login_message_role';
+  $strongarm->value = array(
+    2 => 0,
+    111903911 => 0,
+    111903912 => 0,
+    25521343 => 0,
+    111903910 => 0,
+    30037204 => 0,
+  );
+  $export['pcp_login_message_role'] = $strongarm;
 
   return $export;
 }
