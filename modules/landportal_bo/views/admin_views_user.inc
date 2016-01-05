@@ -198,16 +198,6 @@ $handler->display->display_options['fields']['rid']['id'] = 'rid';
 $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
 $handler->display->display_options['fields']['rid']['field'] = 'rid';
 $handler->display->display_options['fields']['rid']['type'] = 'ul';
-/* Field: Field: Description */
-$handler->display->display_options['fields']['field_description']['id'] = 'field_description';
-$handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
-$handler->display->display_options['fields']['field_description']['field'] = 'field_description';
-$handler->display->display_options['fields']['field_description']['relationship'] = 'profile';
-$handler->display->display_options['fields']['field_description']['label'] = 'Public';
-/* Field: Field: Description */
-$handler->display->display_options['fields']['field_description_1']['id'] = 'field_description_1';
-$handler->display->display_options['fields']['field_description_1']['table'] = 'field_data_field_description';
-$handler->display->display_options['fields']['field_description_1']['field'] = 'field_description';
 /* Field: Field: Geographical focus */
 $handler->display->display_options['fields']['field_geographical_focus']['id'] = 'field_geographical_focus';
 $handler->display->display_options['fields']['field_geographical_focus']['table'] = 'field_data_field_geographical_focus';
@@ -216,13 +206,6 @@ $handler->display->display_options['fields']['field_geographical_focus']['relati
 $handler->display->display_options['fields']['field_geographical_focus']['label'] = 'Public Geo';
 $handler->display->display_options['fields']['field_geographical_focus']['group_column'] = 'entity_id';
 $handler->display->display_options['fields']['field_geographical_focus']['delta_offset'] = '0';
-/* Field: Field: Geographical focus */
-$handler->display->display_options['fields']['field_geographical_focus_1']['id'] = 'field_geographical_focus_1';
-$handler->display->display_options['fields']['field_geographical_focus_1']['table'] = 'field_data_field_geographical_focus';
-$handler->display->display_options['fields']['field_geographical_focus_1']['field'] = 'field_geographical_focus';
-$handler->display->display_options['fields']['field_geographical_focus_1']['label'] = 'Geographical';
-$handler->display->display_options['fields']['field_geographical_focus_1']['group_column'] = 'entity_id';
-$handler->display->display_options['fields']['field_geographical_focus_1']['delta_offset'] = '0';
 /* Field: User: Created date */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'users';
@@ -251,10 +234,6 @@ $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'users';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-/* Sort criterion: User: Active */
-$handler->display->display_options['sorts']['status']['id'] = 'status';
-$handler->display->display_options['sorts']['status']['table'] = 'users';
-$handler->display->display_options['sorts']['status']['field'] = 'status';
 /* Filter criterion: User: Name */
 $handler->display->display_options['filters']['uid']['id'] = 'uid';
 $handler->display->display_options['filters']['uid']['table'] = 'users';
@@ -299,6 +278,80 @@ $handler->display->display_options['filters']['status']['expose']['operator_id']
 $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
 $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
 $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+$handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+/* Filter criterion: User: Roles */
+$handler->display->display_options['filters']['rid']['id'] = 'rid';
+$handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+$handler->display->display_options['filters']['rid']['field'] = 'rid';
+$handler->display->display_options['filters']['rid']['group'] = 1;
+$handler->display->display_options['filters']['rid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+$handler->display->display_options['filters']['rid']['expose']['label'] = 'Role';
+$handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+$handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+$handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
+
+/* Display: System */
+$handler = $view->new_display('system', 'System', 'system_1');
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+$handler->display->display_options['hide_admin_links'] = TRUE;
+$handler->display->display_options['defaults']['access'] = FALSE;
+$handler->display->display_options['path'] = 'admin/people';
+
+/* Display: Pending */
+$handler = $view->new_display('system', 'Pending', 'system_2');
+$handler->display->display_options['defaults']['access'] = FALSE;
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '100';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['pager']['options']['quantity'] = '9';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: User: Name */
+$handler->display->display_options['filters']['uid']['id'] = 'uid';
+$handler->display->display_options['filters']['uid']['table'] = 'users';
+$handler->display->display_options['filters']['uid']['field'] = 'uid';
+$handler->display->display_options['filters']['uid']['operator'] = 'not in';
+$handler->display->display_options['filters']['uid']['value'] = array(
+  0 => 0,
+);
+$handler->display->display_options['filters']['uid']['group'] = 1;
+/* Filter criterion: User: Name (raw) */
+$handler->display->display_options['filters']['name']['id'] = 'name';
+$handler->display->display_options['filters']['name']['table'] = 'users';
+$handler->display->display_options['filters']['name']['field'] = 'name';
+$handler->display->display_options['filters']['name']['operator'] = 'contains';
+$handler->display->display_options['filters']['name']['group'] = 1;
+$handler->display->display_options['filters']['name']['exposed'] = TRUE;
+$handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+$handler->display->display_options['filters']['name']['expose']['label'] = 'Username';
+$handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+$handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+$handler->display->display_options['filters']['name']['expose']['remember'] = TRUE;
+/* Filter criterion: User: E-mail */
+$handler->display->display_options['filters']['mail']['id'] = 'mail';
+$handler->display->display_options['filters']['mail']['table'] = 'users';
+$handler->display->display_options['filters']['mail']['field'] = 'mail';
+$handler->display->display_options['filters']['mail']['operator'] = 'contains';
+$handler->display->display_options['filters']['mail']['group'] = 1;
+$handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+$handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+$handler->display->display_options['filters']['mail']['expose']['label'] = 'E-mail';
+$handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+$handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+$handler->display->display_options['filters']['mail']['expose']['remember'] = TRUE;
+/* Filter criterion: User: Active */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'users';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = '0';
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+$handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
+$handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+$handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
 $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
@@ -320,44 +373,6 @@ $handler->display->display_options['filters']['rid']['expose']['label'] = 'Role'
 $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
 $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
 $handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
-/* Filter criterion: Field: Description (field_description) */
-$handler->display->display_options['filters']['field_description_value']['id'] = 'field_description_value';
-$handler->display->display_options['filters']['field_description_value']['table'] = 'field_data_field_description';
-$handler->display->display_options['filters']['field_description_value']['field'] = 'field_description_value';
-$handler->display->display_options['filters']['field_description_value']['relationship'] = 'profile';
-$handler->display->display_options['filters']['field_description_value']['exposed'] = TRUE;
-$handler->display->display_options['filters']['field_description_value']['expose']['operator_id'] = 'field_description_value_op';
-$handler->display->display_options['filters']['field_description_value']['expose']['label'] = 'Public';
-$handler->display->display_options['filters']['field_description_value']['expose']['use_operator'] = TRUE;
-$handler->display->display_options['filters']['field_description_value']['expose']['operator'] = 'field_description_value_op';
-$handler->display->display_options['filters']['field_description_value']['expose']['identifier'] = 'field_description_value';
-$handler->display->display_options['filters']['field_description_value']['expose']['remember_roles'] = array(
-  2 => '2',
-  1 => 0,
-  111731461 => 0,
-  111903911 => 0,
-  111903912 => 0,
-  25521343 => 0,
-  111903910 => 0,
-  30037204 => 0,
-);
-
-/* Display: System */
-$handler = $view->new_display('system', 'System', 'system_1');
-$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$handler->display->display_options['hide_admin_links'] = TRUE;
-$handler->display->display_options['defaults']['access'] = FALSE;
-$handler->display->display_options['path'] = 'admin/people';
-
-/* Display: System 2 */
-$handler = $view->new_display('system', 'System 2', 'system_2');
-$handler->display->display_options['defaults']['access'] = FALSE;
-$handler->display->display_options['defaults']['pager'] = FALSE;
-$handler->display->display_options['pager']['type'] = 'full';
-$handler->display->display_options['pager']['options']['items_per_page'] = '100';
-$handler->display->display_options['pager']['options']['offset'] = '0';
-$handler->display->display_options['pager']['options']['id'] = '0';
-$handler->display->display_options['pager']['options']['quantity'] = '9';
 $handler->display->display_options['path'] = 'admin/people/moderate';
 $translatables['admin_views_user'] = array(
   t('Defaults'),
@@ -379,16 +394,13 @@ $translatables['admin_views_user'] = array(
   t('No users available.'),
   t('Public'),
   t('- Choose an operation -'),
-  t('Delete'),
   t('Change value'),
   t('Change user roles'),
   t('Send e-mail'),
   t('Name'),
   t('Active'),
   t('Roles'),
-  t('Description'),
   t('Public Geo'),
-  t('Geographical'),
   t('Member for'),
   t('Last access'),
   t('Operations'),
@@ -396,5 +408,5 @@ $translatables['admin_views_user'] = array(
   t('E-mail'),
   t('Role'),
   t('System'),
-  t('System 2'),
+  t('Pending'),
 );
