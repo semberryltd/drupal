@@ -40,7 +40,7 @@ function landbook_init() {
     global $language, $databases, $conn;
     if ($node = menu_get_object()) {
         if ($node->type == 'landbook_country') {
-            error_log('[LB: '.$node->type.']');
+            //error_log('[LB: '.$node->type.']');
             $data = array();
             // Get country ISO3 code (from field_countries)
             $country_field = field_get_items('node', $node, 'field_countries');

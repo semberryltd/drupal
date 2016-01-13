@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a node.
@@ -17,10 +16,10 @@
       <h2 class="section"><span><?php echo t('Country map'); ?></span></h2>
       <div id="country-map" class="country-map"></div>
     </article>
-    <article>
-    <button class="btn">[Print / DL]</button><br/>
-    <button class="btn">[Data]</button><br/>
-    <button class="btn">[Go to library]</button>
+    <article class="text-center">
+      <a href="/book/countries/<?php echo $node->book['data']['entity-id']; ?>/details" class="btn btn-primary"><?php echo t('Full data on'); ?> <span class="country-name"><?php echo $node->book['data']['info']['name']; ?></span></a>
+      <a href="/search/site/<?php echo $node->book['data']['info']['name']; ?>" target="_blank" class="btn btn-primary"><?php echo t('Search the Land Portal'); ?></a>
+      <a href="/library/search?keyword=<?php echo $node->book['data']['info']['name']; ?>" target="_blank" class="btn btn-primary"><?php echo t('Consult the Land Library'); ?></a>
     </article>
 </aside>
 
@@ -50,15 +49,14 @@
       print render($content);
     ?>
 
-  <?php if ($display_submitted): ?>
+  <?php /* if ($display_submitted): ?>
   <div class="submitted">
       <?php print $submitted; ?>
     </div>
-  <?php endif; ?>
+    <?php endif; */ ?>
   </section>
 
   <?php print render($content['links']); ?>
-
   <?php print render($content['comments']); ?>
 
 </div>

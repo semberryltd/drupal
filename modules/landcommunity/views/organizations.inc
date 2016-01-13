@@ -281,6 +281,7 @@ $handler = $view->new_display('block', 'Org byC', 'block_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Organizations';
 $handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 /* Contextual filter: Taxonomy term: Name */
 $handler->display->display_options['arguments']['name']['id'] = 'name';
@@ -290,6 +291,7 @@ $handler->display->display_options['arguments']['name']['relationship'] = 'field
 $handler->display->display_options['arguments']['name']['default_action'] = 'default';
 $handler->display->display_options['arguments']['name']['title_enable'] = TRUE;
 $handler->display->display_options['arguments']['name']['title'] = 'Organizations working in %1';
+$handler->display->display_options['arguments']['name']['breadcrumb_enable'] = TRUE;
 $handler->display->display_options['arguments']['name']['breadcrumb'] = '%1';
 $handler->display->display_options['arguments']['name']['default_argument_type'] = 'raw';
 $handler->display->display_options['arguments']['name']['default_argument_options']['index'] = '2';

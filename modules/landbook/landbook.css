@@ -211,11 +211,6 @@ div.evolutions {
 	margin: 0 !important;
 }
 
-table {
-	width: 100%;
-	margin-bottom: 2em;
-}
-
 table.traffic {
 	border-bottom: 0.1em dashed #aaa;
 	margin-bottom: 0;

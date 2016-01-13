@@ -50,18 +50,21 @@
  * Page content starts here
  */
 ?>
-    <?php if ($breadcrumb): ?>
+    <br/>
+    <?php /*if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
+    <?php endif;*/ ?>
     <?php print $messages; ?>
 
 <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
     
     <div id="main-wrapper"><div id="main" class="clearfix">
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+<?php /* if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; */ ?>
         <?php print render($title_prefix); ?>
 <?php /* Add Country Flag to title */ ?>
-       <?php if ($title): ?><h1 class="title" id="page-title"><?php print '<img src="/'.drupal_get_path('theme',$GLOBALS['theme']).'/images/flags/'.$node->book['iso3'].'.png" alt="flag"/>'; ?><?php print $title; ?></h1><?php endif; ?>
+       <?php if ($title): ?><h1 class="title" id="page-title"><span>
+ <?php print '<img src="/'.drupal_get_path('theme',$GLOBALS['theme']).'/images/flags/'.$node->book['iso3'].'.png" alt="flag"/>'; ?><?php print $title; ?>
+</span></h1><?php endif; ?>
         <?php print render($title_suffix); ?>
 
     <section id="content">
@@ -82,7 +85,7 @@
 
       <?php if ($page['sidebar_second']): ?>
         <div id="sidebar-second" class="column sidebar"><div class="section">
-       <h2><?php print t('Also on the Landportal'); ?></h2>
+       <h2 class="section section-name"><span><?php print t('Also on the Landportal'); ?></span></h2>
           <?php print render($page['sidebar_second']); ?>
         </div></div> <!-- /.section, /#sidebar-second -->
       <?php endif; ?>

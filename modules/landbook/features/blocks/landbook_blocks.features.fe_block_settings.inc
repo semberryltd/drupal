@@ -35,7 +35,7 @@ function landbook_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'landportal',
-        'weight' => -41,
+        'weight' => -43,
       ),
       'seven' => array(
         'region' => '',
@@ -71,7 +71,7 @@ function landbook_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'landportal',
-        'weight' => -42,
+        'weight' => -44,
       ),
       'seven' => array(
         'region' => '',
@@ -107,7 +107,7 @@ function landbook_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'landportal',
-        'weight' => -39,
+        'weight' => -41,
       ),
       'seven' => array(
         'region' => '',
@@ -143,7 +143,7 @@ function landbook_blocks_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => 1,
         'theme' => 'landportal',
-        'weight' => 0,
+        'weight' => -30,
       ),
       'seven' => array(
         'region' => '',
@@ -179,7 +179,7 @@ function landbook_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'landportal',
-        'weight' => -40,
+        'weight' => -42,
       ),
       'seven' => array(
         'region' => '',
