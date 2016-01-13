@@ -1036,6 +1036,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'create blog_post content',
     'roles' => array(
       'administrator' => 'administrator',
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
@@ -1943,6 +1944,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'edit own blog_post content',
     'roles' => array(
       'administrator' => 'administrator',
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'landportal admin' => 'landportal admin',
       'landportal editor' => 'landportal editor',
