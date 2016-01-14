@@ -92,3 +92,13 @@ html.js fieldset.collapsed {
         min-width: 150px;
     }
 }
+
+
+/* Restyle and baseline non-control form elements. */
+
+fieldset {
+  padding: 1px;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
