@@ -63,7 +63,6 @@ function landbook_block_view($delta = '') {
 function landbook_country_book() {
   if ($node = menu_get_object()) {
       if ($node->type == 'landbook_country') {
-          error_log('[LB:Block Country Book]');
           return array('#type'=>'markup', '#markup'=>$node->book);
       }
   }
@@ -73,7 +72,6 @@ function landbook_country_indicators_table() {
   global $language;
   if ($node = menu_get_object()) {
       if ($node->type == 'landbook_country') {
-          error_log('[LB:Block Country Indicators Table]');
           $data = $node->book;
           // Get Indicators for this country (from field_indicators)
           $indicators_field = field_get_items('node', $node, 'field_indicators');
