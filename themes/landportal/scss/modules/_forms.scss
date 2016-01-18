@@ -194,9 +194,7 @@ textarea.node-form input {
     }
     input[type=text],
     input[type=email],
-    select, textarea {
-        @extend .node-form input;
-    }
+    
     .form-type-checkbox {
         
     }
