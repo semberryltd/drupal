@@ -115,6 +115,7 @@ output {
 // input[type="color"]
 
 .node-form input[type]:not([type=submit]),.node-form select,.node-form textarea {
+  display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: $padding-base-vertical $padding-base-horizontal;
