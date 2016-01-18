@@ -59,7 +59,7 @@
 
 
 // node form overrides
-.node-form .form-submit {
+.node-form .form-submit,.node-form  a.button {
   display: inline-block;
   margin: 5px 10px 0 0; // For input.btn
   font-weight: $btn-font-weight;
@@ -107,7 +107,7 @@
   // [converter] extracted a& to a.form-submit
 }
 
-.node-form a.form-submit {
+.node-form a.button {
   &.disabled,
   fieldset[disabled] & {
     pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
