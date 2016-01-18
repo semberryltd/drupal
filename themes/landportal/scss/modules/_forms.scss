@@ -114,7 +114,7 @@ output {
 // input[type="tel"]
 // input[type="color"]
 
-.form-control {
+.node-form input {
   display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
@@ -158,11 +158,11 @@ output {
     cursor: $cursor-disabled;
   }
 
-  // [converter] extracted textarea& to textarea.form-control
+  // [converter] extracted textarea& to textarea.node-form input
 }
 
 // Reset height for `textarea`s
-textarea.form-control {
+textarea.node-form input {
   height: auto;
 }
 
@@ -195,7 +195,7 @@ textarea.form-control {
     input[type=text],
     input[type=email],
     select, textarea {
-        @extend .form-control;
+        @extend .node-form input;
     }
     .form-type-checkbox {
         
