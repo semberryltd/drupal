@@ -61,7 +61,7 @@
 // node form overrides
 .node-form .form-submit {
   display: inline-block;
-  margin-bottom: 0; // For input.btn
+  margin: 5px 10px 0 0; // For input.btn
   font-weight: $btn-font-weight;
   text-align: center;
   vertical-align: middle;
