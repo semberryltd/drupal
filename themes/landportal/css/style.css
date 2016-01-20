@@ -10913,6 +10913,11 @@ html.js fieldset.collapsed {
   margin: 0 0 0 1em;
 }
 
+/* line 32, ../scss/modules/_lists.scss */
+.views-view-grid td {
+  padding: 1em 3em 0 0;
+}
+
 /* line 2, ../scss/modules/_debate.scss */
 .field-name-body h1,
 .field-name-body h2,
