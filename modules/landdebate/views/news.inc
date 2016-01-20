@@ -25,12 +25,6 @@ $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['style_options']['row_class_special'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'entity';
 $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-/* Header: Global: Text area */
-$handler->display->display_options['header']['area']['id'] = 'area';
-$handler->display->display_options['header']['area']['table'] = 'views';
-$handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = '<h2>Lastest news on the Landportal</h2>';
-$handler->display->display_options['header']['area']['format'] = 'filtered_html';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -102,7 +96,7 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
-$handler->display->display_options['block_description'] = 'None';
+$handler->display->display_options['block_description'] = 'Latest news on the Landportal';
 
 /* Display: News byC */
 $handler = $view->new_display('block', 'News byC', 'block_2');
@@ -146,12 +140,11 @@ $translatables['news'] = array(
   t('‹ previous'),
   t('next ›'),
   t('last »'),
-  t('<h2>Lastest news on the Landportal</h2>'),
   t('Page'),
   t('more'),
   t('Block'),
   t('Read more news'),
-  t('None'),
+  t('Latest news on the Landportal'),
   t('News byC'),
   t('term from field_geographical_focus'),
   t('All'),
