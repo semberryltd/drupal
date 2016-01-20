@@ -127,9 +127,9 @@ $handler->display->display_options['arguments']['title']['case'] = 'upper';
 $handler->display->display_options['arguments']['title']['path_case'] = 'lower';
 $handler->display->display_options['displays'] = array(
   'page' => 'page',
+  'page_2' => 'page_2',
   'default' => 0,
   'block_2' => 0,
-  'page_2' => 0,
 );
 $handler->display->display_options['attachment_position'] = 'after';
 $handler->display->display_options['inherit_arguments'] = FALSE;
