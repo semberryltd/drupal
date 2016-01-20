@@ -76,8 +76,8 @@ $handler->display->display_options['filters']['type']['value'] = array(
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['path'] = 'organizations';
 
-/* Display: Attachment */
-$handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+/* Display: Alpha filter */
+$handler = $view->new_display('attachment', 'Alpha filter', 'attachment_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['defaults']['group_by'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'none';
@@ -127,9 +127,9 @@ $handler->display->display_options['arguments']['title']['case'] = 'upper';
 $handler->display->display_options['arguments']['title']['path_case'] = 'lower';
 $handler->display->display_options['displays'] = array(
   'page' => 'page',
-  'page_2' => 'page_2',
   'default' => 0,
   'block_2' => 0,
+  'page_1' => 0,
 );
 $handler->display->display_options['attachment_position'] = 'after';
 $handler->display->display_options['inherit_arguments'] = FALSE;
@@ -159,12 +159,10 @@ $handler->display->display_options['arguments']['name']['summary_options']['item
 $handler->display->display_options['arguments']['name']['limit'] = '0';
 $handler->display->display_options['arguments']['name']['case'] = 'ucfirst';
 
-/* Display: Page partners */
-$handler = $view->new_display('page', 'Page partners', 'page_2');
+/* Display: Page community */
+$handler = $view->new_display('page', 'Page community', 'page_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
-$handler->display->display_options['title'] = 'Community';
-$handler->display->display_options['defaults']['header'] = FALSE;
-$handler->display->display_options['defaults']['arguments'] = FALSE;
+$handler->display->display_options['title'] = 'Land Portal Community';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */
@@ -181,15 +179,98 @@ $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'organization' => 'organization',
 );
-/* Filter criterion: Content: Organization relationship (field_organization_relationship) */
-$handler->display->display_options['filters']['field_organization_relationship_tid']['id'] = 'field_organization_relationship_tid';
-$handler->display->display_options['filters']['field_organization_relationship_tid']['table'] = 'field_data_field_organization_relationship';
-$handler->display->display_options['filters']['field_organization_relationship_tid']['field'] = 'field_organization_relationship_tid';
-$handler->display->display_options['filters']['field_organization_relationship_tid']['value'] = array(
-  0 => '6119',
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Organization type (field_organization_type) */
+$handler->display->display_options['filters']['field_organization_type_tid']['id'] = 'field_organization_type_tid';
+$handler->display->display_options['filters']['field_organization_type_tid']['table'] = 'field_data_field_organization_type';
+$handler->display->display_options['filters']['field_organization_type_tid']['field'] = 'field_organization_type_tid';
+$handler->display->display_options['filters']['field_organization_type_tid']['value'] = array(
+  0 => '1272',
 );
-$handler->display->display_options['filters']['field_organization_relationship_tid']['vocabulary'] = 'organization_relation';
+$handler->display->display_options['filters']['field_organization_type_tid']['vocabulary'] = 'organization_types';
 $handler->display->display_options['path'] = 'debate/community';
+
+/* Display: Alpha filter community */
+$handler = $view->new_display('attachment', 'Alpha filter community', 'attachment_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'title' => 'title',
+);
+$handler->display->display_options['style_options']['default'] = 'title';
+$handler->display->display_options['style_options']['info'] = array(
+  'title' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: Content: Title */
+$handler->display->display_options['arguments']['title']['id'] = 'title';
+$handler->display->display_options['arguments']['title']['table'] = 'node';
+$handler->display->display_options['arguments']['title']['field'] = 'title';
+$handler->display->display_options['arguments']['title']['default_action'] = 'summary';
+$handler->display->display_options['arguments']['title']['default_argument_type'] = 'fixed';
+$handler->display->display_options['arguments']['title']['default_argument_options']['argument'] = 'a';
+$handler->display->display_options['arguments']['title']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['title']['summary']['format'] = 'unformatted_summary';
+$handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['title']['summary_options']['inline'] = TRUE;
+$handler->display->display_options['arguments']['title']['glossary'] = TRUE;
+$handler->display->display_options['arguments']['title']['limit'] = '1';
+$handler->display->display_options['arguments']['title']['case'] = 'upper';
+$handler->display->display_options['arguments']['title']['path_case'] = 'lower';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'organization' => 'organization',
+);
+/* Filter criterion: Content: Organization type (field_organization_type) */
+$handler->display->display_options['filters']['field_organization_type_tid']['id'] = 'field_organization_type_tid';
+$handler->display->display_options['filters']['field_organization_type_tid']['table'] = 'field_data_field_organization_type';
+$handler->display->display_options['filters']['field_organization_type_tid']['field'] = 'field_organization_type_tid';
+$handler->display->display_options['filters']['field_organization_type_tid']['value'] = array(
+  0 => '1272',
+);
+$handler->display->display_options['filters']['field_organization_type_tid']['vocabulary'] = 'organization_types';
+$handler->display->display_options['displays'] = array(
+  'page_1' => 'page_1',
+  'default' => 0,
+  'page' => 0,
+  'block_2' => 0,
+);
+$handler->display->display_options['attachment_position'] = 'after';
+$handler->display->display_options['inherit_arguments'] = FALSE;
 $translatables['organizations_overview'] = array(
   t('Master'),
   t('Organizations'),
@@ -208,10 +289,11 @@ $translatables['organizations_overview'] = array(
   t('last »'),
   t('All'),
   t('Page'),
-  t('Attachment'),
+  t('Alpha filter'),
   t('Block by country'),
   t('Organizations working in %1'),
   t('%1'),
-  t('Page partners'),
-  t('Community'),
+  t('Page community'),
+  t('Land Portal Community'),
+  t('Alpha filter community'),
 );
