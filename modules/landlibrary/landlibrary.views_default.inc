@@ -21,6 +21,8 @@ function landlibrary_views_default_views() {
   $export[$view->name] = $view;
   include_once 'views/resource_type.inc';
   $export[$view->name] = $view;
+  include_once 'views/organizations.inc';
+  $export[$view->name] = $view;
 
   $view = new view();
   $view->name = 'browse_by_subject';
