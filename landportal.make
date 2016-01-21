@@ -57,6 +57,7 @@ projects:
   - libraries
   - link
   - location
+  - login_one_time
   - logintoboggan
   - mailchimp_user_lists
   - masquerade
