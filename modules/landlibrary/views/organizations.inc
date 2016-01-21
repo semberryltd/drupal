@@ -18,7 +18,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Organizations Library';
+$handler->display->display_options['title'] = 'Library Sources provider organizations';
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['access']['type'] = 'perm';
@@ -34,10 +34,12 @@ $handler->display->display_options['pager']['options']['expose']['items_per_page
 $handler->display->display_options['style_plugin'] = 'grid';
 $handler->display->display_options['style_options']['uses_fields'] = TRUE;
 $handler->display->display_options['row_plugin'] = 'fields';
-/* Relationship: Entity Reference: Referenced Entity */
-$handler->display->display_options['relationships']['field_doc_data_provider_target_id']['id'] = 'field_doc_data_provider_target_id';
-$handler->display->display_options['relationships']['field_doc_data_provider_target_id']['table'] = 'field_data_field_doc_data_provider';
-$handler->display->display_options['relationships']['field_doc_data_provider_target_id']['field'] = 'field_doc_data_provider_target_id';
+/* Relationship: Entity Reference: Referencing entity */
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['id'] = 'reverse_field_doc_provider_node';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['table'] = 'node';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['field'] = 'reverse_field_doc_provider_node';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['label'] = 'Providers';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['required'] = TRUE;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -62,6 +64,7 @@ $handler->display->display_options['fields']['nid']['field'] = 'nid';
 $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_doc_provider_node';
 $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
 $handler->display->display_options['fields']['nid']['label'] = 'Library resources';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
 $handler->display->display_options['fields']['nid']['separator'] = '';
 /* Sort criterion: Content: Title */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -99,19 +102,11 @@ $handler->display->display_options['filters']['type']['value'] = array(
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['defaults']['header'] = FALSE;
-$handler->display->display_options['defaults']['relationships'] = FALSE;
-/* Relationship: Entity Reference: Referencing entity */
-$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['id'] = 'reverse_field_doc_provider_node';
-$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['table'] = 'node';
-$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['field'] = 'reverse_field_doc_provider_node';
-$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['label'] = 'Providers';
-$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['required'] = TRUE;
 $handler->display->display_options['path'] = 'library/sources';
 
 /* Display: Attachment */
 $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
-$handler->display->display_options['defaults']['group_by'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -151,6 +146,7 @@ $handler->display->display_options['arguments']['title']['default_argument_type'
 $handler->display->display_options['arguments']['title']['default_argument_options']['argument'] = 'a';
 $handler->display->display_options['arguments']['title']['summary']['number_of_records'] = '0';
 $handler->display->display_options['arguments']['title']['summary']['format'] = 'unformatted_summary';
+$handler->display->display_options['arguments']['title']['summary_options']['count'] = FALSE;
 $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
 $handler->display->display_options['arguments']['title']['summary_options']['inline'] = TRUE;
 $handler->display->display_options['arguments']['title']['glossary'] = TRUE;
@@ -218,7 +214,7 @@ $handler->display->display_options['relationships']['reverse_field_doc_provider_
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 $translatables['organizations_library'] = array(
   t('Master'),
-  t('Organizations Library'),
+  t('Library Sources provider organizations'),
   t('more'),
   t('Apply'),
   t('Reset'),
@@ -232,11 +228,10 @@ $translatables['organizations_library'] = array(
   t('‹ previous'),
   t('next ›'),
   t('last »'),
-  t('Content entity referenced from field_doc_data_provider'),
+  t('Providers'),
   t('Library resources'),
   t('All'),
   t('Page'),
-  t('Providers'),
   t('Attachment'),
   t('LLOrg publisher EntityRef'),
   t('library publishers'),
