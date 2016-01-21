@@ -20,6 +20,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 $handler = $view->new_display('default', 'Master', 'default');
 $handler->display->display_options['title'] = 'Organizations Library';
 $handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
@@ -32,14 +33,36 @@ $handler->display->display_options['pager']['options']['quantity'] = '9';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
 $handler->display->display_options['style_plugin'] = 'grid';
 $handler->display->display_options['style_options']['uses_fields'] = TRUE;
-$handler->display->display_options['row_plugin'] = 'entity';
-$handler->display->display_options['row_options']['view_mode'] = 'teaser';
+$handler->display->display_options['row_plugin'] = 'fields';
+/* Relationship: Entity Reference: Referenced Entity */
+$handler->display->display_options['relationships']['field_doc_data_provider_target_id']['id'] = 'field_doc_data_provider_target_id';
+$handler->display->display_options['relationships']['field_doc_data_provider_target_id']['table'] = 'field_data_field_doc_data_provider';
+$handler->display->display_options['relationships']['field_doc_data_provider_target_id']['field'] = 'field_doc_data_provider_target_id';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Field: Content: Rendered Node */
+$handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+$handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+$handler->display->display_options['fields']['rendered_entity']['label'] = '';
+$handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+$handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+$handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+$handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+/* Field: COUNT(DISTINCT Content: Nid) */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_doc_provider_node';
+$handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+$handler->display->display_options['fields']['nid']['label'] = 'Library resources';
+$handler->display->display_options['fields']['nid']['separator'] = '';
 /* Sort criterion: Content: Title */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
 $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -75,6 +98,14 @@ $handler->display->display_options['filters']['type']['value'] = array(
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Entity Reference: Referencing entity */
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['id'] = 'reverse_field_doc_provider_node';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['table'] = 'node';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['field'] = 'reverse_field_doc_provider_node';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['label'] = 'Providers';
+$handler->display->display_options['relationships']['reverse_field_doc_provider_node']['required'] = TRUE;
 $handler->display->display_options['path'] = 'library/sources';
 
 /* Display: Attachment */
@@ -201,8 +232,11 @@ $translatables['organizations_library'] = array(
   t('‹ previous'),
   t('next ›'),
   t('last »'),
+  t('Content entity referenced from field_doc_data_provider'),
+  t('Library resources'),
   t('All'),
   t('Page'),
+  t('Providers'),
   t('Attachment'),
   t('LLOrg publisher EntityRef'),
   t('library publishers'),
