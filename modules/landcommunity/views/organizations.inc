@@ -193,6 +193,8 @@ $handler->display->display_options['path'] = 'debate/community';
 /* Display: Alpha filter community */
 $handler = $view->new_display('attachment', 'Alpha filter community', 'attachment_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['defaults']['link_display'] = FALSE;
+$handler->display->display_options['link_display'] = 'page_1';
 $handler->display->display_options['defaults']['group_by'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
