@@ -24,6 +24,7 @@ projects:
   - context
   - ctools
   - date
+  - draggableviews
   - drupal
   - ds
   - elysia_cron
@@ -83,6 +84,7 @@ projects:
   - sparql
   - strongarm
   - synonyms
+  - taxonomy_edge
   - term_merge
   - term_search
   - title

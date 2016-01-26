@@ -8,5 +8,6 @@ dependencies[] = features
 dependencies[] = landportal_base
 dependencies[] = views
 dependencies[] = views_ui
+dependencies[] = views_taxonomy_edge
 files[] = landportal_bo.module
 files[] = landportal_bo.views_default.inc

@@ -9,21 +9,16 @@ function landportal_bo_views_default_views_alter(&$views) {
     $views_override = array(
         'admin_views_user',
         'admin_views_node',
-        'admin_views_taxonomy_term'
+        'admin_views_taxonomy_terms_ak',
+        'admin_views_taxonomy_terms_topics'
+        //'admin_views_taxonomy_term'
     );
-
-    // Only replace existing views (Overrides)
     foreach ($views_override as $view_name) {
-        if (array_key_exists($view_name, $views)) {
-            /**
-             * View module export code, this file MUST declare a '$view' object
-             * (as per Drupal default 'view > export' functionality)
-             */
-            include $path.'/'.$view_name . '.inc';
-            $views[$view_name] = $view;
-        }
+        /**
+         * View module export code, this file MUST declare a '$view' object
+         * (as per Drupal default 'view > export' functionality)
+         */
+        include $path.'/'.$view_name . '.inc';
+        $views[$view_name] = $view;
     }
-    // Include views
-    include_once 'views/admin_views_taxonomy_terms.inc';
-    $views[$view_name] = $view;
 }
