@@ -1,7 +1,7 @@
 <?php
 
 $view = new view();
-$view->name = 'topics_terms_management';
+$view->name = 'admin_views_taxonomy_terms_topics';
 $view->description = '';
 $view->tag = 'default';
 $view->base_table = 'taxonomy_term_data';
@@ -104,10 +104,6 @@ $handler->display->display_options['header']['result']['field'] = 'result';
 $handler->display->display_options['relationships']['reverse_field_related_topics_node']['id'] = 'reverse_field_related_topics_node';
 $handler->display->display_options['relationships']['reverse_field_related_topics_node']['table'] = 'taxonomy_term_data';
 $handler->display->display_options['relationships']['reverse_field_related_topics_node']['field'] = 'reverse_field_related_topics_node';
-/* Relationship: Taxonomy term: Profile using Related topics */
-$handler->display->display_options['relationships']['reverse_field_related_topics_profile2']['id'] = 'reverse_field_related_topics_profile2';
-$handler->display->display_options['relationships']['reverse_field_related_topics_profile2']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['relationships']['reverse_field_related_topics_profile2']['field'] = 'reverse_field_related_topics_profile2';
 /* Relationship: Taxonomy term: Parent term */
 $handler->display->display_options['relationships']['parent']['id'] = 'parent';
 $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
@@ -121,6 +117,48 @@ $handler->display->display_options['fields']['draggableviews']['hide_alter_empty
 $handler->display->display_options['fields']['draggableviews']['draggableviews']['hierarchy_handler'] = 'draggableviews_hierarchy_handler_native';
 $handler->display->display_options['fields']['draggableviews']['draggableviews']['save_button_label'] = 'Save order';
 $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
+/* Field: Taxonomy term: Term ID */
+$handler->display->display_options['fields']['tid']['id'] = 'tid';
+$handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['fields']['tid']['field'] = 'tid';
+$handler->display->display_options['fields']['tid']['label'] = 'TID';
+$handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+/* Field: Field: ID */
+$handler->display->display_options['fields']['field_id']['id'] = 'field_id';
+$handler->display->display_options['fields']['field_id']['table'] = 'field_data_field_id';
+$handler->display->display_options['fields']['field_id']['field'] = 'field_id';
+$handler->display->display_options['fields']['field_id']['relationship'] = 'parent';
+$handler->display->display_options['fields']['field_id']['label'] = 'PID';
+$handler->display->display_options['fields']['field_id']['exclude'] = TRUE;
+/* Field: Taxonomy term: Name */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+/* Field: Taxonomy term: Term description */
+$handler->display->display_options['fields']['description']['id'] = 'description';
+$handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['fields']['description']['field'] = 'description';
+$handler->display->display_options['fields']['description']['label'] = 'Description';
+/* Field: COUNT(DISTINCT Content: Nid) */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_related_topics_node';
+$handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+$handler->display->display_options['fields']['nid']['label'] = 'References';
+/* Field: Field: Language */
+$handler->display->display_options['fields']['field_language']['id'] = 'field_language';
+$handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
+$handler->display->display_options['fields']['field_language']['field'] = 'field_language';
+$handler->display->display_options['fields']['field_language']['label'] = 'Lang';
+/* Field: Taxonomy term: Term edit link */
+$handler->display->display_options['fields']['edit_term']['id'] = 'edit_term';
+$handler->display->display_options['fields']['edit_term']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['fields']['edit_term']['field'] = 'edit_term';
+$handler->display->display_options['fields']['edit_term']['label'] = 'Links';
 /* Field: Bulk operations: Taxonomy term */
 $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
 $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'taxonomy_term_data';
@@ -159,49 +197,6 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo_opera
     'label' => '',
   ),
 );
-/* Field: Taxonomy term: Name */
-$handler->display->display_options['fields']['name']['id'] = 'name';
-$handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['fields']['name']['field'] = 'name';
-$handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-$handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-$handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-/* Field: Taxonomy term: Term ID */
-$handler->display->display_options['fields']['tid']['id'] = 'tid';
-$handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['fields']['tid']['field'] = 'tid';
-$handler->display->display_options['fields']['tid']['label'] = 'TID';
-$handler->display->display_options['fields']['tid']['exclude'] = TRUE;
-/* Field: Field: ID */
-$handler->display->display_options['fields']['field_id']['id'] = 'field_id';
-$handler->display->display_options['fields']['field_id']['table'] = 'field_data_field_id';
-$handler->display->display_options['fields']['field_id']['field'] = 'field_id';
-$handler->display->display_options['fields']['field_id']['relationship'] = 'parent';
-$handler->display->display_options['fields']['field_id']['label'] = 'PID';
-$handler->display->display_options['fields']['field_id']['exclude'] = TRUE;
-/* Field: Taxonomy term: Weight */
-$handler->display->display_options['fields']['weight']['id'] = 'weight';
-$handler->display->display_options['fields']['weight']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['fields']['weight']['field'] = 'weight';
-$handler->display->display_options['fields']['weight']['label'] = 'W';
-$handler->display->display_options['fields']['weight']['exclude'] = TRUE;
-/* Field: COUNT(DISTINCT Content: Nid) */
-$handler->display->display_options['fields']['nid']['id'] = 'nid';
-$handler->display->display_options['fields']['nid']['table'] = 'node';
-$handler->display->display_options['fields']['nid']['field'] = 'nid';
-$handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_related_topics_node';
-$handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
-$handler->display->display_options['fields']['nid']['label'] = 'NC';
-/* Field: Field: Language */
-$handler->display->display_options['fields']['field_language']['id'] = 'field_language';
-$handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
-$handler->display->display_options['fields']['field_language']['field'] = 'field_language';
-$handler->display->display_options['fields']['field_language']['label'] = 'Lang';
-/* Field: Taxonomy term: Term edit link */
-$handler->display->display_options['fields']['edit_term']['id'] = 'edit_term';
-$handler->display->display_options['fields']['edit_term']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['fields']['edit_term']['field'] = 'edit_term';
-$handler->display->display_options['fields']['edit_term']['label'] = 'Links';
 /* Sort criterion: Taxonomy edge: taxonomy hierarchy order */
 $handler->display->display_options['sorts']['term_sort_hierarchy']['id'] = 'term_sort_hierarchy';
 $handler->display->display_options['sorts']['term_sort_hierarchy']['table'] = 'taxonomy_term_data';
@@ -213,11 +208,32 @@ $handler->display->display_options['filters']['machine_name']['field'] = 'machin
 $handler->display->display_options['filters']['machine_name']['value'] = array(
   'landportal_topics' => 'landportal_topics',
 );
+/* Filter criterion: Taxonomy term: Name */
+$handler->display->display_options['filters']['name']['id'] = 'name';
+$handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['filters']['name']['field'] = 'name';
+$handler->display->display_options['filters']['name']['operator'] = 'contains';
+$handler->display->display_options['filters']['name']['exposed'] = TRUE;
+$handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+$handler->display->display_options['filters']['name']['expose']['label'] = 'Name';
+$handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+$handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+$handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  111903911 => 0,
+  111903912 => 0,
+  25521343 => 0,
+  111903910 => 0,
+  30037204 => 0,
+);
 
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page');
+/* Display: Terms management */
+$handler = $view->new_display('system', 'System', 'system_1');
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+$handler->display->display_options['defaults']['access'] = FALSE;
 $handler->display->display_options['path'] = 'admin/structure/taxonomy/terms/topics';
-$translatables['topics_terms_management'] = array(
+$translatables['admin_views_taxonomy_terms_topics'] = array(
   t('Master'),
   t('Topics terms management'),
   t('more'),
@@ -237,15 +253,15 @@ $translatables['topics_terms_management'] = array(
   t('field_related_topics'),
   t('Parent'),
   t('Taxonomy term'),
-  t('- Choose an operation -'),
-  t('Name'),
   t('TID'),
   t('.'),
   t(','),
   t('PID'),
-  t('W'),
-  t('NC'),
+  t('Name'),
+  t('Description'),
+  t('References'),
   t('Lang'),
   t('Links'),
+  t('- Choose an operation -'),
   t('Page'),
 );
