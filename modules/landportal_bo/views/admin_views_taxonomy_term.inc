@@ -15,6 +15,7 @@ $handler = $view->new_display('default', 'Defaults', 'default');
 $handler->display->display_options['title'] = 'Terms';
 $handler->display->display_options['use_ajax'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
 $handler->display->display_options['access']['type'] = 'menu';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
@@ -60,6 +61,10 @@ $handler->display->display_options['style_options']['sticky'] = TRUE;
 $handler->display->display_options['header']['result']['id'] = 'result';
 $handler->display->display_options['header']['result']['table'] = 'views';
 $handler->display->display_options['header']['result']['field'] = 'result';
+/* Relationship: Taxonomy term: Parent term */
+$handler->display->display_options['relationships']['parent']['id'] = 'parent';
+$handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+$handler->display->display_options['relationships']['parent']['field'] = 'parent';
 /* Field: Taxonomy vocabulary: Name */
 $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
 $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_vocabulary';
@@ -134,14 +139,10 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo_opera
     'label' => '',
   ),
 );
-/* Sort criterion: Taxonomy term: Weight */
-$handler->display->display_options['sorts']['weight']['id'] = 'weight';
-$handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['sorts']['weight']['field'] = 'weight';
-/* Sort criterion: Taxonomy term: Name */
-$handler->display->display_options['sorts']['name']['id'] = 'name';
-$handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['sorts']['name']['field'] = 'name';
+/* Sort criterion: Taxonomy edge: taxonomy hierarchy order */
+$handler->display->display_options['sorts']['term_sort_hierarchy']['id'] = 'term_sort_hierarchy';
+$handler->display->display_options['sorts']['term_sort_hierarchy']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['sorts']['term_sort_hierarchy']['field'] = 'term_sort_hierarchy';
 /* Contextual filter: Taxonomy vocabulary: Machine name */
 $handler->display->display_options['arguments']['machine_name']['id'] = 'machine_name';
 $handler->display->display_options['arguments']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -222,6 +223,7 @@ $translatables['admin_views_taxonomy_term'] = array(
   t('next ›'),
   t('last »'),
   t('Displaying @start - @end of @total'),
+  t('Parent'),
   t('Term'),
   t('Description'),
   t('Operations'),

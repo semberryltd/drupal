@@ -31,3 +31,17 @@ function landportal_bo_menu() {
     );
     return $items;
 }
+
+function landportal_bo_default_rules_configuration() {
+    $config = array();
+    
+    $rules_path = dirname(__FILE__) . '/rules';
+    $files = file_scan_directory($rules_path, '/\.rule$/');
+    foreach ($files as $filepath => $file) {
+        require $filepath;
+        if (isset($rule)) {
+            $config['landportal_bo_' . $file->name] = rules_import($rule);
+        }
+    }
+    return $config;
+}

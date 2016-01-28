@@ -6,6 +6,7 @@ version = 7.x-1.2
 project = landportal_bo
 dependencies[] = features
 dependencies[] = landportal_base
+dependencies[] = rules
 dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = views_taxonomy_edge
