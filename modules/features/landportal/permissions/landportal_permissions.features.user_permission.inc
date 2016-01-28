@@ -2118,8 +2118,11 @@ function landportal_permissions_user_default_permissions() {
   $permissions['edit own work_profile profile'] = array(
     'name' => 'edit own work_profile profile',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
       'editor' => 'editor',
+      'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'profile2',
   );
@@ -3106,6 +3109,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view any main profile',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
@@ -3116,8 +3120,8 @@ function landportal_permissions_user_default_permissions() {
   $permissions['view any work_profile profile'] = array(
     'name' => 'view any work_profile profile',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
@@ -3190,6 +3194,7 @@ function landportal_permissions_user_default_permissions() {
     'name' => 'view own main profile',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
@@ -3238,8 +3243,8 @@ function landportal_permissions_user_default_permissions() {
   $permissions['view own work_profile profile'] = array(
     'name' => 'view own work_profile profile',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'editor' => 'editor',
     ),
     'module' => 'profile2',
   );
