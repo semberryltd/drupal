@@ -10913,6 +10913,11 @@ html.js fieldset.collapsed {
   margin: 0 0 0 1em;
 }
 
+/* line 32, ../scss/modules/_lists.scss */
+.views-view-grid td {
+  padding: 1em 3em 0 0;
+}
+
 /* line 2, ../scss/modules/_debate.scss */
 .field-name-body h1,
 .field-name-body h2,
@@ -12252,6 +12257,8 @@ ul.tabs li a.active {
 /* line 251, ../scss/modules/_menus.scss */
 ul.primary.tabs,
 ul.secondary.tabs {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 14px;
   float: right;
   border-bottom: 0;
   padding: 1em 0;
@@ -12264,13 +12271,13 @@ ul.secondary.tabs a.active {
   /*3px solid $blue-dark;*/
 }
 
-/* line 261, ../scss/modules/_menus.scss */
+/* line 263, ../scss/modules/_menus.scss */
 li a.active,
 a.active {
   color: #2a6496;
 }
 
-/* line 265, ../scss/modules/_menus.scss */
+/* line 267, ../scss/modules/_menus.scss */
 a:not([href]) {
   color: inherit;
   text-decoration: none;

@@ -1,7 +1,7 @@
 <?php
 
 $view = new view();
-$view->name = 'admin_views_taxonomy_terms';
+$view->name = 'admin_views_taxonomy_terms_ak';
 $view->description = '';
 $view->tag = 'admin';
 $view->base_table = 'taxonomy_term_data';

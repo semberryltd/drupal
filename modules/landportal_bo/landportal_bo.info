@@ -1,12 +1,14 @@
 name = Landportal Backoffice
-description = The landdebate section of the landportal
+description = Provides administrative menus and links for the Landportal site management.
 core = 7.x
 package = ELandportal
-version = 7.x-1.1
+version = 7.x-1.2
 project = landportal_bo
 dependencies[] = features
 dependencies[] = landportal_base
+dependencies[] = rules
 dependencies[] = views
 dependencies[] = views_ui
+dependencies[] = views_taxonomy_edge
 files[] = landportal_bo.module
 files[] = landportal_bo.views_default.inc

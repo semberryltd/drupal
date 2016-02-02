@@ -24,6 +24,7 @@ projects:
   - context
   - ctools
   - date
+  - draggableviews
   - drupal
   - ds
   - elysia_cron
@@ -57,6 +58,7 @@ projects:
   - libraries
   - link
   - location
+  - login_one_time
   - logintoboggan
   - mailchimp_user_lists
   - masquerade
@@ -82,6 +84,7 @@ projects:
   - sparql
   - strongarm
   - synonyms
+  - taxonomy_edge
   - term_merge
   - term_search
   - title

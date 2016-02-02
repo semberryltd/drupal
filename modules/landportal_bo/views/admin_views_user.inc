@@ -273,12 +273,20 @@ $handler->display->display_options['filters']['status']['table'] = 'users';
 $handler->display->display_options['filters']['status']['field'] = 'status';
 $handler->display->display_options['filters']['status']['value'] = 'All';
 $handler->display->display_options['filters']['status']['group'] = 1;
-$handler->display->display_options['filters']['status']['exposed'] = TRUE;
 $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
 $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
 $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
 $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
-$handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+$handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  111731461 => 0,
+  111903911 => 0,
+  111903912 => 0,
+  25521343 => 0,
+  111903910 => 0,
+  30037204 => 0,
+);
 /* Filter criterion: User: Roles */
 $handler->display->display_options['filters']['rid']['id'] = 'rid';
 $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -290,6 +298,15 @@ $handler->display->display_options['filters']['rid']['expose']['label'] = 'Role'
 $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
 $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
 $handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
+$handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
+  2 => 0,
+  1 => 0,
+  111903911 => 0,
+  111903912 => 0,
+  25521343 => 0,
+  111903910 => 0,
+  30037204 => 0,
+);
 
 /* Display: System */
 $handler = $view->new_display('system', 'System', 'system_1');
@@ -373,6 +390,15 @@ $handler->display->display_options['filters']['rid']['expose']['label'] = 'Role'
 $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
 $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
 $handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
+$handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  111903911 => 0,
+  111903912 => 0,
+  25521343 => 0,
+  111903910 => 0,
+  30037204 => 0,
+);
 $handler->display->display_options['path'] = 'admin/people/moderate';
 $translatables['admin_views_user'] = array(
   t('Defaults'),
