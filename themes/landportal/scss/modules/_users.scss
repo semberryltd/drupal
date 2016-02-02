@@ -81,11 +81,11 @@
 		}
 
 	}
-}
 
 
 
-.node-form input[type]:not([type=submit]):not([type=radio]):not([type=checkbox]),.node-form select,.node-form textarea {
+
+input[type]:not([type=submit]):not([type=radio]):not([type=checkbox]), select, textarea {
   display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
@@ -129,18 +129,20 @@
     cursor: $cursor-disabled;
   }
 
-  // [converter] extracted textarea& to textarea.node-form input
+  // [converter] extracted textarea& to textarea input
 }
 
 // Reset height for `textarea`s
-textarea.node-form input {
+textarea input {
   height: auto;
 }
 
 
-.node-form th.field-label
+th.field-label
 {
 min-width: 165px;
+}
+
 }
 /******************************************
  *      Users / profile
