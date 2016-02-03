@@ -244,7 +244,7 @@ PREFIX base-time: &lt;http://book.landportal.org/time/&gt;
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX base-ind: <http://book.landportal.org/indicator/> SELECT ?country_name, ?year, ?value WHERE { ?obs rdf:type qb:Observation ; cex:value ?value ; cex:ref-time ?date ; cex:ref-indicator base-ind:INDUNDP0 ; cex:ref-area ?country. ?country rdf:type cex:Area ; rdfs:label ?country_name . ?date base-time:year ?year . FILTER (?year &gt; 2011) }" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX base-ind: <http://book.landportal.org/indicator/> PREFIX base-time: <http://book.landportal.org/time/> SELECT ?country_name, ?year, ?value WHERE { ?obs rdf:type qb:Observation ; cex:value ?value ; cex:ref-time ?date ; cex:ref-indicator base-ind:INDUNDP0 ; cex:ref-area ?country. ?country rdf:type cex:Area ; rdfs:label ?country_name . ?date base-time:year ?year . FILTER (?year &gt; 2011) }" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
 
