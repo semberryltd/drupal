@@ -8,7 +8,7 @@
 	</div>
 	<div class="form-group">
 	  <label for="query"><?php echo t('Query'); ?></label>
-	  <textarea name="query" class="form-control query" id="query"><?php echo $data['query']; ?></textarea>
+	  <textarea name="query" class="form-control query" id="query" rows="10"><?php echo $data['query']; ?></textarea>
 	</div>
 	<div class="form-group">
 	  <label for="format"><?php echo t('Format'); ?>:</label>
