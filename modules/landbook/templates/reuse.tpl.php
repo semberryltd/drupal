@@ -8,7 +8,7 @@
 	</div>
 	<div class="form-group">
 	  <label for="query"><?php echo t('Query'); ?></label>
-	  <textarea name="query" class="form-control query" id="query"><?php echo $data['query']; ?></textarea>
+	  <textarea name="query" class="form-control query" id="query" rows="10"><?php echo $data['query']; ?></textarea>
 	</div>
 	<div class="form-group">
 	  <label for="format"><?php echo t('Format'); ?>:</label>
@@ -37,14 +37,14 @@
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 PREFIX lbonto: &lt;http://purl.org/weso/landbook/ontology#&gt;
 
-select * where
+SELECT * WHERE
 {
  ?topic rdf:type lbonto:Topic .
 }
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> select * where { ?topic rdf:type lbonto:Topic .}" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> SELECT * WHERE { ?topic rdf:type lbonto:Topic .}" />
 	<input type="hidden" name="format" value="json" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
@@ -56,7 +56,7 @@ select * where
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 PREFIX lbonto: &lt;http://purl.org/weso/landbook/ontology#&gt;
 
-select ?topic, ?predicate, ?object where
+SELECT ?topic, ?predicate, ?object WHERE
       ?topic rdf:type lbonto:Topic .
       ?topic ?predicate ?object .
     }
@@ -65,8 +65,8 @@ select ?topic, ?predicate, ?object where
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
 	<input type="hidden" name="query" value="PREFIX rdf:
 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX lbonto:
-	<http://purl.org/weso/landbook/ontology#> select ?topic,
-	?predicate, ?object where { ?topic rdf:type lbonto:Topic . ?topic ?predicate ?object .}" />
+	<http://purl.org/weso/landbook/ontology#> SELECT ?topic,
+	?predicate, ?object WHERE { ?topic rdf:type lbonto:Topic . ?topic ?predicate ?object .}" />
 	<input type="hidden" name="format" value="json" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
@@ -78,7 +78,7 @@ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 PREFIX cex: &lt;http://purl.org/weso/computex/ontology#&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
-select * where
+SELECT * WHERE
     {
       ?indicator rdf:type cex:Indicator .
       ?indicator rdfs:label ?name .
@@ -86,7 +86,7 @@ select * where
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> select * where { ?indicator rdf:type cex:Indicator . ?indicator rdfs:label ?name .}" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT * WHERE { ?indicator rdf:type cex:Indicator . ?indicator rdfs:label ?name .}" />
 	<input type="hidden" name="format" value="json" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
@@ -100,7 +100,7 @@ PREFIX cex: &lt;http://purl.org/weso/computex/ontology#&gt;
 PREFIX lbonto: &lt;http://purl.org/weso/landbook/ontology#&gt;
 PREFIX base-topic: &lt;http://book.landportal.org/topic/&gt;
 
- select ?indicator, ?name, ?description  where
+ SELECT ?indicator, ?name, ?description  WHERE
     {
       ?indicator rdf:type cex:Indicator .
       ?indicator lbonto:topic base-topic:LAND_USE .
@@ -110,7 +110,7 @@ PREFIX base-topic: &lt;http://book.landportal.org/topic/&gt;
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX base-topic: <http://book.landportal.org/topic/> select ?indicator, ?name, ?description  where { ?indicator rdf:type cex:Indicator . ?indicator lbonto:topic base-topic:LAND_USE . ?indicator rdfs:label ?name . ?indicator rdfs:comment ?description . }" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX base-topic: <http://book.landportal.org/topic/> SELECT ?indicator, ?name, ?description  WHERE { ?indicator rdf:type cex:Indicator . ?indicator lbonto:topic base-topic:LAND_USE . ?indicator rdfs:label ?name . ?indicator rdfs:comment ?description . }" />
 	<input type="hidden" name="format" value="json" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
@@ -124,7 +124,7 @@ PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX lbonto: &lt;http://purl.org/weso/landbook/ontology#&gt;
 PREFIX base: &lt;http://book.landportal.org/&gt;
 
- select ?iso3, ?name, ?url where
+ SELECT ?iso3, ?name, ?url WHERE
     {
       ?country rdf:type cex:Area .
       ?country lbonto:iso3 ?iso3 .
@@ -136,7 +136,7 @@ PREFIX base: &lt;http://book.landportal.org/&gt;
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX base: <http://book.landportal.org/> select ?iso3, ?name, ?url where { ?country rdf:type cex:Area . ?country lbonto:iso3 ?iso3 . ?country lbonto:is_part_of base:Africa . ?country rdfs:label ?name . ?country lbonto:faoURI ?url . }" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX base: <http://book.landportal.org/> SELECT ?iso3, ?name, ?url WHERE { ?country rdf:type cex:Area . ?country lbonto:iso3 ?iso3 . ?country lbonto:is_part_of base:Africa . ?country rdfs:label ?name . ?country lbonto:faoURI ?url . }" />
 	<input type="hidden" name="format" value="json" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
@@ -153,7 +153,7 @@ PREFIX qb: &lt;http://purl.org/linked-data/cube#&gt;
 PREFIX base: &lt;http://book.landportal.org/&gt;
 PREFIX base-ind: &lt;http://book.landportal.org/indicator/&gt;
 
- select ?iso3, ?name, ?url where
+ SELECT ?iso3, ?name, ?url WHERE
     {
       ?country rdf:type cex:Area ;
                lbonto:iso3 ?iso3 ;
@@ -164,7 +164,7 @@ PREFIX base-ind: &lt;http://book.landportal.org/indicator/&gt;
       ?obs cex:ref-area ?country ;
            rdf:type qb:Observation ;
            cex:ref-indicator base-ind:INDLM4 ;
-           cex:value ?value ;
+           cex:value ?value .
 
       FILTER(?value &gt; 0) .
 
@@ -172,7 +172,7 @@ PREFIX base-ind: &lt;http://book.landportal.org/indicator/&gt;
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX base: <http://book.landportal.org/> PREFIX base-ind: <http://book.landportal.org/indicator/> select ?iso3, ?name, ?url where  { ?country rdf:type cex:Area ; lbonto:iso3 ?iso3 ; lbonto:is_part_of base:Africa ; rdfs:label ?name ; lbonto:faoURI ?url . ?obs cex:ref-area ?country ; rdf:type qb:Observation ; cex:ref-indicator base-ind:INDLM4 ; cex:value ?value ; FILTER(?value > 0) . }" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX base: <http://book.landportal.org/> PREFIX base-ind: <http://book.landportal.org/indicator/> SELECT ?iso3, ?name, ?url WHERE  { ?country rdf:type cex:Area ; lbonto:iso3 ?iso3 ; lbonto:is_part_of base:Africa ; rdfs:label ?name ; lbonto:faoURI ?url . ?obs cex:ref-area ?country ; rdf:type qb:Observation ; cex:ref-indicator base-ind:INDLM4 ; cex:value ?value . FILTER(?value > 0) . }" />
 	<input type="hidden" name="format" value="json" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
@@ -187,7 +187,7 @@ PREFIX qb: &lt;http://purl.org/linked-data/cube#&gt;
 PREFIX w3: &lt;http://www.w3.org/ns/org#&gt;
 PREFIX : &lt;http://book.landportal.org/&gt;
 
- select ?iso3, ?name, ?url where
+ SELECT DISTINCT ?iso3, ?name, ?url WHERE
     {
       ?country rdf:type cex:Area ;
                lbonto:iso3 ?iso3 ;
@@ -205,12 +205,12 @@ PREFIX : &lt;http://book.landportal.org/&gt;
                   lbonto:organization ?org .
 
       ?org rdf:type w3:Organization ;
-           rdfs:label &quot;UNDP: United Nations Development Programme&quot; .
+           rdfs:label &quot;UNDP: United Nations Development Program&quot;@en .
     }
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX w3: <http://www.w3.org/ns/org#> PREFIX : <http://book.landportal.org/> select ?iso3, ?name, ?url where { ?country rdf:type cex:Area ; lbonto:iso3 ?iso3 ; rdfs:label ?name ; lbonto:faoURI ?url .  ?obs cex:ref-area ?country ; rdf:type qb:Observation ; qb:dataSet ?dataset . ?dataset rdf:type qb:DataSet ; lbonto:dataSource ?datasource. ?datasource rdf:type lbonto:DataSource ; lbonto:organization ?org . ?org rdf:type w3:Organization ; rdfs:label &quot;UNDP: United Nations Development Programme&quot; . }" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX lbonto: <http://purl.org/weso/landbook/ontology#> PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX w3: <http://www.w3.org/ns/org#> PREFIX : <http://book.landportal.org/> SELECT DISTINCT ?iso3, ?name, ?url WHERE { ?country rdf:type cex:Area ; lbonto:iso3 ?iso3 ; rdfs:label ?name ; lbonto:faoURI ?url .  ?obs cex:ref-area ?country ; rdf:type qb:Observation ; qb:dataSet ?dataset . ?dataset rdf:type qb:DataSet ; lbonto:dataSource ?datasource. ?datasource rdf:type lbonto:DataSource ; lbonto:organization ?org . ?org rdf:type w3:Organization ; rdfs:label &quot;UNDP: United Nations Development Program&quot;@en . }" />
 	<input type="hidden" name="format" value="json" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
@@ -222,8 +222,9 @@ PREFIX cex: &lt;http://purl.org/weso/computex/ontology#&gt;
 PREFIX rdfs:&lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX qb: &lt;http://purl.org/linked-data/cube#&gt;
 PREFIX base-ind: &lt;http://book.landportal.org/indicator/&gt;
+PREFIX base-time: &lt;http://book.landportal.org/time/&gt;
 
- select ?country_name, ?year, ?value where
+ SELECT ?country_name, ?year, ?value WHERE
        {
          ?obs rdf:type qb:Observation ;
               cex:value ?value        ;
@@ -235,7 +236,7 @@ PREFIX base-ind: &lt;http://book.landportal.org/indicator/&gt;
          ?country rdf:type cex:Area   ;
                   rdfs:label ?country_name    .
 
-         ?date cex:year ?year .
+         ?date base-time:year ?year .
 
          FILTER (?year &gt; 2011)
 
@@ -243,7 +244,7 @@ PREFIX base-ind: &lt;http://book.landportal.org/indicator/&gt;
 </pre>
 <form>
 	<input type="hidden" name="default-graph-uri" value="http://book.landportal.org" />
-	<input type="hidden" name="query" value="select ?country_name, ?year, ?value where { ?obs rdf:type qb:Observation ; cex:value ?value ; cex:ref-time ?date ; cex:ref-indicator base-ind:INDUNDP0 ; cex:ref-area ?country. ?country rdf:type cex:Area ; rdfs:label ?country_name . ?date cex:year ?year . FILTER (?year &gt; 2011) }" />
+	<input type="hidden" name="query" value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX cex: <http://purl.org/weso/computex/ontology#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX base-ind: <http://book.landportal.org/indicator/> PREFIX base-time: <http://book.landportal.org/time/> SELECT ?country_name, ?year, ?value WHERE { ?obs rdf:type qb:Observation ; cex:value ?value ; cex:ref-time ?date ; cex:ref-indicator base-ind:INDUNDP0 ; cex:ref-area ?country. ?country rdf:type cex:Area ; rdfs:label ?country_name . ?date base-time:year ?year . FILTER (?year &gt; 2011) }" />
 	<button class="btn data-button"><?php echo t('Test query'); ?></button>
 </form>
 
