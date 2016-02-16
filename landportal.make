@@ -50,6 +50,7 @@ projects:
   - file_entity
   - global_filter
   - google_analytics
+  - google_adwords
   - honeypot
   - hybridauth
   - i18n
