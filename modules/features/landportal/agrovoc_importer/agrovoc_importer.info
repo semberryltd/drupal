@@ -1,8 +1,8 @@
 name = Agrovoc Importer
-description = Import Landportal terms from Agrovoc vocabulary into Topics taxonomy.
+description = Import Agrovoc Land terms(def,labels,translations,URI in Landportal Topics taxonomy from a sparql query(result in a csv format).
 core = 7.x
 package = Features
-version = 7.x-2.0
+version = 7.x-1.0
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_et
