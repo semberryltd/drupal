@@ -4,7 +4,7 @@
  */
 
 function landportal_taxonomy_views_default_views_alter(&$views) {
-    $path = drupal_get_path('module', 'landportal_bo') . '/views';
+    $path = drupal_get_path('module', 'landportal_taxonomy') . '/views';
 
     $views_override = array(
         'domains', 'themes'
