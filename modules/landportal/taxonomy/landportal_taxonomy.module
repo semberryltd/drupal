@@ -3,6 +3,8 @@
  * This module provides various elements for the Landportal taxonomies 
  */
 
+include_once 'landportal_taxonomy.features.inc';
+
 function landportal_taxonomy_menu() {
     /* $items['voc'] = array(); */
     /* return $items; */
