@@ -489,7 +489,7 @@ function landcommunity_field_default_field_instances() {
     'bundle' => 'organization',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -498,58 +498,34 @@ function landcommunity_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 1,
       ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'rss' => array(
-        'label' => 'hidden',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_related_topics',
     'label' => 'Related topics',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'taxonomy',
+      'module' => 'synonyms',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
+        'auto_creation' => 0,
         'size' => 60,
+        'suggest_only_unique' => 0,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
+      'type' => 'synonyms_autocomplete',
+      'weight' => 4,
     ),
   );
 
@@ -702,7 +678,7 @@ function landcommunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'profile2',
@@ -811,7 +787,7 @@ function landcommunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'profile2',
@@ -937,7 +913,7 @@ function landcommunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'profile2',
@@ -1040,12 +1016,13 @@ function landcommunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'profile2',
     'field_name' => 'field_link',
     'label' => 'Links',
+    'pcp_tag' => 1,
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -1111,7 +1088,7 @@ function landcommunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'profile2',
@@ -1136,30 +1113,23 @@ function landcommunity_field_default_field_instances() {
     'bundle' => 'main',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
     'display' => array(
-      'account' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'full' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 4,
@@ -1167,8 +1137,8 @@ function landcommunity_field_default_field_instances() {
     ),
     'entity_type' => 'profile2',
     'field_name' => 'field_related_topics',
-    'label' => 'Topics',
-    'required' => 0,
+    'label' => 'Related topics',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -1178,14 +1148,13 @@ function landcommunity_field_default_field_instances() {
       'module' => 'synonyms',
       'settings' => array(
         'auto_creation' => 0,
-        'autocomplete_path' => 'synonyms/autocomplete',
         'size' => 60,
         'suggest_only_unique' => 0,
         'suggestion_size' => 10,
         'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
       'type' => 'synonyms_autocomplete',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -1410,6 +1379,7 @@ function landcommunity_field_default_field_instances() {
   t('Date');
   t('Description');
   t('Email');
+  t('Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.');
   t('Firstname');
   t('Geographical focus');
   t('Image');
@@ -1428,7 +1398,6 @@ function landcommunity_field_default_field_instances() {
   t('Related topics');
   t('Tell us where you are based.');
   t('Title');
-  t('Topics');
   t('Website');
 
   return $field_instances;
