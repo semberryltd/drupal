@@ -15,7 +15,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -8,
+      'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -35,12 +35,12 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       ),
     ),
     'interests' => array(
-      'name' => 'Interests',
+      'name' => 'Interests DEPREC?',
       'machine_name' => 'interests',
       'description' => 'User interests',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 3,
+      'weight' => 5,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -60,12 +60,12 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       ),
     ),
     'keywords' => array(
-      'name' => 'Keywords',
+      'name' => 'Keywords DEPREC?',
       'machine_name' => 'keywords',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 2,
+      'weight' => 4,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -90,7 +90,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -4,
+      'weight' => -1,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -115,7 +115,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -7,
+      'weight' => -4,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -140,7 +140,7 @@ function landlibrary_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -3,
+      'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
