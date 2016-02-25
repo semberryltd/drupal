@@ -202,7 +202,7 @@ function landdebate_field_default_field_instances() {
     'bundle' => 'blog_post',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -228,13 +228,16 @@ function landdebate_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'options',
+      'active' => 1,
+      'module' => 'synonyms',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
+        'auto_creation' => 0,
         'size' => 60,
+        'suggest_only_unique' => 0,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
-      'type' => 'options_select',
+      'type' => 'synonyms_autocomplete',
       'weight' => 4,
     ),
   );
@@ -363,7 +366,7 @@ function landdebate_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
-          'view_mode' => 'default',
+          'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 3,
@@ -565,21 +568,21 @@ function landdebate_field_default_field_instances() {
     'bundle' => 'debate',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -591,14 +594,17 @@ function landdebate_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'options',
+      'active' => 1,
+      'module' => 'synonyms',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
+        'auto_creation' => 0,
         'size' => 60,
+        'suggest_only_unique' => 0,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
-      'type' => 'options_select',
-      'weight' => 15,
+      'type' => 'synonyms_autocomplete',
+      'weight' => 4,
     ),
   );
 
@@ -1024,21 +1030,21 @@ If it is only a one day event, the end date should be the same as the starting d
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -1050,13 +1056,16 @@ If it is only a one day event, the end date should be the same as the starting d
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'options',
+      'active' => 1,
+      'module' => 'synonyms',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
+        'auto_creation' => 0,
         'size' => 60,
+        'suggest_only_unique' => 0,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
-      'type' => 'options_select',
+      'type' => 'synonyms_autocomplete',
       'weight' => 4,
     ),
   );
@@ -1436,27 +1445,27 @@ If it is only a one day event, the end date should be the same as the starting d
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_related_topics',
     'label' => 'Related topics',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -1465,15 +1474,14 @@ If it is only a one day event, the end date should be the same as the starting d
       'active' => 1,
       'module' => 'synonyms',
       'settings' => array(
-        'auto_creation' => 1,
-        'autocomplete_path' => 'synonyms/autocomplete',
+        'auto_creation' => 0,
         'size' => 60,
-        'suggest_only_unique' => FALSE,
+        'suggest_only_unique' => 0,
         'suggestion_size' => 10,
         'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
       'type' => 'synonyms_autocomplete',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -1484,6 +1492,7 @@ If it is only a one day event, the end date should be the same as the starting d
   t('Comment');
   t('Contact / Event organiser');
   t('Date');
+  t('Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.');
   t('Facilitators');
   t('Geographical focus');
   t('Give the name, eventually the email of the contact organiser.
