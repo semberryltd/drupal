@@ -20,6 +20,7 @@ projects:
   - calendar
   - captcha
   - chosen
+  - complete_profile
   - computed_field
   - context
   - ctools
@@ -69,6 +70,7 @@ projects:
   - node_edit_protection
   - oauth
   - pathauto
+  - pcp
   - rdfx
   - recaptcha
   - references
