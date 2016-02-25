@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function landlibrary_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -24,11 +24,9 @@ function landlibrary_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_doc_conference',
-      1 => 'group_doc_citation',
-      2 => 'group_doc_creator',
-      3 => 'group_doc_location',
-      4 => 'group_doc_publisher',
-      5 => 'group_doc_subject',
+      1 => 'field_doc_keyword',
+      2 => 'field_doc_subject',
+      3 => 'group_doc_citation',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -41,7 +39,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_deprecated|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_deprecated|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -67,7 +65,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_citation|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_citation|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -80,7 +78,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = 'group_deprecated';
   $field_group->data = array(
     'label' => 'Citation',
-    'weight' => '9',
+    'weight' => '7',
     'children' => array(
       0 => 'field_doc_citation',
       1 => 'field_doc_citation_chronology',
@@ -98,7 +96,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_citation|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_citation|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -124,7 +122,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_coverage|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_coverage|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -153,7 +151,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_coverage|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_coverage|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -179,7 +177,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_creator|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_creator|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -205,7 +203,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_creator|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_creator|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -231,7 +229,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_desc_info|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_desc_info|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -261,7 +259,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_desc_info|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_desc_info|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -287,7 +285,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_location|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_location|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -318,7 +316,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_location|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_location|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -344,7 +342,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_physical_chars|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_physical_chars|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -381,7 +379,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_physical_chars|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_physical_chars|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -407,7 +405,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_publisher|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_publisher|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -433,7 +431,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_publisher|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_publisher|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -458,7 +456,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_doc_relations|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_relations|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -498,7 +496,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_doc_relations|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_relations|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -524,7 +522,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_responsible_body|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_responsible_body|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -558,7 +556,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_responsible_body|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_responsible_body|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -584,7 +582,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_rights|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_rights|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -614,7 +612,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_doc_rights|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_rights|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -640,7 +638,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_subject|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_subject|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -669,7 +667,7 @@ function landlibrary_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_doc_subject|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_subject|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -694,7 +692,7 @@ function landlibrary_field_group_info() {
       ),
     ),
   );
-  $export['group_doc_title_info|node|landlibrary_resource|default'] = $field_group;
+  $field_groups['group_doc_title_info|node|landlibrary_resource|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -721,7 +719,7 @@ function landlibrary_field_group_info() {
       ),
     ),
   );
-  $export['group_doc_title_info|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_doc_title_info|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -738,8 +736,7 @@ function landlibrary_field_group_info() {
     'children' => array(
       0 => 'field_doc_country',
       1 => 'field_doc_geographic_region',
-      2 => 'field_doc_keyword',
-      3 => 'field_doc_subject',
+      2 => 'field_related_topics',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -751,7 +748,7 @@ function landlibrary_field_group_info() {
       ),
     ),
   );
-  $export['group_lptags|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_lptags|node|landlibrary_resource|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -785,7 +782,25 @@ function landlibrary_field_group_info() {
       ),
     ),
   );
-  $export['group_resource|node|landlibrary_resource|form'] = $field_group;
+  $field_groups['group_resource|node|landlibrary_resource|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Citation');
+  t('Creator');
+  t('Deprecated');
+  t('Description Information');
+  t('LPTags');
+  t('Location');
+  t('Physical Characteristics');
+  t('Publisher');
+  t('Relations');
+  t('Resource');
+  t('Responsible body');
+  t('Rights');
+  t('Spatial Coverage');
+  t('Subject');
+  t('Title Information');
+
+  return $field_groups;
 }
