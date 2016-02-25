@@ -3,8 +3,8 @@
  * Override Drupal default views
  */
 
-function landportal_bo_views_default_views_alter(&$views) {
-    $path = drupal_get_path('module', 'landportal_bo') . '/views';
+function landportal_admin_views_default_views_alter(&$views) {
+    $path = drupal_get_path('module', 'landportal_admin') . '/views';
 
     $views_override = array(
         'admin_views_user',
