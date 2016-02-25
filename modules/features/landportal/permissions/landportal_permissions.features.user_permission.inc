@@ -1564,15 +1564,6 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in landvoc'.
-  $permissions['delete terms in landvoc'] = array(
-    'name' => 'delete terms in landvoc',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete terms in languages'.
   $permissions['delete terms in languages'] = array(
     'name' => 'delete terms in languages',
@@ -2213,15 +2204,6 @@ function landportal_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in landvoc'.
-  $permissions['edit terms in landvoc'] = array(
-    'name' => 'edit terms in landvoc',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in languages'.
   $permissions['edit terms in languages'] = array(
     'name' => 'edit terms in languages',
@@ -2519,15 +2501,6 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
-      'landportal editor' => 'landportal editor',
-    ),
-    'module' => 'term_merge',
-  );
-
-  // Exported permission: 'merge landvoc terms'.
-  $permissions['merge landvoc terms'] = array(
-    'name' => 'merge landvoc terms',
-    'roles' => array(
       'landportal editor' => 'landportal editor',
     ),
     'module' => 'term_merge',
