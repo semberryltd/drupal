@@ -1,0 +1,29 @@
+<?php
+/*
+ * This module provides various elements for the Landportal taxonomies 
+ */
+
+function landportal_taxonomy_menu() {
+    /* $items['voc'] = array(); */
+    /* return $items; */
+}
+
+function landportal_taxonomy_menu_block_info() {
+  $blocks = array(
+    'domains_views' => array(
+      'info'        => t('Doma Footer'),
+      'status'      => TRUE,
+      'region'      => 'content',
+      'visibility'  => BLOCK_VISIBILITY_LISTED,
+      'pages'       => "voc",
+    ),
+    'themes_' => array(
+      'info'        => t('Footer social icons'),
+      'status'      => TRUE,
+      'region'      => 'content',
+      'visibility'  => BLOCK_VISIBILITY_LISTED,
+      'pages'       => "voc",
+    ),
+  );
+  return $blocks;
+}
