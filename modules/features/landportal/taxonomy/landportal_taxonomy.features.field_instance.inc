@@ -292,6 +292,107 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-domains-field_related_themes'.
+  $field_instances['taxonomy_term-domains-field_related_themes'] = array(
+    'bundle' => 'domains',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_related_themes',
+    'label' => 'Related themes',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-domains-field_related_topics'.
+  $field_instances['taxonomy_term-domains-field_related_topics'] = array(
+    'bundle' => 'domains',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_related_topics',
+    'label' => 'Related topics',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'synonyms',
+      'settings' => array(
+        'auto_creation' => 0,
+        'size' => 60,
+        'suggest_only_unique' => 0,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
+      ),
+      'type' => 'synonyms_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance:
   // 'taxonomy_term-landportal_topics-field_agrovoc_uri'.
   $field_instances['taxonomy_term-landportal_topics-field_agrovoc_uri'] = array(
@@ -617,9 +718,64 @@ function landportal_taxonomy_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-themes-field_related_topics'.
+  $field_instances['taxonomy_term-themes-field_related_topics'] = array(
+    'bundle' => 'themes',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_reference_view_mode' => 'search_index',
+          'use_content_language' => 1,
+        ),
+        'type' => 'ds_taxonomy_view_mode',
+        'weight' => 1,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_related_topics',
+    'label' => 'Related topics',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'synonyms',
+      'settings' => array(
+        'auto_creation' => 0,
+        'size' => 60,
+        'suggest_only_unique' => 0,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
+      ),
+      'type' => 'synonyms_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('AGROVOC URI');
+  t('Enter a Topics term to classify your content. Those terms are in direct correlation with Agrovoc.');
   t('ISO3');
   t('Label');
   t('Language');
@@ -629,6 +785,8 @@ function landportal_taxonomy_field_default_field_instances() {
   t('Name');
   t('Old Geopolitical Ontology URI');
   t('Please, enter the synonyms which should be related to this term.');
+  t('Related themes');
+  t('Related topics');
   t('Synonyms');
   t('This field is for the corresponding URI in the FAO Geopolitical Ontology');
   t('This is the old Geopolitical Ontology URI. Some external systems may still use it instead of the new one.');

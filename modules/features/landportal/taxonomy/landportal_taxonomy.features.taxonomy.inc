@@ -9,38 +9,13 @@
  */
 function landportal_taxonomy_taxonomy_default_vocabularies() {
   return array(
-    'continents' => array(
-      'name' => 'Continents DEPREC',
-      'machine_name' => 'continents',
-      'description' => '(retired) Comes from landportal v1 (drupal6)?',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 5,
-      'language' => 'und',
-      'i18n_mode' => 0,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
     'countries' => array(
       'name' => 'Countries',
       'machine_name' => 'countries',
       'description' => 'Countries',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -10,
+      'weight' => -7,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -65,9 +40,34 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Status of a debate',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -9,
+      'weight' => -6,
       'language' => 'und',
       'i18n_mode' => 4,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'domains' => array(
+      'name' => 'Domains',
+      'machine_name' => 'domains',
+      'description' => 'Land Portal organizational taxonomy system for Themes, Categories',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -10,
+      'language' => 'und',
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -90,9 +90,9 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Topics for the LandPortal',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -2,
+      'weight' => -8,
       'language' => 'und',
-      'i18n_mode' => 0,
+      'i18n_mode' => 1,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -115,7 +115,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -1,
+      'weight' => 1,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -140,7 +140,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Relationship to the Landportal',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -6,
+      'weight' => -3,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -165,7 +165,7 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Specific types for organizations (needs rework)',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -5,
+      'weight' => -2,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -184,13 +184,13 @@ function landportal_taxonomy_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'regions' => array(
-      'name' => 'Regions DEPREC',
-      'machine_name' => 'regions',
-      'description' => 'Regions (DEPRECATED) - this taxonomy is wrong',
+    'themes' => array(
+      'name' => 'Themes',
+      'machine_name' => 'themes',
+      'description' => 'Land Portal organizational taxonomy system for Themes, Categories',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 4,
+      'weight' => -9,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
