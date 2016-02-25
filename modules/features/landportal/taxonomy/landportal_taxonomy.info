@@ -9,6 +9,7 @@ dependencies[] = ds
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = i18n_taxonomy
+dependencies[] = landdebate
 dependencies[] = link
 dependencies[] = options
 dependencies[] = rdfx

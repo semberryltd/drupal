@@ -300,11 +300,14 @@ function landportal_taxonomy_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 2,
+        'label' => 'hidden',
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_reference_view_mode' => 'search_index',
+          'use_content_language' => 1,
+        ),
+        'type' => 'ds_taxonomy_view_mode',
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
@@ -345,10 +348,13 @@ function landportal_taxonomy_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 1,
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_reference_view_mode' => 'search_index',
+          'use_content_language' => 1,
+        ),
+        'type' => 'ds_taxonomy_view_mode',
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -736,7 +742,7 @@ function landportal_taxonomy_field_default_field_instances() {
         'weight' => 1,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
