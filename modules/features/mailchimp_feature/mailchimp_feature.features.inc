@@ -29,7 +29,6 @@ function mailchimp_feature_default_mailchimp_list() {
     "settings" : {
       "roles" : {
         "2" : 2,
-        "111731461" : 111731461,
         "111903911" : 111903911,
         "111903912" : 111903912,
         "25521343" : 25521343,
@@ -57,7 +56,9 @@ function mailchimp_feature_default_mailchimp_list() {
         "MMERGE16" : "",
         "MMERGE17" : "",
         "MMERGE18" : "",
-        "MMERGE19" : ""
+        "MMERGE19" : "",
+        "MMERGE20" : "",
+        "MMERGE21" : ""
       },
       "mergefields_display" : {
         "EMAIL" : true,
@@ -79,11 +80,13 @@ function mailchimp_feature_default_mailchimp_list() {
         "MMERGE16" : 0,
         "MMERGE17" : 0,
         "MMERGE18" : 0,
-        "MMERGE19" : 0
+        "MMERGE19" : 0,
+        "MMERGE20" : 1,
+        "MMERGE21" : 1
       },
       "doublein" : 1,
       "show_register_form" : 1,
-      "default_register_form_optin" : 0,
+      "default_register_form_optin" : 1,
       "show_account_form" : 1,
       "form_label" : "Land Portal News Digest",
       "submit_label" : "Subscribe",
@@ -105,7 +108,6 @@ function mailchimp_feature_default_mailchimp_list() {
     "settings" : {
       "roles" : {
         "2" : 2,
-        "111731461" : 111731461,
         "111903911" : 111903911,
         "111903912" : 111903912,
         "25521343" : 25521343,
@@ -113,15 +115,11 @@ function mailchimp_feature_default_mailchimp_list() {
         "30037204" : 30037204,
         "1" : 1
       },
-      "mergefields" : {
-        "EMAIL" : "mail",
-        "FNAME" : "field-firstname",
-        "LNAME" : "field-lastname"
-      },
-      "mergefields_display" : { "EMAIL" : true, "FNAME" : 1, "LNAME" : 1 },
+      "mergefields" : { "EMAIL" : "mail", "FNAME" : "", "LNAME" : "", "MMERGE3" : "" },
+      "mergefields_display" : { "EMAIL" : true, "FNAME" : 1, "LNAME" : 1, "MMERGE3" : 1 },
       "doublein" : 1,
-      "show_register_form" : 1,
-      "default_register_form_optin" : 1,
+      "show_register_form" : 0,
+      "default_register_form_optin" : 0,
       "show_account_form" : 1,
       "form_label" : "LEGEND Bulletin",
       "submit_label" : "Subscribe",

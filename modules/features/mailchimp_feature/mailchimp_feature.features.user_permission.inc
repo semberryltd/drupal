@@ -63,9 +63,7 @@ function mailchimp_feature_user_default_permissions() {
     'name' => 'administer mailchimp user lists',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
       'landportal admin' => 'landportal admin',
-      'landportal editor' => 'landportal editor',
     ),
     'module' => 'mailchimp_user_list',
   );
