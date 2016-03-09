@@ -48,7 +48,7 @@ function agrovoc_importer_feeds_importer_default() {
           1 => array(
             'source' => 'enLabel',
             'target' => 'name',
-            'unique' => 1,
+            'unique' => 0,
           ),
           2 => array(
             'source' => 'enLabel',
@@ -65,9 +65,24 @@ function agrovoc_importer_feeds_importer_default() {
             'target' => 'name_field:et:fr',
             'unique' => FALSE,
           ),
+          5 => array(
+            'source' => 'defEN',
+            'target' => 'description_field:et:en',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'defFR',
+            'target' => 'description_field:et:fr',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'defES',
+            'target' => 'description_field:et:es',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
-        'input_format' => 'full_html',
+        'input_format' => 'filtered_html',
         'skip_hash_check' => 1,
         'bundle' => 'landportal_topics',
         'update_non_existent' => 'skip',
