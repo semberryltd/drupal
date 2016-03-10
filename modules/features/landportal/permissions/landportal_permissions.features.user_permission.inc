@@ -437,6 +437,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'block',
   );
@@ -685,6 +686,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'menu',
   );
@@ -2321,6 +2323,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'admin_menu',
   );
@@ -2897,6 +2900,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'i18n_string',
   );
@@ -2962,6 +2966,7 @@ function landportal_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'landportal admin' => 'landportal admin',
+      'landportal editor' => 'landportal editor',
     ),
     'module' => 'i18n_string',
   );

@@ -198,7 +198,7 @@ function landcommunity_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -207,13 +207,13 @@ function landcommunity_field_default_field_instances() {
     'bundle' => 'organization',
     'default_value' => array(
       0 => array(
-        'tid' => 1542,
+        'tid' => 7112,
         'vid' => 7,
         'name' => 'Global',
         'description' => NULL,
         'format' => NULL,
         'weight' => 0,
-        'uuid' => 'c4436802-276a-44c8-9d94-c7cb08c54e3c',
+        'uuid' => '231d12b8-2d39-4a2c-a840-d446faea217a',
         'language' => 'und',
         'i18n_tsid' => 0,
         'vocabulary_machine_name' => 'regions',
@@ -246,8 +246,21 @@ function landcommunity_field_default_field_instances() {
           ),
         ),
         'translations' => array(
-          'data' => array(),
-          'original' => NULL,
+          'original' => 'und',
+          'data' => array(
+            'und' => array(
+              'entity_type' => 'taxonomy_term',
+              'entity_id' => 7112,
+              'revision_id' => 7112,
+              'language' => 'und',
+              'source' => '',
+              'uid' => 1,
+              'status' => 1,
+              'translate' => 0,
+              'created' => 1450781511,
+              'changed' => 1450781511,
+            ),
+          ),
         ),
       ),
     ),
@@ -271,20 +284,24 @@ function landcommunity_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_geographical_focus',
     'label' => 'Geographical focus',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'synonyms',
       'settings' => array(
+        'auto_creation' => 1,
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
+        'suggest_only_unique' => FALSE,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'type' => 'synonyms_autocomplete',
+      'weight' => 5,
     ),
   );
 
@@ -443,7 +460,7 @@ function landcommunity_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -480,7 +497,7 @@ function landcommunity_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -574,7 +591,7 @@ function landcommunity_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -793,7 +810,8 @@ function landcommunity_field_default_field_instances() {
     'entity_type' => 'profile2',
     'field_name' => 'field_geographical_focus',
     'label' => 'Geographical focus',
-    'required' => 0,
+    'pcp_tag' => 1,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -803,14 +821,13 @@ function landcommunity_field_default_field_instances() {
       'module' => 'synonyms',
       'settings' => array(
         'auto_creation' => 1,
-        'autocomplete_path' => 'synonyms/autocomplete',
         'size' => 60,
         'suggest_only_unique' => 0,
         'suggestion_size' => 10,
         'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
       'type' => 'synonyms_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 

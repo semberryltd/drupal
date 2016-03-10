@@ -126,10 +126,16 @@ function landdebate_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 3,
+      'module' => 'synonyms',
+      'settings' => array(
+        'auto_creation' => 1,
+        'size' => 60,
+        'suggest_only_unique' => FALSE,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
+      ),
+      'type' => 'synonyms_autocomplete',
+      'weight' => 6,
     ),
   );
 
@@ -238,7 +244,7 @@ function landdebate_field_default_field_instances() {
         'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
       'type' => 'synonyms_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -486,17 +492,23 @@ function landdebate_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_geographical_focus',
     'label' => 'Geographical focus',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 17,
+      'module' => 'synonyms',
+      'settings' => array(
+        'auto_creation' => 1,
+        'size' => 60,
+        'suggest_only_unique' => FALSE,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
+      ),
+      'type' => 'synonyms_autocomplete',
+      'weight' => 5,
     ),
   );
 
@@ -693,7 +705,7 @@ function landdebate_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -897,9 +909,15 @@ If it is only a one day event, the end date should be the same as the starting d
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'synonyms',
+      'settings' => array(
+        'auto_creation' => 1,
+        'size' => 60,
+        'suggest_only_unique' => FALSE,
+        'suggestion_size' => 10,
+        'synonyms_autocomplete_path' => 'synonyms/autocomplete',
+      ),
+      'type' => 'synonyms_autocomplete',
       'weight' => 5,
     ),
   );
@@ -1126,7 +1144,7 @@ If it is only a one day event, the end date should be the same as the starting d
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 31,
+      'weight' => 8,
     ),
   );
 
@@ -1255,7 +1273,7 @@ If it is only a one day event, the end date should be the same as the starting d
     'entity_type' => 'node',
     'field_name' => 'field_geographical_focus',
     'label' => 'Geographical focus',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -1265,14 +1283,13 @@ If it is only a one day event, the end date should be the same as the starting d
       'module' => 'synonyms',
       'settings' => array(
         'auto_creation' => 1,
-        'autocomplete_path' => 'synonyms/autocomplete',
         'size' => 60,
         'suggest_only_unique' => FALSE,
         'suggestion_size' => 10,
         'synonyms_autocomplete_path' => 'synonyms/autocomplete',
       ),
       'type' => 'synonyms_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 

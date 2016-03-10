@@ -24,9 +24,11 @@ function landlibrary_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_doc_conference',
-      1 => 'field_doc_keyword',
-      2 => 'field_doc_subject',
-      3 => 'group_doc_citation',
+      1 => 'group_doc_citation',
+      2 => 'group_doc_creator',
+      3 => 'group_doc_location',
+      4 => 'group_doc_publisher',
+      5 => 'group_doc_subject',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -78,7 +80,7 @@ function landlibrary_field_group_info() {
   $field_group->parent_name = 'group_deprecated';
   $field_group->data = array(
     'label' => 'Citation',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(
       0 => 'field_doc_citation',
       1 => 'field_doc_citation_chronology',
@@ -736,7 +738,8 @@ function landlibrary_field_group_info() {
     'children' => array(
       0 => 'field_doc_country',
       1 => 'field_doc_geographic_region',
-      2 => 'field_related_topics',
+      2 => 'field_doc_keyword',
+      3 => 'field_doc_subject',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
